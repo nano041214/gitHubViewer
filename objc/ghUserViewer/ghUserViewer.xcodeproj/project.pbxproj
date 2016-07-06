@@ -12,7 +12,6 @@
 		276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C53F81D2B9284007C9DB2 /* AppDelegate.m */; };
 		276C53FF1D2B9284007C9DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276C53FD1D2B9284007C9DB2 /* Main.storyboard */; };
 		276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276C54001D2B9284007C9DB2 /* Assets.xcassets */; };
-		276C54041D2B9284007C9DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276C54021D2B9284007C9DB2 /* LaunchScreen.storyboard */; };
 		276C540F1D2B9284007C9DB2 /* ghUserViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C540E1D2B9284007C9DB2 /* ghUserViewerTests.m */; };
 		276C541A1D2B9284007C9DB2 /* ghUserViewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C54191D2B9284007C9DB2 /* ghUserViewerUITests.m */; };
 		2F6F930921EE54B17167B24A /* libPods-ghUserViewerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 932AD99DF52473B4EC3819BB /* libPods-ghUserViewerUITests.a */; };
@@ -48,7 +47,6 @@
 		276C53F81D2B9284007C9DB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		276C53FE1D2B9284007C9DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		276C54001D2B9284007C9DB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		276C54031D2B9284007C9DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		276C54051D2B9284007C9DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		276C540A1D2B9284007C9DB2 /* ghUserViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ghUserViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276C540E1D2B9284007C9DB2 /* ghUserViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ghUserViewerTests.m; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				272F721E1D2C908500CDB739 /* InquiryViewController.h */,
 				272F721F1D2C908500CDB739 /* InquiryViewController.m */,
 				276C54001D2B9284007C9DB2 /* Assets.xcassets */,
-				276C54021D2B9284007C9DB2 /* LaunchScreen.storyboard */,
 				276C54051D2B9284007C9DB2 /* Info.plist */,
 				276C53F41D2B9284007C9DB2 /* Supporting Files */,
 			);
@@ -291,7 +288,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276C54041D2B9284007C9DB2 /* LaunchScreen.storyboard in Resources */,
 				276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */,
 				276C53FF1D2B9284007C9DB2 /* Main.storyboard in Resources */,
 			);
@@ -485,14 +481,6 @@
 				276C53FE1D2B9284007C9DB2 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		276C54021D2B9284007C9DB2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				276C54031D2B9284007C9DB2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

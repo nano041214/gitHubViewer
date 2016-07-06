@@ -25,7 +25,6 @@
         <!--InquiryViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController title="InquiryViewController" id="BYZ-38-t0r" customClass="InquiryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -35,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="djL-Nb-4ii">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="djL-Nb-4ii">
                                 <rect key="frame" x="210" y="124" width="180" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="BHe-LZ-Opr"/>
@@ -62,7 +61,6 @@
                             <constraint firstItem="MZj-QU-wBT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="BUc-b4-vSP"/>
                             <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="DxT-Gn-yuj"/>
                             <constraint firstItem="djL-Nb-4ii" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QM6-8j-IxU"/>
-                            <constraint firstItem="MZj-QU-wBT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ULx-qo-iFg"/>
                             <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="50" id="XfD-F3-RoR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MZj-QU-wBT" secondAttribute="trailing" constant="30" id="Zcr-tn-iJG"/>
                             <constraint firstItem="wn8-xr-eEr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r9L-N9-XKT"/>
@@ -71,11 +69,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="lLc-q8-org"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="304" y="346"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="128" height="128"/>
+        <image name="octcat" width="180" height="180"/>
     </resources>
 </document>
