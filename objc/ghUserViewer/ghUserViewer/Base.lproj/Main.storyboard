@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-458" y="338"/>
         </scene>
-        <!--InquiryViewController-->
+        <!--GUVInquiryViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="InquiryViewController" id="BYZ-38-t0r" customClass="InquiryViewController" sceneMemberID="viewController">
+                <viewController title="GUVInquiryViewController" id="BYZ-38-t0r" customClass="GUVInquiryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
