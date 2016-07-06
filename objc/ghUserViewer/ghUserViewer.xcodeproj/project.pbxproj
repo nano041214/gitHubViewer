@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */; };
 		276C53F61D2B9284007C9DB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C53F51D2B9284007C9DB2 /* main.m */; };
 		276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C53F81D2B9284007C9DB2 /* AppDelegate.m */; };
-		276C53FC1D2B9284007C9DB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C53FB1D2B9284007C9DB2 /* ViewController.m */; };
 		276C53FF1D2B9284007C9DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276C53FD1D2B9284007C9DB2 /* Main.storyboard */; };
 		276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276C54001D2B9284007C9DB2 /* Assets.xcassets */; };
-		276C54041D2B9284007C9DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276C54021D2B9284007C9DB2 /* LaunchScreen.storyboard */; };
 		276C540F1D2B9284007C9DB2 /* ghUserViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C540E1D2B9284007C9DB2 /* ghUserViewerTests.m */; };
 		276C541A1D2B9284007C9DB2 /* ghUserViewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C54191D2B9284007C9DB2 /* ghUserViewerUITests.m */; };
 		2F6F930921EE54B17167B24A /* libPods-ghUserViewerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 932AD99DF52473B4EC3819BB /* libPods-ghUserViewerUITests.a */; };
@@ -40,15 +39,14 @@
 /* Begin PBXFileReference section */
 		10FAF9C3730E76C4BC352501 /* Pods-ghUserViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ghUserViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ghUserViewerTests/Pods-ghUserViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		118BE7449227E4DAC4813933 /* Pods-ghUserViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ghUserViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ghUserViewerTests/Pods-ghUserViewerTests.release.xcconfig"; sourceTree = "<group>"; };
+		272F721E1D2C908500CDB739 /* GUVInquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVInquiryViewController.h; sourceTree = "<group>"; };
+		272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVInquiryViewController.m; sourceTree = "<group>"; };
 		276C53F11D2B9284007C9DB2 /* ghUserViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ghUserViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		276C53F51D2B9284007C9DB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		276C53F71D2B9284007C9DB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		276C53F81D2B9284007C9DB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		276C53FA1D2B9284007C9DB2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		276C53FB1D2B9284007C9DB2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		276C53FE1D2B9284007C9DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		276C54001D2B9284007C9DB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		276C54031D2B9284007C9DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		276C54051D2B9284007C9DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		276C540A1D2B9284007C9DB2 /* ghUserViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ghUserViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276C540E1D2B9284007C9DB2 /* ghUserViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ghUserViewerTests.m; sourceTree = "<group>"; };
@@ -120,11 +118,10 @@
 			children = (
 				276C53F71D2B9284007C9DB2 /* AppDelegate.h */,
 				276C53F81D2B9284007C9DB2 /* AppDelegate.m */,
-				276C53FA1D2B9284007C9DB2 /* ViewController.h */,
-				276C53FB1D2B9284007C9DB2 /* ViewController.m */,
 				276C53FD1D2B9284007C9DB2 /* Main.storyboard */,
+				272F721E1D2C908500CDB739 /* GUVInquiryViewController.h */,
+				272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */,
 				276C54001D2B9284007C9DB2 /* Assets.xcassets */,
-				276C54021D2B9284007C9DB2 /* LaunchScreen.storyboard */,
 				276C54051D2B9284007C9DB2 /* Info.plist */,
 				276C53F41D2B9284007C9DB2 /* Supporting Files */,
 			);
@@ -250,6 +247,7 @@
 		276C53E91D2B9284007C9DB2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GUV;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "naomi-hidaka";
 				TargetAttributes = {
@@ -291,7 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276C54041D2B9284007C9DB2 /* LaunchScreen.storyboard in Resources */,
 				276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */,
 				276C53FF1D2B9284007C9DB2 /* Main.storyboard in Resources */,
 			);
@@ -441,8 +438,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				276C53FC1D2B9284007C9DB2 /* ViewController.m in Sources */,
 				276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */,
+				272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */,
 				276C53F61D2B9284007C9DB2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,14 +482,6 @@
 				276C53FE1D2B9284007C9DB2 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		276C54021D2B9284007C9DB2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				276C54031D2B9284007C9DB2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
