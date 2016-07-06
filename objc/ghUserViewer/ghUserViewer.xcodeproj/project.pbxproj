@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		272F72201D2C908500CDB739 /* InquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F721F1D2C908500CDB739 /* InquiryViewController.m */; };
+		272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */; };
 		276C53F61D2B9284007C9DB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C53F51D2B9284007C9DB2 /* main.m */; };
 		276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C53F81D2B9284007C9DB2 /* AppDelegate.m */; };
 		276C53FF1D2B9284007C9DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276C53FD1D2B9284007C9DB2 /* Main.storyboard */; };
@@ -39,8 +39,8 @@
 /* Begin PBXFileReference section */
 		10FAF9C3730E76C4BC352501 /* Pods-ghUserViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ghUserViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ghUserViewerTests/Pods-ghUserViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		118BE7449227E4DAC4813933 /* Pods-ghUserViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ghUserViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ghUserViewerTests/Pods-ghUserViewerTests.release.xcconfig"; sourceTree = "<group>"; };
-		272F721E1D2C908500CDB739 /* InquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InquiryViewController.h; sourceTree = "<group>"; };
-		272F721F1D2C908500CDB739 /* InquiryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InquiryViewController.m; sourceTree = "<group>"; };
+		272F721E1D2C908500CDB739 /* GUVInquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVInquiryViewController.h; sourceTree = "<group>"; };
+		272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVInquiryViewController.m; sourceTree = "<group>"; };
 		276C53F11D2B9284007C9DB2 /* ghUserViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ghUserViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		276C53F51D2B9284007C9DB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		276C53F71D2B9284007C9DB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 				276C53F71D2B9284007C9DB2 /* AppDelegate.h */,
 				276C53F81D2B9284007C9DB2 /* AppDelegate.m */,
 				276C53FD1D2B9284007C9DB2 /* Main.storyboard */,
-				272F721E1D2C908500CDB739 /* InquiryViewController.h */,
-				272F721F1D2C908500CDB739 /* InquiryViewController.m */,
+				272F721E1D2C908500CDB739 /* GUVInquiryViewController.h */,
+				272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */,
 				276C54001D2B9284007C9DB2 /* Assets.xcassets */,
 				276C54051D2B9284007C9DB2 /* Info.plist */,
 				276C53F41D2B9284007C9DB2 /* Supporting Files */,
@@ -247,6 +247,7 @@
 		276C53E91D2B9284007C9DB2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GUV;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "naomi-hidaka";
 				TargetAttributes = {
@@ -438,7 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */,
-				272F72201D2C908500CDB739 /* InquiryViewController.m in Sources */,
+				272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */,
 				276C53F61D2B9284007C9DB2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

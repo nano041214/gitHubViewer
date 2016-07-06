@@ -1,10 +1,10 @@
-#import "InquiryViewController.h"
+#import "GUVInquiryViewController.h"
 
-@interface InquiryViewController ()
+@interface GUVInquiryViewController ()
 
 @end
 
-@implementation InquiryViewController
+@implementation GUVInquiryViewController
 
 
 - (void)viewDidLoad {
