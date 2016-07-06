@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7u5-it-Hut">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="T9p-OT-Neq">
+            <objects>
+                <navigationController id="7u5-it-Hut" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xLs-5T-2qU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="epa-Lz-Uk4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NZC-BM-Eva" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-458" y="338"/>
+        </scene>
+        <!--InquiryViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController title="InquiryViewController" id="BYZ-38-t0r" customClass="InquiryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +34,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="djL-Nb-4ii">
+                                <rect key="frame" x="210" y="124" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="BHe-LZ-Opr"/>
+                                    <constraint firstAttribute="height" constant="180" id="FD1-2o-lVv"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="githubUserName" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MZj-QU-wBT">
+                                <rect key="frame" x="50" y="354" width="500" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hpe-sf-2RK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-xr-eEr">
+                                <rect key="frame" x="226" y="329" width="148" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MZj-QU-wBT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="BUc-b4-vSP"/>
+                            <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="DxT-Gn-yuj"/>
+                            <constraint firstItem="djL-Nb-4ii" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QM6-8j-IxU"/>
+                            <constraint firstItem="MZj-QU-wBT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ULx-qo-iFg"/>
+                            <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="50" id="XfD-F3-RoR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MZj-QU-wBT" secondAttribute="trailing" constant="30" id="Zcr-tn-iJG"/>
+                            <constraint firstItem="wn8-xr-eEr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r9L-N9-XKT"/>
+                            <constraint firstItem="wn8-xr-eEr" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="25" id="tQM-Gy-aza"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lLc-q8-org"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304" y="346"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="128" height="128"/>
+    </resources>
 </document>
