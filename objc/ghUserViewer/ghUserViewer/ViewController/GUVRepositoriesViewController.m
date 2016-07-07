@@ -1,11 +1,10 @@
-#import "GUVInquiryViewController.h"
+#import "GUVRepositoriesViewController.h"
 
-@interface GUVInquiryViewController ()
+@interface GUVRepositoriesViewController ()
 
 @end
 
-@implementation GUVInquiryViewController
-
+@implementation GUVRepositoriesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
