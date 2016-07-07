@@ -14,6 +14,7 @@
 		276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276C54001D2B9284007C9DB2 /* Assets.xcassets */; };
 		276C540F1D2B9284007C9DB2 /* ghUserViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C540E1D2B9284007C9DB2 /* ghUserViewerTests.m */; };
 		276C541A1D2B9284007C9DB2 /* ghUserViewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C54191D2B9284007C9DB2 /* ghUserViewerUITests.m */; };
+		27F1AC1A1D2DF70B004669A2 /* GUVUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F1AC191D2DF70B004669A2 /* GUVUser.m */; };
 		2F6F930921EE54B17167B24A /* libPods-ghUserViewerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 932AD99DF52473B4EC3819BB /* libPods-ghUserViewerUITests.a */; };
 		92EC2754FDE256B08A980792 /* libPods-ghUserViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9813DCBAED1122A2875B6231 /* libPods-ghUserViewer.a */; };
 		9E61CDE05FB7857880920E4E /* libPods-ghUserViewerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C40E22871E9638190BB4269 /* libPods-ghUserViewerTests.a */; };
@@ -54,6 +55,8 @@
 		276C54151D2B9284007C9DB2 /* ghUserViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ghUserViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276C54191D2B9284007C9DB2 /* ghUserViewerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ghUserViewerUITests.m; sourceTree = "<group>"; };
 		276C541B1D2B9284007C9DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27F1AC181D2DF70B004669A2 /* GUVUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUVUser.h; path = models/GUVUser.h; sourceTree = "<group>"; };
+		27F1AC191D2DF70B004669A2 /* GUVUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUVUser.m; path = models/GUVUser.m; sourceTree = "<group>"; };
 		356ECE0B4FC2E35390CF78BB /* Pods-ghUserViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ghUserViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ghUserViewer/Pods-ghUserViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		6C40E22871E9638190BB4269 /* libPods-ghUserViewerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ghUserViewerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		932AD99DF52473B4EC3819BB /* libPods-ghUserViewerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ghUserViewerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +127,8 @@
 				276C54001D2B9284007C9DB2 /* Assets.xcassets */,
 				276C54051D2B9284007C9DB2 /* Info.plist */,
 				276C53F41D2B9284007C9DB2 /* Supporting Files */,
+				27F1AC181D2DF70B004669A2 /* GUVUser.h */,
+				27F1AC191D2DF70B004669A2 /* GUVUser.m */,
 			);
 			path = ghUserViewer;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */,
+				27F1AC1A1D2DF70B004669A2 /* GUVUser.m in Sources */,
 				272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */,
 				276C53F61D2B9284007C9DB2 /* main.m in Sources */,
 			);
