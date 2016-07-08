@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GUVRepositoriesViewController : UITableViewController
+@interface GUVRepositoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
