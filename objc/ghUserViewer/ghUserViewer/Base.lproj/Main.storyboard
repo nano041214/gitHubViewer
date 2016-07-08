@@ -55,7 +55,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
                                 <connections>
-                                    <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="VgP-Ax-N87"/>
+                                    <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Wzz-zm-6K2"/>
+                                    <segue destination="WBw-K5-etK" kind="push" identifier="toUserInfoTabBar" id="2Od-DX-AHL"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -76,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="304" y="346"/>
         </scene>
-        <!--Item 2-->
+        <!--Activities-->
         <scene sceneID="URz-ae-9a4">
             <objects>
-                <viewController id="vlE-9V-QRU" sceneMemberID="viewController">
+                <viewController title="Activities" id="vlE-9V-QRU" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d83-3G-lWq"/>
                         <viewControllerLayoutGuide type="bottom" id="vrf-tE-tda"/>
@@ -89,16 +90,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="aJR-vT-j1W"/>
+                    <tabBarItem key="tabBarItem" title="Activities" id="aJR-vT-j1W"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHv-II-N1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1788" y="676"/>
         </scene>
-        <!--Item 1-->
+        <!--Repositories-->
         <scene sceneID="UCb-DP-N9X">
             <objects>
-                <viewController id="j2N-YP-nqZ" customClass="GUVRepositoriesViewController" sceneMemberID="viewController">
+                <viewController title="Repositories" id="j2N-YP-nqZ" customClass="GUVRepositoriesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zzw-W1-fdn"/>
                         <viewControllerLayoutGuide type="bottom" id="yHi-iq-v8K"/>
@@ -108,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="VBl-po-V7Q"/>
+                    <tabBarItem key="tabBarItem" title="Repositories" id="VBl-po-V7Q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtD-kf-BYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +118,8 @@
         <!--user-->
         <scene sceneID="38c-aD-bbz">
             <objects>
-                <tabBarController storyboardIdentifier="GUVUsersInfoTabBarController" title="user" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WBw-K5-etK" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="GUVUsersInfoTabBarController" title="user" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WBw-K5-etK" customClass="GUVUserInfoTabBarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="aqV-3M-sdu"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rUu-IX-IXE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
