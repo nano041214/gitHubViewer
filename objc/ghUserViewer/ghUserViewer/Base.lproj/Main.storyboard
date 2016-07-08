@@ -55,7 +55,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
                                 <connections>
-                                    <action selector="inquiredUserInfo:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="VgP-Ax-N87"/>
+                                    <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="VgP-Ax-N87"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -117,7 +117,6 @@
         <!--user-->
         <scene sceneID="38c-aD-bbz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cqk-Tl-PeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="GUVUsersInfoTabBarController" title="user" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WBw-K5-etK" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rUu-IX-IXE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -129,6 +128,7 @@
                         <segue destination="vlE-9V-QRU" kind="relationship" relationship="viewControllers" id="jKT-pA-qnz"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqk-Tl-PeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968" y="346"/>
         </scene>
