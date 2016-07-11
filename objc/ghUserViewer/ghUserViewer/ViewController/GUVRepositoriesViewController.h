@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface GUVRepositoriesViewController : UIViewController
+@interface GUVRepositoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

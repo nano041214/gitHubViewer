@@ -1,11 +1,8 @@
 #import "GUVUserInfoTabBarController.h"
 #import "FontAwesomeKit/FontAwesomeKit.h"
+#import "GUVInquiryViewController.h"
 
 static const CGFloat IconSize = 20;
-
-@interface GUVUserInfoTabBarController ()
-
-@end
 
 @implementation GUVUserInfoTabBarController
 
