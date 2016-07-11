@@ -243,6 +243,12 @@
                                     <constraint firstItem="YDB-Y7-W2H" firstAttribute="width" secondItem="pOS-hs-ME5" secondAttribute="width" multiplier="8:2" id="rgv-gj-Dcg"/>
                                     <constraint firstAttribute="bottom" secondItem="pOS-hs-ME5" secondAttribute="bottom" constant="25" id="tgE-8o-N5d"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="FollowingLabel" destination="kEh-A9-b29" id="nnD-1k-BEg"/>
+                                    <outlet property="followersLabel" destination="9tC-eT-1zV" id="R41-j0-4QL"/>
+                                    <outlet property="starredLabel" destination="XpC-71-8Mc" id="lSF-De-EwT"/>
+                                    <outlet property="userNameLabel" destination="Xms-zi-Tg8" id="HTC-91-Ulm"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="43" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4P-c8-7Zu">
                                 <rect key="frame" x="0.0" y="204" width="600" height="347"/>
