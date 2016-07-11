@@ -5,7 +5,6 @@
 @interface GUVRepositoriesViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 
 @end
 
@@ -14,7 +13,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-    [self.userInfoHeaderView updateConstraints];
 }
 
 #pragma mark - Table view data source
