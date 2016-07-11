@@ -10,6 +10,7 @@
 		272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */; };
 		2768D6671D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2768D6661D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m */; };
 		2768D66A1D2F752800DFFBF3 /* GUVRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2768D6691D2F752800DFFBF3 /* GUVRepositoriesViewController.m */; };
+		2768D66D1D3334E500DFFBF3 /* GUVUserInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2768D66C1D3334E500DFFBF3 /* GUVUserInfoHeaderView.m */; };
 		276C53F61D2B9284007C9DB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C53F51D2B9284007C9DB2 /* main.m */; };
 		276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C53F81D2B9284007C9DB2 /* AppDelegate.m */; };
 		276C53FF1D2B9284007C9DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276C53FD1D2B9284007C9DB2 /* Main.storyboard */; };
@@ -48,6 +49,8 @@
 		2768D6661D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVUserInfoTabBarController.m; sourceTree = "<group>"; };
 		2768D6681D2F752800DFFBF3 /* GUVRepositoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVRepositoriesViewController.h; sourceTree = "<group>"; };
 		2768D6691D2F752800DFFBF3 /* GUVRepositoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVRepositoriesViewController.m; sourceTree = "<group>"; };
+		2768D66B1D3334E500DFFBF3 /* GUVUserInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVUserInfoHeaderView.h; sourceTree = "<group>"; };
+		2768D66C1D3334E500DFFBF3 /* GUVUserInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVUserInfoHeaderView.m; sourceTree = "<group>"; };
 		276C53F11D2B9284007C9DB2 /* ghUserViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ghUserViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		276C53F51D2B9284007C9DB2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		276C53F71D2B9284007C9DB2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +170,8 @@
 		27B4AA791D2E262400F532EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2768D66B1D3334E500DFFBF3 /* GUVUserInfoHeaderView.h */,
+				2768D66C1D3334E500DFFBF3 /* GUVUserInfoHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 				272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */,
 				2768D6671D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m in Sources */,
 				276C53F61D2B9284007C9DB2 /* main.m in Sources */,
+				2768D66D1D3334E500DFFBF3 /* GUVUserInfoHeaderView.m in Sources */,
 				27B4AA7F1D2E2A2200F532EB /* GUVUser.m in Sources */,
 				2768D66A1D2F752800DFFBF3 /* GUVRepositoriesViewController.m in Sources */,
 			);
