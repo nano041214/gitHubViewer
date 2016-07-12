@@ -244,9 +244,6 @@
                                     <constraint firstAttribute="bottom" secondItem="pOS-hs-ME5" secondAttribute="bottom" constant="25" id="tgE-8o-N5d"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="FollowingLabel" destination="kEh-A9-b29" id="nnD-1k-BEg"/>
-                                    <outlet property="followersLabel" destination="9tC-eT-1zV" id="R41-j0-4QL"/>
-                                    <outlet property="starredLabel" destination="XpC-71-8Mc" id="lSF-De-EwT"/>
                                     <outlet property="userNameLabel" destination="Xms-zi-Tg8" id="HTC-91-Ulm"/>
                                 </connections>
                             </view>
@@ -292,6 +289,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="7JV-n6-x5K"/>
                     <connections>
                         <outlet property="tableView" destination="e4P-c8-7Zu" id="4fM-xy-pLx"/>
+                        <outlet property="userInfoHeaderView" destination="mYP-a3-bBR" id="J1z-Jv-Zki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bV-Z9-fWh" userLabel="First Responder" sceneMemberID="firstResponder"/>

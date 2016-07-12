@@ -1,9 +1,13 @@
 #import "GUVRepositoriesViewController.h"
 #import "GUVUserInfoTabBarController.h"
+#import "GUVUserInfoHeaderView.h"
+#import "GUVUser.h"
 
 @interface GUVRepositoriesViewController ()
+@property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, readonly) GUVUser *user;
 
 @end
 
@@ -12,6 +16,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    GUVUserInfoTabBarController *userInfoTabBarController = (GUVUserInfoTabBarController *)self.tabBarController;
+    _user = userInfoTabBarController.user;
+    self.userInfoHeaderView.user = self.user;
 }
 
 #pragma mark - Table view data source
@@ -26,8 +38,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryCell" forIndexPath:indexPath];
-    GUVUserInfoTabBarController *userInfoTabBarController = (GUVUserInfoTabBarController *)self.tabBarController;
-    cell.textLabel.text = userInfoTabBarController.user.name;
+    cell.textLabel.text = self.user.name;
     return cell;
 }
 
