@@ -9,12 +9,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, nullable) NSString *language;
 @property (nonatomic, readonly, nullable) NSString *repositoryDescription;
 @property (nonatomic, readonly) NSUInteger following;
-@property (nonatomic, readonly) NSUInteger starredNum;
-@property (nonatomic, readonly) NSUInteger watcherNum;
-@property (nonatomic, readonly) NSUInteger contributerNum;
-@property (nonatomic, readonly) NSUInteger commitNum;
-@property (nonatomic, readonly) NSUInteger issueNum;
-@property (nonatomic, readonly) NSUInteger branchNum;
+@property (nonatomic, readonly) NSUInteger starredCount;
+@property (nonatomic, readonly) NSUInteger watcherCount;
+@property (nonatomic, readonly) NSUInteger contributerCount;
+@property (nonatomic, readonly) NSUInteger commitCount;
+@property (nonatomic, readonly) NSUInteger issueCount;
+@property (nonatomic, readonly) NSUInteger branchCount;
 @property (nonatomic, readonly) NSDate *createdAt;
 @property (nonatomic, readonly) NSDate *updatedAt;
 @property (nonatomic, readonly) NSURL *repositoryURL;
