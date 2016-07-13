@@ -4,7 +4,7 @@
 #import "GUVUser.h"
 #import "GUVRepository.h"
 
-@interface GUVRepositoriesViewController()
+@interface GUVRepositoriesViewController ()
 
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
