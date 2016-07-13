@@ -7,7 +7,7 @@
 
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, readonly) GUVUser *user;
+@property (nonatomic) GUVUser *user;
 
 @end
 
@@ -22,7 +22,7 @@
     [super viewDidLoad];
 
     GUVUserInfoTabBarController *userInfoTabBarController = (GUVUserInfoTabBarController *)self.tabBarController;
-    _user = userInfoTabBarController.user;
+    self.user = userInfoTabBarController.user;
     self.userInfoHeaderView.user = self.user;
 }
 
