@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 // cast without readonly for debug
 @property (nonatomic) NSString *name;
 @property (nonatomic, readonly, nullable) NSString *language;
-@property (nonatomic, readonly, nullable) NSString *repositoryDescription;
+@property (nonatomic, readonly, nullable) NSString *descriptionString;
 @property (nonatomic, readonly) NSUInteger following;
 @property (nonatomic, readonly) NSUInteger starredCount;
 @property (nonatomic, readonly) NSUInteger watcherCount;
