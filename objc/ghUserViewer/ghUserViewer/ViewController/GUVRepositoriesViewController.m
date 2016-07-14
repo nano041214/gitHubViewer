@@ -1,14 +1,12 @@
 #import "GUVRepositoriesViewController.h"
 #import "GUVUserInfoTabBarController.h"
 #import "GUVUserInfoHeaderView.h"
-#import "GUVUser.h"
 #import "GUVRepository.h"
 
 @interface GUVRepositoriesViewController ()
 
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) GUVUser *user;
 @property (nonatomic) NSArray<GUVRepository *> *repositories;
 
 @end
@@ -24,15 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    GUVUserInfoTabBarController *userInfoTabBarController = (GUVUserInfoTabBarController *)self.tabBarController;
-    self.user = userInfoTabBarController.user;
     self.userInfoHeaderView.user = self.user;
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)_ {
     return 1;
 }
 
