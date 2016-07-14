@@ -17,7 +17,7 @@
 		276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276C54001D2B9284007C9DB2 /* Assets.xcassets */; };
 		276C540F1D2B9284007C9DB2 /* ghUserViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C540E1D2B9284007C9DB2 /* ghUserViewerTests.m */; };
 		276C541A1D2B9284007C9DB2 /* ghUserViewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C54191D2B9284007C9DB2 /* ghUserViewerUITests.m */; };
-		277BD1591D377885006DBCB8 /* RepositoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 277BD1581D377885006DBCB8 /* RepositoriesCell.xib */; };
+		277BD15C1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277BD15B1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m */; };
 		279AECA31D34DC3F004DD5AB /* GUVRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 279AECA21D34DC3F004DD5AB /* GUVRepository.m */; };
 		27B4AA7F1D2E2A2200F532EB /* GUVUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B4AA7E1D2E2A2200F532EB /* GUVUser.m */; };
 		2F6F930921EE54B17167B24A /* libPods-ghUserViewerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 932AD99DF52473B4EC3819BB /* libPods-ghUserViewerUITests.a */; };
@@ -66,7 +66,8 @@
 		276C54151D2B9284007C9DB2 /* ghUserViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ghUserViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276C54191D2B9284007C9DB2 /* ghUserViewerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ghUserViewerUITests.m; sourceTree = "<group>"; };
 		276C541B1D2B9284007C9DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		277BD1581D377885006DBCB8 /* RepositoriesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoriesCell.xib; sourceTree = "<group>"; };
+		277BD15A1D37821A006DBCB8 /* GUVRepositoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVRepositoryTableViewCell.h; sourceTree = "<group>"; };
+		277BD15B1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVRepositoryTableViewCell.m; sourceTree = "<group>"; };
 		279AECA11D34DC3F004DD5AB /* GUVRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVRepository.h; sourceTree = "<group>"; };
 		279AECA21D34DC3F004DD5AB /* GUVRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVRepository.m; sourceTree = "<group>"; };
 		27B4AA7D1D2E2A1200F532EB /* GUVUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUVUser.h; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 				276C53F71D2B9284007C9DB2 /* AppDelegate.h */,
 				276C53F81D2B9284007C9DB2 /* AppDelegate.m */,
 				276C53FD1D2B9284007C9DB2 /* Main.storyboard */,
-				277BD1581D377885006DBCB8 /* RepositoriesCell.xib */,
 				276C54001D2B9284007C9DB2 /* Assets.xcassets */,
 				276C54051D2B9284007C9DB2 /* Info.plist */,
 				276C53F41D2B9284007C9DB2 /* Supporting Files */,
@@ -178,6 +178,8 @@
 			children = (
 				2768D66B1D3334E500DFFBF3 /* GUVUserInfoHeaderView.h */,
 				2768D66C1D3334E500DFFBF3 /* GUVUserInfoHeaderView.m */,
+				277BD15A1D37821A006DBCB8 /* GUVRepositoryTableViewCell.h */,
+				277BD15B1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,7 +343,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277BD1591D377885006DBCB8 /* RepositoriesCell.xib in Resources */,
 				276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */,
 				276C53FF1D2B9284007C9DB2 /* Main.storyboard in Resources */,
 			);
@@ -492,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				279AECA31D34DC3F004DD5AB /* GUVRepository.m in Sources */,
+				277BD15C1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m in Sources */,
 				276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */,
 				272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */,
 				2768D6671D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m in Sources */,

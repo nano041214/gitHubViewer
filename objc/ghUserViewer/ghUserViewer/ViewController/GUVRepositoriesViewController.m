@@ -2,6 +2,7 @@
 #import "GUVUserInfoTabBarController.h"
 #import "GUVUserInfoHeaderView.h"
 #import "GUVRepository.h"
+#import "GUVRepositoryTableViewCell.h"
 
 @interface GUVRepositoriesViewController ()
 
@@ -36,8 +37,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryCell" forIndexPath:indexPath];
-    cell.textLabel.text = self.repositories[indexPath.item].name;
+    GUVRepositoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryCell" forIndexPath:indexPath];
+    cell.repository = self.repositories[indexPath.item];
     return cell;
 }
 
