@@ -1,24 +1,19 @@
-//
-//  GUVRepositoryTableViewCell.m
-//  ghUserViewer
-//
-//  Created by naomi-hidaka on 2016/07/14.
-//  Copyright © 2016年 naomi-hidaka. All rights reserved.
-//
-
 #import "GUVRepositoryTableViewCell.h"
+#import "GUVRepository.h"
+
+@interface GUVRepositoryTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *repositoryNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *starCountLabel;
+
+@end
 
 @implementation GUVRepositoryTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setRepository:(GUVRepository *)repository {
+    _repository = repository;
+    self.repositoryNameLabel.text = repository.name;
+    self.starCountLabel.text = @"10";
 }
 
 @end

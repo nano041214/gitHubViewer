@@ -1,13 +1,12 @@
-//
-//  GUVRepositoryTableViewCell.h
-//  ghUserViewer
-//
-//  Created by naomi-hidaka on 2016/07/14.
-//  Copyright © 2016年 naomi-hidaka. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
+#import "GUVRepository.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface GUVRepositoryTableViewCell : UITableViewCell
 
+@property (nonatomic, nullable) GUVRepository *repository;
+
 @end
+
+NS_ASSUME_NONNULL_END
