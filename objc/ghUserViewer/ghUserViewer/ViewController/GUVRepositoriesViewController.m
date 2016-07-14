@@ -13,6 +13,7 @@
 @end
 
 @implementation GUVRepositoriesViewController
+@synthesize user;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

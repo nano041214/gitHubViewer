@@ -18,6 +18,7 @@
 		276C540F1D2B9284007C9DB2 /* ghUserViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C540E1D2B9284007C9DB2 /* ghUserViewerTests.m */; };
 		276C541A1D2B9284007C9DB2 /* ghUserViewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C54191D2B9284007C9DB2 /* ghUserViewerUITests.m */; };
 		277BD15C1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277BD15B1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m */; };
+		277BD15F1D378CC2006DBCB8 /* GUVActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 277BD15E1D378CC2006DBCB8 /* GUVActivitiesViewController.m */; };
 		279AECA31D34DC3F004DD5AB /* GUVRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 279AECA21D34DC3F004DD5AB /* GUVRepository.m */; };
 		27B4AA7F1D2E2A2200F532EB /* GUVUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B4AA7E1D2E2A2200F532EB /* GUVUser.m */; };
 		2F6F930921EE54B17167B24A /* libPods-ghUserViewerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 932AD99DF52473B4EC3819BB /* libPods-ghUserViewerUITests.a */; };
@@ -68,6 +69,8 @@
 		276C541B1D2B9284007C9DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277BD15A1D37821A006DBCB8 /* GUVRepositoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVRepositoryTableViewCell.h; sourceTree = "<group>"; };
 		277BD15B1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVRepositoryTableViewCell.m; sourceTree = "<group>"; };
+		277BD15D1D378CC2006DBCB8 /* GUVActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVActivitiesViewController.h; sourceTree = "<group>"; };
+		277BD15E1D378CC2006DBCB8 /* GUVActivitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVActivitiesViewController.m; sourceTree = "<group>"; };
 		279AECA11D34DC3F004DD5AB /* GUVRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVRepository.h; sourceTree = "<group>"; };
 		279AECA21D34DC3F004DD5AB /* GUVRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVRepository.m; sourceTree = "<group>"; };
 		27B4AA7D1D2E2A1200F532EB /* GUVUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GUVUser.h; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				2768D6691D2F752800DFFBF3 /* GUVRepositoriesViewController.m */,
 				2768D6651D2F46F200DFFBF3 /* GUVUserInfoTabBarController.h */,
 				2768D6661D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m */,
+				277BD15D1D378CC2006DBCB8 /* GUVActivitiesViewController.h */,
+				277BD15E1D378CC2006DBCB8 /* GUVActivitiesViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 				272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */,
 				2768D6671D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m in Sources */,
 				276C53F61D2B9284007C9DB2 /* main.m in Sources */,
+				277BD15F1D378CC2006DBCB8 /* GUVActivitiesViewController.m in Sources */,
 				2768D66D1D3334E500DFFBF3 /* GUVUserInfoHeaderView.m in Sources */,
 				27B4AA7F1D2E2A2200F532EB /* GUVUser.m in Sources */,
 				2768D66A1D2F752800DFFBF3 /* GUVRepositoriesViewController.m in Sources */,

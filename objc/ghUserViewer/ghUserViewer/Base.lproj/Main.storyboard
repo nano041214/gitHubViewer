@@ -81,7 +81,7 @@
         <!--Activities-->
         <scene sceneID="URz-ae-9a4">
             <objects>
-                <viewController title="Activities" id="vlE-9V-QRU" sceneMemberID="viewController">
+                <viewController title="Activities" id="vlE-9V-QRU" customClass="GUVActivitiesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d83-3G-lWq"/>
                         <viewControllerLayoutGuide type="bottom" id="vrf-tE-tda"/>

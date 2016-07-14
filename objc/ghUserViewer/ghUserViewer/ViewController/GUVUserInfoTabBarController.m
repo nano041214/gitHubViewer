@@ -8,11 +8,10 @@ static const CGFloat IconSize = 20;
 
 @interface GUVUserInfoTabBarController ()
 
-@property (weak, nonatomic) IBOutlet GUVRepositoriesViewController *repositoriesViewController;
-
 @end
 
 @implementation GUVUserInfoTabBarController
+@synthesize user;
 
 - (void)viewDidLoad {
 
@@ -25,7 +24,10 @@ static const CGFloat IconSize = 20;
     activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 
     // pass user instance
-    self.repositoriesViewController.user = self.user;
+//    NSLog(@"%@", self.user.name);
+    for (id<UserProvider> viewController in self.viewControllers) {
+        viewController.user = self.user;
+    }
 }
 
 @end
