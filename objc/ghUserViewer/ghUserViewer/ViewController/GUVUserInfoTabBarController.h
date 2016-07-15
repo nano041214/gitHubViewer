@@ -7,10 +7,6 @@
 
 @end
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface GUVUserInfoTabBarController : UITabBarController <GUVUserProvider>
 
 @end
-
-NS_ASSUME_NONNULL_END

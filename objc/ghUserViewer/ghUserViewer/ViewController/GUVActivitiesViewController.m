@@ -5,6 +5,7 @@
 @end
 
 @implementation GUVActivitiesViewController
+
 @synthesize user;
 
 @end

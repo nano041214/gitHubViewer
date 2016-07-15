@@ -11,6 +11,7 @@ static const CGFloat IconSize = 20;
 @end
 
 @implementation GUVUserInfoTabBarController
+
 @synthesize user;
 
 - (void)viewDidLoad {
