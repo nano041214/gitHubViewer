@@ -1,7 +1,7 @@
 #import "GUVUserInfoHeaderView.h"
 #import "GUVRepositoriesViewController.h"
 
-@interface GUVUserInfoHeaderView()
+@interface GUVUserInfoHeaderView ()
 
 @property (nonatomic, weak) IBOutlet UILabel *userNameLabel;
 

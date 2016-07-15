@@ -1,13 +1,14 @@
 #import "GUVRepositoriesViewController.h"
-#import "GUVUserInfoTabBarController.h"
 #import "GUVUserInfoHeaderView.h"
-#import "GUVUser.h"
+#import "GUVRepository.h"
+#import "GUVRepositoryTableViewCell.h"
 
 @interface GUVRepositoriesViewController ()
-@property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 
+@property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, readonly) GUVUser *user;
+@property (nonatomic) NSArray<GUVRepository *> *repositories;
+@property (nonatomic, weak) id<GUVUserProvider> provider;
 
 @end
 
@@ -15,15 +16,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    GUVRepository *repository = [GUVRepository new];
+    repository.name = @"hoge gem";
+    self.repositories = @[repository];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    GUVUserInfoTabBarController *userInfoTabBarController = (GUVUserInfoTabBarController *)self.tabBarController;
-    _user = userInfoTabBarController.user;
-    self.userInfoHeaderView.user = self.user;
+    self.provider = (id<GUVUserProvider>)self.parentViewController;
+    self.userInfoHeaderView.user = self.provider.fetchUser;
 }
 
 #pragma mark - Table view data source
@@ -33,12 +34,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.repositories.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryCell" forIndexPath:indexPath];
-    cell.textLabel.text = self.user.name;
+    GUVRepositoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryCell" forIndexPath:indexPath];
+    cell.repository = self.repositories[indexPath.item];
     return cell;
 }
 
