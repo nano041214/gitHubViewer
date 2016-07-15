@@ -15,6 +15,8 @@ static const CGFloat IconSize = 20;
 
 - (void)viewDidLoad {
 
+    [super viewDidLoad];
+
     // tab settings
     FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
     UITabBarItem *repositoriesItem = self.tabBar.items[0];
@@ -24,8 +26,7 @@ static const CGFloat IconSize = 20;
     activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 
     // pass user instance
-//    NSLog(@"%@", self.user.name);
-    for (id<UserProvider> viewController in self.viewControllers) {
+    for (id<GUVUserProvider> viewController in self.viewControllers) {
         viewController.user = self.user;
     }
 }

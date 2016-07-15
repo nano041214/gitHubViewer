@@ -4,7 +4,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GUVRepositoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UserProvider>
+@interface GUVRepositoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, GUVUserProvider>
 
 @end
 

@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "GUVUser.h"
 
-@protocol UserProvider <NSObject>
+@protocol GUVUserProvider <NSObject>
 
 @property (nonatomic) GUVUser *user;
 
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GUVUserInfoTabBarController : UITabBarController <UserProvider>
+@interface GUVUserInfoTabBarController : UITabBarController <GUVUserProvider>
 
 @end
 
