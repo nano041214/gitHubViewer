@@ -3,16 +3,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol GUVUserProvider <NSObject>
+@interface GUVUserInfoTabBarController : UITabBarController
 
--(GUVUser *)fetchUser;
+@property (nonatomic) GUVUser *user;
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-@interface GUVUserInfoTabBarController : UITabBarController <GUVUserProvider>
-
-@property (nonatomic, nullable) GUVUser *user;
-
-@end
