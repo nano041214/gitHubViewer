@@ -3,7 +3,6 @@
 
 @protocol GUVUserProvider <NSObject>
 
-@required
 -(nonnull GUVUser *)fetchUser;
 
 @end
