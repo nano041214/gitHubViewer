@@ -2,6 +2,7 @@
 #import "GUVUserInfoHeaderView.h"
 #import "GUVRepository.h"
 #import "GUVRepositoryTableViewCell.h"
+#import "GUVUserInfoTabBarController.h"
 
 @interface GUVRepositoriesViewController ()
 
