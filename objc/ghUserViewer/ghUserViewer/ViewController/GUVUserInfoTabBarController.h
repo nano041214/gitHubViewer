@@ -1,11 +1,15 @@
 #import <UIKit/UIKit.h>
 #import "GUVUser.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol GUVUserProvider <NSObject>
 
--(nonnull GUVUser *)fetchUser;
+-(GUVUser *)fetchUser;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 @interface GUVUserInfoTabBarController : UITabBarController <GUVUserProvider>
 
