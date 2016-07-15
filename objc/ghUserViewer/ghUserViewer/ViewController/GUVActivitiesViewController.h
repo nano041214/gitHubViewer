@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "GUVUserInfoTabBarController.h"
 
-@interface GUVActivitiesViewController : UIViewController <GUVUserProvider>
+@interface GUVActivitiesViewController : UIViewController
 
 @end

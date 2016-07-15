@@ -1,5 +1,4 @@
 #import "GUVRepositoriesViewController.h"
-#import "GUVUserInfoTabBarController.h"
 #import "GUVUserInfoHeaderView.h"
 #import "GUVRepository.h"
 #import "GUVRepositoryTableViewCell.h"
@@ -13,7 +12,6 @@
 @end
 
 @implementation GUVRepositoriesViewController
-@synthesize user;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -24,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.userInfoHeaderView.user = self.user;
+    [self setUserInfo:self.parentViewController];
 }
 
 #pragma mark - Table view data source
@@ -45,6 +43,10 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Repositories";
+}
+
+- (void)setUserInfo:(id <GUVUserProvider>)provider {
+    self.userInfoHeaderView.user = provider.fetchUser;
 }
 
 @end

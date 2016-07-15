@@ -3,10 +3,13 @@
 
 @protocol GUVUserProvider <NSObject>
 
-@property (nonatomic) GUVUser *user;
+@required
+-(nonnull GUVUser *)fetchUser;
 
 @end
 
 @interface GUVUserInfoTabBarController : UITabBarController <GUVUserProvider>
+
+@property (nonatomic, nullable) GUVUser *user;
 
 @end

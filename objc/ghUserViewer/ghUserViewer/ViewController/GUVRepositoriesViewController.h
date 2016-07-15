@@ -2,6 +2,6 @@
 #import "GUVUser.h"
 #import "GUVUserInfoTabBarController.h"
 
-@interface GUVRepositoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, GUVUserProvider>
+@interface GUVRepositoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
