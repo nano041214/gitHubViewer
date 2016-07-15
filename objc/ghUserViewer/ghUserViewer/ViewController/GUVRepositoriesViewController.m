@@ -8,6 +8,7 @@
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray<GUVRepository *> *repositories;
+@property (nonatomic, weak) id<GUVUserProvider> provider;
 
 @end
 
@@ -22,7 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUserInfo:self.parentViewController];
+    self.provider = (id<GUVUserProvider>)self.parentViewController;
+    self.userInfoHeaderView.user = self.provider.fetchUser;
 }
 
 #pragma mark - Table view data source
@@ -43,10 +45,6 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Repositories";
-}
-
-- (void)setUserInfo:(id <GUVUserProvider>)provider {
-    self.userInfoHeaderView.user = provider.fetchUser;
 }
 
 @end
