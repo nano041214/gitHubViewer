@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface GUVActivitiesViewController : UIViewController
+@interface GUVActivitiesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
