@@ -1,6 +1,6 @@
 #import "GUVUserInfoHeaderView.h"
 
-@interface GUVUserInfoHeaderView()
+@interface GUVUserInfoHeaderView ()
 
 @end
 
