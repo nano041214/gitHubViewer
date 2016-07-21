@@ -224,9 +224,6 @@
                                     <constraint firstAttribute="trailing" secondItem="sd5-uu-6T6" secondAttribute="trailing" constant="25" id="onG-Vm-k6x"/>
                                     <constraint firstItem="sd5-uu-6T6" firstAttribute="top" secondItem="U0G-Wq-gDY" secondAttribute="top" constant="25" id="pkt-c0-pab"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="userNameLabel" destination="9KI-Zy-eFO" id="aXV-9Q-QfX"/>
-                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9t2-4I-AgG" userLabel="Activities Table View">
                                 <rect key="frame" x="0.0" y="204" width="600" height="347"/>
@@ -441,9 +438,6 @@
                                     <constraint firstItem="YDB-Y7-W2H" firstAttribute="width" secondItem="pOS-hs-ME5" secondAttribute="width" multiplier="8:2" id="rgv-gj-Dcg"/>
                                     <constraint firstAttribute="bottom" secondItem="pOS-hs-ME5" secondAttribute="bottom" constant="25" id="tgE-8o-N5d"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="userNameLabel" destination="Xms-zi-Tg8" id="HTC-91-Ulm"/>
-                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4P-c8-7Zu">
                                 <rect key="frame" x="0.0" y="204" width="600" height="347"/>
