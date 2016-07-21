@@ -1,8 +1,8 @@
 #import "GUVInquiryViewController.h"
 #import "GUVUserInfoTabBarController.h"
 
-
 @interface GUVInquiryViewController ()
+
 @end
 
 @implementation GUVInquiryViewController
