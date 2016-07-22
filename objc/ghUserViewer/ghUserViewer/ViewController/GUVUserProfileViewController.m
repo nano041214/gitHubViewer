@@ -1,8 +1,10 @@
 #import "GUVUserProfileViewController.h"
+#import "GUVUserInfoHeaderView.h"
 
 @interface GUVUserProfileViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (nonatomic) NSArray<NSString *> *userProfileArray;
 @property (nonatomic) NSArray<NSString *> *userProfileTitleArray;
 
@@ -12,15 +14,15 @@
 
 - (void)setUser:(GUVUser *)user {
     _user = user;
-    self.userProfileTitleArray = @[@"Email", @"Blog", @"Location", @"Joined at"];
 
+    self.userProfileTitleArray = @[@"Email", @"Blog", @"Location", @"Joined at"];
     // TODO: add user method inserting '-' if one of its properties is <null> and return userProfileArray
     // self.userProfileArray = @[self.user.blogURL, self.user.mailAddress, self.user.location, self.user.joinedDate];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.user);
+    self.userInfoHeaderView.user = self.user;
 }
 
 #pragma mark - Table view data source
