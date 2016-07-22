@@ -96,14 +96,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sd5-uu-6T6" userLabel="userStatusWrapper">
                                         <rect key="frame" x="135" y="25" width="440" height="90"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KI-Zy-eFO">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KI-Zy-eFO">
                                                 <rect key="frame" x="25" y="0.0" width="415" height="36"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="AJD-wg-cFA"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="az1-Lh-fAY" appends="YES" id="tPB-K9-CnJ"/>
+                                                </connections>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6i-7I-Q49" userLabel="FollowersWrapper">
                                                 <rect key="frame" x="0.0" y="44" width="147" height="46"/>
@@ -208,8 +212,11 @@
                                             <constraint firstAttribute="bottom" secondItem="p6i-7I-Q49" secondAttribute="bottom" id="xoe-0f-RnX"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="tLZ-4x-MKP">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="tLZ-4x-MKP">
                                         <rect key="frame" x="25" y="25" width="110" height="90"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="4wq-U9-lAQ" appends="YES" id="L3x-Y2-kXp"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -293,13 +300,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHv-II-N1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4wq-U9-lAQ" userLabel="tappedUserIcon">
+                    <connections>
+                        <outlet property="delegate" destination="vlE-9V-QRU" id="Xmz-ye-iLk"/>
+                        <segue destination="jC5-pn-ERv" kind="push" id="Bku-sy-zLi"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="az1-Lh-fAY" userLabel="tappedUserName">
+                    <connections>
+                        <segue destination="jC5-pn-ERv" kind="push" id="Fao-7s-XGa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1788" y="676"/>
         </scene>
-        <!--Item-->
+        <!--Repositories-->
         <scene sceneID="3jx-4h-FPH">
             <objects>
-                <viewController id="DA7-Vp-AY9" customClass="GUVRepositoriesViewController" sceneMemberID="viewController">
+                <viewController id="DA7-Vp-AY9" userLabel="Repositories" customClass="GUVRepositoriesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MLO-Mt-vwM"/>
                         <viewControllerLayoutGuide type="bottom" id="qfF-BT-C33"/>
@@ -374,8 +392,12 @@
                             <view contentMode="scaleToFill" restorationIdentifier="userInfoHeader" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-a3-bBR" customClass="GUVUserInfoHeaderView">
                                 <rect key="frame" x="0.0" y="64" width="600" height="140"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="pOS-hs-ME5">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="pOS-hs-ME5">
                                         <rect key="frame" x="25" y="25" width="110" height="90"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="eWY-uh-aiZ" appends="YES" id="0Pg-zw-wCQ"/>
+                                        </connections>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDB-Y7-W2H" userLabel="userStatusWrapper">
                                         <rect key="frame" x="135" y="25" width="440" height="90"/>
@@ -464,14 +486,18 @@
                                                     <constraint firstItem="kEh-A9-b29" firstAttribute="leading" secondItem="heA-iH-e5c" secondAttribute="leading" id="lGT-c0-c08"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xms-zi-Tg8">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xms-zi-Tg8">
                                                 <rect key="frame" x="25" y="0.0" width="415" height="36"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="dFc-f9-Z8G"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="bTT-d4-sLq" appends="YES" id="QGp-Zh-J2g"/>
+                                                </connections>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -511,6 +537,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="e4P-c8-7Zu" firstAttribute="top" secondItem="mYP-a3-bBR" secondAttribute="bottom" id="7Ul-ZW-ojg"/>
                             <constraint firstItem="qfF-BT-C33" firstAttribute="top" secondItem="e4P-c8-7Zu" secondAttribute="bottom" id="9f1-Ke-ouq"/>
@@ -528,13 +555,23 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bV-Z9-fWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bTT-d4-sLq" userLabel="tappedUserName">
+                    <connections>
+                        <segue destination="jC5-pn-ERv" kind="push" identifier="" id="nsT-cI-t2Z"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="eWY-uh-aiZ" userLabel="tappedUserIcon">
+                    <connections>
+                        <segue destination="jC5-pn-ERv" kind="push" id="N4h-Ji-b3D"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1896" y="-21"/>
         </scene>
-        <!--View Controller-->
+        <!--UserProfile-->
         <scene sceneID="AgY-Mj-KkN">
             <objects>
-                <viewController id="jC5-pn-ERv" sceneMemberID="viewController">
+                <viewController id="jC5-pn-ERv" userLabel="UserProfile" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W3k-Ly-Tvo"/>
                         <viewControllerLayoutGuide type="bottom" id="LBl-0I-CCP"/>
@@ -707,6 +744,7 @@
                             <constraint firstItem="kqm-f0-hA0" firstAttribute="leading" secondItem="0gf-sA-wqt" secondAttribute="leading" id="u1K-gB-aa2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Yja-oS-twi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7F-eW-kKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -735,4 +773,7 @@
     <resources>
         <image name="octcat" width="180" height="180"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nsT-cI-t2Z"/>
+    </inferredMetricsTieBreakers>
 </document>
