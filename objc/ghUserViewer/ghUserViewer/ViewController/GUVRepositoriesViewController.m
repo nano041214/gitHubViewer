@@ -3,6 +3,7 @@
 #import "GUVRepository.h"
 #import "GUVRepositoryTableViewCell.h"
 #import "GUVUserInfoTabBarController.h"
+#import "GUVUserProfileViewController.h"
 
 @interface GUVRepositoriesViewController ()
 
@@ -26,6 +27,14 @@
     [super viewDidLoad];
     self.provider = (id<GUVUserProvider>)self.parentViewController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
+}
+
+
+// IMO: I think this method is able to be changed into optional protocol
+// TODO: So Add this protocol to GUVUserProvider or so
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
+    userProfileViewController.user = self.provider.fetchUser;
 }
 
 #pragma mark - Table view data source
