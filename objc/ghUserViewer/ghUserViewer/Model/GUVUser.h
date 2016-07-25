@@ -6,7 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // remove readonly workaround
 @property (nonatomic) NSString *name;
-@property (nonatomic, readonly) NSURL *iconUrl;
+@property (nonatomic, readonly) NSURL *iconURL;
 @property (nonatomic, readonly) NSUInteger followersCount;
 @property (nonatomic, readonly) NSUInteger followingCount;
 @property (nonatomic, readonly) NSUInteger starredCount;
