@@ -2,7 +2,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GUVUser : MTLModel
+@interface GUVUser : MTLModel <MTLJSONSerializing>
 
 // remove readonly workaround
 @property (nonatomic) NSString *name;
