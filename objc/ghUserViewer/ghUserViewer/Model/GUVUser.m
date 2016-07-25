@@ -17,7 +17,8 @@
              @"followingCount": @"following",
              @"mailAddress": @"email",
              @"location": @"location",
-             @"joinedDate": @"created_at"
+             @"joinedDate": @"created_at",
+             @"blogURL": @"blog",
              };
 }
 
