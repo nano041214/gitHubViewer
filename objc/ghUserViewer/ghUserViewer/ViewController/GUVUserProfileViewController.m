@@ -9,6 +9,7 @@ typedef NS_ENUM(NSUInteger, GUVUserProfileTableContent) {
     GUVUserProfileTableContentBlogURL,
     GUVUserProfileTableContentLocation,
     GUVUserProfileTableContentJoinedAt,
+    NumberOfGUVUserProfileTableContents,
 };
 
 @interface GUVUserProfileViewController ()
@@ -25,8 +26,11 @@ NS_ASSUME_NONNULL_END
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _user = self.provider.fetchUser;
     self.userInfoHeaderView.user = self.user;
+}
+
+- (void)setProvider:(id<GUVUserProvider>)provider {
+    _user = provider.fetchUser;
 }
 
 #pragma mark - Table view data source
@@ -36,17 +40,17 @@ NS_ASSUME_NONNULL_END
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return NumberOfGUVUserProfileTableContents;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserProfileCell" forIndexPath:indexPath];
-    NSInteger contentIndex = indexPath.item;
-    cell.textLabel.text = [self convertGUVUserProfileTableContentToTitleString:contentIndex];
+    NSInteger contentIndex = indexPath.row;
+    cell.textLabel.text = [self titleForProfileTableContent:contentIndex];
     return cell;
 }
 
-- (NSString *)convertGUVUserProfileTableContentToTitleString:(GUVUserProfileTableContent)profileTableContent{
+- (NSString *)titleForProfileTableContent:(GUVUserProfileTableContent)profileTableContent{
     switch (profileTableContent) {
         case GUVUserProfileTableContentEmail: {
             return @"Email";
