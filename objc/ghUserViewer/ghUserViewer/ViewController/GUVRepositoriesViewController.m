@@ -29,9 +29,6 @@
     self.userInfoHeaderView.user = self.provider.fetchUser;
 }
 
-
-// IMO: I think this method is able to be changed into optional protocol
-// TODO: So Add this protocol to GUVUserProvider or so
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
     userProfileViewController.provider = self.provider;

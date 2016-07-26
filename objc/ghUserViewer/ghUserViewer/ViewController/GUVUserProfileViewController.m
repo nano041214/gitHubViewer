@@ -42,25 +42,26 @@ NS_ASSUME_NONNULL_END
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserProfileCell" forIndexPath:indexPath];
     NSInteger contentIndex = indexPath.item;
-    switch (contentIndex) {
+    cell.textLabel.text = [self convertGUVUserProfileTableContentToTitleString:contentIndex];
+    return cell;
+}
+
+- (NSString *)convertGUVUserProfileTableContentToTitleString:(GUVUserProfileTableContent)profileTableContent{
+    switch (profileTableContent) {
         case GUVUserProfileTableContentEmail: {
-            cell.textLabel.text = @"Email";
-            return cell;
+            return @"Email";
         }
         case GUVUserProfileTableContentBlogURL: {
-            cell.textLabel.text = @"Blog URL";
-            return cell;
+            return @"Blog URL";
         }
         case GUVUserProfileTableContentLocation: {
-            cell.textLabel.text = @"Location";
-            return cell;
+            return @"Location";
         }
         case GUVUserProfileTableContentJoinedAt: {
-            cell.textLabel.text = @"Joined at";
-            return cell;
+            return @"Joined at";
         }
         default:
-            return nil;
+            return @"Additional information";
     }
 }
 
