@@ -31,7 +31,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
-    userProfileViewController.user = self.provider.fetchUser;
+    userProfileViewController.provider = self.provider;
 }
 
 #pragma mark - Table view data source

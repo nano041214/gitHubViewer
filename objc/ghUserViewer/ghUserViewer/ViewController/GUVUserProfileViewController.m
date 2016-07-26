@@ -1,5 +1,6 @@
 #import "GUVUserProfileViewController.h"
 #import "GUVUserInfoHeaderView.h"
+#import "GUVUser.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,7 @@ typedef NS_ENUM(NSUInteger, GUVUserProfileTableContent) {
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
+@property (nonatomic, readonly) GUVUser *user;
 
 @end
 
@@ -21,16 +23,9 @@ NS_ASSUME_NONNULL_END
 
 @implementation GUVUserProfileViewController
 
-- (void)setUser:(GUVUser *)user {
-    _user = user;
-
-//    self.userProfileTitleArray = @[@"Email", @"Blog", @"Location", @"Joined at"];
-    // TODO: add user method inserting '-' if one of its properties is <null> and return userProfileArray
-    // self.userProfileArray = @[self.user.blogURL, self.user.mailAddress, self.user.location, self.user.joinedDate];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _user = self.provider.fetchUser;
     self.userInfoHeaderView.user = self.user;
 }
 
@@ -49,7 +44,7 @@ NS_ASSUME_NONNULL_END
     NSInteger contentIndex = indexPath.item;
     switch (contentIndex) {
         case GUVUserProfileTableContentEmail: {
-            cell.textLabel.text = @"Email address";
+            cell.textLabel.text = @"Email";
             return cell;
         }
         case GUVUserProfileTableContentBlogURL: {
