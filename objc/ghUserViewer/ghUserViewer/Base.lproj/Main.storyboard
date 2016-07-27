@@ -57,7 +57,6 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
                                 <connections>
                                     <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Wzz-zm-6K2"/>
-                                    <segue destination="WBw-K5-etK" kind="push" identifier="toUserInfoTabBar" id="2Od-DX-AHL"/>
                                 </connections>
                             </textField>
                         </subviews>

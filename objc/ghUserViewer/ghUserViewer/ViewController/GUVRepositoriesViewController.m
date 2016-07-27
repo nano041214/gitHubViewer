@@ -21,6 +21,8 @@
     GUVRepository *repository = [GUVRepository new];
     repository.name = @"hoge gem";
     self.repositories = @[repository];
+    self.provider = (id<GUVUserProvider>)self.parentViewController;
+    self.userInfoHeaderView.user = self.provider.fetchUser;
 }
 
 - (void)viewDidLoad {
