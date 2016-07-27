@@ -3,6 +3,7 @@
 #import "GUVActivityTableViewCell.h"
 #import "GUVUserInfoHeaderView.h"
 #import "GUVActivity.h"
+#import "GUVUserProfileViewController.h"
 
 @interface GUVActivitiesViewController ()
 
@@ -26,6 +27,11 @@
     [super viewDidLoad];
     self.provider = (id<GUVUserProvider>)self.parentViewController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
+    userProfileViewController.provider = self.provider;
 }
 
 #pragma mark - Table view data source
