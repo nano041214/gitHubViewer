@@ -21,10 +21,6 @@
     GUVActivity *activity = [GUVActivity new];
     activity.name = @"IssueEvent";
     self.activities = @[activity];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
     self.provider = (id<GUVUserProvider>)self.parentViewController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
 }
@@ -53,6 +49,11 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Activities";
+}
+
+- (void)userDidUpdate:(GUVUserInfoTabBarController *)tabBarController user:(GUVUser *)user {
+    self.provider = (id<GUVUserProvider>)self.parentViewController;
+    self.userInfoHeaderView.user = self.provider.fetchUser;
 }
 
 @end
