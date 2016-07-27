@@ -9,14 +9,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@class GUVUserInfoTabBarController;
-
-@protocol GUVUserInfoTabBarControllerDelegate <NSObject>
-
--(void)userDidUpdate:(GUVUserInfoTabBarController *)tabBarController user:(GUVUser *)user;
-
-@end
-
 NS_ASSUME_NONNULL_END
 
 @interface GUVUserInfoTabBarController : UITabBarController <GUVUserProvider>

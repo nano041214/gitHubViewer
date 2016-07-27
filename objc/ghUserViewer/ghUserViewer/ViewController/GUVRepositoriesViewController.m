@@ -54,9 +54,4 @@
     return @"Repositories";
 }
 
-- (void)userDidUpdate:(GUVUserInfoTabBarController *)tabBarController user:(GUVUser *)user {
-    self.provider = (id<GUVUserProvider>)self.parentViewController;
-    self.userInfoHeaderView.user = self.provider.fetchUser;
-}
-
 @end
