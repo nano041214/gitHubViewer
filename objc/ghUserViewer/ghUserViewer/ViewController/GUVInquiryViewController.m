@@ -13,7 +13,7 @@
 @implementation GUVInquiryViewController
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {
-    self.alertLabel.hidden = TRUE;
+    self.alertLabel.hidden = YES;
 }
 
 
@@ -30,7 +30,7 @@
         [self.navigationController pushViewController:usersInfoTabBarController animated:NO];
     } failureBlock:^(NSError *error) {
         [SVProgressHUD dismiss];
-        self.alertLabel.hidden = FALSE;
+        self.alertLabel.hidden = NO;
     }];
 }
 
