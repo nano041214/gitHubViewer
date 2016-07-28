@@ -31,7 +31,6 @@
     } failureBlock:^(NSError *error) {
         [SVProgressHUD dismiss];
         self.alertLabel.hidden = FALSE;
-        NSLog(@"hogee");
     }];
 }
 
