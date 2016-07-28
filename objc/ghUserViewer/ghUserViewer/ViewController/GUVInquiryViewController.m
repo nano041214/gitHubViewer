@@ -6,9 +6,16 @@
 
 @interface GUVInquiryViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *alertLabel;
+
 @end
 
 @implementation GUVInquiryViewController
+
+- (IBAction)textFieldValueDidChange:(UITextField *)sender {
+    self.alertLabel.hidden = TRUE;
+}
+
 
 - (IBAction)userNameDidEdit:(UITextField *)sender {
     [SVProgressHUD show];
@@ -16,14 +23,15 @@
     GUVAPIClient *client = [GUVAPIClient sharedGHAPIClient];
     [client requestUserInfo:sender.text successBlock:^(GUVUser *user, NSError *error) {
         [SVProgressHUD dismiss];
-        _user = user;
-        NSLog(@"%@", self.user);
+        // segue
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
-        usersInfoTabBarController.user = self.user;
+        usersInfoTabBarController.user = user;
         [self.navigationController pushViewController:usersInfoTabBarController animated:NO];
     } failureBlock:^(NSError *error) {
         [SVProgressHUD dismiss];
+        self.alertLabel.hidden = FALSE;
+        NSLog(@"hogee");
     }];
 }
 

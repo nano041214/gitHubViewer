@@ -1,26 +1,26 @@
+#import <Mantle/Mantle.h>
+#import <AFNetworking.h>
 #import "GUVAPIClient.h"
 #import "GUVUser.h"
-#import <Mantle/Mantle.h>
 
 @implementation GUVAPIClient
 
-static NSString * const GHAPIBaseURLString = @"https://api.github.com/users/nano041214";
+static NSString * const GHAPIBaseURLString = @"https://api.github.com";
 
 + (GUVAPIClient *)sharedGHAPIClient {
-    static GUVAPIClient *_sharedWeatherHTTPClient = nil;
+    static GUVAPIClient *client = nil;
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedWeatherHTTPClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:GHAPIBaseURLString]];
+        client = [[self alloc] initWithBaseURL:[NSURL URLWithString:GHAPIBaseURLString]];
     });
 
-    return _sharedWeatherHTTPClient;
+    return client;
 }
 
 - (void)requestUserInfo:(NSString *)userName successBlock:(void (^) (GUVUser *user, NSError *error))success failureBlock:(void (^) (NSError *error))failure {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString *url = [NSString stringWithFormat:GHAPIBaseURLString];
-    [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+    NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", userName];
+    [self GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSDictionary *responseDictionary = (NSDictionary *)responseObject;
         if (success) {
             GUVUser *user = [MTLJSONAdapter modelOfClass:GUVUser.class fromJSONDictionary:responseDictionary error:nil];
@@ -31,7 +31,6 @@ static NSString * const GHAPIBaseURLString = @"https://api.github.com/users/nano
             failure(error);
         }
     }];
-
 }
 
 @end
