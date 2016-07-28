@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272E1FA71D4A047D000BC340 /* GUVRepositoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272E1FA61D4A047D000BC340 /* GUVRepositoryDetailViewController.m */; };
 		272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */; };
 		2768D6671D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2768D6661D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m */; };
 		2768D66A1D2F752800DFFBF3 /* GUVRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2768D6691D2F752800DFFBF3 /* GUVRepositoriesViewController.m */; };
@@ -48,6 +49,8 @@
 /* Begin PBXFileReference section */
 		10FAF9C3730E76C4BC352501 /* Pods-ghUserViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ghUserViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ghUserViewerTests/Pods-ghUserViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		118BE7449227E4DAC4813933 /* Pods-ghUserViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ghUserViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ghUserViewerTests/Pods-ghUserViewerTests.release.xcconfig"; sourceTree = "<group>"; };
+		272E1FA51D4A047D000BC340 /* GUVRepositoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVRepositoryDetailViewController.h; sourceTree = "<group>"; };
+		272E1FA61D4A047D000BC340 /* GUVRepositoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVRepositoryDetailViewController.m; sourceTree = "<group>"; };
 		272F721E1D2C908500CDB739 /* GUVInquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVInquiryViewController.h; sourceTree = "<group>"; };
 		272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVInquiryViewController.m; sourceTree = "<group>"; };
 		2768D6651D2F46F200DFFBF3 /* GUVUserInfoTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVUserInfoTabBarController.h; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				2768D6661D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m */,
 				27E95DFE1D3F69880025CFD6 /* GUVActivitiesViewController.h */,
 				27E95DFF1D3F69880025CFD6 /* GUVActivitiesViewController.m */,
+				272E1FA51D4A047D000BC340 /* GUVRepositoryDetailViewController.h */,
+				272E1FA61D4A047D000BC340 /* GUVRepositoryDetailViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272E1FA71D4A047D000BC340 /* GUVRepositoryDetailViewController.m in Sources */,
 				279AECA31D34DC3F004DD5AB /* GUVRepository.m in Sources */,
 				277BD15C1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m in Sources */,
 				276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */,
