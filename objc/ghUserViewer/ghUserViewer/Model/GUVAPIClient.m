@@ -19,7 +19,9 @@ static NSString * const GHAPIBaseURLString = @"https://api.github.com";
 }
 
 - (void)requestUserInfo:(NSString *)userName successBlock:(void (^) (GUVUser *user, NSError *error))success failureBlock:(void (^) (NSError *error))failure {
-    NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", userName];
+    NSString *safeUserName = [userName stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet punctuationCharacterSet]];
+    NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", safeUserName];
+    NSLog(@"%@", userInfoInquiryPath);
     [self GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSDictionary *responseDictionary = (NSDictionary *)responseObject;
         if (success) {
