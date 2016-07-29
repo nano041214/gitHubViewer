@@ -1,8 +1,15 @@
 #import "GUVRepositoryDetailViewController.h"
+#import "GUVGithubLinkView.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface GUVRepositoryDetailViewController ()
 
+@property (nonatomic) GUVGithubLinkView *linkView;
+
 @end
+
+NS_ASSUME_NONNULL_END
 
 @implementation GUVRepositoryDetailViewController
 
@@ -13,23 +20,26 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return 7;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == 7){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LinkToGitHub" forIndexPath:indexPath];
-        cell.textLabel.text = @"ViewOnGH";
-        return cell;
-    }else{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryDetailCell" forIndexPath:indexPath];
-        cell.textLabel.text = @"hoge";
-        return cell;
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryDetailCell" forIndexPath:indexPath];
+    cell.textLabel.text = @"hoge";
+    return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Activities";
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    _linkView = [GUVGithubLinkView new];
+    return self.linkView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 65;
 }
 
 @end

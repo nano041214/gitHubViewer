@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		272E1FA71D4A047D000BC340 /* GUVRepositoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272E1FA61D4A047D000BC340 /* GUVRepositoryDetailViewController.m */; };
+		272E1FAC1D4AF3D4000BC340 /* GUVGithubLinkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 272E1FAB1D4AF3D4000BC340 /* GUVGithubLinkView.m */; };
+		272E1FAE1D4AF461000BC340 /* GUVGithubLinkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 272E1FAD1D4AF461000BC340 /* GUVGithubLinkView.xib */; };
 		272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */; };
 		2768D6671D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2768D6661D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m */; };
 		2768D66A1D2F752800DFFBF3 /* GUVRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2768D6691D2F752800DFFBF3 /* GUVRepositoriesViewController.m */; };
@@ -51,6 +53,9 @@
 		118BE7449227E4DAC4813933 /* Pods-ghUserViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ghUserViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ghUserViewerTests/Pods-ghUserViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		272E1FA51D4A047D000BC340 /* GUVRepositoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVRepositoryDetailViewController.h; sourceTree = "<group>"; };
 		272E1FA61D4A047D000BC340 /* GUVRepositoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVRepositoryDetailViewController.m; sourceTree = "<group>"; };
+		272E1FAA1D4AF3D4000BC340 /* GUVGithubLinkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVGithubLinkView.h; sourceTree = "<group>"; };
+		272E1FAB1D4AF3D4000BC340 /* GUVGithubLinkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVGithubLinkView.m; sourceTree = "<group>"; };
+		272E1FAD1D4AF461000BC340 /* GUVGithubLinkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GUVGithubLinkView.xib; sourceTree = "<group>"; };
 		272F721E1D2C908500CDB739 /* GUVInquiryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVInquiryViewController.h; sourceTree = "<group>"; };
 		272F721F1D2C908500CDB739 /* GUVInquiryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVInquiryViewController.m; sourceTree = "<group>"; };
 		2768D6651D2F46F200DFFBF3 /* GUVUserInfoTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVUserInfoTabBarController.h; sourceTree = "<group>"; };
@@ -194,6 +199,9 @@
 				27F98EDE1D408ACC0044961D /* GUVActivityTableViewCell.m */,
 				277BD15A1D37821A006DBCB8 /* GUVRepositoryTableViewCell.h */,
 				277BD15B1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m */,
+				272E1FAA1D4AF3D4000BC340 /* GUVGithubLinkView.h */,
+				272E1FAB1D4AF3D4000BC340 /* GUVGithubLinkView.m */,
+				272E1FAD1D4AF461000BC340 /* GUVGithubLinkView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 			files = (
 				276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */,
 				276C53FF1D2B9284007C9DB2 /* Main.storyboard in Resources */,
+				272E1FAE1D4AF461000BC340 /* GUVGithubLinkView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +527,7 @@
 				276C53F91D2B9284007C9DB2 /* AppDelegate.m in Sources */,
 				272F72201D2C908500CDB739 /* GUVInquiryViewController.m in Sources */,
 				2768D6671D2F46F200DFFBF3 /* GUVUserInfoTabBarController.m in Sources */,
+				272E1FAC1D4AF3D4000BC340 /* GUVGithubLinkView.m in Sources */,
 				27F98EDF1D408ACC0044961D /* GUVActivityTableViewCell.m in Sources */,
 				276C53F61D2B9284007C9DB2 /* main.m in Sources */,
 				2768D66D1D3334E500DFFBF3 /* GUVUserInfoHeaderView.m in Sources */,
