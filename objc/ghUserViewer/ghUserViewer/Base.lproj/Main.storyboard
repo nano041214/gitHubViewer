@@ -336,23 +336,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LinkToGitHub" textLabel="GI4-he-cVV" rowHeight="65" style="IBUITableViewCellStyleDefault" id="e1Z-NB-13a">
-                                        <rect key="frame" x="0.0" y="72" width="600" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e1Z-NB-13a" id="0qo-yL-0xZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="View  on  Github" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GI4-he-cVV" userLabel="LinkLabel">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="64.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <color key="textColor" red="0.29019607843137252" green="0.44705882352941173" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="8ye-f5-kZ6" id="pKk-Gj-bCg"/>

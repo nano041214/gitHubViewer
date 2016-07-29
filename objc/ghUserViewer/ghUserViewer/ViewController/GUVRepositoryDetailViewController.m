@@ -1,7 +1,21 @@
 #import "GUVRepositoryDetailViewController.h"
 #import "GUVGithubLinkView.h"
 
+static const CGFloat tableFooterHeight = 65.0;
+
 NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_ENUM(NSInteger, GUVRepositoryDetailTableContent) {
+    GUVRepositoryDetailTableContentLanguage,
+    GUVRepositoryDetailTableContentStarred,
+    GUVRepositoryDetailTableContentWatcher,
+    GUVRepositoryDetailTableContentContributer,
+    GUVRepositoryDetailTableContentCommits,
+    GUVRepositoryDetailTableContentIssue,
+    GUVRepositoryDetailTableContentBranch,
+    NumberOfGUVRepositoryDetailTableContents,
+};
+
 
 @interface GUVRepositoryDetailViewController ()
 
@@ -20,17 +34,46 @@ NS_ASSUME_NONNULL_END
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 7;
+    return NumberOfGUVRepositoryDetailTableContents;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryDetailCell" forIndexPath:indexPath];
-    cell.textLabel.text = @"hoge";
+    NSInteger contentIndex = indexPath.row;
+    cell.textLabel.text = [self titleForDetailTableContent:contentIndex];
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Activities";
+}
+
+- (NSString *)titleForDetailTableContent:(GUVRepositoryDetailTableContent)detailTableContent{
+    switch (detailTableContent) {
+        case GUVRepositoryDetailTableContentLanguage: {
+            return @"Language";
+        }
+        case GUVRepositoryDetailTableContentStarred: {
+            return @"Starred";
+        }
+        case GUVRepositoryDetailTableContentWatcher: {
+            return @"Watchers";
+        }
+        case GUVRepositoryDetailTableContentContributer: {
+            return @"Contributers";
+        }
+        case GUVRepositoryDetailTableContentCommits: {
+            return @"Commits";
+        }
+        case GUVRepositoryDetailTableContentIssue: {
+            return @"Issues";
+        }
+        case GUVRepositoryDetailTableContentBranch: {
+            return @"Branches";
+        }
+        default:
+            return @"Additional information";
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -39,7 +82,7 @@ NS_ASSUME_NONNULL_END
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 65;
+    return tableFooterHeight;
 }
 
 @end
