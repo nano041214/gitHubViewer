@@ -3,7 +3,7 @@
 @implementation GUVUser
 
 + (NSDateFormatter *)dateFormatter {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
     dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
     return dateFormatter;
@@ -23,6 +23,10 @@
 }
 
 + (NSValueTransformer *)iconURLJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)blogURLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
