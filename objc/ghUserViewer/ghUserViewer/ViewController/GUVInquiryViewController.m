@@ -20,7 +20,7 @@
 - (IBAction)userNameDidEdit:(UITextField *)sender {
     [SVProgressHUD show];
 
-    GUVAPIClient *client = [GUVAPIClient sharedGHAPIClient];
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
     [client requestUserInfo:sender.text successBlock:^(GUVUser *user, NSError *error) {
         [SVProgressHUD dismiss];
         if (error == nil) {
