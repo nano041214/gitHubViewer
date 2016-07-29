@@ -21,12 +21,12 @@ static NSString * const GHAPIBaseURLString = @"https://api.github.com";
 - (void)requestUserInfo:(NSString *)userName successBlock:(void (^) (GUVUser *user, NSError *error))success failureBlock:(void (^) (NSError *error))failure {
     NSString *safeUserName = [userName stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet punctuationCharacterSet]];
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", safeUserName];
-    NSLog(@"%@", userInfoInquiryPath);
     [self GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSDictionary *responseDictionary = (NSDictionary *)responseObject;
         if (success) {
-            GUVUser *user = [MTLJSONAdapter modelOfClass:GUVUser.class fromJSONDictionary:responseDictionary error:nil];
-            success(user, nil);
+            NSError *mantleError = nil;
+            GUVUser *user = [MTLJSONAdapter modelOfClass:GUVUser.class fromJSONDictionary:responseDictionary error:&mantleError];
+            success(user, mantleError);
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         if(failure){

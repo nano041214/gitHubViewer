@@ -24,13 +24,21 @@
     [client requestUserInfo:sender.text successBlock:^(GUVUser *user, NSError *error) {
         [SVProgressHUD dismiss];
         // segue
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
-        usersInfoTabBarController.user = user;
-        [self.navigationController pushViewController:usersInfoTabBarController animated:NO];
+        if (error == nil) {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
+            usersInfoTabBarController.user = user;
+            [self.navigationController pushViewController:usersInfoTabBarController animated:NO];
+        } else {
+            self.alertLabel.hidden = NO;
+            self.alertLabel.text = @"An error occured";
+        }
     } failureBlock:^(NSError *error) {
         [SVProgressHUD dismiss];
         self.alertLabel.hidden = NO;
+
+        // TODO: Make this text better
+        self.alertLabel.text = [error localizedDescription];
     }];
 }
 
