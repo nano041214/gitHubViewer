@@ -20,16 +20,12 @@
     [SVProgressHUD show];
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestUserInfo:sender.text successBlock:^(GUVUser *user, NSError *error) {
+    [client requestUserInfo:sender.text successBlock:^(GUVUser *user) {
         [SVProgressHUD dismiss];
-        if (error == nil) {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
-            usersInfoTabBarController.user = user;
-            [self.navigationController pushViewController:usersInfoTabBarController animated:NO];
-        } else {
-            [self showAlertLabel:error];
-        }
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
+        usersInfoTabBarController.user = user;
+        [self.navigationController pushViewController:usersInfoTabBarController animated:NO];
     } failureBlock:^(NSError *error) {
         [SVProgressHUD dismiss];
         [self showAlertLabel:error];

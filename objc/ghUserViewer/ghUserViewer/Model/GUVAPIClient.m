@@ -7,7 +7,7 @@
 
 static NSString * const GHAPIBaseURLString = @"https://api.github.com";
 
-+ (GUVAPIClient *)sharedClient {
++ (instancetype)sharedClient {
     static GUVAPIClient *client = nil;
 
     static dispatch_once_t onceToken;
@@ -18,14 +18,18 @@ static NSString * const GHAPIBaseURLString = @"https://api.github.com";
     return client;
 }
 
-- (void)requestUserInfo:(NSString *)userName successBlock:(void (^)(GUVUser *_Nullable user, NSError *_Nullable error))success failureBlock:(void (^)(NSError *error))failure {
+- (void)requestUserInfo:(NSString *)userName successBlock:(void (^)(GUVUser *_Nullable user))success failureBlock:(void (^)(NSError *error))failure {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", safeUserName];
     [self GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSDictionary * responseDictionary) {
         if (success != nil) {
             NSError *mantleError = nil;
             GUVUser *user = [MTLJSONAdapter modelOfClass:GUVUser.class fromJSONDictionary:responseDictionary error:&mantleError];
-            success(user, mantleError);
+            if (mantleError != nil){
+                failure(mantleError);
+            }else {
+                success(user);
+            }
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         if(failure != nil){
