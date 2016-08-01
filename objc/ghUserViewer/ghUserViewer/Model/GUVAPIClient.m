@@ -2,11 +2,16 @@
 #import "GUVAPIClient.h"
 #import "GUVUser.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface GUVAPIClient ()
 
 @property (nonatomic) AFHTTPSessionManager *httpManager;
+@property (nonatomic, readwrite, copy) GUVGetUserSuccessBlock success;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 @implementation GUVAPIClient
 
@@ -23,7 +28,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     return client;
 }
 
-- (void)requestUserInfo:(NSString *)userName successBlock:(void (^)(GUVUser *user))success failureBlock:(void (^)(NSError *error))failure {
+- (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *error))failure {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", safeUserName];
 

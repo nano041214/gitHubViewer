@@ -4,10 +4,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^GUVGetUserSuccessBlock)(GUVUser *user);
+
 @interface GUVAPIClient : NSObject
 
 + (GUVAPIClient *)sharedClient;
-- (void)requestUserInfo:(NSString *)userName successBlock:(void (^)(GUVUser *user))success failureBlock:(void (^)(NSError *error))failure;
+- (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *error))failure;
 
 @end
 
