@@ -1,40 +1,42 @@
 #import <Mantle/Mantle.h>
-#import <AFNetworking.h>
 #import "GUVAPIClient.h"
 #import "GUVUser.h"
 
+@interface GUVAPIClient ()
+
+@property (nonatomic) AFHTTPSessionManager *httpManager;
+
+@end
+
 @implementation GUVAPIClient
 
-static NSString * const GHAPIBaseURLString = @"https://api.github.com";
+static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
 
-+ (instancetype)sharedClient {
++ (GUVAPIClient *)sharedClient {
     static GUVAPIClient *client = nil;
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        client = [[self alloc] initWithBaseURL:[NSURL URLWithString:GHAPIBaseURLString]];
+        client = [GUVAPIClient new];
+        client.httpManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:GitHubAPIBaseURLString]];
     });
-
     return client;
 }
 
-- (void)requestUserInfo:(NSString *)userName successBlock:(void (^)(GUVUser *_Nullable user))success failureBlock:(void (^)(NSError *error))failure {
+- (void)requestUserInfo:(NSString *)userName successBlock:(void (^)(GUVUser *user))success failureBlock:(void (^)(NSError *error))failure {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", safeUserName];
-    [self GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSDictionary * responseDictionary) {
-        if (success != nil) {
-            NSError *mantleError = nil;
-            GUVUser *user = [MTLJSONAdapter modelOfClass:GUVUser.class fromJSONDictionary:responseDictionary error:&mantleError];
-            if (mantleError != nil){
-                failure(mantleError);
-            }else {
-                success(user);
-            }
+
+    [self.httpManager GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSDictionary * responseDictionary) {
+        NSError *mantleError = nil;
+        GUVUser *user = [MTLJSONAdapter modelOfClass:GUVUser.class fromJSONDictionary:responseDictionary error:&mantleError];
+        if (mantleError != nil){
+            failure(mantleError);
+        }else {
+            success(user);
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        if(failure != nil){
-            failure(error);
-        }
+        failure(error);
     }];
 }
 

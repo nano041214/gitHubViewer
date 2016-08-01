@@ -4,10 +4,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GUVAPIClient : AFHTTPSessionManager
+@interface GUVAPIClient : NSObject
 
-+ (instancetype)sharedClient;
-- (void)requestUserInfo:(NSString *)userName successBlock:(void (^)(GUVUser *_Nullable user))success failureBlock:(void (^)(NSError *error))failure;
++ (GUVAPIClient *)sharedClient;
+- (void)requestUserInfo:(NSString *)userName successBlock:(void (^)(GUVUser *user))success failureBlock:(void (^)(NSError *error))failure;
 
 @end
 
