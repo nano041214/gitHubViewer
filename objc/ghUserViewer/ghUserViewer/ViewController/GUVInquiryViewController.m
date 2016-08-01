@@ -16,7 +16,6 @@
     self.alertLabel.hidden = YES;
 }
 
-
 - (IBAction)userNameDidEdit:(UITextField *)sender {
     [SVProgressHUD show];
 
@@ -39,7 +38,11 @@
 
 - (void)showAlertLabel:(NSError *)error {
     self.alertLabel.hidden = NO;
-    self.alertLabel.text = [error localizedDescription];
+    if (error.code == NSURLErrorBadServerResponse) {
+        self.alertLabel.text = @"No such user here";
+    }else {
+        self.alertLabel.text = error.localizedDescription;
+    }
 }
 
 @end

@@ -19,9 +19,7 @@ static NSString * const GHAPIBaseURLString = @"https://api.github.com";
 }
 
 - (void)requestUserInfo:(NSString *)userName successBlock:(void (^)(GUVUser *_Nullable user, NSError *_Nullable error))success failureBlock:(void (^)(NSError *error))failure {
-//    NSString *safeUserName = [userName stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet punctuationCharacterSet]];
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
-    NSLog(@"%@", safeUserName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", safeUserName];
     [self GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSDictionary * responseDictionary) {
         if (success != nil) {
@@ -30,7 +28,7 @@ static NSString * const GHAPIBaseURLString = @"https://api.github.com";
             success(user, mantleError);
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        if(failure){
+        if(failure != nil){
             failure(error);
         }
     }];
