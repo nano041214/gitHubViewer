@@ -5,8 +5,10 @@
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithReuseIdentifier:reuseIdentifier];
     if(self != nil){
-        UINib *nib = [UINib nibWithNibName:@"GUVGithubLinkView" bundle:nil];
-        self = [nib instantiateWithOwner:nil options:nil][0];
+        NSArray *subviewArray = [[NSBundle mainBundle] loadNibNamed:@"GUVGithubLinkView" owner:self options:nil];
+        GUVGithubLinkView *linkView = subviewArray[0];
+        [linkView setFrame:self.bounds];
+        [self addSubview:linkView];
     }
     return self;
 }
