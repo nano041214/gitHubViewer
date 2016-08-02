@@ -1,11 +1,5 @@
 #import "GUVGithubLinkView.h"
 
-@interface GUVGithubLinkView ()
-
-@property (weak, nonatomic) IBOutlet UILabel *GHLinkLabel;
-
-@end
-
 @implementation GUVGithubLinkView
 
 - (instancetype)init {
@@ -20,9 +14,6 @@
         [self addSubview:topBorder];
     }
     return self;
-}
-
-- (void)setGithubURL:(NSURL *)githubURL {
 }
 
 @end

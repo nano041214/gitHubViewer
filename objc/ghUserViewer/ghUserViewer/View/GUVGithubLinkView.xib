@@ -24,9 +24,6 @@
                 <constraint firstItem="AYU-Lm-bnV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tfe-qE-EL1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="GHLinkLabel" destination="AYU-Lm-bnV" id="LY5-q2-2WJ"/>
-            </connections>
             <point key="canvasLocation" x="337" y="88.25"/>
         </view>
     </objects>

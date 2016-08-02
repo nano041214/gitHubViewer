@@ -1,7 +1,7 @@
 #import "GUVRepositoryDetailViewController.h"
 #import "GUVGithubLinkView.h"
 
-static const CGFloat tableFooterHeight = 65.0;
+static const CGFloat TableFooterHeight = 65.0;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -27,29 +27,9 @@ NS_ASSUME_NONNULL_END
 
 @implementation GUVRepositoryDetailViewController
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return NumberOfGUVRepositoryDetailTableContents;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryDetailCell" forIndexPath:indexPath];
-    NSInteger contentIndex = indexPath.row;
-    cell.textLabel.text = [self titleForDetailTableContent:contentIndex];
-    return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Activities";
-}
-
-- (NSString *)titleForDetailTableContent:(GUVRepositoryDetailTableContent)detailTableContent{
-    switch (detailTableContent) {
+- (NSString *)titleForDetailTableContent:(NSIndexPath *)indexPath {
+     NSInteger row = indexPath.row;
+    switch (row) {
         case GUVRepositoryDetailTableContentLanguage: {
             return @"Language";
         }
@@ -76,13 +56,33 @@ NS_ASSUME_NONNULL_END
     }
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return NumberOfGUVRepositoryDetailTableContents;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryDetailCell" forIndexPath:indexPath];
+    cell.textLabel.text = [self titleForDetailTableContent:indexPath];
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Activities";
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     _linkView = [GUVGithubLinkView new];
     return self.linkView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return tableFooterHeight;
+    return TableFooterHeight;
 }
 
 @end
