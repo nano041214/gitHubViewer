@@ -11,17 +11,38 @@
             <rect key="frame" x="0.0" y="0.0" width="612" height="90.5"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View on Github" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYU-Lm-bnV">
-                    <rect key="frame" x="224.5" y="31" width="163" height="29"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ufm-7O-oFp" userLabel="Wrapper">
+                    <rect key="frame" x="0.0" y="0.0" width="612" height="90.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View on Github" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYU-Lm-bnV">
+                            <rect key="frame" x="224" y="31" width="163" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpW-Lq-p7M" userLabel="TopBorder">
+                            <rect key="frame" x="0.0" y="0.0" width="612" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="HLv-yz-za7"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="AYU-Lm-bnV" firstAttribute="centerX" secondItem="Ufm-7O-oFp" secondAttribute="centerX" id="QgD-FU-c5B"/>
+                        <constraint firstItem="bpW-Lq-p7M" firstAttribute="top" secondItem="Ufm-7O-oFp" secondAttribute="top" id="ic2-Pp-yhq"/>
+                        <constraint firstItem="bpW-Lq-p7M" firstAttribute="leading" secondItem="Ufm-7O-oFp" secondAttribute="leading" id="jBR-rV-lnA"/>
+                        <constraint firstItem="AYU-Lm-bnV" firstAttribute="centerY" secondItem="Ufm-7O-oFp" secondAttribute="centerY" id="kOw-6X-lo5"/>
+                        <constraint firstAttribute="trailing" secondItem="bpW-Lq-p7M" secondAttribute="trailing" id="t6q-No-LLE"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="AYU-Lm-bnV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="O0V-aO-LGS"/>
-                <constraint firstItem="AYU-Lm-bnV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tfe-qE-EL1"/>
+                <constraint firstItem="Ufm-7O-oFp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="M3O-45-idJ"/>
+                <constraint firstItem="Ufm-7O-oFp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UcR-0a-BNH"/>
+                <constraint firstAttribute="trailing" secondItem="Ufm-7O-oFp" secondAttribute="trailing" id="f36-Cw-p8j"/>
+                <constraint firstAttribute="bottom" secondItem="Ufm-7O-oFp" secondAttribute="bottom" id="fSp-Uw-VYm"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="337" y="88.25"/>
