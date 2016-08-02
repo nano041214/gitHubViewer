@@ -2,6 +2,7 @@
 #import "GUVGithubLinkView.h"
 
 static const CGFloat TableFooterHeight = 65.0;
+static NSString* GUVLinkViewFooterID = @"GUVLinkViewFooterID";
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,12 +21,18 @@ typedef NS_ENUM(NSInteger, GUVRepositoryDetailTableContent) {
 @interface GUVRepositoryDetailViewController ()
 
 @property (nonatomic) GUVGithubLinkView *linkView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 NS_ASSUME_NONNULL_END
 
 @implementation GUVRepositoryDetailViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.tableView registerClass:[GUVGithubLinkView class] forHeaderFooterViewReuseIdentifier:GUVLinkViewFooterID];
+}
 
 - (NSString *)titleForDetailTableContent:(NSIndexPath *)indexPath {
      NSInteger row = indexPath.row;
@@ -77,8 +84,7 @@ NS_ASSUME_NONNULL_END
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    _linkView = [GUVGithubLinkView new];
-    return self.linkView;
+    return [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:GUVLinkViewFooterID];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

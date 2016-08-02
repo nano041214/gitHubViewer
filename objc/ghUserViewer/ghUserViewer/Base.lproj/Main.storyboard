@@ -402,6 +402,9 @@ aaaaaaaaaa</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mgh-dO-zsW"/>
+                    <connections>
+                        <outlet property="tableView" destination="QVh-5n-CUv" id="IpE-Jb-mZC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8A-Za-DSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
