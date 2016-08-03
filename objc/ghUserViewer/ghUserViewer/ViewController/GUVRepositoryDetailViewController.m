@@ -2,7 +2,6 @@
 #import "GUVGithubLinkView.h"
 
 static const CGFloat TableFooterHeight = 65.0;
-static NSString* GUVLinkViewFooterID = @"GUVLinkViewFooterID";
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,7 +30,7 @@ NS_ASSUME_NONNULL_END
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerNib:[UINib nibWithNibName:@"GUVGithubLinkView" bundle:nil] forHeaderFooterViewReuseIdentifier:GUVLinkViewFooterID];
+    [self.tableView registerNib:[UINib nibWithNibName:@"GUVGithubLinkView" bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([GUVGithubLinkView class])];
 }
 
 - (NSString *)titleForDetailTableContent:(NSIndexPath *)indexPath {
@@ -84,7 +83,7 @@ NS_ASSUME_NONNULL_END
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:GUVLinkViewFooterID];
+    return [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([GUVGithubLinkView class])];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
