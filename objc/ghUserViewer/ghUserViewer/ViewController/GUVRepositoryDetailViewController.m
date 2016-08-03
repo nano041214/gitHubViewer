@@ -31,11 +31,11 @@ NS_ASSUME_NONNULL_END
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerClass:[GUVGithubLinkView class] forHeaderFooterViewReuseIdentifier:GUVLinkViewFooterID];
+    [self.tableView registerNib:[UINib nibWithNibName:@"GUVGithubLinkView" bundle:nil] forHeaderFooterViewReuseIdentifier:GUVLinkViewFooterID];
 }
 
 - (NSString *)titleForDetailTableContent:(NSIndexPath *)indexPath {
-     NSInteger row = indexPath.row;
+    NSInteger row = indexPath.row;
     switch (row) {
         case GUVRepositoryDetailTableContentLanguage: {
             return @"Language";
