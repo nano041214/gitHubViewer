@@ -30,33 +30,27 @@ NS_ASSUME_NONNULL_END
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerNib:[UINib nibWithNibName:@"GUVGithubLinkView" bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([GUVGithubLinkView class])];
+    [self.tableView registerNib:[UINib nibWithNibName:@"GUVGithubLinkView" bundle:nil]
+     forHeaderFooterViewReuseIdentifier:NSStringFromClass([GUVGithubLinkView class])];
 }
 
 - (NSString *)titleForDetailTableContent:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
     switch (row) {
-        case GUVRepositoryDetailTableContentLanguage: {
+        case GUVRepositoryDetailTableContentLanguage:
             return @"Language";
-        }
-        case GUVRepositoryDetailTableContentStarred: {
+        case GUVRepositoryDetailTableContentStarred:
             return @"Starred";
-        }
-        case GUVRepositoryDetailTableContentWatcher: {
+        case GUVRepositoryDetailTableContentWatcher:
             return @"Watchers";
-        }
-        case GUVRepositoryDetailTableContentContributer: {
+        case GUVRepositoryDetailTableContentContributer:
             return @"Contributers";
-        }
-        case GUVRepositoryDetailTableContentCommits: {
+        case GUVRepositoryDetailTableContentCommits:
             return @"Commits";
-        }
-        case GUVRepositoryDetailTableContentIssue: {
+        case GUVRepositoryDetailTableContentIssue:
             return @"Issues";
-        }
-        case GUVRepositoryDetailTableContentBranch: {
+        case GUVRepositoryDetailTableContentBranch:
             return @"Branches";
-        }
         default:
             return @"Additional information";
     }
