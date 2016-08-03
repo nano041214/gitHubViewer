@@ -55,10 +55,16 @@
                                     <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Wzz-zm-6K2"/>
                                 </connections>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-xr-eEr">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-xr-eEr" userLabel="SuggestionLabel">
                                 <rect key="frame" x="20" y="329" width="560" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nT7-df-1R5" userLabel="AlertLabel">
+                                <rect key="frame" x="20" y="312" width="560" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.69411764710000001" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -66,11 +72,14 @@
                         <constraints>
                             <constraint firstItem="MZj-QU-wBT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="BUc-b4-vSP"/>
                             <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="DxT-Gn-yuj"/>
+                            <constraint firstItem="nT7-df-1R5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FLl-lZ-CiU"/>
                             <constraint firstItem="djL-Nb-4ii" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QM6-8j-IxU"/>
                             <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="50" id="XfD-F3-RoR"/>
                             <constraint firstItem="wn8-xr-eEr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YhR-Vc-bDh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MZj-QU-wBT" secondAttribute="trailing" constant="30" id="Zcr-tn-iJG"/>
+                            <constraint firstItem="nT7-df-1R5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dAt-6d-nvR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wn8-xr-eEr" secondAttribute="trailing" id="dIn-dw-bRf"/>
+                            <constraint firstItem="nT7-df-1R5" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="8" id="ftw-nX-FUG"/>
                             <constraint firstItem="wn8-xr-eEr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r9L-N9-XKT"/>
                             <constraint firstItem="wn8-xr-eEr" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="25" id="tQM-Gy-aza"/>
                         </constraints>
@@ -78,6 +87,7 @@
                     <navigationItem key="navigationItem" id="lLc-q8-org"/>
                     <connections>
                         <outlet property="alertLabel" destination="wn8-xr-eEr" id="5TZ-WP-YbC"/>
+                        <outlet property="suggestionLabel" destination="wn8-xr-eEr" id="RAM-zR-nGe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

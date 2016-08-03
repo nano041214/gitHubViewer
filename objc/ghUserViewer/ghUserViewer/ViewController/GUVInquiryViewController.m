@@ -7,6 +7,7 @@
 @interface GUVInquiryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
+@property (weak, nonatomic) IBOutlet UILabel *suggestionLabel;
 
 @end
 
@@ -14,6 +15,7 @@
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {
     self.alertLabel.hidden = YES;
+    self.suggestionLabel.hidden = YES;
 }
 
 - (IBAction)userNameDidEdit:(UITextField *)sender {
@@ -34,11 +36,8 @@
 
 - (void)showAlertLabel:(NSError *)error {
     self.alertLabel.hidden = NO;
-    if (error.code == NSURLErrorBadServerResponse) {
-        self.alertLabel.text = @"No such user here";
-    }else {
-        self.alertLabel.text = error.localizedDescription;
-    }
+    self.alertLabel.text = [NSString stringWithFormat:@"%@ %@", error.localizedDescription, error.localizedRecoverySuggestion];
+    self.suggestionLabel.hidden = YES;
 }
 
 @end

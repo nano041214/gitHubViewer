@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GUVAPIClient ()
 
 @property (nonatomic) AFHTTPSessionManager *httpManager;
-@property (nonatomic, readwrite, copy) GUVGetUserSuccessBlock success;
+@property (nonatomic, copy) GUVGetUserSuccessBlock success;
 
 @end
 
@@ -37,12 +37,27 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
         GUVUser *user = [MTLJSONAdapter modelOfClass:GUVUser.class fromJSONDictionary:responseDictionary error:&mantleError];
         if (mantleError != nil){
             failure(mantleError);
-        }else {
+        } else {
             success(user);
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
+        if ([operation.response isKindOfClass:[NSHTTPURLResponse class]])
+        {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*) operation.response;
+            if (httpResponse.statusCode == 404) {
+                error = [self noSuchUserError];
+            }
+        }
         failure(error);
     }];
+}
+
+- (NSError *)noSuchUserError {
+    NSString *errorDomain = @"com.cookpad.ghUserViewer";
+    NSInteger errorCode = 12345;
+    NSDictionary *errorUserInfo = @{NSLocalizedDescriptionKey: @"No such user here.",
+                                    NSLocalizedRecoverySuggestionErrorKey: @"Please enter correct user name"};
+    return [[NSError alloc] initWithDomain:errorDomain code:errorCode userInfo:errorUserInfo];
 }
 
 @end
