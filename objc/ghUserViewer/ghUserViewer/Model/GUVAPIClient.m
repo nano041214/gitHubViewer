@@ -45,14 +45,14 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
         {
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*) operation.response;
             if (httpResponse.statusCode == 404) {
-                error = [self noSuchUserError];
+                error = [GUVAPIClient noSuchUserError];
             }
         }
         failure(error);
     }];
 }
 
-- (NSError *)noSuchUserError {
++ (NSError *)noSuchUserError {
     NSString *errorDomain = @"com.cookpad.ghUserViewer";
     NSInteger errorCode = 12345;
     NSDictionary *errorUserInfo = @{NSLocalizedDescriptionKey: @"No such user here.",

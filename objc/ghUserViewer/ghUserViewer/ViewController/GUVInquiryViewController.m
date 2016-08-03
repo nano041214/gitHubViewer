@@ -7,7 +7,6 @@
 @interface GUVInquiryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
-@property (weak, nonatomic) IBOutlet UILabel *suggestionLabel;
 
 @end
 
@@ -15,7 +14,6 @@
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {
     self.alertLabel.hidden = YES;
-    self.suggestionLabel.hidden = YES;
 }
 
 - (IBAction)userNameDidEdit:(UITextField *)sender {
@@ -36,8 +34,11 @@
 
 - (void)showAlertLabel:(NSError *)error {
     self.alertLabel.hidden = NO;
-    self.alertLabel.text = [NSString stringWithFormat:@"%@ %@", error.localizedDescription, error.localizedRecoverySuggestion];
-    self.suggestionLabel.hidden = YES;
+    if ( error.localizedRecoverySuggestion != nil ) {
+        self.alertLabel.text = [NSString stringWithFormat:@"%@\n%@", error.localizedDescription, error.localizedRecoverySuggestion];
+    } else {
+        self.alertLabel.text = error.localizedDescription;
+    }
 }
 
 @end
