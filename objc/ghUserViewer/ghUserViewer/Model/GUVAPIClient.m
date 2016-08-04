@@ -9,7 +9,6 @@ NSString *const GUVAPIClientErrorDomain = @"com.cookpad.ghUserViewer.api.client.
 @interface GUVAPIClient ()
 
 @property (nonatomic) AFHTTPSessionManager *httpManager;
-@property (nonatomic, copy) GUVGetUserSuccessBlock success;
 
 @end
 
