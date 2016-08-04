@@ -19,13 +19,18 @@ NS_ASSUME_NONNULL_END
 
 static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
 
+- (instancetype)init {
+    self = [super init];
+    self.httpManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:GitHubAPIBaseURLString]];
+    return self;
+}
+
 + (GUVAPIClient *)sharedClient {
     static GUVAPIClient *client = nil;
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         client = [GUVAPIClient new];
-        client.httpManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:GitHubAPIBaseURLString]];
     });
     return client;
 }
