@@ -42,12 +42,6 @@
                                     <constraint firstAttribute="height" constant="180" id="FD1-2o-lVv"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-xr-eEr">
-                                <rect key="frame" x="226" y="329" width="148" height="22"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="githubUserName" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MZj-QU-wBT">
                                 <rect key="frame" x="50" y="354" width="500" height="40"/>
                                 <constraints>
@@ -56,23 +50,38 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
                                 <connections>
+                                    <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Apq-69-IJw"/>
+                                    <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="yoi-AO-jhn"/>
                                     <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Wzz-zm-6K2"/>
-                                    <segue destination="WBw-K5-etK" kind="push" identifier="toUserInfoTabBar" id="2Od-DX-AHL"/>
                                 </connections>
                             </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-xr-eEr" userLabel="alertLabel">
+                                <rect key="frame" x="20" y="329" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="RCD-xr-3xf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MZj-QU-wBT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="BUc-b4-vSP"/>
                             <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="DxT-Gn-yuj"/>
+                            <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="wn8-xr-eEr" secondAttribute="bottom" constant="4" id="Lvt-gr-Nbf"/>
                             <constraint firstItem="djL-Nb-4ii" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QM6-8j-IxU"/>
                             <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="50" id="XfD-F3-RoR"/>
+                            <constraint firstItem="wn8-xr-eEr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YhR-Vc-bDh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MZj-QU-wBT" secondAttribute="trailing" constant="30" id="Zcr-tn-iJG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wn8-xr-eEr" secondAttribute="trailing" id="dIn-dw-bRf"/>
                             <constraint firstItem="wn8-xr-eEr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r9L-N9-XKT"/>
-                            <constraint firstItem="wn8-xr-eEr" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="25" id="tQM-Gy-aza"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lLc-q8-org"/>
+                    <connections>
+                        <outlet property="alertLabel" destination="wn8-xr-eEr" id="5TZ-WP-YbC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="userInfoHeader" translatesAutoresizingMaskIntoConstraints="NO" id="U0G-Wq-gDY" customClass="GUVUserInfoHeaderView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="140"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sd5-uu-6T6" userLabel="userStatusWrapper">
                                         <rect key="frame" x="135" y="25" width="440" height="90"/>
@@ -110,16 +119,16 @@
                                                 </connections>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6i-7I-Q49" userLabel="FollowersWrapper">
-                                                <rect key="frame" x="0.0" y="44" width="147" height="46"/>
+                                                <rect key="frame" x="0.0" y="44" width="146.5" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtY-F1-yzV">
-                                                        <rect key="frame" x="0.0" y="29" width="147" height="17"/>
+                                                        <rect key="frame" x="0.0" y="29" width="146.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFh-e8-oY0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -139,7 +148,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbD-mw-GEG" userLabel="StarredWrapper">
-                                                <rect key="frame" x="146" y="44" width="147" height="46"/>
+                                                <rect key="frame" x="146.5" y="44" width="147" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starred" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moV-LP-B3l">
                                                         <rect key="frame" x="0.0" y="29" width="147" height="17"/>
@@ -167,16 +176,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUp-1l-8v8" userLabel="FollowingWrapper">
-                                                <rect key="frame" x="293" y="44" width="147" height="46"/>
+                                                <rect key="frame" x="293.5" y="44" width="146.5" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUG-rS-bIv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkt-T5-ko9">
-                                                        <rect key="frame" x="0.0" y="29" width="147" height="17"/>
+                                                        <rect key="frame" x="0.0" y="29" width="146.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -236,7 +245,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9t2-4I-AgG" userLabel="Activities Table View">
-                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
+                                <rect key="frame" x="0.0" y="160" width="600" height="391"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ActivityCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="97" id="PaB-0c-tLG" userLabel="ActivityCell" customClass="GUVActivityTableViewCell">
@@ -327,7 +336,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="userInfoHeader" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-a3-bBR" customClass="GUVUserInfoHeaderView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="140"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="pOS-hs-ME5">
                                         <rect key="frame" x="25" y="25" width="110" height="90"/>
@@ -340,16 +349,16 @@
                                         <rect key="frame" x="135" y="25" width="440" height="90"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ulj-EY-5tA" userLabel="FollowersWrapper">
-                                                <rect key="frame" x="0.0" y="44" width="147" height="46"/>
+                                                <rect key="frame" x="0.0" y="44" width="146.5" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLZ-u5-4ti">
-                                                        <rect key="frame" x="0.0" y="29" width="147" height="17"/>
+                                                        <rect key="frame" x="0.0" y="29" width="146.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tC-eT-1zV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -369,7 +378,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VG7-YO-nK9" userLabel="StarredWrapper">
-                                                <rect key="frame" x="147" y="44" width="147" height="46"/>
+                                                <rect key="frame" x="146.5" y="44" width="147" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starred" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lya-DA-QfX">
                                                         <rect key="frame" x="0.0" y="29" width="147" height="17"/>
@@ -397,16 +406,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heA-iH-e5c" userLabel="FollowingWrapper">
-                                                <rect key="frame" x="294" y="44" width="146" height="46"/>
+                                                <rect key="frame" x="293.5" y="44" width="146.5" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEh-A9-b29">
-                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ia-Ad-Gvk">
-                                                        <rect key="frame" x="0.0" y="29" width="147" height="17"/>
+                                                        <rect key="frame" x="0.0" y="29" width="146.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -473,7 +482,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4P-c8-7Zu">
-                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
+                                <rect key="frame" x="0.0" y="160" width="600" height="391"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RepositoryCell" rowHeight="97" id="pgg-EQ-PAJ" customClass="GUVRepositoryTableViewCell">

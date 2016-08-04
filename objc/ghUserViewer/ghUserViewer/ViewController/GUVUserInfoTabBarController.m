@@ -1,8 +1,5 @@
 #import "GUVUserInfoTabBarController.h"
 #import "FontAwesomeKit/FontAwesomeKit.h"
-#import "GUVInquiryViewController.h"
-#import "GUVRepositoriesViewController.h"
-#import "GUVUserInfoHeaderView.h"
 
 static const CGFloat IconSize = 20;
 
@@ -15,7 +12,6 @@ static const CGFloat IconSize = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // tab settings
     FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
     UITabBarItem *repositoriesItem = self.tabBar.items[0];
     repositoriesItem.image = [repositoriesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
