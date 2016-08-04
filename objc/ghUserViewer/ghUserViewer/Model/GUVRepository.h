@@ -2,7 +2,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GUVRepository : MTLModel
+@interface GUVRepository : MTLModel <MTLJSONSerializing>
 
 // cast without readonly for debug
 @property (nonatomic) NSString *name;

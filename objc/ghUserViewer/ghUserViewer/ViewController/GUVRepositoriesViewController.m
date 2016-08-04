@@ -4,6 +4,7 @@
 #import "GUVRepositoryTableViewCell.h"
 #import "GUVUserInfoTabBarController.h"
 #import "GUVUserProfileViewController.h"
+#import "GUVAPIClient.h"
 
 @interface GUVRepositoriesViewController ()
 
@@ -27,6 +28,12 @@
     [super viewDidLoad];
     self.provider = (id<GUVUserProvider>)self.parentViewController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestRepositoryInfo:self.provider.fetchUser.name successBlock:^(GUVRepository * _Nonnull repository) {
+        NSLog(@"sucess");
+    } failureBlock:^(NSError * _Nonnull error) {
+        NSLog(@"failure");
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

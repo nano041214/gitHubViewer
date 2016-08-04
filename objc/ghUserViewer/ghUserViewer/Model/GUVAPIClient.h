@@ -1,6 +1,7 @@
+#import <AFNetworking.h>
 #import <Foundation/Foundation.h>
 #import "GUVUser.h"
-#import <AFNetworking.h>
+#import "GUVRepository.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -10,11 +11,13 @@ typedef NS_ENUM(NSInteger, GUVAPIClientErrorCode) {
 };
 
 typedef void (^GUVGetUserSuccessBlock)(GUVUser *user);
+typedef void (^GUVGetRepositorySuccessBlock)(GUVRepository *repository);
 
 @interface GUVAPIClient : NSObject
 
 + (GUVAPIClient *)sharedClient;
 - (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure;
+- (void)requestRepositoryInfo:(NSString *)userName successBlock:(nonnull GUVGetRepositorySuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure;
 
 @end
 
