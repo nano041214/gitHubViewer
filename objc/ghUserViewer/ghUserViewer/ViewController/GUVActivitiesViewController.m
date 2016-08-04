@@ -1,12 +1,16 @@
 #import "GUVActivitiesViewController.h"
 #import "GUVUserInfoTabBarController.h"
 #import "GUVActivityTableViewCell.h"
+#import "GUVUserInfoHeaderView.h"
 #import "GUVActivity.h"
+#import "GUVUserProfileViewController.h"
 
 @interface GUVActivitiesViewController ()
 
+@property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray<GUVActivity *> *activities;
+@property (nonatomic, weak) id<GUVUserProvider> provider;
 
 @end
 
@@ -14,10 +18,20 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
     GUVActivity *activity = [GUVActivity new];
     activity.name = @"IssueEvent";
     self.activities = @[activity];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.provider = (id<GUVUserProvider>)self.parentViewController;
+    self.userInfoHeaderView.user = self.provider.fetchUser;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
+    userProfileViewController.provider = self.provider;
 }
 
 #pragma mark - Table view data source

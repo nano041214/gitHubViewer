@@ -3,6 +3,7 @@
 #import "GUVRepository.h"
 #import "GUVRepositoryTableViewCell.h"
 #import "GUVUserInfoTabBarController.h"
+#import "GUVUserProfileViewController.h"
 
 @interface GUVRepositoriesViewController ()
 
@@ -26,6 +27,13 @@
     [super viewDidLoad];
     self.provider = (id<GUVUserProvider>)self.parentViewController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqual: @"jumpToUserProfileVC"]) {
+        GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
+        userProfileViewController.provider = self.provider;
+    }
 }
 
 #pragma mark - Table view data source
