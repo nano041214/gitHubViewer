@@ -4,6 +4,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NSString *const GUVAPIClientErrorDomain = @"com.cookpad.ghUserViewer.api";
+
 @interface GUVAPIClient ()
 
 @property (nonatomic) AFHTTPSessionManager *httpManager;
@@ -53,11 +55,9 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
 }
 
 + (NSError *)noSuchUserError {
-    NSString *errorDomain = @"com.cookpad.ghUserViewer";
-    NSInteger errorCode = 12345;
     NSDictionary *errorUserInfo = @{NSLocalizedDescriptionKey: @"No such user here.",
                                     NSLocalizedRecoverySuggestionErrorKey: @"Please enter correct user name"};
-    return [[NSError alloc] initWithDomain:errorDomain code:errorCode userInfo:errorUserInfo];
+    return [[NSError alloc] initWithDomain:GUVAPIClientErrorDomain code:GUVAPIClientErrorCodeNotFound userInfo:errorUserInfo];
 }
 
 @end

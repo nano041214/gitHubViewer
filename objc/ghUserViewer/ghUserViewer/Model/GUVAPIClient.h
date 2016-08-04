@@ -8,6 +8,11 @@ typedef void (^GUVGetUserSuccessBlock)(GUVUser *user);
 
 @interface GUVAPIClient : NSObject
 
+extern NSString *const GUVAPIClientErrorDomain;
+extern const NS_ENUM(NSInteger, GUVAPIClientErrorCode) {
+    GUVAPIClientErrorCodeNotFound,
+};
+
 + (GUVAPIClient *)sharedClient;
 - (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *error))failure;
 
