@@ -14,7 +14,7 @@ typedef void (^GUVGetUserSuccessBlock)(GUVUser *user);
 @interface GUVAPIClient : NSObject
 
 + (GUVAPIClient *)sharedClient;
-- (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *error))failure;
+- (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure;
 
 @end
 

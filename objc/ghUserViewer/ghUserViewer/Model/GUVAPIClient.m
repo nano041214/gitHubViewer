@@ -34,7 +34,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     return client;
 }
 
-- (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *error))failure {
+- (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", safeUserName];
 
