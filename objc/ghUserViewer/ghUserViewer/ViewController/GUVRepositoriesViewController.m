@@ -30,8 +30,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
-    userProfileViewController.provider = self.provider;
+    if ([segue.identifier isEqual: @"jumpToUserProfileVC"]) {
+        GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
+        userProfileViewController.provider = self.provider;
+    }
 }
 
 #pragma mark - Table view data source
