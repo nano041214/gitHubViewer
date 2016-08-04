@@ -4,7 +4,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-NSString *const GUVAPIClientErrorDomain = @"com.cookpad.ghUserViewer.api";
+NSString *const GUVAPIClientErrorDomain = @"com.cookpad.ghUserViewer.api.client.error";
 
 @interface GUVAPIClient ()
 
