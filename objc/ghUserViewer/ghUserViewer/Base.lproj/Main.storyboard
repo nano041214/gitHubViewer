@@ -431,7 +431,10 @@ aaaaaaaaaa</string>
                     </view>
                     <navigationItem key="navigationItem" id="mgh-dO-zsW"/>
                     <connections>
+                        <outlet property="dateLabel" destination="H1P-Mk-gfY" id="wQM-3U-kJT"/>
+                        <outlet property="descriptionLabel" destination="PCv-vH-Ww7" id="AfR-xV-RPd"/>
                         <outlet property="tableView" destination="QVh-5n-CUv" id="IpE-Jb-mZC"/>
+                        <outlet property="titleLabel" destination="7Hg-ea-3mU" id="9Kf-dT-qIp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8A-Za-DSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -651,7 +654,7 @@ aaaaaaaaaa</string>
                                         <connections>
                                             <outlet property="repositoryNameLabel" destination="Dws-uR-bPh" id="nUC-ow-c8C"/>
                                             <outlet property="starCountLabel" destination="3tR-XN-CJh" id="ZiQ-0K-yAC"/>
-                                            <segue destination="8ye-f5-kZ6" kind="push" id="9qb-Va-Laf"/>
+                                            <segue destination="8ye-f5-kZ6" kind="push" identifier="pushRepositoryDetail" id="9qb-Va-Laf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -923,6 +926,6 @@ aaaaaaaaaa</string>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bku-sy-zLi"/>
+        <segue reference="nsT-cI-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>

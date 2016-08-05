@@ -1,27 +1,22 @@
 #import "GUVRepositoriesViewController.h"
 #import "GUVUserInfoHeaderView.h"
-#import "GUVRepository.h"
 #import "GUVRepositoryTableViewCell.h"
 #import "GUVUserInfoTabBarController.h"
 #import "GUVUserProfileViewController.h"
+#import "GUVAPIClient.h"
+#import "GUVRepository.h"
+#import "GUVRepositoryDetailViewController.h"
 
 @interface GUVRepositoriesViewController ()
 
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSArray<GUVRepository *> *repositories;
 @property (nonatomic, weak) id<GUVUserProvider> provider;
+@property (nonatomic, nonnull) NSArray<GUVRepository *> *repositories;
 
 @end
 
 @implementation GUVRepositoriesViewController
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    GUVRepository *repository = [GUVRepository new];
-    repository.name = @"hoge gem";
-    self.repositories = @[repository];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,10 +24,30 @@
     self.userInfoHeaderView.user = self.provider.fetchUser;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestRepositoriesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
+        if (error != nil) {
+            // TODO: Make error hundling
+            NSLog(@"%@", error);
+        } else {
+            self.repositories = repositories;
+            [self.tableView reloadData];
+        }
+    }];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqual: @"jumpToUserProfileVC"]) {
         GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
         userProfileViewController.provider = self.provider;
+    } else {
+        if ([sender isKindOfClass:[GUVRepositoryTableViewCell class]]) {
+            GUVRepositoryTableViewCell *repositoryTableCell = sender;
+            GUVRepositoryDetailViewController *repositoryDetailViewController = segue.destinationViewController;
+            repositoryDetailViewController.repository = repositoryTableCell.repository;
+        }
     }
 }
 

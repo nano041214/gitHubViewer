@@ -1,6 +1,5 @@
 #import <Mantle/Mantle.h>
 #import "GUVAPIClient.h"
-#import "GUVUser.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -40,21 +39,37 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
 
     [self.httpManager GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSDictionary * responseDictionary) {
         NSError *mantleError = nil;
-        GUVUser *user = [MTLJSONAdapter modelOfClass:GUVUser.class fromJSONDictionary:responseDictionary error:&mantleError];
-        if (mantleError != nil){
+        GUVUser *user = [MTLJSONAdapter modelOfClass:[GUVUser class] fromJSONDictionary:responseDictionary error:&mantleError];
+        if (mantleError != nil) {
             failure(mantleError);
         } else {
             success(user);
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        if ([operation.response isKindOfClass:[NSHTTPURLResponse class]])
-        {
+        if ([operation.response isKindOfClass:[NSHTTPURLResponse class]]) {
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*) operation.response;
             if (httpResponse.statusCode == 404) {
                 error = [GUVAPIClient noSuchUserError];
             }
         }
         failure(error);
+    }];
+}
+
+- (void)requestRepositoriesInfo:(NSString *)userName completionBlock:(nonnull GUVGetRepositoryCompletionBlock)completion {
+    NSString *safeUserName = AFPercentEscapedStringFromString(userName);
+    NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@/repos", safeUserName];
+
+    [self.httpManager GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSArray * responseArray) {
+        NSError *mantleError = nil;
+        NSArray<GUVRepository*> *repositories = [MTLJSONAdapter modelsOfClass:[GUVRepository class] fromJSONArray:responseArray error:&mantleError];
+        if (mantleError != nil) {
+            completion(nil, mantleError);
+        } else {
+            completion(repositories, nil);
+        }
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        completion(nil, error);
     }];
 }
 

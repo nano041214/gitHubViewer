@@ -20,7 +20,10 @@ typedef NS_ENUM(NSInteger, GUVRepositoryDetailTableContent) {
 @interface GUVRepositoryDetailViewController ()
 
 @property (nonatomic) GUVGithubLinkView *linkView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
 
@@ -28,13 +31,20 @@ NS_ASSUME_NONNULL_END
 
 @implementation GUVRepositoryDetailViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.titleLabel.text = [self.repository formatedRepositoryNameString];
+    self.descriptionLabel.text = self.repository.descriptionString;
+    self.dateLabel.text = [self.repository formatedCreatedAndUpdatedDateString];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"GUVGithubLinkView" bundle:nil]
      forHeaderFooterViewReuseIdentifier:NSStringFromClass([GUVGithubLinkView class])];
 }
 
-- (NSString *)titleForDetailTableContent:(NSIndexPath *)indexPath {
+- (NSString *)titleForIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
     switch (row) {
         case GUVRepositoryDetailTableContentLanguage:
@@ -56,6 +66,29 @@ NS_ASSUME_NONNULL_END
     }
 }
 
+
+- (NSString *)descriptionForIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    switch (row) {
+        case GUVRepositoryDetailTableContentLanguage:
+            return self.repository.language;
+        case GUVRepositoryDetailTableContentStarred:
+            return [NSString stringWithFormat:@"%ld stars", self.repository.starredCount];
+        case GUVRepositoryDetailTableContentWatcher:
+            return [NSString stringWithFormat:@"%ld watchers", self.repository.watcherCount];
+        case GUVRepositoryDetailTableContentContributer:
+            return @"Contributers";
+        case GUVRepositoryDetailTableContentCommits:
+            return @"Commits";
+        case GUVRepositoryDetailTableContentIssue:
+            return [NSString stringWithFormat:@"%ld issues", self.repository.issueCount];
+        case GUVRepositoryDetailTableContentBranch:
+            return @"Branches";
+        default:
+            return @"Additional information";
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -68,7 +101,8 @@ NS_ASSUME_NONNULL_END
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryDetailCell" forIndexPath:indexPath];
-    cell.textLabel.text = [self titleForDetailTableContent:indexPath];
+    cell.textLabel.text = [self titleForIndexPath:indexPath];
+    cell.detailTextLabel.text = [self descriptionForIndexPath:indexPath];
     return cell;
 }
 
