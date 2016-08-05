@@ -69,12 +69,6 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
             success(repository);
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        if ([operation.response isKindOfClass:[NSHTTPURLResponse class]]) {
-            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*) operation.response;
-            if (httpResponse.statusCode == 404) {
-                error = [GUVAPIClient noSuchUserError];
-            }
-        }
         failure(error);
     }];
 }
