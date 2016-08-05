@@ -56,17 +56,17 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     }];
 }
 
-- (void)requestRepositoryInfo:(NSString *)userName successBlock:(nonnull GUVGetRepositorySuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure {
+- (void)requestRepositoriesInfo:(NSString *)userName successBlock:(nonnull GUVGetRepositorySuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@/repos", safeUserName];
 
     [self.httpManager GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSArray * responseArray) {
         NSError *mantleError = nil;
-        GUVRepository *repository = [MTLJSONAdapter modelOfClass:GUVRepository.class fromJSONDictionary:responseArray[0] error:&mantleError];
+        NSArray<GUVRepository*> *repositories = [MTLJSONAdapter modelsOfClass:GUVRepository.class fromJSONArray:responseArray error:&mantleError];
         if (mantleError != nil) {
             failure(mantleError);
         } else {
-            success(repository);
+            success(repositories);
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         failure(error);

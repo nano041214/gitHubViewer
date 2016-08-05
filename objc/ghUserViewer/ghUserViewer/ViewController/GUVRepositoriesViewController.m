@@ -20,8 +20,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestRepositoryInfo:self.provider.fetchUser.name successBlock:^(GUVRepository * _Nonnull repository) {
-        self.repositories = @[repository];
+    [client requestRepositoriesInfo:(NSString *)self.provider.fetchUser.name successBlock:^(NSArray<GUVRepository *> * _Nonnull repositories) {
+        self.repositories = repositories;
         [self.tableView reloadData];
         NSLog(@"success");
     } failureBlock:^(NSError * _Nonnull error) {
