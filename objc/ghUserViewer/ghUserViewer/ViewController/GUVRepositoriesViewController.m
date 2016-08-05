@@ -18,22 +18,24 @@
 
 @implementation GUVRepositoriesViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestRepositoriesInfo:(NSString *)self.provider.fetchUser.name
-                       successBlock:^(NSArray<GUVRepository *> * _Nonnull repositories) {
-        self.repositories = repositories;
-        [self.tableView reloadData];
-    } failureBlock:^(NSError * _Nonnull error) {
-        NSLog(@"%@", error);
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.provider = (id<GUVUserProvider>)self.parentViewController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestRepositoriesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
+        if (error != nil) {
+            // TODO: Make error hundling
+            NSLog(@"%@", error);
+        } else {
+            self.repositories = repositories;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
