@@ -1,9 +1,10 @@
 #import "GUVActivitiesViewController.h"
-#import "GUVUserInfoTabBarController.h"
-#import "GUVActivityTableViewCell.h"
-#import "GUVUserInfoHeaderView.h"
 #import "GUVActivity.h"
+#import "GUVActivityTableViewCell.h"
+#import "GUVAPIClient.h"
+#import "GUVUserInfoHeaderView.h"
 #import "GUVUserProfileViewController.h"
+#import "GUVUserInfoTabBarController.h"
 
 @interface GUVActivitiesViewController ()
 
@@ -18,9 +19,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    GUVActivity *activity = [GUVActivity new];
-    activity.name = @"IssueEvent";
-    self.activities = @[activity];
+
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestActivitiesInfo:self.provider.fetchUser.name successBlock:^(NSArray<GUVActivity *> * _Nonnull activities) {
+        self.activities = activities;
+        [self.tableView reloadData];
+    } failureBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 - (void)viewDidLoad {

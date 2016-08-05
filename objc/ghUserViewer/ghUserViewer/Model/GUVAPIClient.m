@@ -73,6 +73,23 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     }];
 }
 
+- (void)requestActivitiesInfo:(NSString *)userName successBlock:(nonnull GUVGetActivitiesSuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure {
+    NSString *safeUserName = AFPercentEscapedStringFromString(userName);
+    NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@/events", safeUserName];
+
+    [self.httpManager GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSArray * responseArray) {
+        NSError *mantleError = nil;
+        NSArray<GUVActivity *> *activities = [MTLJSONAdapter modelsOfClass:[GUVActivity class] fromJSONArray:responseArray error:&mantleError];
+        if (mantleError != nil) {
+            failure(mantleError);
+        } else {
+            success(activities);
+        }
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        failure(error);
+    }];
+}
+
 + (NSError *)noSuchUserError {
     NSDictionary *errorUserInfo = @{NSLocalizedDescriptionKey: @"No such user here.",
                                     NSLocalizedRecoverySuggestionErrorKey: @"Please enter correct user name"};

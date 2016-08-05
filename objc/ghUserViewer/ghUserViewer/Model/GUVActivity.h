@@ -2,7 +2,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GUVActivity : MTLModel
+@interface GUVActivity : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *descriptionString;
