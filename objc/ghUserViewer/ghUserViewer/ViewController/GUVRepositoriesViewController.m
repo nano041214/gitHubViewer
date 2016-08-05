@@ -19,21 +19,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    GUVRepository *repository = [GUVRepository new];
-    repository.name = @"hoge gem";
-    self.repositories = @[repository];
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestRepositoryInfo:self.provider.fetchUser.name successBlock:^(GUVRepository * _Nonnull repository) {
+        self.repositories = @[repository];
+        [self.tableView reloadData];
+    } failureBlock:^(NSError * _Nonnull error) {
+    }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.provider = (id<GUVUserProvider>)self.parentViewController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
-    GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestRepositoryInfo:self.provider.fetchUser.name successBlock:^(GUVRepository * _Nonnull repository) {
-        NSLog(@"sucess");
-    } failureBlock:^(NSError * _Nonnull error) {
-        NSLog(@"failure");
-    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
