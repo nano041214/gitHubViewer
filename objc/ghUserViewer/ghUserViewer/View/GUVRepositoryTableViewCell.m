@@ -13,7 +13,7 @@
 - (void)setRepository:(GUVRepository *)repository {
     _repository = repository;
     self.repositoryNameLabel.text = repository.name;
-    self.starCountLabel.text = [NSString stringWithFormat:@"%ld", repository.starredCount];
+    self.starCountLabel.text = [@(repository.starredCount) stringValue];
 }
 
 @end

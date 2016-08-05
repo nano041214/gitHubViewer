@@ -33,21 +33,25 @@ NS_ASSUME_NONNULL_END
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.titleLabel.text = [NSString stringWithFormat:
-                            @"%@/\n%@",
-                            self.repository.ownerName,
-                            self.repository.name];
+    self.titleLabel.text = [self formatedRepositoryNameString];
     self.descriptionLabel.text = self.repository.descriptionString;
-    self.dateLabel.text = [NSString stringWithFormat:
-                           @"created at %@    updated at %@",
-                           self.repository.createdDate,
-                           self.repository.updatedDate];
+    self.dateLabel.text = [self formatedCreatedAndUpdatedDateString];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"GUVGithubLinkView" bundle:nil]
      forHeaderFooterViewReuseIdentifier:NSStringFromClass([GUVGithubLinkView class])];
+}
+
+- (NSString *)formatedRepositoryNameString {
+    return [NSString stringWithFormat:@"%@/\n%@", self.repository.ownerName, self.repository.name];
+}
+
+- (NSString *)formatedCreatedAndUpdatedDateString {
+    return [NSString stringWithFormat: @"created at %@    updated at %@",
+            self.repository.createdDate,
+            self.repository.updatedDate];
 }
 
 - (NSString *)titleForDetailTableContent:(NSIndexPath *)indexPath {

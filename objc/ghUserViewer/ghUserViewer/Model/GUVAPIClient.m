@@ -19,8 +19,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
 
 - (instancetype)init {
     self = [super init];
-    self.httpManager = [[AFHTTPSessionManager alloc] initWithBaseURL:
-                        [NSURL URLWithString:GitHubAPIBaseURLString]];
+    self.httpManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:GitHubAPIBaseURLString]];
     return self;
 }
 
@@ -40,7 +39,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
 
     [self.httpManager GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSDictionary * responseDictionary) {
         NSError *mantleError = nil;
-        GUVUser *user = [MTLJSONAdapter modelOfClass:GUVUser.class fromJSONDictionary:responseDictionary error:&mantleError];
+        GUVUser *user = [MTLJSONAdapter modelOfClass:[GUVUser class] fromJSONDictionary:responseDictionary error:&mantleError];
         if (mantleError != nil) {
             failure(mantleError);
         } else {
@@ -63,7 +62,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
 
     [self.httpManager GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSArray * responseArray) {
         NSError *mantleError = nil;
-        NSArray<GUVRepository*> *repositories = [MTLJSONAdapter modelsOfClass:GUVRepository.class fromJSONArray:responseArray error:&mantleError];
+        NSArray<GUVRepository*> *repositories = [MTLJSONAdapter modelsOfClass:[GUVRepository class] fromJSONArray:responseArray error:&mantleError];
         if (mantleError != nil) {
             failure(mantleError);
         } else {
