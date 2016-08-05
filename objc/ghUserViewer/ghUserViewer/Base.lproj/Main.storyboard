@@ -654,7 +654,7 @@ aaaaaaaaaa</string>
                                         <connections>
                                             <outlet property="repositoryNameLabel" destination="Dws-uR-bPh" id="nUC-ow-c8C"/>
                                             <outlet property="starCountLabel" destination="3tR-XN-CJh" id="ZiQ-0K-yAC"/>
-                                            <segue destination="8ye-f5-kZ6" kind="push" id="9qb-Va-Laf"/>
+                                            <segue destination="8ye-f5-kZ6" kind="push" identifier="pushRepositoryDetail" id="9qb-Va-Laf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -926,6 +926,6 @@ aaaaaaaaaa</string>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bku-sy-zLi"/>
+        <segue reference="nsT-cI-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>

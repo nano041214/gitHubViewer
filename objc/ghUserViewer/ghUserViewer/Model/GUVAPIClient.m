@@ -19,7 +19,8 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
 
 - (instancetype)init {
     self = [super init];
-    self.httpManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:GitHubAPIBaseURLString]];
+    self.httpManager = [[AFHTTPSessionManager alloc] initWithBaseURL:
+                        [NSURL URLWithString:GitHubAPIBaseURLString]];
     return self;
 }
 

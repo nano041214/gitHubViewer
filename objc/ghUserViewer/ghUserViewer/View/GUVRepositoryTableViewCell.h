@@ -5,7 +5,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GUVRepositoryTableViewCell : UITableViewCell
 
-@property (nonatomic, nullable) GUVRepository *repository;
+@property (nonatomic) GUVRepository *repository;
 
 @end
 

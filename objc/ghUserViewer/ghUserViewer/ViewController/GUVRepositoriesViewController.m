@@ -20,10 +20,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestRepositoriesInfo:(NSString *)self.provider.fetchUser.name successBlock:^(NSArray<GUVRepository *> * _Nonnull repositories) {
+    [client requestRepositoriesInfo:(NSString *)self.provider.fetchUser.name successBlock:
+     ^(NSArray<GUVRepository *> * _Nonnull repositories) {
         self.repositories = repositories;
         [self.tableView reloadData];
-        NSLog(@"success");
     } failureBlock:^(NSError * _Nonnull error) {
         NSLog(@"%@", error);
     }];
@@ -40,8 +40,11 @@
         GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
         userProfileViewController.provider = self.provider;
     } else {
-        GUVRepositoryDetailViewController *repositoryDetailViewController = segue.destinationViewController;
-        repositoryDetailViewController.repository = self.repositories[0];
+        if ([sender isKindOfClass:GUVRepositoryTableViewCell.class]) {
+            GUVRepositoryTableViewCell *repositoryTableCell = sender;
+            GUVRepositoryDetailViewController *repositoryDetailViewController = segue.destinationViewController;
+            repositoryDetailViewController.repository = repositoryTableCell.repository;
+        }
     }
 }
 
