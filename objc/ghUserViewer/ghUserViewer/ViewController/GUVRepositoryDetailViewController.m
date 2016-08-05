@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_END
      forHeaderFooterViewReuseIdentifier:NSStringFromClass([GUVGithubLinkView class])];
 }
 
-- (NSString *)titleForDetailTableContent:(NSIndexPath *)indexPath {
+- (NSString *)titleForIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
     switch (row) {
         case GUVRepositoryDetailTableContentLanguage:
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_END
 }
 
 
-- (NSString *)descriptionForDetailTableContent:(NSIndexPath *)indexPath {
+- (NSString *)descriptionForIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
     switch (row) {
         case GUVRepositoryDetailTableContentLanguage:
@@ -101,8 +101,8 @@ NS_ASSUME_NONNULL_END
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RepositoryDetailCell" forIndexPath:indexPath];
-    cell.textLabel.text = [self titleForDetailTableContent:indexPath];
-    cell.detailTextLabel.text = [self descriptionForDetailTableContent:indexPath];
+    cell.textLabel.text = [self titleForIndexPath:indexPath];
+    cell.detailTextLabel.text = [self descriptionForIndexPath:indexPath];
     return cell;
 }
 
