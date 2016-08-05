@@ -49,4 +49,14 @@
     }];
 }
 
+- (NSString *)formatedRepositoryNameString {
+    return [NSString stringWithFormat:@"%@/\n%@", self.ownerName, self.name];
+}
+
+- (NSString *)formatedCreatedAndUpdatedDateString {
+    return [NSString stringWithFormat: @"created at %@    updated at %@",
+            self.createdDate,
+            self.updatedDate];
+}
+
 @end

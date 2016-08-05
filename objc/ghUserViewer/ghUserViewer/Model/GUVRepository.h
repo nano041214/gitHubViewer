@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSDate *updatedDate;
 @property (nonatomic, readonly) NSURL *repositoryURL;
 
+- (NSString *)formatedRepositoryNameString;
+- (NSString *)formatedCreatedAndUpdatedDateString;
+
 @end
 
 NS_ASSUME_NONNULL_END
