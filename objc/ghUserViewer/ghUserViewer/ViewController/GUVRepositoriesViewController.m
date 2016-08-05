@@ -1,17 +1,17 @@
 #import "GUVRepositoriesViewController.h"
 #import "GUVUserInfoHeaderView.h"
-#import "GUVRepository.h"
 #import "GUVRepositoryTableViewCell.h"
 #import "GUVUserInfoTabBarController.h"
 #import "GUVUserProfileViewController.h"
 #import "GUVAPIClient.h"
+#import "GUVRepositoryDetailViewController.h"
 
 @interface GUVRepositoriesViewController ()
 
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSArray<GUVRepository *> *repositories;
 @property (nonatomic, weak) id<GUVUserProvider> provider;
+@property (nonatomic, nonnull) NSArray<GUVRepository *> *repositories;
 
 @end
 
@@ -39,7 +39,14 @@
     if ([segue.identifier isEqual: @"jumpToUserProfileVC"]) {
         GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
         userProfileViewController.provider = self.provider;
+    } else {
+        GUVRepositoryDetailViewController *repositoryDetailViewController = segue.destinationViewController;
+        repositoryDetailViewController.repository = self.repositories[0];
     }
+}
+
+-(GUVRepository *)repository:(NSInteger)index {
+    return self.repositories[index];
 }
 
 #pragma mark - Table view data source

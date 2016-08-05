@@ -13,8 +13,9 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
                 @"name": @"name",
+                @"ownerName": @"owner.login",
                 @"language": @"language",
-                @"descriptionString": @"followers",
+                @"descriptionString": @"description",
 //                @"followerCount": @"following",
                 @"starredCount": @"stargazers_count",
                 @"watcherCount": @"watchers_count",
