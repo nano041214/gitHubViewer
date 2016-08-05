@@ -4,6 +4,7 @@
 #import "GUVUserInfoTabBarController.h"
 #import "GUVUserProfileViewController.h"
 #import "GUVAPIClient.h"
+#import "GUVRepository.h"
 #import "GUVRepositoryDetailViewController.h"
 
 @interface GUVRepositoriesViewController ()
@@ -46,10 +47,6 @@
             repositoryDetailViewController.repository = repositoryTableCell.repository;
         }
     }
-}
-
--(GUVRepository *)repository:(NSInteger)index {
-    return self.repositories[index];
 }
 
 #pragma mark - Table view data source
