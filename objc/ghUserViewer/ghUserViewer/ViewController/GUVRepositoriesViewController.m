@@ -23,7 +23,9 @@
     [client requestRepositoryInfo:self.provider.fetchUser.name successBlock:^(GUVRepository * _Nonnull repository) {
         self.repositories = @[repository];
         [self.tableView reloadData];
+        NSLog(@"success");
     } failureBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error);
     }];
 }
 

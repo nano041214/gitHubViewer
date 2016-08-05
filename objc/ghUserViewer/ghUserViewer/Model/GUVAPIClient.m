@@ -63,7 +63,6 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     [self.httpManager GET:userInfoInquiryPath parameters:nil progress:nil success:^(NSURLSessionTask *task, NSArray * responseArray) {
         NSError *mantleError = nil;
         GUVRepository *repository = [MTLJSONAdapter modelOfClass:GUVRepository.class fromJSONDictionary:responseArray[0] error:&mantleError];
-        NSLog(@"%@", repository);
         if (mantleError != nil) {
             failure(mantleError);
         } else {
