@@ -4,7 +4,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GUVGithubLinkView : UITableViewHeaderFooterView
 
-@property (nonatomic, nullable) NSURL *githubURL;
+@property (nonatomic) NSURL *githubURL;
 
 @end
 
