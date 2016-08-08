@@ -241,6 +241,10 @@
                                     <constraint firstItem="sd5-uu-6T6" firstAttribute="top" secondItem="U0G-Wq-gDY" secondAttribute="top" constant="25" id="pkt-c0-pab"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="followersCountLabel" destination="ZFh-e8-oY0" id="ozJ-aZ-nbf"/>
+                                    <outlet property="followingCountLabel" destination="hUG-rS-bIv" id="yMP-md-tXe"/>
+                                    <outlet property="starredCountLabel" destination="Mck-Kb-NR1" id="avK-pW-k8U"/>
+                                    <outlet property="userIconImageView" destination="tLZ-4x-MKP" id="seU-1b-3Ow"/>
                                     <outlet property="userNameLabel" destination="9KI-Zy-eFO" id="Tro-aU-InU"/>
                                 </connections>
                             </view>
@@ -596,6 +600,10 @@ aaaaaaaaaa</string>
                                     <constraint firstAttribute="bottom" secondItem="pOS-hs-ME5" secondAttribute="bottom" constant="25" id="tgE-8o-N5d"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="followersCountLabel" destination="9tC-eT-1zV" id="Ba8-MK-awJ"/>
+                                    <outlet property="followingCountLabel" destination="kEh-A9-b29" id="eZ1-8f-Xyz"/>
+                                    <outlet property="starredCountLabel" destination="XpC-71-8Mc" id="RfE-BS-hB3"/>
+                                    <outlet property="userIconImageView" destination="pOS-hs-ME5" id="Yef-gt-u11"/>
                                     <outlet property="userNameLabel" destination="Xms-zi-Tg8" id="HTC-91-Ulm"/>
                                 </connections>
                             </view>
@@ -843,6 +851,10 @@ aaaaaaaaaa</string>
                                     <constraint firstItem="Gkm-XS-YFV" firstAttribute="top" secondItem="4wE-dC-jhf" secondAttribute="top" constant="25" id="yqM-rj-CRZ"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="followersCountLabel" destination="nu3-38-qiY" id="LEO-Af-dUN"/>
+                                    <outlet property="followingCountLabel" destination="o57-Qb-fNw" id="14e-VA-EQg"/>
+                                    <outlet property="starredCountLabel" destination="nEV-Ez-Z1b" id="hFe-Gg-NRf"/>
+                                    <outlet property="userIconImageView" destination="Gkm-XS-YFV" id="8mV-Yg-CdK"/>
                                     <outlet property="userNameLabel" destination="ElW-eK-9MT" id="cUj-K4-7kb"/>
                                 </connections>
                             </view>
