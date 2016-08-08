@@ -21,11 +21,14 @@
     [super viewWillAppear:animated];
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestActivitiesInfo:self.provider.fetchUser.name successBlock:^(NSArray<GUVActivity *> * _Nonnull activities) {
-        self.activities = activities;
-        [self.tableView reloadData];
-    } failureBlock:^(NSError * _Nonnull error) {
-        NSLog(@"%@", error);
+    [client requestActivitiesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
+        if (error != nil) {
+            // TODO: Make error hundling
+            NSLog(@"%@", error);
+        } else {
+            self.activities = activities;
+            [self.tableView reloadData];
+        }
     }];
 }
 

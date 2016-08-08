@@ -73,7 +73,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     }];
 }
 
-- (void)requestActivitiesInfo:(NSString *)userName successBlock:(nonnull GUVGetActivitiesSuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure {
+- (void)requestActivitiesInfo:(NSString *)userName completionBlock:(nonnull GUVGetActivitiesCompletionBlock)completion {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@/events", safeUserName];
 
@@ -81,12 +81,12 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
         NSError *mantleError = nil;
         NSArray<GUVActivity *> *activities = [MTLJSONAdapter modelsOfClass:[GUVActivity class] fromJSONArray:responseArray error:&mantleError];
         if (mantleError != nil) {
-            failure(mantleError);
+            completion(nil, mantleError);
         } else {
-            success(activities);
+            completion(activities, nil);
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        failure(error);
+        completion(nil, error);
     }];
 }
 
