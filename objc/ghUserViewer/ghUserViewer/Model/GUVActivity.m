@@ -5,8 +5,8 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"name": @"type",
-             //@"descriptionString": @"owner.login",
-             };
+             @"repositoryName": @"repo.name",
+    };
 }
 
 @end

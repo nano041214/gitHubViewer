@@ -13,7 +13,7 @@
 - (void)setActivity:(GUVActivity *)activity {
     _activity = activity;
     self.nameLabel.text = self.activity.name;
-    self.descriptionLabel.text = @"Add hogehoge method";
+    self.descriptionLabel.text = self.activity.repositoryName;
 }
 
 @end
