@@ -25,7 +25,7 @@
 //                @"branchCount": @"blog",
                 @"createdDate": @"created_at",
                 @"updatedDate": @"updated_at",
-                @"repositoryURL": @"git_url",
+                @"repositoryURL": @"svn_url",
             };
 }
 

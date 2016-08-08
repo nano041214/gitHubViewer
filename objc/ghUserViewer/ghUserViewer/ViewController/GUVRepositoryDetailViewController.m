@@ -19,7 +19,6 @@ typedef NS_ENUM(NSInteger, GUVRepositoryDetailTableContent) {
 
 @interface GUVRepositoryDetailViewController ()
 
-@property (nonatomic) GUVGithubLinkView *linkView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
@@ -111,7 +110,9 @@ NS_ASSUME_NONNULL_END
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([GUVGithubLinkView class])];
+    GUVGithubLinkView *linkView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([GUVGithubLinkView class])];
+    linkView.githubURL = self.repository.repositoryURL;
+    return linkView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
