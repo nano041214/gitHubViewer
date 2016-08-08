@@ -28,11 +28,11 @@
         [self.navigationController pushViewController:usersInfoTabBarController animated:NO];
     } failureBlock:^(NSError *error) {
         [SVProgressHUD dismiss];
-        [self showAlertLabel:error];
+        [self showAlertLabelwithError:error];
     }];
 }
 
-- (void)showAlertLabel:(NSError *)error {
+- (void)showAlertLabelwithError:(NSError *)error {
     self.alertLabel.hidden = NO;
     if ( error.localizedRecoverySuggestion != nil ) {
         self.alertLabel.text = [NSString stringWithFormat:@"%@\n%@", error.localizedDescription, error.localizedRecoverySuggestion];
