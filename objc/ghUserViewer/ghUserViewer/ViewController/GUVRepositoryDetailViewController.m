@@ -89,7 +89,9 @@ NS_ASSUME_NONNULL_END
 }
 
 - (void)jumpToGithubRepository:(NSURL *)repositoryURL {
-    [[UIApplication sharedApplication] openURL:repositoryURL];
+    if ([[UIApplication sharedApplication] canOpenURL:repositoryURL]) {
+        [[UIApplication sharedApplication] openURL:repositoryURL];
+    }
 }
 
 #pragma mark - Table view data source

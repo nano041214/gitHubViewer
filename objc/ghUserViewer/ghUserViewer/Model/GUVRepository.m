@@ -16,16 +16,16 @@
                 @"ownerName": @"owner.login",
                 @"language": @"language",
                 @"descriptionString": @"description",
-//                @"followerCount": @"following",
+//                @"followerCount": @"followerCount",
                 @"starredCount": @"stargazers_count",
                 @"watcherCount": @"watchers_count",
-//                @"contributerCount": @"created_at",
-//                @"commitCount": @"blog",
+//                @"contributerCount": @"contribuerCount",
+//                @"commitCount": @"commitCount",
                 @"issueCount": @"open_issues_count",
-//                @"branchCount": @"blog",
+//                @"branchCount": @"branchCount",
                 @"createdDate": @"created_at",
                 @"updatedDate": @"updated_at",
-                @"repositoryURL": @"svn_url",
+                @"repositoryURL": @"html_url",
             };
 }
 
