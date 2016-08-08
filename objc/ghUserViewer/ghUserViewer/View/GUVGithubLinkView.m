@@ -3,7 +3,7 @@
 @implementation GUVGithubLinkView
 
 - (IBAction)didTapLinkButton:(id)sender {
-    [[UIApplication sharedApplication] openURL:self.githubURL];
+    [self.opener jumpToGithubRepository:self.repositoryURL];
 }
 
 @end

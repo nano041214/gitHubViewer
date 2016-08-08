@@ -20,7 +20,7 @@ static const CGFloat IconSize = 20;
     activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
--(GUVUser *)fetchUser {
+- (GUVUser *)fetchUser {
     return self.user;
 }
 

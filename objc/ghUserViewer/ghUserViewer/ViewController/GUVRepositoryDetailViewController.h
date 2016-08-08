@@ -3,7 +3,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GUVRepositoryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@protocol GUVBrowserOpener <NSObject>
+
+- (void)jumpToGithubRepository:(NSURL *)repositoryURL;
+
+@end
+
+@interface GUVRepositoryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, GUVBrowserOpener>
 
 @property (nonatomic) GUVRepository *repository;
 

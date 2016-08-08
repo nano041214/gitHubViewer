@@ -88,6 +88,10 @@ NS_ASSUME_NONNULL_END
     }
 }
 
+- (void)jumpToGithubRepository:(NSURL *)repositoryURL {
+    [[UIApplication sharedApplication] openURL:repositoryURL];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -111,7 +115,8 @@ NS_ASSUME_NONNULL_END
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     GUVGithubLinkView *linkView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([GUVGithubLinkView class])];
-    linkView.githubURL = self.repository.repositoryURL;
+    linkView.repositoryURL = self.repository.repositoryURL;
+    linkView.opener = (id<GUVBrowserOpener>)self;
     return linkView;
 }
 
