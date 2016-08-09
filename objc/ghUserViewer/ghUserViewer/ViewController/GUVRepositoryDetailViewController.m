@@ -117,8 +117,7 @@ NS_ASSUME_NONNULL_END
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     GUVGithubLinkView *linkView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([GUVGithubLinkView class])];
-    linkView.repositoryURL = self.repository.repositoryURL;
-    linkView.delegate = (id<GUVGithubLinkViewDelegate>)self;
+    linkView.delegate = self;
     return linkView;
 }
 

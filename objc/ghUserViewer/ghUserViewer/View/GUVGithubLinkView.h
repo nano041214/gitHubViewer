@@ -10,7 +10,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GUVGithubLinkView : UITableViewHeaderFooterView
 
-@property (nonatomic) NSURL *repositoryURL;
 @property (nonatomic, weak) id<GUVGithubLinkViewDelegate> delegate;
 
 @end
