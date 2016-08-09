@@ -50,7 +50,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="oyN-m9-epN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="go"/>
                                                 <connections>
                                                     <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Apq-69-IJw"/>
                                                     <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="yoi-AO-jhn"/>
@@ -101,6 +101,8 @@
                     <navigationItem key="navigationItem" id="lLc-q8-org"/>
                     <connections>
                         <outlet property="alertLabel" destination="wn8-xr-eEr" id="5TZ-WP-YbC"/>
+                        <outlet property="userNameTextField" destination="MZj-QU-wBT" id="Zcv-QK-OLP"/>
+                        <outlet property="viewWrapperScrollView" destination="ob7-ha-8HV" id="ctY-eo-Epv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

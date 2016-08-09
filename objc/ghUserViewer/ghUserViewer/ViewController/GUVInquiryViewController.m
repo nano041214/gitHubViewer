@@ -4,13 +4,23 @@
 #import "GUVAPIClient.h"
 #import <SVProgressHUD.h>
 
+static const CGFloat TextFieldMarginBottom = 20.0;
+
 @interface GUVInquiryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *viewWrapperScrollView;
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 
 @end
 
 @implementation GUVInquiryViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+}
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {
     self.alertLabel.hidden = YES;
@@ -38,6 +48,16 @@
         self.alertLabel.text = [NSString stringWithFormat:@"%@\n%@", error.localizedDescription, error.localizedRecoverySuggestion];
     } else {
         self.alertLabel.text = error.localizedDescription;
+    }
+}
+
+-(void)keyboardWillShow:(NSNotification*)note {
+    CGRect keyboardFrame = [[note.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat keyboardOffsetHeight = [[UIScreen mainScreen] bounds].size.height - keyboardFrame.size.height;
+    CGFloat textFieldBottomOffsetHeight = [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height + self.userNameTextField.frame.origin.y + self.userNameTextField.frame.size.height;
+    if (textFieldBottomOffsetHeight > keyboardOffsetHeight) {
+        CGFloat scrollScale = textFieldBottomOffsetHeight - keyboardOffsetHeight + TextFieldMarginBottom;
+        [self.viewWrapperScrollView setContentOffset:CGPointMake(0, scrollScale) animated:YES];
     }
 }
 
