@@ -57,8 +57,13 @@ static const CGFloat TextFieldMarginBottom = 20.0;
     CGFloat textFieldBottomOffsetHeight = [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height + self.userNameTextField.frame.origin.y + self.userNameTextField.frame.size.height;
     if (textFieldBottomOffsetHeight > keyboardOffsetHeight) {
         CGFloat scrollScale = textFieldBottomOffsetHeight - keyboardOffsetHeight + TextFieldMarginBottom;
-        [self.viewWrapperScrollView setContentOffset:CGPointMake(0, scrollScale) animated:YES];
+        [self.viewWrapperScrollView setContentOffset:CGPointMake(0.0, scrollScale) animated:YES];
     }
+}
+
+- (IBAction)didTapContentView:(id)sender {
+    [self.viewWrapperScrollView setContentOffset:CGPointMake(0.0, 0.0) animated:YES];
+    [self.view endEditing:YES];
 }
 
 @end
