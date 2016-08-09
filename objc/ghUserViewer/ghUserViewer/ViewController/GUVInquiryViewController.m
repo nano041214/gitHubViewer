@@ -51,10 +51,26 @@ static const CGFloat TextFieldMarginBottom = 20.0;
     }
 }
 
--(void)keyboardWillShow:(NSNotification*)note {
-    CGRect keyboardFrame = [[note.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat keyboardOffsetHeight = [[UIScreen mainScreen] bounds].size.height - keyboardFrame.size.height;
-    CGFloat textFieldBottomOffsetHeight = [[UIApplication sharedApplication] statusBarFrame].size.height + self.navigationController.navigationBar.frame.size.height + self.userNameTextField.frame.origin.y + self.userNameTextField.frame.size.height;
+-(void)keyboardWillShow:(NSNotification *)notification {
+    NSDictionary *info = notification.userInfo;
+    CGRect keyboardFrame = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat keyboardHeight = keyboardFrame.size.height;
+    CGRect deviceFrame = [[UIScreen mainScreen] bounds];
+    CGFloat deviceHeight = deviceFrame.size.height;
+
+    CGFloat keyboardOffsetHeight = deviceHeight - keyboardHeight;
+
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+    CGFloat statusBarHeight = statusBarFrame.size.height;
+    CGRect navigationBarFrame = self.navigationController.navigationBar.frame;
+    CGFloat navigationBarHeight = navigationBarFrame.size.height;
+
+    CGRect userNameTextFieldFrame = self.userNameTextField.frame;
+    CGFloat userNameTextFieldOriginY = userNameTextFieldFrame.origin.y;
+    CGFloat userNameTextFieldHeight = userNameTextFieldFrame.size.height;
+
+    CGFloat textFieldBottomOffsetHeight = statusBarHeight + navigationBarHeight + userNameTextFieldOriginY + userNameTextFieldHeight;
+
     if (textFieldBottomOffsetHeight > keyboardOffsetHeight) {
         CGFloat scrollScale = textFieldBottomOffsetHeight - keyboardOffsetHeight + TextFieldMarginBottom;
         [self.viewWrapperScrollView setContentOffset:CGPointMake(0.0, scrollScale) animated:YES];
