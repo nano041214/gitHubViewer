@@ -88,9 +88,9 @@ NS_ASSUME_NONNULL_END
     }
 }
 
-- (void)jumpToGithubRepository:(NSURL *)repositoryURL {
-    if ([[UIApplication sharedApplication] canOpenURL:repositoryURL]) {
-        [[UIApplication sharedApplication] openURL:repositoryURL];
+- (void)didTapLinkButton {
+    if ([[UIApplication sharedApplication] canOpenURL:self.repository.repositoryURL]) {
+        [[UIApplication sharedApplication] openURL:self.repository.repositoryURL];
     }
 }
 
@@ -118,7 +118,7 @@ NS_ASSUME_NONNULL_END
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     GUVGithubLinkView *linkView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([GUVGithubLinkView class])];
     linkView.repositoryURL = self.repository.repositoryURL;
-    linkView.opener = (id<GUVBrowserOpener>)self;
+    linkView.delegate = (id<GUVGithubLinkViewDelegate>)self;
     return linkView;
 }
 

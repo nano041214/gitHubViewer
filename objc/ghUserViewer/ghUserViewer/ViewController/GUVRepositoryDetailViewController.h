@@ -1,15 +1,10 @@
 #import <UIKit/UIKit.h>
 #import "GUVRepository.h"
+#import "GUVGithubLinkView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol GUVBrowserOpener <NSObject>
-
-- (void)jumpToGithubRepository:(NSURL *)repositoryURL;
-
-@end
-
-@interface GUVRepositoryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, GUVBrowserOpener>
+@interface GUVRepositoryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, GUVGithubLinkViewDelegate>
 
 @property (nonatomic) GUVRepository *repository;
 

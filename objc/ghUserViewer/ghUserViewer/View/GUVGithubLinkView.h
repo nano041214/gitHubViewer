@@ -1,12 +1,17 @@
 #import <UIKit/UIKit.h>
-#import "GUVRepositoryDetailViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol GUVGithubLinkViewDelegate <NSObject>
+
+- (void)didTapLinkButton;
+
+@end
 
 @interface GUVGithubLinkView : UITableViewHeaderFooterView
 
 @property (nonatomic) NSURL *repositoryURL;
-@property (nonatomic, weak) id<GUVBrowserOpener> opener;
+@property (nonatomic, weak) id<GUVGithubLinkViewDelegate> delegate;
 
 @end
 
