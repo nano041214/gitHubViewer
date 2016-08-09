@@ -35,78 +35,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ob7-ha-8HV">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cot-bg-avH" userLabel="Wrapper View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cot-bg-avH" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="djL-Nb-4ii">
-                                                <rect key="frame" x="210" y="60" width="180" height="180"/>
-                                            </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="githubUserName" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MZj-QU-wBT">
-                                                <rect key="frame" x="40" y="290" width="530" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="oyN-m9-epN"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="go"/>
-                                                <connections>
-                                                    <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Apq-69-IJw"/>
-                                                    <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="yoi-AO-jhn"/>
-                                                    <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Wzz-zm-6K2"/>
-                                                </connections>
-                                            </textField>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-xr-eEr" userLabel="alertLabel">
-                                                <rect key="frame" x="25" y="265" width="550" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="YAr-z6-1Qf"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <gestureRecognizers/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="djL-Nb-4ii">
+                                        <rect key="frame" x="210" y="90" width="180" height="180"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="githubUserName" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MZj-QU-wBT">
+                                        <rect key="frame" x="40" y="320" width="530" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="MZj-QU-wBT" secondAttribute="trailing" constant="30" id="6Vw-a7-aaX" userLabel="User Name Text Field.trailing = trailing + 30"/>
-                                            <constraint firstItem="MZj-QU-wBT" firstAttribute="leading" secondItem="cot-bg-avH" secondAttribute="leading" constant="40" id="FYs-tj-eP1"/>
-                                            <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="wn8-xr-eEr" secondAttribute="bottom" constant="4" id="PI1-fy-VY8" userLabel="alertLabel.bottom = githubUserName.top - 4"/>
-                                            <constraint firstAttribute="trailing" secondItem="wn8-xr-eEr" secondAttribute="trailing" constant="25" id="V0g-7M-AOs" userLabel="alertLabel.trailing = trailing + 25"/>
-                                            <constraint firstItem="wn8-xr-eEr" firstAttribute="leading" secondItem="cot-bg-avH" secondAttribute="leading" constant="25" id="Vv8-n0-0qo"/>
-                                            <constraint firstItem="djL-Nb-4ii" firstAttribute="centerX" secondItem="cot-bg-avH" secondAttribute="centerX" id="c25-sz-Pxu"/>
-                                            <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="50" id="cDt-Kh-HqI"/>
-                                            <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="top" constant="60" id="eQR-J9-IGc"/>
+                                            <constraint firstAttribute="height" constant="40" id="oyN-m9-epN"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="go"/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="So7-fs-a5R" appends="YES" id="rxp-id-ARL"/>
+                                            <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Apq-69-IJw"/>
+                                            <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="yoi-AO-jhn"/>
+                                            <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Wzz-zm-6K2"/>
                                         </connections>
-                                    </view>
+                                    </textField>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-xr-eEr" userLabel="alertLabel">
+                                        <rect key="frame" x="25" y="295" width="550" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="YAr-z6-1Qf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="cot-bg-avH" firstAttribute="height" secondItem="ob7-ha-8HV" secondAttribute="height" id="Dc7-6b-M7O"/>
-                                    <constraint firstItem="cot-bg-avH" firstAttribute="top" secondItem="ob7-ha-8HV" secondAttribute="top" id="FJf-uk-Esb"/>
-                                    <constraint firstAttribute="trailing" secondItem="cot-bg-avH" secondAttribute="trailing" id="H11-6U-aei" userLabel="Content View.trailing = trailing"/>
-                                    <constraint firstItem="cot-bg-avH" firstAttribute="centerX" secondItem="ob7-ha-8HV" secondAttribute="centerX" id="MqL-E7-5nb"/>
-                                    <constraint firstAttribute="bottom" secondItem="cot-bg-avH" secondAttribute="bottom" id="uLa-Xj-PQE" userLabel="Content View.bottom = bottom"/>
-                                    <constraint firstItem="cot-bg-avH" firstAttribute="leading" secondItem="ob7-ha-8HV" secondAttribute="leading" id="xXV-t2-9h7"/>
+                                    <constraint firstAttribute="trailing" secondItem="MZj-QU-wBT" secondAttribute="trailing" constant="30" id="6Vw-a7-aaX" userLabel="User Name Text Field.trailing = trailing + 30"/>
+                                    <constraint firstItem="MZj-QU-wBT" firstAttribute="leading" secondItem="cot-bg-avH" secondAttribute="leading" constant="40" id="FYs-tj-eP1"/>
+                                    <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="wn8-xr-eEr" secondAttribute="bottom" constant="4" id="PI1-fy-VY8" userLabel="alertLabel.bottom = githubUserName.top - 4"/>
+                                    <constraint firstAttribute="trailing" secondItem="wn8-xr-eEr" secondAttribute="trailing" constant="25" id="V0g-7M-AOs" userLabel="alertLabel.trailing = trailing + 25"/>
+                                    <constraint firstItem="wn8-xr-eEr" firstAttribute="leading" secondItem="cot-bg-avH" secondAttribute="leading" constant="25" id="Vv8-n0-0qo"/>
+                                    <constraint firstItem="djL-Nb-4ii" firstAttribute="centerX" secondItem="cot-bg-avH" secondAttribute="centerX" id="c25-sz-Pxu"/>
+                                    <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="50" id="cDt-Kh-HqI"/>
+                                    <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="top" constant="90" id="eQR-J9-IGc" userLabel="octcat.top = top + 90"/>
                                 </constraints>
-                            </scrollView>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="So7-fs-a5R" appends="YES" id="rxp-id-ARL"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ob7-ha-8HV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9mh-OC-KWD" userLabel="View Wrapper Scroll View.top = top"/>
-                            <constraint firstAttribute="trailing" secondItem="ob7-ha-8HV" secondAttribute="trailing" id="MWJ-vG-hWf" userLabel="View Wrapper Scroll View.trailing = trailing"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ob7-ha-8HV" secondAttribute="bottom" id="YiB-4J-fTO" userLabel="View Wrapper Scroll View.bottom = bottom"/>
-                            <constraint firstItem="ob7-ha-8HV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gyF-yt-heY"/>
+                            <constraint firstAttribute="trailing" secondItem="cot-bg-avH" secondAttribute="trailing" id="MmI-SZ-qEx"/>
+                            <constraint firstAttribute="height" secondItem="cot-bg-avH" secondAttribute="height" id="RdY-1O-ctH"/>
+                            <constraint firstItem="cot-bg-avH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WCw-Cs-gDX"/>
+                            <constraint firstAttribute="bottom" secondItem="cot-bg-avH" secondAttribute="bottom" id="v9E-7F-ZE9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lLc-q8-org"/>
                     <connections>
                         <outlet property="alertLabel" destination="wn8-xr-eEr" id="5TZ-WP-YbC"/>
                         <outlet property="userNameTextField" destination="MZj-QU-wBT" id="Zcv-QK-OLP"/>
-                        <outlet property="viewWrapperScrollView" destination="ob7-ha-8HV" id="ctY-eo-Epv"/>
+                        <outlet property="wrapperViewMarginBottomConstraint" destination="v9E-7F-ZE9" id="SP0-wj-JPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

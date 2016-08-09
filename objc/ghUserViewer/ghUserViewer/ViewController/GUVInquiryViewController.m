@@ -9,8 +9,8 @@ static const CGFloat TextFieldMarginBottom = 20.0;
 @interface GUVInquiryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
-@property (weak, nonatomic) IBOutlet UIScrollView *viewWrapperScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *wrapperViewMarginBottomConstraint;
 
 @end
 
@@ -73,13 +73,23 @@ static const CGFloat TextFieldMarginBottom = 20.0;
 
     if (textFieldBottomOffsetHeight > keyboardOffsetHeight) {
         CGFloat scrollScale = textFieldBottomOffsetHeight - keyboardOffsetHeight + TextFieldMarginBottom;
-        [self.viewWrapperScrollView setContentOffset:CGPointMake(0.0, scrollScale) animated:YES];
+        [self.view layoutIfNeeded];
+        self.wrapperViewMarginBottomConstraint.constant = scrollScale;
+        [UIView animateWithDuration:0
+                         animations:^{
+                             [self.view layoutIfNeeded];
+        }];
     }
 }
 
 - (IBAction)didTapContentView:(id)sender {
-    [self.viewWrapperScrollView setContentOffset:CGPointMake(0.0, 0.0) animated:YES];
     [self.view endEditing:YES];
+    [self.view layoutIfNeeded];
+    self.wrapperViewMarginBottomConstraint.constant = 0.0;
+    [UIView animateWithDuration:0.37
+                     animations:^{
+                         [self.view layoutIfNeeded];
+    }];
 }
 
 @end
