@@ -91,8 +91,8 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
 }
 
 + (NSError *)noSuchUserError {
-    NSDictionary *errorUserInfo = @{NSLocalizedDescriptionKey: @"No such user here.",
-                                    NSLocalizedRecoverySuggestionErrorKey: @"Please enter correct user name"};
+    NSDictionary *errorUserInfo = @{NSLocalizedDescriptionKey: @"NoSuchUserHere",
+                                    NSLocalizedRecoverySuggestionErrorKey: @"PleaseEnterCorrectUserName"};
     return [[NSError alloc] initWithDomain:GUVAPIClientErrorDomain code:GUVAPIClientErrorCodeNotFound userInfo:errorUserInfo];
 }
 

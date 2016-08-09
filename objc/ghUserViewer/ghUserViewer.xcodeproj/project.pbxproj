@@ -20,6 +20,7 @@
 		276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276C54001D2B9284007C9DB2 /* Assets.xcassets */; };
 		276C540F1D2B9284007C9DB2 /* ghUserViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C540E1D2B9284007C9DB2 /* ghUserViewerTests.m */; };
 		276C541A1D2B9284007C9DB2 /* ghUserViewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 276C54191D2B9284007C9DB2 /* ghUserViewerUITests.m */; };
+		27758F7B1D59BF4C00EFDB1C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27758F7D1D59BF4C00EFDB1C /* Localizable.strings */; };
 		277BD15C1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 277BD15B1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m */; };
 		279AECA31D34DC3F004DD5AB /* GUVRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 279AECA21D34DC3F004DD5AB /* GUVRepository.m */; };
 		279DD0A71D41FF50005981B5 /* GUVUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 279DD0A61D41FF50005981B5 /* GUVUserProfileViewController.m */; };
@@ -79,6 +80,9 @@
 		276C54151D2B9284007C9DB2 /* ghUserViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ghUserViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276C54191D2B9284007C9DB2 /* ghUserViewerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ghUserViewerUITests.m; sourceTree = "<group>"; };
 		276C541B1D2B9284007C9DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27758F7A1D59BF3E00EFDB1C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		27758F7C1D59BF4C00EFDB1C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		27758F7E1D59BF5700EFDB1C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		277BD15A1D37821A006DBCB8 /* GUVRepositoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVRepositoryTableViewCell.h; sourceTree = "<group>"; };
 		277BD15B1D37821A006DBCB8 /* GUVRepositoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUVRepositoryTableViewCell.m; sourceTree = "<group>"; };
 		279AECA11D34DC3F004DD5AB /* GUVRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUVRepository.h; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 		276C53F41D2B9284007C9DB2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27758F7D1D59BF4C00EFDB1C /* Localizable.strings */,
 				276C53F51D2B9284007C9DB2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -382,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276C54011D2B9284007C9DB2 /* Assets.xcassets in Resources */,
+				27758F7B1D59BF4C00EFDB1C /* Localizable.strings in Resources */,
 				276C53FF1D2B9284007C9DB2 /* Main.storyboard in Resources */,
 				272E1FAE1D4AF461000BC340 /* GUVGithubLinkView.xib in Resources */,
 			);
@@ -586,8 +592,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				276C53FE1D2B9284007C9DB2 /* Base */,
+				27758F7A1D59BF3E00EFDB1C /* ja */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27758F7D1D59BF4C00EFDB1C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27758F7C1D59BF4C00EFDB1C /* ja */,
+				27758F7E1D59BF5700EFDB1C /* en */,
+			);
+			name = Localizable.strings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
