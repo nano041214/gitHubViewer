@@ -3,7 +3,7 @@
 @implementation GUVGithubLinkView
 
 - (IBAction)didTapLinkButton:(id)sender {
-    [self.delegate didTapLinkButton];
+    [self.delegate didTapLinkButtonOnLinkView:self];
 }
 
 @end

@@ -1,10 +1,12 @@
 #import <UIKit/UIKit.h>
 
+@class GUVGithubLinkView;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol GUVGithubLinkViewDelegate <NSObject>
 
-- (void)didTapLinkButton;
+- (void)didTapLinkButtonOnLinkView:(GUVGithubLinkView *)linkView;
 
 @end
 

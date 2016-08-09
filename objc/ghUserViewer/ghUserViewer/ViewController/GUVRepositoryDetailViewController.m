@@ -88,7 +88,7 @@ NS_ASSUME_NONNULL_END
     }
 }
 
-- (void)didTapLinkButton {
+- (void)didTapLinkButtonOnLinkView:(GUVGithubLinkView *)linkView {
     if ([[UIApplication sharedApplication] canOpenURL:self.repository.repositoryURL]) {
         [[UIApplication sharedApplication] openURL:self.repository.repositoryURL];
     }
