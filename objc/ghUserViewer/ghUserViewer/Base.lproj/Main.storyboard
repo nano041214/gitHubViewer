@@ -49,6 +49,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="go"/>
                                         <connections>
+                                            <action selector="didToutchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Lqj-Sr-UEy"/>
                                             <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Apq-69-IJw"/>
                                             <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="yoi-AO-jhn"/>
                                             <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Wzz-zm-6K2"/>

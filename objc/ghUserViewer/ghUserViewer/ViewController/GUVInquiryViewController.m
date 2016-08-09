@@ -4,8 +4,6 @@
 #import "GUVAPIClient.h"
 #import <SVProgressHUD.h>
 
-static const CGFloat TextFieldMarginBottom = 20.0;
-
 @interface GUVInquiryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
@@ -20,6 +18,7 @@ static const CGFloat TextFieldMarginBottom = 20.0;
     [super viewDidLoad];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {
@@ -51,7 +50,11 @@ static const CGFloat TextFieldMarginBottom = 20.0;
     }
 }
 
--(void)keyboardWillShow:(NSNotification *)notification {
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
     NSDictionary *info = notification.userInfo;
     CGRect keyboardFrame = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat keyboardHeight = keyboardFrame.size.height;
@@ -72,7 +75,7 @@ static const CGFloat TextFieldMarginBottom = 20.0;
     CGFloat textFieldBottomOffsetHeight = statusBarHeight + navigationBarHeight + userNameTextFieldOriginY + userNameTextFieldHeight;
 
     if (textFieldBottomOffsetHeight > keyboardOffsetHeight) {
-        CGFloat scrollScale = textFieldBottomOffsetHeight - keyboardOffsetHeight + TextFieldMarginBottom;
+        CGFloat scrollScale = textFieldBottomOffsetHeight - keyboardOffsetHeight;
         [self.view layoutIfNeeded];
         self.wrapperViewMarginBottomConstraint.constant = scrollScale;
         [UIView animateWithDuration:0
@@ -82,14 +85,21 @@ static const CGFloat TextFieldMarginBottom = 20.0;
     }
 }
 
-- (IBAction)didTapContentView:(id)sender {
-    [self.view endEditing:YES];
+- (void)keyboardWillHide:(NSNotification *)notification {
     [self.view layoutIfNeeded];
     self.wrapperViewMarginBottomConstraint.constant = 0.0;
     [UIView animateWithDuration:0.37
                      animations:^{
                          [self.view layoutIfNeeded];
-    }];
+                     }];
+}
+
+- (IBAction)didTapContentView:(id)sender {
+    [self.view endEditing:YES];
+}
+
+- (IBAction)didToutchUpOutside:(id)sender {
+    [self.view endEditing:YES];
 }
 
 @end
