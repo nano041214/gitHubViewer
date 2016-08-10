@@ -57,28 +57,27 @@
 - (void)keyboardWillShow:(NSNotification *)notification {
     NSDictionary *info = notification.userInfo;
     CGRect keyboardFrame = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat keyboardHeight = keyboardFrame.size.height;
+    CGFloat keyboardCGRectGetHeight = keyboardFrame.size.height;
     CGRect deviceFrame = [[UIScreen mainScreen] bounds];
-    CGFloat deviceHeight = deviceFrame.size.height;
+    CGFloat deviceCGRectGetHeight = deviceFrame.size.height;
 
-    CGFloat keyboardOffsetHeight = deviceHeight - keyboardHeight;
+    CGFloat keyboardOffsetHeight = deviceCGRectGetHeight - keyboardCGRectGetHeight;
 
     CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-    CGFloat statusBarHeight = statusBarFrame.size.height;
+    CGFloat statusBarCGRectGetHeight = statusBarFrame.size.height;
     CGRect navigationBarFrame = self.navigationController.navigationBar.frame;
-    CGFloat navigationBarHeight = navigationBarFrame.size.height;
+    CGFloat navigationBarCGRectGetHeight = navigationBarFrame.size.height;
 
     CGRect userNameTextFieldFrame = self.userNameTextField.frame;
-    CGFloat userNameTextFieldOriginY = userNameTextFieldFrame.origin.y;
-    CGFloat userNameTextFieldHeight = userNameTextFieldFrame.size.height;
+    CGFloat userNameTextFieldCGRectGetY = userNameTextFieldFrame.origin.y;
+    CGFloat userNameTextFieldCGRectGetHeight = userNameTextFieldFrame.size.height;
 
-    CGFloat textFieldBottomOffsetHeight = statusBarHeight + navigationBarHeight + userNameTextFieldOriginY + userNameTextFieldHeight;
+    CGFloat textFieldBottomOffsetHeight = statusBarCGRectGetHeight + navigationBarCGRectGetHeight + userNameTextFieldCGRectGetY + userNameTextFieldCGRectGetHeight;
 
     if (textFieldBottomOffsetHeight > keyboardOffsetHeight) {
-        CGFloat scrollScale = textFieldBottomOffsetHeight - keyboardOffsetHeight;
-        [self.view layoutIfNeeded];
-        self.wrapperViewMarginBottomConstraint.constant = scrollScale;
-        [UIView animateWithDuration:0
+        CGFloat scrollOffset = textFieldBottomOffsetHeight - keyboardOffsetHeight;
+        self.wrapperViewMarginBottomConstraint.constant = scrollOffset;
+        [UIView animateWithDuration:0.0
                          animations:^{
                              [self.view layoutIfNeeded];
         }];
@@ -86,7 +85,6 @@
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-    [self.view layoutIfNeeded];
     self.wrapperViewMarginBottomConstraint.constant = 0.0;
     [UIView animateWithDuration:0.37
                      animations:^{
@@ -98,7 +96,7 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)didToutchUpOutside:(id)sender {
+- (IBAction)didTouchTextFieldCancel:(UITextField *)sender {
     [self.view endEditing:YES];
 }
 

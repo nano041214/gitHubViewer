@@ -39,24 +39,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="djL-Nb-4ii">
-                                        <rect key="frame" x="210" y="90" width="180" height="180"/>
+                                        <rect key="frame" x="210" y="110" width="180" height="180"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="githubUserName" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MZj-QU-wBT">
-                                        <rect key="frame" x="40" y="320" width="530" height="40"/>
+                                        <rect key="frame" x="40" y="340" width="530" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="oyN-m9-epN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="go"/>
                                         <connections>
-                                            <action selector="didToutchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Lqj-Sr-UEy"/>
+                                            <action selector="didTouchTextFieldCancel:" destination="BYZ-38-t0r" eventType="touchCancel" id="Shw-7v-EsU"/>
                                             <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Apq-69-IJw"/>
                                             <action selector="textFieldValueDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="yoi-AO-jhn"/>
                                             <action selector="userNameDidEdit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Wzz-zm-6K2"/>
                                         </connections>
                                     </textField>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wn8-xr-eEr" userLabel="alertLabel">
-                                        <rect key="frame" x="25" y="295" width="550" height="21"/>
+                                        <rect key="frame" x="25" y="315" width="550" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="YAr-z6-1Qf"/>
                                         </constraints>
@@ -75,7 +75,7 @@
                                     <constraint firstItem="wn8-xr-eEr" firstAttribute="leading" secondItem="cot-bg-avH" secondAttribute="leading" constant="25" id="Vv8-n0-0qo"/>
                                     <constraint firstItem="djL-Nb-4ii" firstAttribute="centerX" secondItem="cot-bg-avH" secondAttribute="centerX" id="c25-sz-Pxu"/>
                                     <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="50" id="cDt-Kh-HqI"/>
-                                    <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="top" constant="90" id="eQR-J9-IGc" userLabel="octcat.top = top + 90"/>
+                                    <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="top" constant="110" id="eQR-J9-IGc" userLabel="octcat.top = top + 90"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="So7-fs-a5R" appends="YES" id="rxp-id-ARL"/>
