@@ -78,6 +78,8 @@
         CGFloat scrollOffset = textFieldBottomOffsetHeight - keyboardOffsetHeight;
         self.wrapperViewMarginBottomConstraint.constant = scrollOffset;
         NSTimeInterval duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+
+        // Wondering why it works with any duration value.
         [UIView animateWithDuration:duration
                          animations:^{
                              [self.view layoutIfNeeded];
