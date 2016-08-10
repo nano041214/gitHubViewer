@@ -45,13 +45,14 @@ NS_ASSUME_NONNULL_END
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserProfileCell" forIndexPath:indexPath];
-    NSInteger contentIndex = indexPath.row;
-    cell.textLabel.text = [self titleForProfileTableContent:contentIndex];
+    cell.textLabel.text = [self titleForIndexPath:indexPath];
+    cell.detailTextLabel.text = [self descriptionForIndexPath:indexPath];
     return cell;
 }
 
-- (NSString *)titleForProfileTableContent:(GUVUserProfileTableContent)profileTableContent{
-    switch (profileTableContent) {
+- (NSString *)titleForIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    switch (row) {
         case GUVUserProfileTableContentEmail: {
             return @"Email";
         }
@@ -64,6 +65,34 @@ NS_ASSUME_NONNULL_END
         case GUVUserProfileTableContentJoinedAt: {
             return @"Joined at";
         }
+        default:
+            return @"Additional information";
+    }
+}
+
+- (NSString *)descriptionForIndexPath:(NSIndexPath *)indexPath {
+    NSInteger row = indexPath.row;
+    switch (row) {
+        case GUVUserProfileTableContentEmail:
+            if (self.user.mailAddress != nil) {
+                return self.user.mailAddress;
+            } else {
+                return @"private";
+            }
+        case GUVUserProfileTableContentBlogURL:
+            if (self.user.blogURL != nil) {
+                return [NSString stringWithFormat:@"%@", self.user.blogURL];
+            } else {
+                return @"-";
+            }
+        case GUVUserProfileTableContentLocation:
+            if (self.user.location != nil) {
+                return self.user.location;
+            } else {
+                return @"-";
+            }
+        case GUVUserProfileTableContentJoinedAt:
+            return [NSString stringWithFormat:@"%@", self.user.joinedDate];
         default:
             return @"Additional information";
     }
