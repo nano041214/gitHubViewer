@@ -77,7 +77,8 @@
     if (textFieldBottomOffsetHeight > keyboardOffsetHeight) {
         CGFloat scrollOffset = textFieldBottomOffsetHeight - keyboardOffsetHeight;
         self.wrapperViewMarginBottomConstraint.constant = scrollOffset;
-        [UIView animateWithDuration:0.0
+        NSTimeInterval duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+        [UIView animateWithDuration:duration
                          animations:^{
                              [self.view layoutIfNeeded];
         }];
@@ -86,7 +87,8 @@
 
 - (void)keyboardWillHide:(NSNotification *)notification {
     self.wrapperViewMarginBottomConstraint.constant = 0.0;
-    [UIView animateWithDuration:0.37
+    NSTimeInterval duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    [UIView animateWithDuration:duration
                      animations:^{
                          [self.view layoutIfNeeded];
                      }];
