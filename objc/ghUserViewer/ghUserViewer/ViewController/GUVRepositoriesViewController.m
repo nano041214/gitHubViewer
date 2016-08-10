@@ -11,8 +11,8 @@
 
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *massageWrapperView;
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UIView *errorMassageWrapperView;
+@property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
 @property (nonatomic, weak) id<GUVUserProvider> provider;
 @property (nonatomic, nonnull) NSArray<GUVRepository *> *repositories;
 
@@ -27,29 +27,27 @@
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
     [client requestRepositoriesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
-        if (error != nil) {
-            [self showMessageView];
-            self.messageLabel.text = error.localizedDescription;
+        if (repositories.count != 0) {
+            [self showTableView];
+            self.repositories = repositories;
+            [self.tableView reloadData];
         } else {
-            if (repositories.count != 0) {
-                [self showTableView];
-                self.repositories = repositories;
-                [self.tableView reloadData];
-            } else {
-                [self showMessageView];
-            }
+            [self showErrorMessageViewWithMessage:nil];
         }
     }];
 }
 
 - (void)showTableView {
     self.tableView.hidden = NO;
-    self.massageWrapperView.hidden = YES;
+    self.errorMassageWrapperView.hidden = YES;
 }
 
-- (void)showMessageView {
+- (void)showErrorMessageViewWithMessage:(NSError *_Nullable)error {
+    if (error != nil) {
+        self.errorMessageLabel.text = error.localizedDescription;
+    }
     self.tableView.hidden = YES;
-    self.massageWrapperView.hidden = NO;
+    self.errorMassageWrapperView.hidden = NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -313,7 +313,7 @@
                                     <outlet property="delegate" destination="vlE-9V-QRU" id="KW6-KV-ufl"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wp3-5v-Yjl" userLabel="Message Wrapper View">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wp3-5v-Yjl" userLabel="Error Message Wrapper View">
                                 <rect key="frame" x="0.0" y="160" width="600" height="391"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jt8-xB-e9W" userLabel="Border top">
@@ -358,9 +358,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Activities" id="aJR-vT-j1W"/>
                     <connections>
-                        <outlet property="messageLabel" destination="WVt-uf-5fm" id="Dvc-4G-skC"/>
-                        <outlet property="messageWrapperView" destination="Wp3-5v-Yjl" id="8Qe-hx-P3v"/>
-                        <outlet property="tableView" destination="9t2-4I-AgG" id="PyE-b0-xRV"/>
+                        <outlet property="errorMassageWrapperView" destination="Wp3-5v-Yjl" id="UKk-Py-TnG"/>
+                        <outlet property="errorMessageLabel" destination="WVt-uf-5fm" id="7Pa-4C-R0c"/>
+                        <outlet property="tableView" destination="9t2-4I-AgG" id="kDk-K2-lHG"/>
                         <outlet property="userInfoHeaderView" destination="U0G-Wq-gDY" id="MkX-zO-njh"/>
                     </connections>
                 </viewController>
@@ -723,7 +723,7 @@ aaaaaaaaaa</string>
                                     <outlet property="delegate" destination="DA7-Vp-AY9" id="jSb-k8-Pop"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-an-l2o" userLabel="Message Wrapper View">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-an-l2o" userLabel="Error Message Wrapper View">
                                 <rect key="frame" x="0.0" y="160" width="600" height="391"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4m-Wq-vMR" userLabel="Border top">
@@ -769,8 +769,8 @@ aaaaaaaaaa</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="7JV-n6-x5K" userLabel="Repositories"/>
                     <connections>
-                        <outlet property="massageWrapperView" destination="1uT-an-l2o" id="K8X-T5-00H"/>
-                        <outlet property="messageLabel" destination="3vI-GQ-EZa" id="SXz-O7-9tC"/>
+                        <outlet property="errorMassageWrapperView" destination="1uT-an-l2o" id="2Hf-uF-xoc"/>
+                        <outlet property="errorMessageLabel" destination="3vI-GQ-EZa" id="CuO-pd-sfU"/>
                         <outlet property="tableView" destination="e4P-c8-7Zu" id="4fM-xy-pLx"/>
                         <outlet property="userInfoHeaderView" destination="mYP-a3-bBR" id="J1z-Jv-Zki"/>
                     </connections>
@@ -1023,6 +1023,6 @@ aaaaaaaaaa</string>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fao-7s-XGa"/>
+        <segue reference="nsT-cI-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>

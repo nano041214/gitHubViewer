@@ -12,8 +12,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray<GUVActivity *> *activities;
 @property (nonatomic, weak) id<GUVUserProvider> provider;
-@property (weak, nonatomic) IBOutlet UIView *messageWrapperView;
-@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UIView *errorMassageWrapperView;
+@property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
 
 @end
 
@@ -26,29 +26,27 @@
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
     [client requestActivitiesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
-        if (error != nil) {
-            [self showMessageView];
-            self.messageLabel.text = error.localizedDescription;
+        if (activities.count != 0) {
+            [self showTableView];
+            self.activities = activities;
+            [self.tableView reloadData];
         } else {
-            if (activities.count != 0) {
-                [self showTableView];
-                self.activities = activities;
-                [self.tableView reloadData];
-            } else {
-                [self showMessageView];
-            }
+            [self showErrorMessageViewWithMessage:error];
         }
     }];
 }
 
 - (void)showTableView {
     self.tableView.hidden = NO;
-    self.messageWrapperView.hidden = YES;
+    self.errorMassageWrapperView.hidden = YES;
 }
 
-- (void)showMessageView {
+- (void)showErrorMessageViewWithMessage:(NSError *_Nullable)error {
+    if (error != nil) {
+        self.errorMessageLabel.text = error.localizedDescription;
+    }
     self.tableView.hidden = YES;
-    self.messageWrapperView.hidden = NO;
+    self.errorMassageWrapperView.hidden = NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
