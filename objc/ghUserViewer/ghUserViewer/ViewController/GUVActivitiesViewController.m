@@ -12,30 +12,43 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray<GUVActivity *> *activities;
 @property (nonatomic, weak) id<GUVUserProvider> provider;
+@property (weak, nonatomic) IBOutlet UIView *messageWrapperView;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @end
 
 @implementation GUVActivitiesViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-    GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestActivitiesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
-        if (error != nil) {
-            // TODO: Make error hundling
-            NSLog(@"%@", error);
-        } else {
-            self.activities = activities;
-            [self.tableView reloadData];
-        }
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.provider = (id<GUVUserProvider>)self.parentViewController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
+
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestActivitiesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
+        if (error != nil) {
+            [self showMessageView];
+            self.messageLabel.text = error.localizedDescription;
+        } else {
+            if (activities.count != 0) {
+                [self showTableView];
+                self.activities = activities;
+                [self.tableView reloadData];
+            } else {
+                [self showMessageView];
+            }
+        }
+    }];
+}
+
+- (void)showTableView {
+    self.tableView.hidden = NO;
+    self.messageWrapperView.hidden = YES;
+}
+
+- (void)showMessageView {
+    self.tableView.hidden = YES;
+    self.messageWrapperView.hidden = NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
