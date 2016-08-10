@@ -11,6 +11,8 @@
 
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *showMessageView;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (nonatomic, weak) id<GUVUserProvider> provider;
 @property (nonatomic, nonnull) NSArray<GUVRepository *> *repositories;
 
@@ -22,20 +24,32 @@
     [super viewDidLoad];
     self.provider = (id<GUVUserProvider>)self.parentViewController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
-}
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     GUVAPIClient *client = [GUVAPIClient sharedClient];
     [client requestRepositoriesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
         if (error != nil) {
-            // TODO: Make error hundling
-            NSLog(@"%@", error);
+            [self displayMessageView];
+            self.messageLabel.text = error.localizedDescription;
         } else {
-            self.repositories = repositories;
-            [self.tableView reloadData];
+            if (repositories.count != 0) {
+                [self displayTableView];
+                self.repositories = repositories;
+                [self.tableView reloadData];
+            } else {
+                [self displayMessageView];
+            }
         }
     }];
+}
+
+- (void)displayTableView {
+    self.tableView.hidden = NO;
+    self.showMessageView.hidden = YES;
+}
+
+- (void)displayMessageView {
+    self.tableView.hidden = YES;
+    self.showMessageView.hidden = NO;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

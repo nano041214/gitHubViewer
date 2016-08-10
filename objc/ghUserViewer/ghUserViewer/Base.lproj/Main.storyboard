@@ -467,7 +467,7 @@ aaaaaaaaaa</string>
         <!--Repositories-->
         <scene sceneID="3jx-4h-FPH">
             <objects>
-                <viewController id="DA7-Vp-AY9" userLabel="Repositories" customClass="GUVRepositoriesViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="DA7-Vp-AY9" userLabel="Repositories" customClass="GUVRepositoriesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MLO-Mt-vwM"/>
                         <viewControllerLayoutGuide type="bottom" id="qfF-BT-C33"/>
@@ -690,7 +690,7 @@ aaaaaaaaaa</string>
                                     <outlet property="delegate" destination="DA7-Vp-AY9" id="jSb-k8-Pop"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-an-l2o">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-an-l2o">
                                 <rect key="frame" x="0.0" y="160" width="600" height="391"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4m-Wq-vMR">
@@ -736,6 +736,8 @@ aaaaaaaaaa</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="7JV-n6-x5K" userLabel="Repositories"/>
                     <connections>
+                        <outlet property="messageLabel" destination="3vI-GQ-EZa" id="SXz-O7-9tC"/>
+                        <outlet property="showMessageView" destination="1uT-an-l2o" id="6td-Ze-3vf"/>
                         <outlet property="tableView" destination="e4P-c8-7Zu" id="4fM-xy-pLx"/>
                         <outlet property="userInfoHeaderView" destination="mYP-a3-bBR" id="J1z-Jv-Zki"/>
                     </connections>
