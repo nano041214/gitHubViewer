@@ -45,12 +45,12 @@ NS_ASSUME_NONNULL_END
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserProfileCell" forIndexPath:indexPath];
-    cell.textLabel.text = [self titleForIndexPath:indexPath];
-    cell.detailTextLabel.text = [self descriptionForIndexPath:indexPath];
+    cell.textLabel.text = [self titleStringAtIndexPath:indexPath];
+    cell.detailTextLabel.text = [self descriptionStringAtIndexPath:indexPath];
     return cell;
 }
 
-- (NSString *)titleForIndexPath:(NSIndexPath *)indexPath {
+- (NSString *)titleStringAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
     switch (row) {
         case GUVUserProfileTableContentEmail: {
@@ -70,7 +70,7 @@ NS_ASSUME_NONNULL_END
     }
 }
 
-- (NSString *)descriptionForIndexPath:(NSIndexPath *)indexPath {
+- (NSString *)descriptionStringAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
     switch (row) {
         case GUVUserProfileTableContentEmail:
