@@ -7,10 +7,19 @@
 @interface GUVInquiryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *wrapperViewMarginBottomConstraint;
 
 @end
 
 @implementation GUVInquiryViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {
     self.alertLabel.hidden = YES;
@@ -39,6 +48,60 @@
     } else {
         self.alertLabel.text = error.localizedDescription;
     }
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    NSDictionary *info = notification.userInfo;
+    CGRect keyboardFrame = [info[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat keyboardCGRectGetHeight = keyboardFrame.size.height;
+    CGRect deviceFrame = [[UIScreen mainScreen] bounds];
+    CGFloat deviceCGRectGetHeight = deviceFrame.size.height;
+
+    CGFloat keyboardOffsetHeight = deviceCGRectGetHeight - keyboardCGRectGetHeight;
+
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+    CGFloat statusBarCGRectGetHeight = statusBarFrame.size.height;
+    CGRect navigationBarFrame = self.navigationController.navigationBar.frame;
+    CGFloat navigationBarCGRectGetHeight = navigationBarFrame.size.height;
+
+    CGRect userNameTextFieldFrame = self.userNameTextField.frame;
+    CGFloat userNameTextFieldCGRectGetY = userNameTextFieldFrame.origin.y;
+    CGFloat userNameTextFieldCGRectGetHeight = userNameTextFieldFrame.size.height;
+
+    CGFloat textFieldBottomOffsetHeight = statusBarCGRectGetHeight + navigationBarCGRectGetHeight + userNameTextFieldCGRectGetY + userNameTextFieldCGRectGetHeight;
+
+    if (textFieldBottomOffsetHeight > keyboardOffsetHeight) {
+        CGFloat scrollOffset = textFieldBottomOffsetHeight - keyboardOffsetHeight;
+        self.wrapperViewMarginBottomConstraint.constant = scrollOffset;
+        NSTimeInterval duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+
+        // Wondering why it works with any duration value.
+        [UIView animateWithDuration:duration
+                         animations:^{
+                             [self.view layoutIfNeeded];
+        }];
+    }
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    self.wrapperViewMarginBottomConstraint.constant = 0.0;
+    NSTimeInterval duration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    [UIView animateWithDuration:duration
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }];
+}
+
+- (IBAction)didTapContentView:(id)sender {
+    [self.view endEditing:YES];
+}
+
+- (IBAction)didTouchTextFieldCancel:(UITextField *)sender {
+    [self.view endEditing:YES];
 }
 
 @end
