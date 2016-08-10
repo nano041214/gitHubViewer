@@ -35,9 +35,7 @@
 - (void)showAlertLabelwithError:(NSError *)error {
     self.alertLabel.hidden = NO;
     if ( error.localizedRecoverySuggestion != nil ) {
-        NSString *localizedDescription = NSLocalizedString(error.localizedDescription, nil);
-        NSString *localizedRecoverySuggestion = NSLocalizedString(error.localizedRecoverySuggestion, nil);
-        self.alertLabel.text = [NSString stringWithFormat:@"%@\n%@", localizedDescription, localizedRecoverySuggestion];
+        self.alertLabel.text = [NSString stringWithFormat:@"%@\n%@", error.localizedDescription, error.localizedRecoverySuggestion];
     } else {
         self.alertLabel.text = error.localizedDescription;
     }
