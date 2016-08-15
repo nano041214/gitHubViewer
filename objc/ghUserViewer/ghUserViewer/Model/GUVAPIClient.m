@@ -33,7 +33,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     return client;
 }
 
-- (void)requestUserInfo:(NSString *)userName completionBlock:(nonnull GUVGetUserCompleteBlock)completion {
+- (void)requestUserInfo:(NSString *)userName completionBlock:(GUVGetUserCompleteBlock)completion {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", safeUserName];
 
@@ -56,7 +56,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     }];
 }
 
-- (void)requestRepositoriesInfo:(NSString *)userName completionBlock:(nonnull GUVGetRepositoryCompletionBlock)completion {
+- (void)requestRepositoriesInfo:(NSString *)userName completionBlock:(GUVGetRepositoryCompletionBlock)completion {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@/repos", safeUserName];
 
@@ -73,7 +73,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     }];
 }
 
-- (void)requestActivitiesInfo:(NSString *)userName completionBlock:(nonnull GUVGetActivitiesCompletionBlock)completion {
+- (void)requestActivitiesInfo:(NSString *)userName completionBlock:(GUVGetActivitiesCompletionBlock)completion {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@/events", safeUserName];
 

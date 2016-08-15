@@ -18,9 +18,9 @@ typedef void (^GUVGetActivitiesCompletionBlock)(NSArray<GUVActivity *> *_Nullabl
 @interface GUVAPIClient : NSObject
 
 + (GUVAPIClient *)sharedClient;
-- (void)requestUserInfo:(NSString *)userName completionBlock:(nonnull GUVGetUserCompleteBlock)completion;
-- (void)requestRepositoriesInfo:(NSString *)userName completionBlock:(nonnull GUVGetRepositoryCompletionBlock)completion;
-- (void)requestActivitiesInfo:(NSString *)userName completionBlock:(nonnull GUVGetActivitiesCompletionBlock)completion;
+- (void)requestUserInfo:(NSString *)userName completionBlock:(GUVGetUserCompleteBlock)completion;
+- (void)requestRepositoriesInfo:(NSString *)userName completionBlock:(GUVGetRepositoryCompletionBlock)completion;
+- (void)requestActivitiesInfo:(NSString *)userName completionBlock:(GUVGetActivitiesCompletionBlock)completion;
 
 @end
 
