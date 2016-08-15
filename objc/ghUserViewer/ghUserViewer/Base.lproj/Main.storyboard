@@ -48,11 +48,22 @@
                                         <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V6-Kg-XVJ">
+                                        <rect key="frame" x="553" y="18" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="1WY-lQ-jL8"/>
+                                            <constraint firstAttribute="height" constant="44" id="WrU-Tg-mlZ"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="didTapCloseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hyD-uu-bK1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="MZj-QU-wBT" secondAttribute="trailing" constant="30" id="6Vw-a7-aaX" userLabel="User Name Text Field.trailing = trailing + 30"/>
+                                    <constraint firstAttribute="trailing" secondItem="7V6-Kg-XVJ" secondAttribute="trailing" constant="3" id="9Pm-Ke-ZaW"/>
                                     <constraint firstItem="MZj-QU-wBT" firstAttribute="leading" secondItem="cot-bg-avH" secondAttribute="leading" constant="40" id="FYs-tj-eP1"/>
                                     <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="wn8-xr-eEr" secondAttribute="bottom" constant="4" id="PI1-fy-VY8" userLabel="alertLabel.bottom = githubUserName.top - 4"/>
                                     <constraint firstAttribute="trailing" secondItem="wn8-xr-eEr" secondAttribute="trailing" constant="25" id="V0g-7M-AOs" userLabel="alertLabel.trailing = trailing + 25"/>
@@ -60,6 +71,7 @@
                                     <constraint firstItem="djL-Nb-4ii" firstAttribute="centerX" secondItem="cot-bg-avH" secondAttribute="centerX" id="c25-sz-Pxu"/>
                                     <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="50" id="cDt-Kh-HqI"/>
                                     <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="top" constant="110" id="eQR-J9-IGc" userLabel="octcat.top = top + 90"/>
+                                    <constraint firstItem="7V6-Kg-XVJ" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="topMargin" constant="10" id="jPk-Gw-V9B"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="So7-fs-a5R" appends="YES" id="rxp-id-ARL"/>
@@ -74,9 +86,9 @@
                             <constraint firstAttribute="bottom" secondItem="cot-bg-avH" secondAttribute="bottom" id="v9E-7F-ZE9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lLc-q8-org"/>
                     <connections>
                         <outlet property="alertLabel" destination="wn8-xr-eEr" id="5TZ-WP-YbC"/>
+                        <outlet property="closeButton" destination="7V6-Kg-XVJ" id="MuP-jj-pxm"/>
                         <outlet property="userNameTextField" destination="MZj-QU-wBT" id="Zcv-QK-OLP"/>
                         <outlet property="wrapperViewMarginBottomConstraint" destination="v9E-7F-ZE9" id="SP0-wj-JPH"/>
                     </connections>
@@ -653,7 +665,7 @@ aaaaaaaaaa</string>
                                         <rect key="frame" x="0.0" y="28" width="600" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pgg-EQ-PAJ" id="x5v-VD-MDo">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="96.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RepositoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dws-uR-bPh" userLabel="RepositoryName">

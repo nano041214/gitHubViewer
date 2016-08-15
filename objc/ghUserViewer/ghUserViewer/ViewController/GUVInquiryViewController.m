@@ -3,12 +3,16 @@
 #import "GUVUser.h"
 #import "GUVAPIClient.h"
 #import <SVProgressHUD.h>
+#import <FontAwesomeKit/FontAwesomeKit.h>
+
+static const CGFloat IconSize = 20;
 
 @interface GUVInquiryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *wrapperViewMarginBottomConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end
 
@@ -19,6 +23,9 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
+    FAKFontAwesome *activitiesIcon = [FAKFontAwesome closeIconWithSize:IconSize];
+    [self.closeButton setImage:[activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)] forState:UIControlStateNormal];
 }
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {
@@ -103,6 +110,10 @@
 
 - (IBAction)didTouchTextFieldCancel:(UITextField *)sender {
     [self.view endEditing:YES];
+}
+
+- (IBAction)didTapCloseButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
