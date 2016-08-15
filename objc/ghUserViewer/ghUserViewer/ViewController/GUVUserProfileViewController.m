@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_END
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.userInfoHeaderView.user = self.user;
+    self.navigationItem.title = self.user.name;
 }
 
 - (void)setProvider:(id<GUVUserProvider>)provider {

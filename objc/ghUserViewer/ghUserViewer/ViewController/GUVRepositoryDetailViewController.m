@@ -41,6 +41,7 @@ NS_ASSUME_NONNULL_END
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"GUVGithubLinkView" bundle:nil]
      forHeaderFooterViewReuseIdentifier:NSStringFromClass([GUVGithubLinkView class])];
+    self.navigationItem.title = self.repository.name;
 }
 
 - (NSString *)titleForIndexPath:(NSIndexPath *)indexPath {
