@@ -33,7 +33,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
     return client;
 }
 
-- (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure {
+- (void)requestUserInfo:(NSString *)userName completionBlock:(nonnull GUVGetUserCompleteBlock)completion {
     NSString *safeUserName = AFPercentEscapedStringFromString(userName);
     NSString *userInfoInquiryPath = [NSString stringWithFormat:@"/users/%@", safeUserName];
 
@@ -41,9 +41,9 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
         NSError *mantleError = nil;
         GUVUser *user = [MTLJSONAdapter modelOfClass:[GUVUser class] fromJSONDictionary:responseDictionary error:&mantleError];
         if (mantleError != nil) {
-            failure(mantleError);
+            completion(nil, mantleError);
         } else {
-            success(user);
+            completion(user, nil);
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         if ([operation.response isKindOfClass:[NSHTTPURLResponse class]]) {
@@ -52,7 +52,7 @@ static NSString * const GitHubAPIBaseURLString = @"https://api.github.com";
                 error = [GUVAPIClient noSuchUserError];
             }
         }
-        failure(error);
+        completion(nil, error);
     }];
 }
 
