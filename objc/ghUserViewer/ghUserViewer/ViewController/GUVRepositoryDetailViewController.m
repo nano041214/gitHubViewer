@@ -32,9 +32,9 @@ NS_ASSUME_NONNULL_END
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.titleLabel.text = [self.repository formatedRepositoryNameString];
+    self.titleLabel.text = [self.repository formattedRepositoryNameString];
     self.descriptionLabel.text = self.repository.descriptionString;
-    self.dateLabel.text = [self.repository formatedCreatedAndUpdatedDateString];
+    self.dateLabel.text = [self.repository formattedCreatedAndUpdatedDateString];
 }
 
 - (void)viewDidLoad {
@@ -75,13 +75,13 @@ NS_ASSUME_NONNULL_END
         case GUVRepositoryDetailTableContentStarred:
             return [NSString stringWithFormat:@"%ld stars", self.repository.starredCount];
         case GUVRepositoryDetailTableContentWatcher:
-            return [NSString stringWithFormat:@"%ld watchers", self.repository.watcherCount];
+            return [NSString stringWithFormat:@"%ld watchers", self.repository.watchersCount];
         case GUVRepositoryDetailTableContentContributer:
             return @"Contributers";
         case GUVRepositoryDetailTableContentCommits:
             return @"Commits";
         case GUVRepositoryDetailTableContentIssue:
-            return [NSString stringWithFormat:@"%ld issues", self.repository.issueCount];
+            return [NSString stringWithFormat:@"%ld issues", self.repository.issuesCount];
         case GUVRepositoryDetailTableContentBranch:
             return @"Branches";
         default:

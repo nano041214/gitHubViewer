@@ -18,10 +18,10 @@
                 @"descriptionString": @"description",
 //                @"followerCount": @"followerCount",
                 @"starredCount": @"stargazers_count",
-                @"watcherCount": @"watchers_count",
+                @"watchersCount": @"watchers_count",
 //                @"contributerCount": @"contribuerCount",
 //                @"commitCount": @"commitCount",
-                @"issueCount": @"open_issues_count",
+                @"issuesCount": @"open_issues_count",
 //                @"branchCount": @"branchCount",
                 @"createdDate": @"created_at",
                 @"updatedDate": @"updated_at",
@@ -49,11 +49,11 @@
     }];
 }
 
-- (NSString *)formatedRepositoryNameString {
+- (NSString *)formattedRepositoryNameString {
     return [NSString stringWithFormat:@"%@/\n%@", self.ownerName, self.name];
 }
 
-- (NSString *)formatedCreatedAndUpdatedDateString {
+- (NSString *)formattedCreatedAndUpdatedDateString {
     return [NSString stringWithFormat: @"created at %@    updated at %@",
             self.createdDate,
             self.updatedDate];

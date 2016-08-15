@@ -4,8 +4,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GUVUser : MTLModel <MTLJSONSerializing>
 
-// remove readonly workaround
-@property (nonatomic) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSURL *iconURL;
 @property (nonatomic, readonly) NSUInteger followersCount;
 @property (nonatomic, readonly) NSUInteger followingCount;
