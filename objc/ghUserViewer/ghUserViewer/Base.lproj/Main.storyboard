@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7u5-it-Hut">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,22 +7,6 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="T9p-OT-Neq">
-            <objects>
-                <navigationController id="7u5-it-Hut" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xLs-5T-2qU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="epa-Lz-Uk4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NZC-BM-Eva" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-458" y="338"/>
-        </scene>
         <!--GUVInquiryViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -104,7 +88,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="304" y="346"/>
+            <point key="canvasLocation" x="314" y="48"/>
         </scene>
         <!--Activities-->
         <scene sceneID="URz-ae-9a4">
@@ -119,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="userInfoHeader" translatesAutoresizingMaskIntoConstraints="NO" id="U0G-Wq-gDY" customClass="GUVUserInfoHeaderView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="140"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sd5-uu-6T6" userLabel="userStatusWrapper">
                                         <rect key="frame" x="135" y="25" width="440" height="90"/>
@@ -167,7 +151,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbD-mw-GEG" userLabel="StarredWrapper">
-                                                <rect key="frame" x="146" y="44" width="147" height="46"/>
+                                                <rect key="frame" x="147" y="44" width="147" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starred" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moV-LP-B3l">
                                                         <rect key="frame" x="0.0" y="29" width="147" height="17"/>
@@ -195,7 +179,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IUp-1l-8v8" userLabel="FollowingWrapper">
-                                                <rect key="frame" x="293" y="44" width="147" height="46"/>
+                                                <rect key="frame" x="294" y="44" width="146" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUG-rS-bIv">
                                                         <rect key="frame" x="0.0" y="0.0" width="147" height="29"/>
@@ -268,7 +252,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9t2-4I-AgG" userLabel="Activities Table View">
-                                <rect key="frame" x="0.0" y="160" width="600" height="391"/>
+                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ActivityCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="97" id="PaB-0c-tLG" userLabel="ActivityCell" customClass="GUVActivityTableViewCell">
@@ -314,7 +298,7 @@
                                 </connections>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wp3-5v-Yjl" userLabel="Error Message Wrapper View">
-                                <rect key="frame" x="0.0" y="160" width="600" height="391"/>
+                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jt8-xB-e9W" userLabel="Border top">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
@@ -356,7 +340,7 @@
                             <constraint firstItem="Wp3-5v-Yjl" firstAttribute="leading" secondItem="9os-GR-HRv" secondAttribute="leading" id="uNN-pO-IsW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Activities" id="aJR-vT-j1W"/>
+                    <navigationItem key="navigationItem" title="Activities" id="LhU-ZG-kDl"/>
                     <connections>
                         <outlet property="errorMassageWrapperView" destination="Wp3-5v-Yjl" id="UKk-Py-TnG"/>
                         <outlet property="errorMessageLabel" destination="WVt-uf-5fm" id="7Pa-4C-R0c"/>
@@ -377,7 +361,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1788" y="676"/>
+            <point key="canvasLocation" x="2574" y="470"/>
         </scene>
         <!--RepositoryDetailViewController-->
         <scene sceneID="lH7-0A-t6K">
@@ -392,7 +376,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QVh-5n-CUv">
-                                <rect key="frame" x="0.0" y="205" width="600" height="346"/>
+                                <rect key="frame" x="0.0" y="249" width="600" height="302"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryDetailCell" textLabel="C6j-Kj-syx" detailTextLabel="jjE-io-zAX" style="IBUITableViewCellStyleValue1" id="gki-jw-rV9">
@@ -426,7 +410,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ud-My-IVf" userLabel="RepositoryOverview">
-                                <rect key="frame" x="0.0" y="20" width="600" height="185"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="185"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-ea-3mU">
                                         <rect key="frame" x="20" y="20" width="560" height="72"/>
@@ -485,7 +469,7 @@ aaaaaaaaaa</string>
                             <constraint firstAttribute="trailing" secondItem="QVh-5n-CUv" secondAttribute="trailing" id="tcX-aU-JrR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mgh-dO-zsW"/>
+                    <navigationItem key="navigationItem" title="RepositoryName" id="mgh-dO-zsW"/>
                     <connections>
                         <outlet property="dateLabel" destination="H1P-Mk-gfY" id="wQM-3U-kJT"/>
                         <outlet property="descriptionLabel" destination="PCv-vH-Ww7" id="AfR-xV-RPd"/>
@@ -495,7 +479,7 @@ aaaaaaaaaa</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8A-Za-DSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2477" y="-391"/>
+            <point key="canvasLocation" x="3295" y="-597"/>
         </scene>
         <!--Repositories-->
         <scene sceneID="3jx-4h-FPH">
@@ -510,7 +494,7 @@ aaaaaaaaaa</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="userInfoHeader" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-a3-bBR" customClass="GUVUserInfoHeaderView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="140"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="pOS-hs-ME5">
                                         <rect key="frame" x="25" y="25" width="110" height="90"/>
@@ -523,16 +507,16 @@ aaaaaaaaaa</string>
                                         <rect key="frame" x="135" y="25" width="440" height="90"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ulj-EY-5tA" userLabel="FollowersWrapper">
-                                                <rect key="frame" x="0.0" y="44" width="146.5" height="46"/>
+                                                <rect key="frame" x="0.0" y="44" width="147" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLZ-u5-4ti">
-                                                        <rect key="frame" x="0.0" y="29" width="146.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="29" width="147" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tC-eT-1zV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -552,7 +536,7 @@ aaaaaaaaaa</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VG7-YO-nK9" userLabel="StarredWrapper">
-                                                <rect key="frame" x="146" y="44" width="147" height="46"/>
+                                                <rect key="frame" x="147" y="44" width="147" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starred" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lya-DA-QfX">
                                                         <rect key="frame" x="0.0" y="29" width="147" height="17"/>
@@ -580,16 +564,16 @@ aaaaaaaaaa</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heA-iH-e5c" userLabel="FollowingWrapper">
-                                                <rect key="frame" x="293" y="44" width="146.5" height="46"/>
+                                                <rect key="frame" x="294" y="44" width="146" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="84" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEh-A9-b29">
-                                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ia-Ad-Gvk">
-                                                        <rect key="frame" x="0.0" y="29" width="146.5" height="17"/>
+                                                        <rect key="frame" x="0.0" y="29" width="147" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -660,7 +644,7 @@ aaaaaaaaaa</string>
                                 </connections>
                             </view>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4P-c8-7Zu">
-                                <rect key="frame" x="0.0" y="160" width="600" height="391"/>
+                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RepositoryCell" rowHeight="97" id="pgg-EQ-PAJ" customClass="GUVRepositoryTableViewCell">
@@ -724,7 +708,7 @@ aaaaaaaaaa</string>
                                 </connections>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-an-l2o" userLabel="Error Message Wrapper View">
-                                <rect key="frame" x="0.0" y="160" width="600" height="391"/>
+                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4m-Wq-vMR" userLabel="Border top">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
@@ -767,7 +751,7 @@ aaaaaaaaaa</string>
                             <constraint firstAttribute="trailing" secondItem="mYP-a3-bBR" secondAttribute="trailing" id="yrq-ov-z4N"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7JV-n6-x5K" userLabel="Repositories"/>
+                    <navigationItem key="navigationItem" title="Repos" id="Cn5-U3-30i"/>
                     <connections>
                         <outlet property="errorMassageWrapperView" destination="1uT-an-l2o" id="2Hf-uF-xoc"/>
                         <outlet property="errorMessageLabel" destination="3vI-GQ-EZa" id="CuO-pd-sfU"/>
@@ -787,12 +771,12 @@ aaaaaaaaaa</string>
                 </tapGestureRecognizer>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bV-Z9-fWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="-35"/>
+            <point key="canvasLocation" x="2574" y="-241"/>
         </scene>
         <!--UserProfile-->
         <scene sceneID="AgY-Mj-KkN">
             <objects>
-                <viewController id="jC5-pn-ERv" userLabel="UserProfile" customClass="GUVUserProfileViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="jC5-pn-ERv" userLabel="UserProfile" customClass="GUVUserProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W3k-Ly-Tvo"/>
                         <viewControllerLayoutGuide type="bottom" id="LBl-0I-CCP"/>
@@ -997,7 +981,7 @@ aaaaaaaaaa</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7F-eW-kKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2572" y="250"/>
+            <point key="canvasLocation" x="3295" y="104"/>
         </scene>
         <!--user-->
         <scene sceneID="38c-aD-bbz">
@@ -1010,19 +994,57 @@ aaaaaaaaaa</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="DA7-Vp-AY9" kind="relationship" relationship="viewControllers" id="jeu-Qt-kxd"/>
-                        <segue destination="vlE-9V-QRU" kind="relationship" relationship="viewControllers" id="zbh-7c-abc"/>
+                        <segue destination="PKA-BG-87c" kind="relationship" relationship="viewControllers" id="jeu-Qt-kxd"/>
+                        <segue destination="AZP-vO-vGF" kind="relationship" relationship="viewControllers" id="zbh-7c-abc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqk-Tl-PeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992" y="254"/>
+            <point key="canvasLocation" x="998" y="48"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="dNI-da-Rl3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PKA-BG-87c" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="7JV-n6-x5K" userLabel="Repositories"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tZn-j7-p3B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DA7-Vp-AY9" kind="relationship" relationship="rootViewController" id="OfN-DH-VEF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5gG-jM-fVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762" y="-241"/>
+        </scene>
+        <!--Activities-->
+        <scene sceneID="Bjr-A9-bbc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AZP-vO-vGF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Activities" id="aJR-vT-j1W"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gei-6Y-OGi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vlE-9V-QRU" kind="relationship" relationship="rootViewController" id="RPo-KS-oLh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s5L-mB-cpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762" y="470"/>
         </scene>
     </scenes>
     <resources>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nsT-cI-t2Z"/>
+        <segue reference="Fao-7s-XGa"/>
     </inferredMetricsTieBreakers>
 </document>

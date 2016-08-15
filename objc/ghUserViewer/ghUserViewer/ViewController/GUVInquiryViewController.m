@@ -34,7 +34,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
         usersInfoTabBarController.user = user;
-        [self.navigationController pushViewController:usersInfoTabBarController animated:NO];
+        [self showViewController:usersInfoTabBarController sender:self];
     } failureBlock:^(NSError *error) {
         [SVProgressHUD dismiss];
         [self showAlertLabelwithError:error];
