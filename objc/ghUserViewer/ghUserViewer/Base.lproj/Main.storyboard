@@ -10,7 +10,7 @@
         <!--GUVInquiryViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="GUVInquiryViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="GUVInquiryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GUVInquiryViewController" title="GUVInquiryViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="GUVInquiryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -340,7 +340,9 @@
                             <constraint firstItem="Wp3-5v-Yjl" firstAttribute="leading" secondItem="9os-GR-HRv" secondAttribute="leading" id="uNN-pO-IsW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Activities" id="LhU-ZG-kDl"/>
+                    <navigationItem key="navigationItem" title="Activities" id="LhU-ZG-kDl">
+                        <barButtonItem key="rightBarButtonItem" id="nGw-kJ-IGs"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="errorMassageWrapperView" destination="Wp3-5v-Yjl" id="UKk-Py-TnG"/>
                         <outlet property="errorMessageLabel" destination="WVt-uf-5fm" id="7Pa-4C-R0c"/>
@@ -751,10 +753,17 @@ aaaaaaaaaa</string>
                             <constraint firstAttribute="trailing" secondItem="mYP-a3-bBR" secondAttribute="trailing" id="yrq-ov-z4N"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Repos" id="Cn5-U3-30i"/>
+                    <navigationItem key="navigationItem" title="Repos" id="Cn5-U3-30i">
+                        <barButtonItem key="rightBarButtonItem" id="Uzq-DW-GOA">
+                            <connections>
+                                <action selector="didTapInquiryViewControllerAppearButton:" destination="DA7-Vp-AY9" id="oxw-vA-iM9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="errorMassageWrapperView" destination="1uT-an-l2o" id="2Hf-uF-xoc"/>
                         <outlet property="errorMessageLabel" destination="3vI-GQ-EZa" id="CuO-pd-sfU"/>
+                        <outlet property="inquiryViewControllerAppearButton" destination="Uzq-DW-GOA" id="f4h-gp-grG"/>
                         <outlet property="tableView" destination="e4P-c8-7Zu" id="4fM-xy-pLx"/>
                         <outlet property="userInfoHeaderView" destination="mYP-a3-bBR" id="J1z-Jv-Zki"/>
                     </connections>
@@ -1045,6 +1054,6 @@ aaaaaaaaaa</string>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fao-7s-XGa"/>
+        <segue reference="nsT-cI-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>

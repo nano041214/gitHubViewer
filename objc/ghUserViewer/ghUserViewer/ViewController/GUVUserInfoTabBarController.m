@@ -1,5 +1,5 @@
 #import "GUVUserInfoTabBarController.h"
-#import "FontAwesomeKit/FontAwesomeKit.h"
+#import <FontAwesomeKit/FontAwesomeKit.h>
 
 static const CGFloat IconSize = 20;
 

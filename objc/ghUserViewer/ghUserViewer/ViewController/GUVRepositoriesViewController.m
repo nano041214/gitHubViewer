@@ -1,3 +1,4 @@
+#import "GUVInquiryViewController.h"
 #import "GUVRepositoriesViewController.h"
 #import "GUVUserInfoHeaderView.h"
 #import "GUVRepositoryTableViewCell.h"
@@ -6,6 +7,9 @@
 #import "GUVAPIClient.h"
 #import "GUVRepository.h"
 #import "GUVRepositoryDetailViewController.h"
+#import <FontAwesomeKit/FontAwesomeKit.h>
+
+static const CGFloat IconSize = 20;
 
 @interface GUVRepositoriesViewController ()
 
@@ -13,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *errorMassageWrapperView;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *inquiryViewControllerAppearButton;
 @property (nonatomic, weak) id<GUVUserProvider> provider;
 @property (nonatomic, nonnull) NSArray<GUVRepository *> *repositories;
 
@@ -35,6 +40,9 @@
             [self showErrorMessageViewWithMessage:nil];
         }
     }];
+
+    FAKFontAwesome *activitiesIcon = [FAKFontAwesome userIconWithSize:IconSize];
+    self.inquiryViewControllerAppearButton.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
 - (void)showTableView {
@@ -61,6 +69,12 @@
             repositoryDetailViewController.repository = repositoryTableCell.repository;
         }
     }
+}
+
+- (IBAction)didTapInquiryViewControllerAppearButton:(UIBarButtonItem *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    GUVInquiryViewController *inquiryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
+    [self presentViewController:inquiryViewController animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
