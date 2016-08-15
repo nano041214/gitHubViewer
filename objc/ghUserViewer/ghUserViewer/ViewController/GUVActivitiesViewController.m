@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.provider = (id<GUVUserProvider>)self.parentViewController.parentViewController;
+    self.provider = (id<GUVUserProvider>)self.navigationController.tabBarController;
     self.userInfoHeaderView.user = self.provider.fetchUser;
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
