@@ -776,7 +776,7 @@ aaaaaaaaaa</string>
         <!--UserProfile-->
         <scene sceneID="AgY-Mj-KkN">
             <objects>
-                <viewController id="jC5-pn-ERv" userLabel="UserProfile" customClass="GUVUserProfileViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="jC5-pn-ERv" userLabel="UserProfile" customClass="GUVUserProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W3k-Ly-Tvo"/>
                         <viewControllerLayoutGuide type="bottom" id="LBl-0I-CCP"/>
