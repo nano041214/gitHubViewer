@@ -1,4 +1,5 @@
 #import "GUVUserInfoTabBarController.h"
+#import "GUVInquiryViewController.h"
 #import <FontAwesomeKit/FontAwesomeKit.h>
 
 static const CGFloat IconSize = 20;
@@ -18,6 +19,19 @@ static const CGFloat IconSize = 20;
     FAKFontAwesome *activitiesIcon = [FAKFontAwesome rssIconWithSize:IconSize];
     UITabBarItem *activitiesItem = self.tabBar.items[1];
     activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.user == nil) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        GUVInquiryViewController *inquiryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
+        [self showViewController:inquiryViewController sender:self];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (GUVUser *)fetchUser {
