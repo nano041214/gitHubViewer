@@ -14,7 +14,6 @@ static const CGFloat IconSize = 20;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
     UITabBarItem *repositoriesItem = self.tabBar.items[0];
     repositoriesItem.image = [repositoriesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
@@ -23,8 +22,8 @@ static const CGFloat IconSize = 20;
     activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     if (self.user == nil) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.inquryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
@@ -33,13 +32,13 @@ static const CGFloat IconSize = 20;
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
+# pragma mark GUVUserProvider
 
 - (GUVUser *)fetchUser {
     return self.user;
 }
+
+# pragma mark GUVInquiryViewControllerDelegate
 
 - (void)viewController:(GUVInquiryViewController *)viewController userWasSelected:(GUVUser *)user {
     self.user = user;
@@ -49,9 +48,9 @@ static const CGFloat IconSize = 20;
     _user = user;
     for (id viewController in self.childViewControllers) {
         if ([viewController isKindOfClass:[UINavigationController class]]) {
-            UINavigationController *nav = (UINavigationController *)viewController;
-            if ([nav.childViewControllers[0] conformsToProtocol:@protocol(GUVUserObserver)]) {
-                [nav.childViewControllers[0] userDidUpdate:self];
+            UINavigationController *navigationController = (UINavigationController *)viewController;
+            if ([navigationController.childViewControllers[0] conformsToProtocol:@protocol(GUVUserObserver)]) {
+                [navigationController.childViewControllers[0] userDidUpdate:self];
             }
         }
     }
