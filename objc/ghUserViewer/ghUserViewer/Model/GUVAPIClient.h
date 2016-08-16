@@ -11,16 +11,16 @@ typedef NS_ENUM(NSInteger, GUVAPIClientErrorCode) {
     GUVAPIClientErrorCodeNotFound,
 };
 
-typedef void (^GUVGetUserSuccessBlock)(GUVUser *user);
+typedef void (^GUVGetUserCompletionBlock)(GUVUser *_Nullable user, NSError *_Nullable error);
 typedef void (^GUVGetRepositoryCompletionBlock)(NSArray<GUVRepository *> *_Nullable repositories, NSError *_Nullable error);
 typedef void (^GUVGetActivitiesCompletionBlock)(NSArray<GUVActivity *> *_Nullable activities, NSError *_Nullable error);
 
 @interface GUVAPIClient : NSObject
 
 + (GUVAPIClient *)sharedClient;
-- (void)requestUserInfo:(NSString *)userName successBlock:(nonnull GUVGetUserSuccessBlock)success failureBlock:(void (^)(NSError *_Nonnull error))failure;
-- (void)requestRepositoriesInfo:(NSString *)userName completionBlock:(nonnull GUVGetRepositoryCompletionBlock)completion;
-- (void)requestActivitiesInfo:(NSString *)userName completionBlock:(nonnull GUVGetActivitiesCompletionBlock)completion;
+- (void)requestUserInfo:(NSString *)userName completionBlock:(GUVGetUserCompletionBlock)completion;
+- (void)requestRepositoriesInfo:(NSString *)userName completionBlock:(GUVGetRepositoryCompletionBlock)completion;
+- (void)requestActivitiesInfo:(NSString *)userName completionBlock:(GUVGetActivitiesCompletionBlock)completion;
 
 @end
 

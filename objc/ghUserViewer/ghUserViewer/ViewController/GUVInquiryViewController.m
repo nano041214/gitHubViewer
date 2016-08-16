@@ -29,15 +29,16 @@
     [SVProgressHUD show];
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestUserInfo:sender.text successBlock:^(GUVUser *user) {
+    [client requestUserInfo:sender.text completionBlock:^(GUVUser * _Nullable user, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
-        usersInfoTabBarController.user = user;
-        [self showViewController:usersInfoTabBarController sender:self];
-    } failureBlock:^(NSError *error) {
-        [SVProgressHUD dismiss];
-        [self showAlertLabelwithError:error];
+        if (error != nil) {
+            [self showAlertLabelwithError:error];
+        } else {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
+            usersInfoTabBarController.user = user;
+            [self showViewController:usersInfoTabBarController sender:self];
+        }
     }];
 }
 

@@ -310,7 +310,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently no activity." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVt-uf-5fm">
                                         <rect key="frame" x="0.0" y="51" width="600" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -352,16 +352,16 @@
                 <tapGestureRecognizer id="4wq-U9-lAQ" userLabel="tappedUserIcon">
                     <connections>
                         <outlet property="delegate" destination="vlE-9V-QRU" id="Xmz-ye-iLk"/>
-                        <segue destination="jC5-pn-ERv" kind="push" identifier="jumpToUserProfileVC" id="Bku-sy-zLi"/>
+                        <segue destination="jC5-pn-ERv" kind="show" identifier="jumpToUserProfileVC" id="Bku-sy-zLi"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="az1-Lh-fAY" userLabel="tappedUserName">
                     <connections>
-                        <segue destination="jC5-pn-ERv" kind="push" identifier="jumpToUserProfileVC" id="Fao-7s-XGa"/>
+                        <segue destination="jC5-pn-ERv" kind="show" identifier="jumpToUserProfileVC" id="Fao-7s-XGa"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2574" y="470"/>
+            <point key="canvasLocation" x="2572" y="824"/>
         </scene>
         <!--RepositoryDetailViewController-->
         <scene sceneID="lH7-0A-t6K">
@@ -479,7 +479,7 @@ aaaaaaaaaa</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8A-Za-DSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295" y="-597"/>
+            <point key="canvasLocation" x="3295" y="-595"/>
         </scene>
         <!--Repositories-->
         <scene sceneID="3jx-4h-FPH">
@@ -698,7 +698,7 @@ aaaaaaaaaa</string>
                                         <connections>
                                             <outlet property="repositoryNameLabel" destination="Dws-uR-bPh" id="nUC-ow-c8C"/>
                                             <outlet property="starCountLabel" destination="3tR-XN-CJh" id="ZiQ-0K-yAC"/>
-                                            <segue destination="8ye-f5-kZ6" kind="push" identifier="pushRepositoryDetail" id="9qb-Va-Laf"/>
+                                            <segue destination="8ye-f5-kZ6" kind="show" identifier="pushRepositoryDetail" id="9qb-Va-Laf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -720,7 +720,7 @@ aaaaaaaaaa</string>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No repository." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vI-GQ-EZa">
                                         <rect key="frame" x="0.0" y="51" width="600" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -761,17 +761,17 @@ aaaaaaaaaa</string>
                 </viewController>
                 <tapGestureRecognizer id="eWY-uh-aiZ" userLabel="tappedUserIcon">
                     <connections>
-                        <segue destination="jC5-pn-ERv" kind="push" identifier="jumpToUserProfileVC" id="N4h-Ji-b3D"/>
+                        <segue destination="jC5-pn-ERv" kind="show" identifier="jumpToUserProfileVC" id="N4h-Ji-b3D"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="bTT-d4-sLq" userLabel="tappedUserName">
                     <connections>
-                        <segue destination="jC5-pn-ERv" kind="push" identifier="jumpToUserProfileVC" id="nsT-cI-t2Z"/>
+                        <segue destination="jC5-pn-ERv" kind="show" identifier="jumpToUserProfileVC" id="nsT-cI-t2Z"/>
                     </connections>
                 </tapGestureRecognizer>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bV-Z9-fWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="-241"/>
+            <point key="canvasLocation" x="2572" y="59"/>
         </scene>
         <!--UserProfile-->
         <scene sceneID="AgY-Mj-KkN">
@@ -981,7 +981,7 @@ aaaaaaaaaa</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7F-eW-kKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295" y="104"/>
+            <point key="canvasLocation" x="3295" y="824"/>
         </scene>
         <!--user-->
         <scene sceneID="38c-aD-bbz">
