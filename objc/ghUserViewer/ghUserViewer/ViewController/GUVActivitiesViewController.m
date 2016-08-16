@@ -1,9 +1,12 @@
+#import <FontAwesomeKit/FontAwesomeKit.h>
 #import "GUVActivitiesViewController.h"
 #import "GUVActivity.h"
 #import "GUVActivityTableViewCell.h"
 #import "GUVAPIClient.h"
 #import "GUVUserInfoHeaderView.h"
 #import "GUVUserProfileViewController.h"
+
+static const CGFloat IconSize = 20;
 
 @interface GUVActivitiesViewController ()
 
@@ -13,6 +16,7 @@
 @property (nonatomic, weak) id<GUVUserProvider> provider;
 @property (weak, nonatomic) IBOutlet UIView *errorMassageWrapperView;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *inquiryViewAppearButton;
 
 @end
 
@@ -21,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
+
+    FAKFontAwesome *activitiesIcon = [FAKFontAwesome userIconWithSize:IconSize];
+    self.inquiryViewAppearButton.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
 - (void)showTableView {
@@ -41,24 +48,11 @@
     userProfileViewController.provider = self.provider;
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.activities.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GUVActivityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActivityCell" forIndexPath:indexPath];
-    cell.activity = self.activities[indexPath.item];
-    return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Activities";
+- (IBAction)didTapInquiryViewAppearButton:(UIBarButtonItem *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    GUVInquiryViewController *inquiryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
+    inquiryViewController.delegate = (GUVUserInfoTabBarController *)self.tabBarController;
+    [self presentViewController:inquiryViewController animated:YES completion:nil];
 }
 
 - (void)userDidUpdated:(GUVUserInfoTabBarController *)userInfoTabBarController {
@@ -79,6 +73,26 @@
             [self showErrorMessageViewWithMessage:error];
         }
     }];
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.activities.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GUVActivityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActivityCell" forIndexPath:indexPath];
+    cell.activity = self.activities[indexPath.item];
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Activities";
 }
 
 @end

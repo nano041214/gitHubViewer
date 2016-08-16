@@ -353,11 +353,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Activities" id="LhU-ZG-kDl">
-                        <barButtonItem key="rightBarButtonItem" id="nGw-kJ-IGs"/>
+                        <barButtonItem key="rightBarButtonItem" id="nGw-kJ-IGs">
+                            <connections>
+                                <action selector="didTapInquiryViewAppearButton:" destination="vlE-9V-QRU" id="7vU-E9-3NN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="errorMassageWrapperView" destination="Wp3-5v-Yjl" id="UKk-Py-TnG"/>
                         <outlet property="errorMessageLabel" destination="WVt-uf-5fm" id="7Pa-4C-R0c"/>
+                        <outlet property="inquiryViewAppearButton" destination="nGw-kJ-IGs" id="9VT-Qp-GfR"/>
                         <outlet property="tableView" destination="9t2-4I-AgG" id="kDk-K2-lHG"/>
                         <outlet property="userInfoHeaderView" destination="U0G-Wq-gDY" id="MkX-zO-njh"/>
                     </connections>
@@ -1066,6 +1071,6 @@ aaaaaaaaaa</string>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nsT-cI-t2Z"/>
+        <segue reference="Fao-7s-XGa"/>
     </inferredMetricsTieBreakers>
 </document>
