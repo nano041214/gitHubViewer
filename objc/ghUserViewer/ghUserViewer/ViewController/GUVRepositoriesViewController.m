@@ -2,7 +2,6 @@
 #import "GUVRepositoriesViewController.h"
 #import "GUVUserInfoHeaderView.h"
 #import "GUVRepositoryTableViewCell.h"
-#import "GUVUserInfoTabBarController.h"
 #import "GUVUserProfileViewController.h"
 #import "GUVAPIClient.h"
 #import "GUVRepository.h"
@@ -27,20 +26,7 @@ static const CGFloat IconSize = 20;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.provider = (id<GUVUserProvider>)self.tabBarController;
-    self.userInfoHeaderView.user = self.provider.fetchUser;
-
-    GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestRepositoriesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
-        if (repositories.count != 0) {
-            [self showTableView];
-            self.repositories = repositories;
-            [self.tableView reloadData];
-        } else {
-            [self showErrorMessageViewWithMessage:nil];
-        }
-    }];
-
+    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
     FAKFontAwesome *activitiesIcon = [FAKFontAwesome userIconWithSize:IconSize];
     self.inquiryViewControllerAppearButton.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
@@ -74,6 +60,7 @@ static const CGFloat IconSize = 20;
 - (IBAction)didTapInquiryViewControllerAppearButton:(UIBarButtonItem *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     GUVInquiryViewController *inquiryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
+    inquiryViewController.delegate = (GUVUserInfoTabBarController *)self.tabBarController;
     [self presentViewController:inquiryViewController animated:YES completion:nil];
 }
 
@@ -95,6 +82,27 @@ static const CGFloat IconSize = 20;
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Repositories";
+}
+
+- (void)userDidUpdated:(GUVUserInfoTabBarController *)userInfoTabBarController {
+    self.provider = userInfoTabBarController;
+}
+
+- (void)setProvider:(id<GUVUserProvider>)provider {
+    _provider = provider;
+
+    self.userInfoHeaderView.user = self.provider.fetchUser;
+
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestRepositoriesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
+        if (repositories.count != 0) {
+            [self showTableView];
+            self.repositories = repositories;
+            [self.tableView reloadData];
+        } else {
+            [self showErrorMessageViewWithMessage:nil];
+        }
+    }];
 }
 
 @end

@@ -2,11 +2,19 @@
 #import "GUVUser.h"
 #import "GUVInquiryViewController.h"
 
+@class GUVUserInfoTabBarController;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol GUVUserProvider <NSObject>
 
 - (GUVUser *)fetchUser;
+
+@end
+
+@protocol GUVUserObserver <NSObject>
+
+- (void)userDidUpdated:(GUVUserInfoTabBarController *)userInfoTabBarController;
 
 @end
 

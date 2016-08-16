@@ -4,7 +4,6 @@
 #import "GUVAPIClient.h"
 #import "GUVUserInfoHeaderView.h"
 #import "GUVUserProfileViewController.h"
-#import "GUVUserInfoTabBarController.h"
 
 @interface GUVActivitiesViewController ()
 
@@ -21,19 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.provider = (id<GUVUserProvider>)self.tabBarController;
-    self.userInfoHeaderView.user = self.provider.fetchUser;
-
-    GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestActivitiesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
-        if (activities.count != 0) {
-            [self showTableView];
-            self.activities = activities;
-            [self.tableView reloadData];
-        } else {
-            [self showErrorMessageViewWithMessage:error];
-        }
-    }];
+    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
 }
 
 - (void)showTableView {
@@ -72,6 +59,26 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return @"Activities";
+}
+
+- (void)userDidUpdated:(GUVUserInfoTabBarController *)userInfoTabBarController {
+    self.provider = userInfoTabBarController;
+}
+
+- (void)setProvider:(id<GUVUserProvider>)provider {
+    _provider = provider;
+    self.userInfoHeaderView.user = self.provider.fetchUser;
+
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestActivitiesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
+        if (activities.count != 0) {
+            [self showTableView];
+            self.activities = activities;
+            [self.tableView reloadData];
+        } else {
+            [self showErrorMessageViewWithMessage:error];
+        }
+    }];
 }
 
 @end
