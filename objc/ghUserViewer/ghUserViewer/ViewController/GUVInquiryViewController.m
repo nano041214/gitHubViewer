@@ -41,10 +41,8 @@ static const CGFloat IconSize = 20;
         if (error != nil) {
             [self showAlertLabelwithError:error];
         } else {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
-            usersInfoTabBarController.user = user;
-            [self showViewController:usersInfoTabBarController sender:self];
+            [self.delegate provideUser:self user:user];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
 }

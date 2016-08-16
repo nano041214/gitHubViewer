@@ -6,6 +6,8 @@ static const CGFloat IconSize = 20;
 
 @interface GUVUserInfoTabBarController ()
 
+@property (nonatomic) GUVInquiryViewController *inquryViewController;
+
 @end
 
 @implementation GUVUserInfoTabBarController
@@ -25,8 +27,9 @@ static const CGFloat IconSize = 20;
     [super viewDidAppear:animated];
     if (self.user == nil) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        GUVInquiryViewController *inquiryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
-        [self showViewController:inquiryViewController sender:self];
+        self.inquryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
+        self.inquryViewController.delegate = self;
+        [self showViewController:self.inquryViewController sender:self];
     }
 }
 
@@ -36,6 +39,10 @@ static const CGFloat IconSize = 20;
 
 - (GUVUser *)fetchUser {
     return self.user;
+}
+
+- (void)provideUser:(GUVInquiryViewController *)inquiryViewController user:(GUVUser *)user {
+    self.user = user;
 }
 
 @end

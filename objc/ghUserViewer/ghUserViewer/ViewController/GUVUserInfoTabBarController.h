@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "GUVUser.h"
+#import "GUVInquiryViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -11,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-@interface GUVUserInfoTabBarController : UITabBarController <GUVUserProvider>
+@interface GUVUserInfoTabBarController : UITabBarController <GUVUserProvider, GUVInquiryViewControllerDelegate>
 
 @property (nonatomic, nullable) GUVUser *user;
 
