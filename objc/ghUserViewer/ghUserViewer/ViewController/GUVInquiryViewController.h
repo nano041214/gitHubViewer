@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol GUVInquiryViewControllerDelegate <NSObject>
 
-- (void)provideUser:(GUVInquiryViewController *)inquiryViewController user:(GUVUser *)user;
+- (void)viewController:(GUVInquiryViewController *)viewController userWasSelected:(GUVUser *)user;
 
 @end
 

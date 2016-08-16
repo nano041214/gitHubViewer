@@ -41,7 +41,7 @@ static const CGFloat IconSize = 20;
     return self.user;
 }
 
-- (void)provideUser:(GUVInquiryViewController *)inquiryViewController user:(GUVUser *)user {
+- (void)viewController:(GUVInquiryViewController *)viewController userWasSelected:(GUVUser *)user {
     self.user = user;
 }
 

@@ -100,7 +100,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="998" y="740"/>
+            <point key="canvasLocation" x="992" y="756"/>
         </scene>
         <!--Activities-->
         <scene sceneID="URz-ae-9a4">
@@ -1071,6 +1071,6 @@ aaaaaaaaaa</string>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fao-7s-XGa"/>
+        <segue reference="nsT-cI-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>

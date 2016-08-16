@@ -39,15 +39,15 @@ static const CGFloat IconSize = 20;
     [client requestUserInfo:sender.text completionBlock:^(GUVUser * _Nullable user, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         if (error != nil) {
-            [self showAlertLabelwithError:error];
+            [self showAlertLabelWithError:error];
         } else {
-            [self.delegate provideUser:self user:user];
+            [self.delegate viewController:self userWasSelected:user];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
 }
 
-- (void)showAlertLabelwithError:(NSError *)error {
+- (void)showAlertLabelWithError:(NSError *)error {
     self.alertLabel.hidden = NO;
     if ( error.localizedRecoverySuggestion != nil ) {
         self.alertLabel.text = [NSString stringWithFormat:@"%@\n%@", error.localizedDescription, error.localizedRecoverySuggestion];
