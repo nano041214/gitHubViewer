@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol GUVUserObserver <NSObject>
 
-- (void)userDidUpdated:(GUVUserInfoTabBarController *)userInfoTabBarController;
+- (void)userDidUpdate:(GUVUserInfoTabBarController *)userInfoTabBarController;
 
 @end
 

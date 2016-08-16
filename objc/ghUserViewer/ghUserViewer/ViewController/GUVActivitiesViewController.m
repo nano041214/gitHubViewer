@@ -55,7 +55,7 @@ static const CGFloat IconSize = 20;
     [self presentViewController:inquiryViewController animated:YES completion:nil];
 }
 
-- (void)userDidUpdated:(GUVUserInfoTabBarController *)userInfoTabBarController {
+- (void)userDidUpdate:(GUVUserInfoTabBarController *)userInfoTabBarController {
     self.provider = userInfoTabBarController;
 }
 

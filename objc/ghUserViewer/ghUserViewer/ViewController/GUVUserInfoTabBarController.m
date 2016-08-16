@@ -1,6 +1,6 @@
+#import <FontAwesomeKit/FontAwesomeKit.h>
 #import "GUVUserInfoTabBarController.h"
 #import "GUVInquiryViewController.h"
-#import <FontAwesomeKit/FontAwesomeKit.h>
 
 static const CGFloat IconSize = 20;
 
@@ -51,7 +51,7 @@ static const CGFloat IconSize = 20;
         if ([viewController isKindOfClass:[UINavigationController class]]) {
             UINavigationController *nav = (UINavigationController *)viewController;
             if ([nav.childViewControllers[0] conformsToProtocol:@protocol(GUVUserObserver)]) {
-                [nav.childViewControllers[0] userDidUpdated:self];
+                [nav.childViewControllers[0] userDidUpdate:self];
             }
         }
     }

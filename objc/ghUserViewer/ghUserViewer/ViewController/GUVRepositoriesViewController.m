@@ -1,3 +1,4 @@
+#import <FontAwesomeKit/FontAwesomeKit.h>
 #import "GUVInquiryViewController.h"
 #import "GUVRepositoriesViewController.h"
 #import "GUVUserInfoHeaderView.h"
@@ -6,7 +7,6 @@
 #import "GUVAPIClient.h"
 #import "GUVRepository.h"
 #import "GUVRepositoryDetailViewController.h"
-#import <FontAwesomeKit/FontAwesomeKit.h>
 
 static const CGFloat IconSize = 20;
 
@@ -69,7 +69,7 @@ static const CGFloat IconSize = 20;
     [self presentViewController:inquiryViewController animated:YES completion:nil];
 }
 
-- (void)userDidUpdated:(GUVUserInfoTabBarController *)userInfoTabBarController {
+- (void)userDidUpdate:(GUVUserInfoTabBarController *)userInfoTabBarController {
     self.provider = userInfoTabBarController;
 }
 

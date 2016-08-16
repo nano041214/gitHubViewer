@@ -1,9 +1,9 @@
+#import <SVProgressHUD.h>
+#import <FontAwesomeKit/FontAwesomeKit.h>
 #import "GUVInquiryViewController.h"
 #import "GUVUserInfoTabBarController.h"
 #import "GUVUser.h"
 #import "GUVAPIClient.h"
-#import <SVProgressHUD.h>
-#import <FontAwesomeKit/FontAwesomeKit.h>
 
 static const CGFloat IconSize = 20;
 
