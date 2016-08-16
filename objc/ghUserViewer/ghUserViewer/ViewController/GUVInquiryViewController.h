@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 #import "GUVUser.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @class GUVInquiryViewController;
+
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol GUVInquiryViewControllerDelegate <NSObject>
 
