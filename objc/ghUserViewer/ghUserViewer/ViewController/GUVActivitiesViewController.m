@@ -24,6 +24,7 @@ static const CGFloat IconSize = 20;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
     self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
 
     FAKFontAwesome *activitiesIcon = [FAKFontAwesome userIconWithSize:IconSize];
@@ -32,6 +33,7 @@ static const CGFloat IconSize = 20;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
     self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
 }
 
@@ -56,6 +58,7 @@ static const CGFloat IconSize = 20;
 - (IBAction)didTapInquiryViewAppearButton:(UIBarButtonItem *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     GUVInquiryViewController *inquiryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
+    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
     inquiryViewController.delegate = (GUVUserInfoTabBarController *)self.tabBarController;
     [self presentViewController:inquiryViewController animated:YES completion:nil];
 }
