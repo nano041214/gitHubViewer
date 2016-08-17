@@ -28,6 +28,8 @@ static const CGFloat IconSize = 20;
     [super viewDidLoad];
     NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
     self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
+    self.userInfoHeaderView.user = self.provider.fetchedUser;
+    [self loadRepositories];
     FAKFontAwesome *activitiesIcon = [FAKFontAwesome userIconWithSize:IconSize];
     self.inquiryViewControllerAppearButton.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
@@ -36,6 +38,8 @@ static const CGFloat IconSize = 20;
     [super viewWillAppear:animated];
     NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
     self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
+    self.userInfoHeaderView.user = self.provider.fetchedUser;
+    [self loadRepositories];
 }
 
 - (void)showTableView {
@@ -75,21 +79,19 @@ static const CGFloat IconSize = 20;
     [self presentViewController:inquiryViewController animated:YES completion:nil];
 }
 
-- (void)setProvider:(id<GUVUserProvider>)provider {
-    _provider = provider;
-
-    self.userInfoHeaderView.user = self.provider.fetchedUser;
-
-    GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestRepositoriesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
-        if (repositories.count != 0) {
-            [self showTableView];
-            self.repositories = repositories;
-            [self.tableView reloadData];
-        } else {
-            [self showErrorMessageViewWithMessage:error];
-        }
-    }];
+- (void)loadRepositories {
+    if (self.provider.fetchedUser != nil) {
+        GUVAPIClient *client = [GUVAPIClient sharedClient];
+        [client requestRepositoriesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
+            if (repositories.count != 0) {
+                [self showTableView];
+                self.repositories = repositories;
+                [self.tableView reloadData];
+            } else {
+                [self showErrorMessageViewWithMessage:error];
+            }
+        }];
+    }
 }
 
 #pragma mark - Table view data source
