@@ -32,6 +32,12 @@ static const CGFloat IconSize = 20;
     self.inquiryViewControllerAppearButton.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
+    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
+}
+
 - (void)showTableView {
     self.tableView.hidden = NO;
     self.errorMassageWrapperView.hidden = YES;
@@ -67,10 +73,6 @@ static const CGFloat IconSize = 20;
     inquiryViewController.delegate = tabBarController;
 
     [self presentViewController:inquiryViewController animated:YES completion:nil];
-}
-
-- (void)userDidUpdate:(GUVUserInfoTabBarController *)userInfoTabBarController {
-    self.provider = userInfoTabBarController;
 }
 
 - (void)setProvider:(id<GUVUserProvider>)provider {

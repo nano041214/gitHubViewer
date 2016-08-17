@@ -44,16 +44,4 @@ static const CGFloat IconSize = 20;
     self.user = user;
 }
 
-- (void)setUser:(GUVUser *)user {
-    _user = user;
-    for (id viewController in self.childViewControllers) {
-        if ([viewController isKindOfClass:[UINavigationController class]]) {
-            UINavigationController *navigationController = (UINavigationController *)viewController;
-            if ([navigationController.childViewControllers[0] conformsToProtocol:@protocol(GUVUserObserver)]) {
-                [navigationController.childViewControllers[0] userDidUpdate:self];
-            }
-        }
-    }
-}
-
 @end
