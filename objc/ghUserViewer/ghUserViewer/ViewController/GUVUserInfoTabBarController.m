@@ -32,13 +32,13 @@ static const CGFloat IconSize = 20;
     }
 }
 
-# pragma mark GUVUserProvider
+# pragma mark - GUVUserProvider
 
 - (GUVUser *)fetchedUser {
     return self.user;
 }
 
-# pragma mark GUVInquiryViewControllerDelegate
+# pragma mark - GUVInquiryViewControllerDelegate
 
 - (void)viewController:(GUVInquiryViewController *)viewController userWasSelected:(GUVUser *)user {
     self.user = user;
