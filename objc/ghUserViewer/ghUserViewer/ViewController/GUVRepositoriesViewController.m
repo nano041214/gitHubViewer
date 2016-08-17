@@ -87,7 +87,7 @@ static const CGFloat IconSize = 20;
             self.repositories = repositories;
             [self.tableView reloadData];
         } else {
-            [self showErrorMessageViewWithMessage:nil];
+            [self showErrorMessageViewWithMessage:error];
         }
     }];
 }
