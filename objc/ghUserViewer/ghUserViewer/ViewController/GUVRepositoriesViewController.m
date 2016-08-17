@@ -26,20 +26,27 @@ static const CGFloat IconSize = 22;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
-    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
-    self.userInfoHeaderView.user = self.provider.fetchedUser;
-    [self loadRepositories];
     FAKFontAwesome *githubIon = [FAKFontAwesome githubIconWithSize:IconSize];
     self.inquiryViewControllerAppearButton.image = [githubIon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
     NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
     self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
     self.userInfoHeaderView.user = self.provider.fetchedUser;
-    [self loadRepositories];
+
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestRepositoriesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
+        if (repositories.count != 0) {
+            [self showTableView];
+            self.repositories = repositories;
+            [self.tableView reloadData];
+        } else {
+            [self showErrorMessageViewWithMessage:error];
+        }
+    }];
 }
 
 - (void)showTableView {
@@ -77,21 +84,6 @@ static const CGFloat IconSize = 22;
     inquiryViewController.delegate = tabBarController;
 
     [self presentViewController:inquiryViewController animated:YES completion:nil];
-}
-
-- (void)loadRepositories {
-    if (self.provider.fetchedUser != nil) {
-        GUVAPIClient *client = [GUVAPIClient sharedClient];
-        [client requestRepositoriesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
-            if (repositories.count != 0) {
-                [self showTableView];
-                self.repositories = repositories;
-                [self.tableView reloadData];
-            } else {
-                [self showErrorMessageViewWithMessage:error];
-            }
-        }];
-    }
 }
 
 #pragma mark - Table view data source

@@ -23,22 +23,27 @@ static const CGFloat IconSize = 22;
 @implementation GUVActivitiesViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
-    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
-    self.userInfoHeaderView.user = self.provider.fetchedUser;
-    [self loadActivities];
-
     FAKFontAwesome *githubIcon = [FAKFontAwesome githubIconWithSize:IconSize];
     self.inquiryViewAppearButton.image = [githubIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
     NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
     self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
     self.userInfoHeaderView.user = self.provider.fetchedUser;
-    [self loadActivities];
+
+    GUVAPIClient *client = [GUVAPIClient sharedClient];
+    [client requestActivitiesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
+        if (activities.count != 0) {
+            [self showTableView];
+            self.activities = activities;
+            [self.tableView reloadData];
+        } else {
+            [self showErrorMessageViewWithMessage:error];
+        }
+    }];
 }
 
 - (void)showTableView {
@@ -65,21 +70,6 @@ static const CGFloat IconSize = 22;
     NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
     inquiryViewController.delegate = (GUVUserInfoTabBarController *)self.tabBarController;
     [self presentViewController:inquiryViewController animated:YES completion:nil];
-}
-
-- (void)loadActivities {
-    if (self.provider.fetchedUser != nil) {
-        GUVAPIClient *client = [GUVAPIClient sharedClient];
-        [client requestActivitiesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
-            if (activities.count != 0) {
-                [self showTableView];
-                self.activities = activities;
-                [self.tableView reloadData];
-            } else {
-                [self showErrorMessageViewWithMessage:error];
-            }
-        }];
-    }
 }
 
 #pragma mark - Table view data source
