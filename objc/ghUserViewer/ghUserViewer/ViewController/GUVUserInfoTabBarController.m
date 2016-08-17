@@ -1,3 +1,4 @@
+#import <ChameleonFramework/Chameleon.h>
 #import <FontAwesomeKit/FontAwesomeKit.h>
 #import "GUVUserInfoTabBarController.h"
 #import "GUVInquiryViewController.h"
@@ -30,6 +31,7 @@ static const CGFloat IconSize = 20;
 
     [self setViewControllers:@[repositoriesContainerNavigationController, activitiesContainerNavigationController] animated:NO];
 
+    [self setTabBarAppearance];
     FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
     UITabBarItem *repositoriesItem = self.tabBar.items[0];
     repositoriesItem.image = [repositoriesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
@@ -58,6 +60,14 @@ static const CGFloat IconSize = 20;
 
 - (void)viewController:(GUVInquiryViewController *)viewController userWasSelected:(GUVUser *)user {
     self.user = user;
+}
+
+
+#pragma mark - Appearance
+
+- (void)setTabBarAppearance {
+    self.tabBar.barTintColor = [UIColor flatMintColor];
+    self.tabBar.tintColor = [UIColor flatWhiteColor];
 }
 
 @end
