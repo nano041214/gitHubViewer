@@ -1,11 +1,14 @@
+#import <FontAwesomeKit/FontAwesomeKit.h>
+#import "GUVInquiryViewController.h"
 #import "GUVRepositoriesViewController.h"
 #import "GUVUserInfoHeaderView.h"
 #import "GUVRepositoryTableViewCell.h"
-#import "GUVUserInfoTabBarController.h"
 #import "GUVUserProfileViewController.h"
 #import "GUVAPIClient.h"
 #import "GUVRepository.h"
 #import "GUVRepositoryDetailViewController.h"
+
+static const CGFloat IconSize = 22;
 
 @interface GUVRepositoriesViewController ()
 
@@ -13,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *errorMassageWrapperView;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *inquiryViewControllerAppearButton;
 @property (nonatomic, weak) id<GUVUserProvider> provider;
 @property (nonatomic, nonnull) NSArray<GUVRepository *> *repositories;
 
@@ -22,17 +26,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.provider = (id<GUVUserProvider>)self.tabBarController;
-    self.userInfoHeaderView.user = self.provider.fetchUser;
+    FAKFontAwesome *githubIon = [FAKFontAwesome githubIconWithSize:IconSize];
+    self.inquiryViewControllerAppearButton.image = [githubIon imageWithSize:CGSizeMake(IconSize, IconSize)];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
+    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
+    self.userInfoHeaderView.user = self.provider.fetchedUser;
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestRepositoriesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
+    [client requestRepositoriesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
         if (repositories.count != 0) {
             [self showTableView];
             self.repositories = repositories;
             [self.tableView reloadData];
         } else {
-            [self showErrorMessageViewWithMessage:nil];
+            [self showErrorMessageViewWithMessage:error];
         }
     }];
 }
@@ -61,6 +73,17 @@
             repositoryDetailViewController.repository = repositoryTableCell.repository;
         }
     }
+}
+
+- (IBAction)didTapInquiryViewControllerAppearButton:(UIBarButtonItem *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    GUVInquiryViewController *inquiryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
+
+    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
+    GUVUserInfoTabBarController *tabBarController = (GUVUserInfoTabBarController *)self.tabBarController;
+    inquiryViewController.delegate = tabBarController;
+
+    [self presentViewController:inquiryViewController animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source

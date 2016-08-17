@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_END
 }
 
 - (void)setProvider:(id<GUVUserProvider>)provider {
-    _user = provider.fetchUser;
+    _user = provider.fetchedUser;
 }
 
 #pragma mark - Table view data source

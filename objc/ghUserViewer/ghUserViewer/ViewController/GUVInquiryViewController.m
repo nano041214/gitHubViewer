@@ -1,14 +1,18 @@
+#import <FontAwesomeKit/FontAwesomeKit.h>
+#import <SVProgressHUD.h>
 #import "GUVInquiryViewController.h"
 #import "GUVUserInfoTabBarController.h"
 #import "GUVUser.h"
 #import "GUVAPIClient.h"
-#import <SVProgressHUD.h>
+
+static const CGFloat IconSize = 22;
 
 @interface GUVInquiryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *wrapperViewMarginBottomConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end
 
@@ -19,6 +23,9 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
+    FAKFontAwesome *activitiesIcon = [FAKFontAwesome closeIconWithSize:IconSize];
+    [self.closeButton setImage:[activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)] forState:UIControlStateNormal];
 }
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {
@@ -32,17 +39,15 @@
     [client requestUserInfo:sender.text completionBlock:^(GUVUser * _Nullable user, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         if (error != nil) {
-            [self showAlertLabelwithError:error];
+            [self showAlertLabelWithError:error];
         } else {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            GUVUserInfoTabBarController *usersInfoTabBarController = [storyboard instantiateViewControllerWithIdentifier:@"GUVUsersInfoTabBarController"];
-            usersInfoTabBarController.user = user;
-            [self showViewController:usersInfoTabBarController sender:self];
+            [self.delegate viewController:self userWasSelected:user];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
 }
 
-- (void)showAlertLabelwithError:(NSError *)error {
+- (void)showAlertLabelWithError:(NSError *)error {
     self.alertLabel.hidden = NO;
     if ( error.localizedRecoverySuggestion != nil ) {
         self.alertLabel.text = [NSString stringWithFormat:@"%@\n%@", error.localizedDescription, error.localizedRecoverySuggestion];
@@ -103,6 +108,10 @@
 
 - (IBAction)didTouchTextFieldCancel:(UITextField *)sender {
     [self.view endEditing:YES];
+}
+
+- (IBAction)didTapCloseButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

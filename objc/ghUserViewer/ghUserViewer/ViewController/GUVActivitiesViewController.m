@@ -1,10 +1,12 @@
+#import <FontAwesomeKit/FontAwesomeKit.h>
 #import "GUVActivitiesViewController.h"
 #import "GUVActivity.h"
 #import "GUVActivityTableViewCell.h"
 #import "GUVAPIClient.h"
 #import "GUVUserInfoHeaderView.h"
 #import "GUVUserProfileViewController.h"
-#import "GUVUserInfoTabBarController.h"
+
+static const CGFloat IconSize = 22;
 
 @interface GUVActivitiesViewController ()
 
@@ -14,18 +16,26 @@
 @property (nonatomic, weak) id<GUVUserProvider> provider;
 @property (weak, nonatomic) IBOutlet UIView *errorMassageWrapperView;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *inquiryViewAppearButton;
 
 @end
 
 @implementation GUVActivitiesViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.provider = (id<GUVUserProvider>)self.tabBarController;
-    self.userInfoHeaderView.user = self.provider.fetchUser;
+    FAKFontAwesome *githubIcon = [FAKFontAwesome githubIconWithSize:IconSize];
+    self.inquiryViewAppearButton.image = [githubIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
+    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
+    self.userInfoHeaderView.user = self.provider.fetchedUser;
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestActivitiesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
+    [client requestActivitiesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
         if (activities.count != 0) {
             [self showTableView];
             self.activities = activities;
@@ -52,6 +62,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
     userProfileViewController.provider = self.provider;
+}
+
+- (IBAction)didTapInquiryViewAppearButton:(UIBarButtonItem *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    GUVInquiryViewController *inquiryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
+    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
+    inquiryViewController.delegate = (GUVUserInfoTabBarController *)self.tabBarController;
+    [self presentViewController:inquiryViewController animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source

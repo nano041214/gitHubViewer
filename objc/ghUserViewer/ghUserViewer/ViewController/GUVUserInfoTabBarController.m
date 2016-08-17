@@ -1,9 +1,12 @@
+#import <FontAwesomeKit/FontAwesomeKit.h>
 #import "GUVUserInfoTabBarController.h"
-#import "FontAwesomeKit/FontAwesomeKit.h"
+#import "GUVInquiryViewController.h"
 
 static const CGFloat IconSize = 20;
 
 @interface GUVUserInfoTabBarController ()
+
+@property (nonatomic) GUVInquiryViewController *inquryViewController;
 
 @end
 
@@ -11,7 +14,6 @@ static const CGFloat IconSize = 20;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
     UITabBarItem *repositoriesItem = self.tabBar.items[0];
     repositoriesItem.image = [repositoriesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
@@ -20,8 +22,26 @@ static const CGFloat IconSize = 20;
     activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
-- (GUVUser *)fetchUser {
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.user == nil) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.inquryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
+        self.inquryViewController.delegate = self;
+        [self presentViewController:self.inquryViewController animated:YES completion:nil];
+    }
+}
+
+# pragma mark - GUVUserProvider
+
+- (GUVUser *)fetchedUser {
     return self.user;
+}
+
+# pragma mark - GUVInquiryViewControllerDelegate
+
+- (void)viewController:(GUVInquiryViewController *)viewController userWasSelected:(GUVUser *)user {
+    self.user = user;
 }
 
 @end
