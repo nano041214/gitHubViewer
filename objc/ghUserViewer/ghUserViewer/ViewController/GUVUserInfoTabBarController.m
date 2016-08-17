@@ -28,7 +28,7 @@ static const CGFloat IconSize = 20;
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.inquryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
         self.inquryViewController.delegate = self;
-        [self showViewController:self.inquryViewController sender:self];
+        [self presentViewController:self.inquryViewController animated:YES completion:nil];
     }
 }
 
