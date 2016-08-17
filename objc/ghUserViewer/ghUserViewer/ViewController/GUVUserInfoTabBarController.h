@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol GUVUserProvider <NSObject>
 
-- (GUVUser *)fetchUser;
+- (GUVUser *)fetchedUser;
 
 @end
 

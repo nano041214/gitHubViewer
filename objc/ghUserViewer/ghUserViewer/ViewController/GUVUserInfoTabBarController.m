@@ -34,7 +34,7 @@ static const CGFloat IconSize = 20;
 
 # pragma mark GUVUserProvider
 
-- (GUVUser *)fetchUser {
+- (GUVUser *)fetchedUser {
     return self.user;
 }
 

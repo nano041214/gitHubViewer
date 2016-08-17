@@ -65,10 +65,10 @@ static const CGFloat IconSize = 20;
 
 - (void)setProvider:(id<GUVUserProvider>)provider {
     _provider = provider;
-    self.userInfoHeaderView.user = self.provider.fetchUser;
+    self.userInfoHeaderView.user = self.provider.fetchedUser;
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestActivitiesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
+    [client requestActivitiesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
         if (activities.count != 0) {
             [self showTableView];
             self.activities = activities;

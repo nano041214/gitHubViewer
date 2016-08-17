@@ -78,10 +78,10 @@ static const CGFloat IconSize = 20;
 - (void)setProvider:(id<GUVUserProvider>)provider {
     _provider = provider;
 
-    self.userInfoHeaderView.user = self.provider.fetchUser;
+    self.userInfoHeaderView.user = self.provider.fetchedUser;
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestRepositoriesInfo:self.provider.fetchUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
+    [client requestRepositoriesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
         if (repositories.count != 0) {
             [self showTableView];
             self.repositories = repositories;
