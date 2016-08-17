@@ -22,8 +22,8 @@ static const CGFloat IconSize = 20;
     activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if (self.user == nil) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.inquryViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVInquiryViewController"];
