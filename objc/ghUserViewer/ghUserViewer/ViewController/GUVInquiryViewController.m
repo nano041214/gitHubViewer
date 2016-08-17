@@ -5,7 +5,7 @@
 #import "GUVUser.h"
 #import "GUVAPIClient.h"
 
-static const CGFloat IconSize = 20;
+static const CGFloat IconSize = 22;
 
 @interface GUVInquiryViewController ()
 

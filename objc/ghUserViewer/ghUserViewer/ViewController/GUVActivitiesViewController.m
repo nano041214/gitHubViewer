@@ -6,7 +6,7 @@
 #import "GUVUserInfoHeaderView.h"
 #import "GUVUserProfileViewController.h"
 
-static const CGFloat IconSize = 20;
+static const CGFloat IconSize = 22;
 
 @interface GUVActivitiesViewController ()
 
@@ -29,8 +29,8 @@ static const CGFloat IconSize = 20;
     self.userInfoHeaderView.user = self.provider.fetchedUser;
     [self loadActivities];
 
-    FAKFontAwesome *activitiesIcon = [FAKFontAwesome userIconWithSize:IconSize];
-    self.inquiryViewAppearButton.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
+    FAKFontAwesome *githubIcon = [FAKFontAwesome githubIconWithSize:IconSize];
+    self.inquiryViewAppearButton.image = [githubIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

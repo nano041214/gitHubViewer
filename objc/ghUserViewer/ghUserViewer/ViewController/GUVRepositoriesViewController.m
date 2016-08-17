@@ -8,7 +8,7 @@
 #import "GUVRepository.h"
 #import "GUVRepositoryDetailViewController.h"
 
-static const CGFloat IconSize = 20;
+static const CGFloat IconSize = 22;
 
 @interface GUVRepositoriesViewController ()
 
@@ -30,8 +30,8 @@ static const CGFloat IconSize = 20;
     self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
     self.userInfoHeaderView.user = self.provider.fetchedUser;
     [self loadRepositories];
-    FAKFontAwesome *activitiesIcon = [FAKFontAwesome userIconWithSize:IconSize];
-    self.inquiryViewControllerAppearButton.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
+    FAKFontAwesome *githubIon = [FAKFontAwesome githubIconWithSize:IconSize];
+    self.inquiryViewControllerAppearButton.image = [githubIon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
