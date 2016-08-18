@@ -13,7 +13,6 @@ static const CGFloat IconSize = 22;
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray<GUVActivity *> *activities;
-@property (nonatomic, weak) id<GUVUserProvider> provider;
 @property (weak, nonatomic) IBOutlet UIView *errorMassageWrapperView;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *inquiryViewAppearButton;
@@ -30,8 +29,8 @@ static const CGFloat IconSize = 22;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
-    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
+//    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
+//    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
     self.userInfoHeaderView.user = self.provider.fetchedUser;
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];

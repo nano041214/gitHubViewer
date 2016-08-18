@@ -3,4 +3,6 @@
 
 @interface GUVActivitiesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, weak) id<GUVUserProvider> userProvider;
+
 @end
