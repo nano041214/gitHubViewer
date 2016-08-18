@@ -1,4 +1,3 @@
-#import <ChameleonFramework/Chameleon.h>
 #import <FontAwesomeKit/FontAwesomeKit.h>
 #import "GUVUserInfoTabBarController.h"
 #import "GUVInquiryViewController.h"
@@ -34,12 +33,6 @@ static const CGFloat IconSize = 20;
     UINavigationController *activitiesContainerNavigationController = [[UINavigationController alloc] initWithRootViewController:activitiesViewController];
 
     [self setViewControllers:@[repositoriesContainerNavigationController, activitiesContainerNavigationController] animated:NO];
-
-    [self setTabBarAppearance];
-    [self setNavigationBarAppearance];
-    [self setButonAppearance];
-    [self setTableAppearance];
-    [self setTextFiledAppearance];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -62,34 +55,6 @@ static const CGFloat IconSize = 20;
 
 - (void)viewController:(GUVInquiryViewController *)viewController userWasSelected:(GUVUser *)user {
     self.user = user;
-}
-
-
-#pragma mark - Appearance
-
-- (void)setTabBarAppearance {
-    [UITabBar appearance].barTintColor = [UIColor flatMintColor];
-    [UITabBar appearance].tintColor = [UIColor flatWhiteColor];
-}
-
-- (void)setNavigationBarAppearance {
-    [UINavigationBar appearance].barTintColor = [UIColor flatMintColor];
-    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor flatWhiteColor]};
-    [UIBarButtonItem appearance].tintColor = [UIColor flatWhiteColor];
-    [UINavigationBar appearance].tintColor = [UIColor flatWhiteColor];
-}
-
-- (void)setButonAppearance {
-    [[UIButton appearance] setTitleColor:[UIColor flatMintColor] forState:UIControlStateNormal];
-}
-
-- (void)setTableAppearance {
-    [UITableViewHeaderFooterView appearance].tintColor = [UIColor flatMintColor];
-    [UITableViewHeaderFooterView appearance].textLabel.textColor = [UIColor flatWhiteColor];
-}
-
-- (void)setTextFiledAppearance {
-    [UITextField appearance].tintColor = [UIColor flatMintColor];
 }
 
 @end
