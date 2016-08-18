@@ -32,8 +32,6 @@ static const CGFloat IconSize = 22;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-//    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
-//    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
     GUVUser *user = self.userProvider.user;
     self.userInfoHeaderView.user = user;
 
