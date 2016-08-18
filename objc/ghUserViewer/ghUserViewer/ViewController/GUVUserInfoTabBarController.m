@@ -23,8 +23,12 @@ static const CGFloat IconSize = 20;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     GUVRepositoriesViewController *repositoriesViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVRepositoriesViewController"];
     repositoriesViewController.userProvider = self;
+    FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
+    repositoriesViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Repos" image:[repositoriesIcon imageWithSize:CGSizeMake(IconSize, IconSize)] tag:0];
     GUVActivitiesViewController *activitiesViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVActivitiesViewController"];
     activitiesViewController.userProvider = self;
+    FAKFontAwesome *activitiesIcon = [FAKFontAwesome rssIconWithSize:IconSize];
+    activitiesViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Activities" image:[activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)] tag:1];
 
     UINavigationController *repositoriesContainerNavigationController = [[UINavigationController alloc] initWithRootViewController:repositoriesViewController];
     UINavigationController *activitiesContainerNavigationController = [[UINavigationController alloc] initWithRootViewController:activitiesViewController];
@@ -35,16 +39,7 @@ static const CGFloat IconSize = 20;
     [self setNavigationBarAppearance];
     [self setButonAppearance];
     [self setTableAppearance];
-    FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
-    [repositoriesIcon addAttribute:NSForegroundColorAttributeName value:[UIColor
-                                                                 flatMintColorDark]];
-    UITabBarItem *repositoriesItem = self.tabBar.items[0];
-    repositoriesItem.image = [repositoriesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
-    FAKFontAwesome *activitiesIcon = [FAKFontAwesome rssIconWithSize:IconSize];
-    [activitiesIcon addAttribute:NSForegroundColorAttributeName value:[UIColor
-                                                                         flatMintColorDark]];
-    UITabBarItem *activitiesItem = self.tabBar.items[1];
-    activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
+    [self setTextFiledAppearance];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -78,8 +73,10 @@ static const CGFloat IconSize = 20;
 }
 
 - (void)setNavigationBarAppearance {
-    [UINavigationBar appearance].backgroundColor = [UIColor flatMintColor];
-    [UIBarButtonItem appearance].tintColor = [UIColor flatWatermelonColor];
+    [UINavigationBar appearance].barTintColor = [UIColor flatMintColor];
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor flatWhiteColor]};
+    [UIBarButtonItem appearance].tintColor = [UIColor flatWhiteColor];
+    [UINavigationBar appearance].tintColor = [UIColor flatWhiteColor];
 }
 
 - (void)setButonAppearance {
@@ -87,7 +84,12 @@ static const CGFloat IconSize = 20;
 }
 
 - (void)setTableAppearance {
-    [UITableView appearance].sectionIndexBackgroundColor = [UIColor flatMintColor];
+    [UITableViewHeaderFooterView appearance].tintColor = [UIColor flatMintColor];
+    [UITableViewHeaderFooterView appearance].textLabel.textColor = [UIColor flatWhiteColor];
+}
+
+- (void)setTextFiledAppearance {
+    [UITextField appearance].tintColor = [UIColor flatMintColor];
 }
 
 @end

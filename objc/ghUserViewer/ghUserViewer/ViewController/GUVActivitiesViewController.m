@@ -6,7 +6,7 @@
 #import "GUVUserInfoHeaderView.h"
 #import "GUVUserProfileViewController.h"
 
-static const CGFloat IconSize = 22;
+static const CGFloat IconSize = 30;
 
 @interface GUVActivitiesViewController ()
 
