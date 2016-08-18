@@ -100,7 +100,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="992" y="756"/>
+            <point key="canvasLocation" x="1054" y="-437"/>
         </scene>
         <!--Activities-->
         <scene sceneID="URz-ae-9a4">
@@ -380,7 +380,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2572" y="824"/>
+            <point key="canvasLocation" x="1840" y="-380"/>
         </scene>
         <!--RepositoryDetailViewController-->
         <scene sceneID="lH7-0A-t6K">
@@ -394,8 +394,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QVh-5n-CUv">
-                                <rect key="frame" x="0.0" y="249" width="600" height="302"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QVh-5n-CUv">
+                                <rect key="frame" x="0.0" y="205" width="600" height="395"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryDetailCell" textLabel="C6j-Kj-syx" detailTextLabel="jjE-io-zAX" style="IBUITableViewCellStyleValue1" id="gki-jw-rV9">
@@ -428,8 +428,8 @@
                                     <outlet property="delegate" destination="8ye-f5-kZ6" id="Lsa-N2-HVl"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ud-My-IVf" userLabel="RepositoryOverview">
-                                <rect key="frame" x="0.0" y="64" width="600" height="185"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ud-My-IVf" userLabel="RepositoryOverview">
+                                <rect key="frame" x="0.0" y="20" width="600" height="185"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-ea-3mU">
                                         <rect key="frame" x="20" y="20" width="560" height="72"/>
@@ -498,7 +498,7 @@ aaaaaaaaaa</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8A-Za-DSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295" y="-595"/>
+            <point key="canvasLocation" x="2563" y="-1799"/>
         </scene>
         <!--Repositories-->
         <scene sceneID="3jx-4h-FPH">
@@ -797,7 +797,7 @@ aaaaaaaaaa</string>
                 </tapGestureRecognizer>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bV-Z9-fWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2572" y="59"/>
+            <point key="canvasLocation" x="1840" y="-1145"/>
         </scene>
         <!--UserProfile-->
         <scene sceneID="AgY-Mj-KkN">
@@ -1007,7 +1007,7 @@ aaaaaaaaaa</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7F-eW-kKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295" y="824"/>
+            <point key="canvasLocation" x="2563" y="-380"/>
         </scene>
         <!--user-->
         <scene sceneID="38c-aD-bbz">
@@ -1022,13 +1022,13 @@ aaaaaaaaaa</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqk-Tl-PeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="48"/>
+            <point key="canvasLocation" x="1060" y="-1145"/>
         </scene>
     </scenes>
     <resources>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fao-7s-XGa"/>
+        <segue reference="nsT-cI-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>
