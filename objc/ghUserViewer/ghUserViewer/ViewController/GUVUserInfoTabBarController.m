@@ -32,10 +32,17 @@ static const CGFloat IconSize = 20;
     [self setViewControllers:@[repositoriesContainerNavigationController, activitiesContainerNavigationController] animated:NO];
 
     [self setTabBarAppearance];
+    [self setNavigationBarAppearance];
+    [self setButonAppearance];
+    [self setTableAppearance];
     FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
+    [repositoriesIcon addAttribute:NSForegroundColorAttributeName value:[UIColor
+                                                                 flatMintColorDark]];
     UITabBarItem *repositoriesItem = self.tabBar.items[0];
     repositoriesItem.image = [repositoriesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
     FAKFontAwesome *activitiesIcon = [FAKFontAwesome rssIconWithSize:IconSize];
+    [activitiesIcon addAttribute:NSForegroundColorAttributeName value:[UIColor
+                                                                         flatMintColorDark]];
     UITabBarItem *activitiesItem = self.tabBar.items[1];
     activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
@@ -66,8 +73,21 @@ static const CGFloat IconSize = 20;
 #pragma mark - Appearance
 
 - (void)setTabBarAppearance {
-    self.tabBar.barTintColor = [UIColor flatMintColor];
-    self.tabBar.tintColor = [UIColor flatWhiteColor];
+    [UITabBar appearance].barTintColor = [UIColor flatMintColor];
+    [UITabBar appearance].tintColor = [UIColor flatWhiteColor];
+}
+
+- (void)setNavigationBarAppearance {
+    [UINavigationBar appearance].backgroundColor = [UIColor flatMintColor];
+    [UIBarButtonItem appearance].tintColor = [UIColor flatWatermelonColor];
+}
+
+- (void)setButonAppearance {
+    [[UIButton appearance] setTitleColor:[UIColor flatMintColor] forState:UIControlStateNormal];
+}
+
+- (void)setTableAppearance {
+    [UITableView appearance].sectionIndexBackgroundColor = [UIColor flatMintColor];
 }
 
 @end
