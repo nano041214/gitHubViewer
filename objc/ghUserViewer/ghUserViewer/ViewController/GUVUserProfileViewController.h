@@ -5,7 +5,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GUVUserProfileViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) id<GUVUserProvider> provider;
+@property (nonatomic, weak) id<GUVUserProvider> userProvider;
 
 @end
 

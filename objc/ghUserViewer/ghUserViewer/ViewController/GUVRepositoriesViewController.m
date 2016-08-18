@@ -34,10 +34,11 @@ static const CGFloat IconSize = 22;
 
 //    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
 //    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
-    self.userInfoHeaderView.user = self.provider.fetchedUser;
+    GUVUser *user = self.userProvider.user;
+    self.userInfoHeaderView.user = user;
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestRepositoriesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
+    [client requestRepositoriesInfo:user.name completionBlock:^(NSArray<GUVRepository *> * _Nonnull repositories, NSError * _Nullable error) {
         if (repositories.count != 0) {
             [self showTableView];
             self.repositories = repositories;
@@ -64,7 +65,7 @@ static const CGFloat IconSize = 22;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqual: @"jumpToUserProfileVC"]) {
         GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
-        userProfileViewController.provider = self.provider;
+        userProfileViewController.userProvider = self.userProvider;
     } else {
         if ([sender isKindOfClass:[GUVRepositoryTableViewCell class]]) {
             GUVRepositoryTableViewCell *repositoryTableCell = sender;

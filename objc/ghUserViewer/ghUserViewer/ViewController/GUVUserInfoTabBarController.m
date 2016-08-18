@@ -10,6 +10,8 @@ static const CGFloat IconSize = 20;
 
 @property (nonatomic) GUVInquiryViewController *inquryViewController;
 
+@property (nonatomic, nullable) GUVUser *user;
+
 @end
 
 @implementation GUVUserInfoTabBarController
