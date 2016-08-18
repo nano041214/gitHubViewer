@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, GUVUserProfileTableContent) {
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
-@property (nonatomic, readonly) GUVUser *user;
+@property (nonatomic) GUVUser *user;
 
 @end
 
@@ -24,14 +24,16 @@ NS_ASSUME_NONNULL_END
 
 @implementation GUVUserProfileViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.userInfoHeaderView.user = self.user;
-    self.navigationItem.title = self.user.name;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self reloadUserProfile];
 }
 
-- (void)setProvider:(id<GUVUserProvider>)provider {
-    _user = provider.fetchedUser;
+- (void)reloadUserProfile {
+    self.user = self.userProvider.user;
+    self.userInfoHeaderView.user = self.user;
+    self.navigationItem.title = self.user.name;
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source

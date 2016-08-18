@@ -13,7 +13,6 @@ static const CGFloat IconSize = 22;
 @property (weak, nonatomic) IBOutlet GUVUserInfoHeaderView *userInfoHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray<GUVActivity *> *activities;
-@property (nonatomic, weak) id<GUVUserProvider> provider;
 @property (weak, nonatomic) IBOutlet UIView *errorMassageWrapperView;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *inquiryViewAppearButton;
@@ -30,12 +29,11 @@ static const CGFloat IconSize = 22;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    NSAssert([self.tabBarController isKindOfClass:[GUVUserInfoTabBarController class]], @"tabBarController is of class %@, not of the expected class GUVUserInfoTabBarController", [self.tabBarController class]);
-    self.provider = (GUVUserInfoTabBarController *)self.tabBarController;
-    self.userInfoHeaderView.user = self.provider.fetchedUser;
+    GUVUser *user = self.userProvider.user;
+    self.userInfoHeaderView.user = user;
 
     GUVAPIClient *client = [GUVAPIClient sharedClient];
-    [client requestActivitiesInfo:self.provider.fetchedUser.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
+    [client requestActivitiesInfo:user.name completionBlock:^(NSArray<GUVActivity *> * _Nullable activities, NSError * _Nullable error) {
         if (activities.count != 0) {
             [self showTableView];
             self.activities = activities;
@@ -61,7 +59,7 @@ static const CGFloat IconSize = 22;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     GUVUserProfileViewController *userProfileViewController = segue.destinationViewController;
-    userProfileViewController.provider = self.provider;
+    userProfileViewController.userProvider = self.userProvider;
 }
 
 - (IBAction)didTapInquiryViewAppearButton:(UIBarButtonItem *)sender {

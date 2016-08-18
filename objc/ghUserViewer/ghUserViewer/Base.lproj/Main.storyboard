@@ -105,7 +105,7 @@
         <!--Activities-->
         <scene sceneID="URz-ae-9a4">
             <objects>
-                <viewController title="Activities" automaticallyAdjustsScrollViewInsets="NO" id="vlE-9V-QRU" customClass="GUVActivitiesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GUVActivitiesViewController" title="Activities" automaticallyAdjustsScrollViewInsets="NO" id="vlE-9V-QRU" customClass="GUVActivitiesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d83-3G-lWq"/>
                         <viewControllerLayoutGuide type="bottom" id="vrf-tE-tda"/>
@@ -115,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="userInfoHeader" translatesAutoresizingMaskIntoConstraints="NO" id="U0G-Wq-gDY" customClass="GUVUserInfoHeaderView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="140"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sd5-uu-6T6" userLabel="userStatusWrapper">
                                         <rect key="frame" x="135" y="25" width="440" height="90"/>
@@ -264,7 +264,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9t2-4I-AgG" userLabel="Activities Table View">
-                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
+                                <rect key="frame" x="0.0" y="160" width="600" height="440"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ActivityCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="97" id="PaB-0c-tLG" userLabel="ActivityCell" customClass="GUVActivityTableViewCell">
@@ -310,7 +310,7 @@
                                 </connections>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wp3-5v-Yjl" userLabel="Error Message Wrapper View">
-                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
+                                <rect key="frame" x="0.0" y="160" width="600" height="440"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jt8-xB-e9W" userLabel="Border top">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
@@ -394,7 +394,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QVh-5n-CUv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QVh-5n-CUv">
                                 <rect key="frame" x="0.0" y="249" width="600" height="302"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -428,7 +428,7 @@
                                     <outlet property="delegate" destination="8ye-f5-kZ6" id="Lsa-N2-HVl"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ud-My-IVf" userLabel="RepositoryOverview">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ud-My-IVf" userLabel="RepositoryOverview">
                                 <rect key="frame" x="0.0" y="64" width="600" height="185"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hg-ea-3mU">
@@ -503,7 +503,7 @@ aaaaaaaaaa</string>
         <!--Repositories-->
         <scene sceneID="3jx-4h-FPH">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="DA7-Vp-AY9" userLabel="Repositories" customClass="GUVRepositoriesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GUVRepositoriesViewController" automaticallyAdjustsScrollViewInsets="NO" id="DA7-Vp-AY9" userLabel="Repositories" customClass="GUVRepositoriesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MLO-Mt-vwM"/>
                         <viewControllerLayoutGuide type="bottom" id="qfF-BT-C33"/>
@@ -513,7 +513,7 @@ aaaaaaaaaa</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" restorationIdentifier="userInfoHeader" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-a3-bBR" customClass="GUVUserInfoHeaderView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="140"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="140"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="pOS-hs-ME5">
                                         <rect key="frame" x="25" y="25" width="110" height="90"/>
@@ -663,7 +663,7 @@ aaaaaaaaaa</string>
                                 </connections>
                             </view>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4P-c8-7Zu">
-                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
+                                <rect key="frame" x="0.0" y="160" width="600" height="440"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RepositoryCell" rowHeight="97" id="pgg-EQ-PAJ" customClass="GUVRepositoryTableViewCell">
@@ -727,7 +727,7 @@ aaaaaaaaaa</string>
                                 </connections>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uT-an-l2o" userLabel="Error Message Wrapper View">
-                                <rect key="frame" x="0.0" y="204" width="600" height="347"/>
+                                <rect key="frame" x="0.0" y="160" width="600" height="440"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4m-Wq-vMR" userLabel="Border top">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
@@ -1019,58 +1019,16 @@ aaaaaaaaaa</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="PKA-BG-87c" kind="relationship" relationship="viewControllers" id="jeu-Qt-kxd"/>
-                        <segue destination="AZP-vO-vGF" kind="relationship" relationship="viewControllers" id="zbh-7c-abc"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqk-Tl-PeE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="998" y="48"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="dNI-da-Rl3">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PKA-BG-87c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7JV-n6-x5K" userLabel="Repositories"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tZn-j7-p3B">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="DA7-Vp-AY9" kind="relationship" relationship="rootViewController" id="OfN-DH-VEF"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5gG-jM-fVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1762" y="-241"/>
-        </scene>
-        <!--Activities-->
-        <scene sceneID="Bjr-A9-bbc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AZP-vO-vGF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activities" id="aJR-vT-j1W"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gei-6Y-OGi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vlE-9V-QRU" kind="relationship" relationship="rootViewController" id="RPo-KS-oLh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s5L-mB-cpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1762" y="470"/>
         </scene>
     </scenes>
     <resources>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nsT-cI-t2Z"/>
+        <segue reference="Fao-7s-XGa"/>
     </inferredMetricsTieBreakers>
 </document>
