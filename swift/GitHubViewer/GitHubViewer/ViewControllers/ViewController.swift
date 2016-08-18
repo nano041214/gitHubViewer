@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  GitHubViewer
-//
-//  Created by naomi-hidaka on 2016/08/18.
-//  Copyright © 2016年 naomi-hidaka. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
