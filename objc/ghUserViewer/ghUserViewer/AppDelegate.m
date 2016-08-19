@@ -9,7 +9,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [GUVTheme setTheme];
+    [GUVTheme initializeTheme];
     return YES;
 }
 

@@ -3,36 +3,36 @@
 
 @implementation GUVTheme
 
-+ (void)setTheme {
-    [GUVTheme setTabBarAppearance];
-    [GUVTheme setNavigationBarAppearance];
-    [GUVTheme setButtonAppearance];
-    [GUVTheme setTableAppearance];
-    [GUVTheme setTextFiledAppearance];
++ (void)initializeTheme {
+    [GUVTheme initializeTabBarAppearance];
+    [GUVTheme initializeNavigationBarAppearance];
+    [GUVTheme initializeButtonAppearance];
+    [GUVTheme initializeTableAppearance];
+    [GUVTheme initializeTextFiledAppearance];
 }
 
-+ (void)setTabBarAppearance {
++ (void)initializeTabBarAppearance {
     [UITabBar appearance].barTintColor = [UIColor flatMintColor];
     [UITabBar appearance].tintColor = [UIColor flatWhiteColor];
 }
 
-+ (void)setNavigationBarAppearance {
++ (void)initializeNavigationBarAppearance {
     [UINavigationBar appearance].barTintColor = [UIColor flatMintColor];
     [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor flatWhiteColor]};
     [UIBarButtonItem appearance].tintColor = [UIColor flatWhiteColor];
     [UINavigationBar appearance].tintColor = [UIColor flatWhiteColor];
 }
 
-+ (void)setButtonAppearance {
++ (void)initializeButtonAppearance {
     [[UIButton appearance] setTitleColor:[UIColor flatMintColor] forState:UIControlStateNormal];
 }
 
-+ (void)setTableAppearance {
++ (void)initializeTableAppearance {
     [UITableViewHeaderFooterView appearance].tintColor = [UIColor flatMintColor];
     [UITableViewHeaderFooterView appearance].textLabel.textColor = [UIColor flatWhiteColor];
 }
 
-+ (void)setTextFiledAppearance {
++ (void)initializeTextFiledAppearance {
     [UITextField appearance].tintColor = [UIColor flatMintColor];
 }
 
