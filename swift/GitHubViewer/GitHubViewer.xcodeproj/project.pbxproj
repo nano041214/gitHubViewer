@@ -12,6 +12,11 @@
 		270C5FFB1D65A7FF0009DAC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C5FF91D65A7FF0009DAC0 /* Main.storyboard */; };
 		270C5FFD1D65A7FF0009DAC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270C5FFC1D65A7FF0009DAC0 /* Assets.xcassets */; };
 		270C60001D65A7FF0009DAC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C5FFE1D65A7FF0009DAC0 /* LaunchScreen.storyboard */; };
+		27EE30F91D66D95C00526F88 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30F81D66D95C00526F88 /* APIKit.framework */; };
+		27EE30FB1D66D96F00526F88 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FA1D66D96F00526F88 /* Himotoki.framework */; };
+		27EE30FD1D66D97B00526F88 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FC1D66D97B00526F88 /* Kingfisher.framework */; };
+		27EE30FF1D66D99000526F88 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FE1D66D99000526F88 /* SnapKit.framework */; };
+		27EE31021D66DB8600526F88 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE31011D66DB8600526F88 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		270C5FFC1D65A7FF0009DAC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		270C5FFF1D65A7FF0009DAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		270C60011D65A7FF0009DAC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27EE30F81D66D95C00526F88 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
+		27EE30FA1D66D96F00526F88 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
+		27EE30FC1D66D97B00526F88 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		27EE30FE1D66D99000526F88 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		27EE31011D66DB8600526F88 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27EE31021D66DB8600526F88 /* Result.framework in Frameworks */,
+				27EE30FF1D66D99000526F88 /* SnapKit.framework in Frameworks */,
+				27EE30FD1D66D97B00526F88 /* Kingfisher.framework in Frameworks */,
+				27EE30FB1D66D96F00526F88 /* Himotoki.framework in Frameworks */,
+				27EE30F91D66D95C00526F88 /* APIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +53,11 @@
 		270C5FE91D65A7FF0009DAC0 = {
 			isa = PBXGroup;
 			children = (
+				27EE31011D66DB8600526F88 /* Result.framework */,
+				27EE30FE1D66D99000526F88 /* SnapKit.framework */,
+				27EE30FC1D66D97B00526F88 /* Kingfisher.framework */,
+				27EE30FA1D66D96F00526F88 /* Himotoki.framework */,
+				27EE30F81D66D95C00526F88 /* APIKit.framework */,
 				270C5FF41D65A7FF0009DAC0 /* GitHubViewer */,
 				270C5FF31D65A7FF0009DAC0 /* Products */,
 			);
@@ -98,6 +118,7 @@
 				270C5FEE1D65A7FF0009DAC0 /* Sources */,
 				270C5FEF1D65A7FF0009DAC0 /* Frameworks */,
 				270C5FF01D65A7FF0009DAC0 /* Resources */,
+				27EE31001D66D9B000526F88 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -153,6 +174,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27EE31001D66D9B000526F88 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Himotoki.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/brew/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		270C5FEE1D65A7FF0009DAC0 /* Sources */ = {
@@ -275,6 +317,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GitHubViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cookpad.ios.GitHubViewer;
@@ -286,6 +332,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GitHubViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cookpad.ios.GitHubViewer;
@@ -312,6 +362,7 @@
 				270C60061D65A7FF0009DAC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
