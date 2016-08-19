@@ -58,6 +58,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--User Info Tab Bar Controller-->
+        <scene sceneID="quA-Gs-29X">
+            <objects>
+                <tabBarController id="WvE-zD-FCf" customClass="UserInfoTabBarController" customModule="GitHubViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="0FP-hc-tXu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2B-0T-RcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="288"/>
+        </scene>
         <!--Item 2-->
         <scene sceneID="Xl7-iz-5fT">
             <objects>
