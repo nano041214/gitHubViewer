@@ -16,11 +16,50 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="SXv-tT-HkP">
+                                <rect key="frame" x="210" y="130" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="30e-sT-kst"/>
+                                    <constraint firstAttribute="height" constant="180" id="EYm-Pu-4e8"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHubUserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vDD-zh-WGS">
+                                <rect key="frame" x="30" y="360" width="540" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="J82-Cs-aag"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tml-hn-5N1">
+                                <rect key="frame" x="25" y="339" width="550" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="21" id="pvf-oy-86k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.69411764710000001" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SXv-tT-HkP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="110" id="G9e-Lc-HVC"/>
+                            <constraint firstItem="vDD-zh-WGS" firstAttribute="top" secondItem="SXv-tT-HkP" secondAttribute="bottom" constant="50" id="M1M-41-TxI"/>
+                            <constraint firstItem="vDD-zh-WGS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="M7W-ji-4LP"/>
+                            <constraint firstItem="Tml-hn-5N1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="dYd-mp-TcQ"/>
+                            <constraint firstItem="SXv-tT-HkP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mSS-a6-EZV"/>
+                            <constraint firstItem="vDD-zh-WGS" firstAttribute="top" secondItem="Tml-hn-5N1" secondAttribute="bottom" constant="4" id="sZd-1d-47M"/>
+                            <constraint firstAttribute="trailing" secondItem="Tml-hn-5N1" secondAttribute="trailing" constant="25" id="wqk-xz-sEM"/>
+                            <constraint firstItem="vDD-zh-WGS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-30" id="yBg-Yt-Aug"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="octcat" width="180" height="180"/>
+    </resources>
 </document>
