@@ -30,6 +30,8 @@
 + (void)initializeTableAppearance {
     [UITableViewHeaderFooterView appearance].tintColor = [UIColor flatMintColor];
     [UITableViewHeaderFooterView appearance].textLabel.textColor = [UIColor flatWhiteColor];
+    NSArray *textColorWhiteClassArray = @[[UITableViewHeaderFooterView class]];
+    [[UILabel appearanceWhenContainedInInstancesOfClasses:textColorWhiteClassArray] setTextColor:[UIColor flatWhiteColor]];
 }
 
 + (void)initializeTextFiledAppearance {
