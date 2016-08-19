@@ -22,6 +22,7 @@ static const CGFloat IconSize = 30;
 @implementation GUVActivitiesViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     FAKFontAwesome *githubIcon = [FAKFontAwesome githubIconWithSize:IconSize];
     self.inquiryViewAppearButton.image = [githubIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
