@@ -6,8 +6,6 @@
 #import "GUVUser.h"
 #import "GUVAPIClient.h"
 
-static const CGFloat IconSize = 22;
-
 @interface GUVInquiryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alertLabel;
@@ -24,11 +22,6 @@ static const CGFloat IconSize = 22;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-
-    FAKFontAwesome *closeIcon = [FAKFontAwesome closeIconWithSize:IconSize];
-    [closeIcon addAttribute:NSForegroundColorAttributeName value:[UIColor
-                                                                 flatMintColor]];
-    [self.closeButton setBackgroundImage:[closeIcon imageWithSize:CGSizeMake(IconSize, IconSize)] forState:UIControlStateNormal];
 }
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {

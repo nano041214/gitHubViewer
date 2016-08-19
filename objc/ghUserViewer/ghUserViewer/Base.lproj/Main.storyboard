@@ -54,7 +54,7 @@
                                             <constraint firstAttribute="width" constant="44" id="1WY-lQ-jL8"/>
                                             <constraint firstAttribute="height" constant="44" id="WrU-Tg-mlZ"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="closeIcon">
                                             <color key="titleColor" red="0.18198148906230927" green="0.69426733255386353" blue="0.53024792671203613" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -1029,6 +1029,7 @@ aaaaaaaaaa</string>
         </scene>
     </scenes>
     <resources>
+        <image name="closeIcon" width="20" height="20"/>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
