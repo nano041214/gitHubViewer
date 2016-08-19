@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - ChameleonFramework (2.0.5):
+    - ChameleonFramework/Default (= 2.0.5)
+  - ChameleonFramework/Default (2.0.5)
   - FontAwesomeKit (2.2.0):
     - FontAwesomeKit/Core (= 2.2.0)
     - FontAwesomeKit/FontAwesome (= 2.2.0)
@@ -40,6 +43,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
+  - ChameleonFramework (= 2.0.5)
   - FontAwesomeKit (= 2.2.0)
   - Mantle (= 2.0.7)
   - PureLayout (= 3.0.2)
@@ -48,12 +52,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  ChameleonFramework: 69b0256ae77de31b89b9c83ef501d154e1e64341
   FontAwesomeKit: 025fd4dd1017fe4e3f8d47b03e024deedbb33cd4
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 9c7ebf92473e807ded965306a98c2b42976771fb
+PODFILE CHECKSUM: d6a8fa612eacc955c12fe58c17851cdec793d875
 
 COCOAPODS: 1.0.1

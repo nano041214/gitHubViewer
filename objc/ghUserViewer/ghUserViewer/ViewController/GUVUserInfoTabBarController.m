@@ -22,20 +22,17 @@ static const CGFloat IconSize = 20;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     GUVRepositoriesViewController *repositoriesViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVRepositoriesViewController"];
     repositoriesViewController.userProvider = self;
+    FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
+    repositoriesViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Repos" image:[repositoriesIcon imageWithSize:CGSizeMake(IconSize, IconSize)] selectedImage:nil];
     GUVActivitiesViewController *activitiesViewController = [storyboard instantiateViewControllerWithIdentifier:@"GUVActivitiesViewController"];
     activitiesViewController.userProvider = self;
+    FAKFontAwesome *activitiesIcon = [FAKFontAwesome rssIconWithSize:IconSize];
+    activitiesViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Activities" image:[activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)]  selectedImage:nil];
 
     UINavigationController *repositoriesContainerNavigationController = [[UINavigationController alloc] initWithRootViewController:repositoriesViewController];
     UINavigationController *activitiesContainerNavigationController = [[UINavigationController alloc] initWithRootViewController:activitiesViewController];
 
     [self setViewControllers:@[repositoriesContainerNavigationController, activitiesContainerNavigationController] animated:NO];
-
-    FAKFontAwesome *repositoriesIcon = [FAKFontAwesome databaseIconWithSize:IconSize];
-    UITabBarItem *repositoriesItem = self.tabBar.items[0];
-    repositoriesItem.image = [repositoriesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
-    FAKFontAwesome *activitiesIcon = [FAKFontAwesome rssIconWithSize:IconSize];
-    UITabBarItem *activitiesItem = self.tabBar.items[1];
-    activitiesItem.image = [activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

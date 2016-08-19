@@ -8,11 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="GUVGithubLinkView" id="iN0-l3-epB" customClass="GUVGithubLinkView">
-            <rect key="frame" x="0.0" y="0.0" width="612" height="90.5"/>
+            <rect key="frame" x="0.0" y="0.0" width="612" height="91"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ufm-7O-oFp" userLabel="Wrapper">
-                    <rect key="frame" x="0.0" y="0.0" width="612" height="90.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="612" height="91"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpW-Lq-p7M" userLabel="TopBorder">
                             <rect key="frame" x="0.0" y="0.0" width="612" height="1"/>
@@ -22,7 +22,7 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="txX-X2-vir">
-                            <rect key="frame" x="224.5" y="25" width="163" height="41"/>
+                            <rect key="frame" x="225" y="25" width="163" height="41"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aX-dz-nr2">
                                     <rect key="frame" x="0.0" y="0.0" width="163" height="41"/>

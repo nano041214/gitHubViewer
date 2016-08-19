@@ -1,11 +1,10 @@
+#import <ChameleonFramework/Chameleon.h>
 #import <FontAwesomeKit/FontAwesomeKit.h>
 #import <SVProgressHUD.h>
 #import "GUVInquiryViewController.h"
 #import "GUVUserInfoTabBarController.h"
 #import "GUVUser.h"
 #import "GUVAPIClient.h"
-
-static const CGFloat IconSize = 22;
 
 @interface GUVInquiryViewController ()
 
@@ -23,9 +22,6 @@ static const CGFloat IconSize = 22;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-
-    FAKFontAwesome *activitiesIcon = [FAKFontAwesome closeIconWithSize:IconSize];
-    [self.closeButton setImage:[activitiesIcon imageWithSize:CGSizeMake(IconSize, IconSize)] forState:UIControlStateNormal];
 }
 
 - (IBAction)textFieldValueDidChange:(UITextField *)sender {
