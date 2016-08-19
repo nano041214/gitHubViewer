@@ -31,6 +31,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEnterUserName:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="jmI-cj-XpW"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tml-hn-5N1">
                                 <rect key="frame" x="25" y="339" width="550" height="17"/>
@@ -61,12 +64,16 @@
         <!--User Info Tab Bar Controller-->
         <scene sceneID="quA-Gs-29X">
             <objects>
-                <tabBarController id="WvE-zD-FCf" customClass="UserInfoTabBarController" customModule="GitHubViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UserInfoTabBarController" id="WvE-zD-FCf" customClass="UserInfoTabBarController" customModule="GitHubViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="0FP-hc-tXu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="lUH-GW-Bgj" kind="relationship" relationship="viewControllers" id="oxF-yt-NoK"/>
+                        <segue destination="hWO-w9-dqk" kind="relationship" relationship="viewControllers" id="u3K-27-yNg"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2B-0T-RcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
