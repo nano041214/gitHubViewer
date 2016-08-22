@@ -6,6 +6,4 @@ class InquiryViewController: UIViewController {
         let tabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("UserInfoTabBarController") as! UserInfoTabBarController
         showViewController(tabBarController, sender: self)
     }
-
 }
-
