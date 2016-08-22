@@ -48,8 +48,15 @@
                                         <color key="textColor" red="0.69411764705882351" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnH-GG-rkd">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                        <color key="backgroundColor" red="0.18198148906230927" green="0.69426733255386353" blue="0.53024792671203613" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="FtY-nC-hwB"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V6-Kg-XVJ">
-                                        <rect key="frame" x="553" y="18" width="44" height="44"/>
+                                        <rect key="frame" x="548" y="20" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="1WY-lQ-jL8"/>
                                             <constraint firstAttribute="height" constant="44" id="WrU-Tg-mlZ"/>
@@ -62,19 +69,21 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="MZj-QU-wBT" secondAttribute="trailing" constant="30" id="6Vw-a7-aaX" userLabel="User Name Text Field.trailing = trailing + 30"/>
-                                    <constraint firstAttribute="trailing" secondItem="7V6-Kg-XVJ" secondAttribute="trailing" constant="3" id="9Pm-Ke-ZaW"/>
+                                    <constraint firstItem="qnH-GG-rkd" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="top" id="9FN-Qf-Oju"/>
+                                    <constraint firstAttribute="trailing" secondItem="7V6-Kg-XVJ" secondAttribute="trailing" constant="8" id="9Pm-Ke-ZaW"/>
                                     <constraint firstItem="MZj-QU-wBT" firstAttribute="leading" secondItem="cot-bg-avH" secondAttribute="leading" constant="40" id="FYs-tj-eP1"/>
                                     <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="wn8-xr-eEr" secondAttribute="bottom" constant="4" id="PI1-fy-VY8" userLabel="alertLabel.bottom = githubUserName.top - 4"/>
                                     <constraint firstAttribute="trailing" secondItem="wn8-xr-eEr" secondAttribute="trailing" constant="25" id="V0g-7M-AOs" userLabel="alertLabel.trailing = trailing + 25"/>
                                     <constraint firstItem="wn8-xr-eEr" firstAttribute="leading" secondItem="cot-bg-avH" secondAttribute="leading" constant="25" id="Vv8-n0-0qo"/>
+                                    <constraint firstItem="qnH-GG-rkd" firstAttribute="leading" secondItem="cot-bg-avH" secondAttribute="leading" id="Xrs-Px-JtS"/>
                                     <constraint firstItem="djL-Nb-4ii" firstAttribute="centerX" secondItem="cot-bg-avH" secondAttribute="centerX" id="c25-sz-Pxu"/>
                                     <constraint firstItem="MZj-QU-wBT" firstAttribute="top" secondItem="djL-Nb-4ii" secondAttribute="bottom" constant="50" id="cDt-Kh-HqI"/>
                                     <constraint firstItem="djL-Nb-4ii" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="top" constant="110" id="eQR-J9-IGc" userLabel="octcat.top = top + 90"/>
-                                    <constraint firstItem="7V6-Kg-XVJ" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="topMargin" constant="10" id="jPk-Gw-V9B"/>
+                                    <constraint firstItem="7V6-Kg-XVJ" firstAttribute="top" secondItem="cot-bg-avH" secondAttribute="topMargin" constant="12" id="jPk-Gw-V9B"/>
+                                    <constraint firstItem="7V6-Kg-XVJ" firstAttribute="leading" secondItem="qnH-GG-rkd" secondAttribute="trailing" constant="-52" id="ptP-T0-lwo"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="So7-fs-a5R" appends="YES" id="rxp-id-ARL"/>
