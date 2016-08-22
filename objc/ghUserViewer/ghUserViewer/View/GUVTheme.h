@@ -3,6 +3,6 @@
 
 @interface GUVTheme : NSObject
 
-+ (void)readyTheme;
++ (void)setupTheme;
 
 @end
