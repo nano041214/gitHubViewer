@@ -3,6 +3,12 @@ import UIKit
 class RepositoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 100.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
+
     // MARK - tableViewDataSource
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
