@@ -283,7 +283,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PaB-0c-tLG" id="yu9-Hu-9jL">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="96.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RepositoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EI-4x-yG0" userLabel="NameLabel">
@@ -682,7 +682,7 @@ aaaaaaaaaa</string>
                                         <rect key="frame" x="0.0" y="28" width="600" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pgg-EQ-PAJ" id="x5v-VD-MDo">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="96.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RepositoryName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dws-uR-bPh" userLabel="RepositoryName">
@@ -1042,6 +1042,6 @@ aaaaaaaaaa</string>
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Fao-7s-XGa"/>
+        <segue reference="nsT-cI-t2Z"/>
     </inferredMetricsTieBreakers>
 </document>
