@@ -5,12 +5,26 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
 
     // MARK - tableViewDataSource
 
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2;
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
-        return 5
+        if section == 0 {
+            return 1
+        } else {
+            return 5
+        }
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
+            print(cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize))
+            return cell
+        }
     }
 }
