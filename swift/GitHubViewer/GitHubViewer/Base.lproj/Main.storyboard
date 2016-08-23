@@ -123,16 +123,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWQ-Nc-qrO">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWQ-Nc-qrO" userLabel="UserInfoHeaderView">
                                                     <rect key="frame" x="15" y="18" width="570" height="101"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-DH-wk2">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-DH-wk2" userLabel="LabelWrapperView">
                                                             <rect key="frame" x="114" y="0.0" width="456" height="101"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydC-QZ-maT">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydC-QZ-maT" userLabel="StarredLabelWrapper">
                                                                     <rect key="frame" x="0.0" y="55" width="152" height="46"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ba-Rh-e9t">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starred" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ba-Rh-e9t">
                                                                             <rect key="frame" x="0.0" y="29" width="152" height="17"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -156,7 +156,7 @@
                                                                         <constraint firstItem="e5M-Yd-RpO" firstAttribute="top" secondItem="ydC-QZ-maT" secondAttribute="top" id="qzk-ZH-DFA"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-L8-5Nf">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-L8-5Nf" userLabel="FollowingLabelWrapper">
                                                                     <rect key="frame" x="152" y="54" width="152" height="47"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRs-0g-ARw">
@@ -165,7 +165,7 @@
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ES3-j8-P67">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ES3-j8-P67">
                                                                             <rect key="frame" x="0.0" y="30" width="152" height="17"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -183,18 +183,12 @@
                                                                         <constraint firstAttribute="trailing" secondItem="yRs-0g-ARw" secondAttribute="trailing" id="zFX-yg-FOk"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEw-Rj-coN">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEw-Rj-coN" userLabel="FollowedLabelWrapper">
                                                                     <rect key="frame" x="304" y="54" width="152" height="47"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4Q-a3-fEh">
                                                                             <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-1m-9Pg">
-                                                                            <rect key="frame" x="0.0" y="30" width="152" height="17"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -205,14 +199,17 @@
                                                                         <constraint firstItem="T4Q-a3-fEh" firstAttribute="top" secondItem="gEw-Rj-coN" secondAttribute="top" id="NXX-cO-6tN"/>
                                                                         <constraint firstItem="T4Q-a3-fEh" firstAttribute="top" secondItem="gEw-Rj-coN" secondAttribute="top" id="R2F-bg-OCF"/>
                                                                         <constraint firstAttribute="trailing" secondItem="T4Q-a3-fEh" secondAttribute="trailing" id="jVY-wG-e2e"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="JHR-1m-9Pg" secondAttribute="bottom" id="pfL-bd-Xvv"/>
-                                                                        <constraint firstItem="JHR-1m-9Pg" firstAttribute="leading" secondItem="gEw-Rj-coN" secondAttribute="leading" id="q0G-ee-tLM"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="JHR-1m-9Pg" secondAttribute="trailing" id="uin-Z6-nPD"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYR-fe-ehZ">
                                                                     <rect key="frame" x="25" y="0.0" width="431" height="47"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-1m-9Pg">
+                                                                    <rect key="frame" x="304" y="84" width="152" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -273,7 +270,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="96.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmm-JQ-r95">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmm-JQ-r95" userLabel="RepositoryCellContentWrapperView">
                                                     <rect key="frame" x="8" y="8" width="551" height="81"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="starsLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdE-Si-Vy3">
