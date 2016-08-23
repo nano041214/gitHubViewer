@@ -29,7 +29,6 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
-            print(cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize))
             return cell
         }
     }
