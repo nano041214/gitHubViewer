@@ -8,7 +8,7 @@
         <!--Inquiry View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GUVInquiryViewController" customModule="GitHubViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InquiryViewController" customModule="GitHubViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -31,6 +31,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEnterUserName:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="z8p-MV-Unl"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No such user here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tml-hn-5N1">
                                 <rect key="frame" x="25" y="339" width="550" height="17"/>
@@ -57,6 +60,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--User Info Tab Bar Controller-->
+        <scene sceneID="quA-Gs-29X">
+            <objects>
+                <tabBarController storyboardIdentifier="UserInfoTabBarController" id="WvE-zD-FCf" customClass="UserInfoTabBarController" customModule="GitHubViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="0FP-hc-tXu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="lUH-GW-Bgj" kind="relationship" relationship="viewControllers" id="oxF-yt-NoK"/>
+                        <segue destination="hWO-w9-dqk" kind="relationship" relationship="viewControllers" id="u3K-27-yNg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2B-0T-RcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1068" y="288"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="Xl7-iz-5fT">
+            <objects>
+                <viewController id="hWO-w9-dqk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zup-RS-zSA"/>
+                        <viewControllerLayoutGuide type="bottom" id="28A-cg-dNW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hNz-xX-aHF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="xcj-tY-Rbz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rSX-Js-35m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1833" y="618"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="6ut-AT-QNh">
+            <objects>
+                <viewController id="lUH-GW-Bgj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WQC-nh-vuX"/>
+                        <viewControllerLayoutGuide type="bottom" id="11U-Lw-Tmr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UdA-r2-3Ln">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="QK1-CL-REJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ti9-lI-QNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1833" y="-43"/>
         </scene>
     </scenes>
     <resources>
