@@ -14,7 +14,13 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
 
-        static var count: Int { return RepositoriesTableCellTyle.RepositoryType.rawValue + 1 }
+        static let count: Int = {
+            var i = 0
+            while (RepositoriesTableCellTyle(rawValue: i) != nil) {
+                i += 1
+            }
+            return i
+        }()
     }
 
     // define value workaround
