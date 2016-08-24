@@ -1,25 +1,39 @@
 import UIKit
 
 class RepositoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let defaultRowHeight: CGFloat = 100.0
-    let sectionCounts = 2
+    enum RepositoriesTableCell: Int {
+        case UserInfoCell
+        case RepositoryCell
+
+        func toString() -> String {
+            switch self {
+                case .UserInfoCell:
+                    return "UserInfoCell"
+                case .RepositoryCell:
+                    return "RepositoryCell"            }
+        }
+
+        func height() -> CGFloat {
+            switch self {
+            case .UserInfoCell:
+                return 139.5
+            case .RepositoryCell:
+                return 96.5
+            }
+        }
+
+        static var count: Int { return RepositoriesTableCell.RepositoryCell.hashValue + 1}
+    }
 
     // define value workaround
     let repositoriesCount = 5
 
     @IBOutlet weak var tableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView.estimatedRowHeight = defaultRowHeight
-        // ajust row height depends on its content
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-    }
-
     // MARK: - tableViewDataSource
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionCounts;
+        return RepositoriesTableCell.count;
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
@@ -39,6 +53,15 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
             return cell
+        }
+    }
+
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        switch indexPath.section {
+        case RepositoriesTableCell.UserInfoCell.rawValue:
+            return RepositoriesTableCell.UserInfoCell.height()
+        default:
+            return RepositoriesTableCell.RepositoryCell.height()
         }
     }
 }
