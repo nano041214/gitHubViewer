@@ -120,7 +120,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9IR-pp-2jH" id="vxp-8Q-wPC">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWQ-Nc-qrO" userLabel="UserInfoHeaderView">
@@ -192,24 +192,27 @@
                                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFC-Dh-uP4">
+                                                                            <rect key="frame" x="0.0" y="30" width="152" height="17"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="cFC-Dh-uP4" secondAttribute="bottom" id="772-0J-MTj"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="cFC-Dh-uP4" secondAttribute="trailing" id="8fB-JY-cn3"/>
                                                                         <constraint firstItem="T4Q-a3-fEh" firstAttribute="leading" secondItem="gEw-Rj-coN" secondAttribute="leading" id="KTW-tR-ki7"/>
                                                                         <constraint firstItem="T4Q-a3-fEh" firstAttribute="top" secondItem="gEw-Rj-coN" secondAttribute="top" id="NXX-cO-6tN"/>
                                                                         <constraint firstItem="T4Q-a3-fEh" firstAttribute="top" secondItem="gEw-Rj-coN" secondAttribute="top" id="R2F-bg-OCF"/>
+                                                                        <constraint firstItem="cFC-Dh-uP4" firstAttribute="leading" secondItem="gEw-Rj-coN" secondAttribute="leading" id="cqg-Mc-fRp"/>
                                                                         <constraint firstAttribute="trailing" secondItem="T4Q-a3-fEh" secondAttribute="trailing" id="jVY-wG-e2e"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYR-fe-ehZ">
                                                                     <rect key="frame" x="25" y="0.0" width="431" height="47"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-1m-9Pg">
-                                                                    <rect key="frame" x="304" y="84" width="152" height="17"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -271,7 +274,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hmm-JQ-r95" userLabel="RepositoryCellContentWrapperView">
-                                                    <rect key="frame" x="8" y="8" width="551" height="80"/>
+                                                    <rect key="frame" x="8" y="8" width="551" height="79.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="starsLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdE-Si-Vy3">
                                                             <rect key="frame" x="20" y="43" width="516" height="22"/>

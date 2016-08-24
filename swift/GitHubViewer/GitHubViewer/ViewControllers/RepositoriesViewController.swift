@@ -14,7 +14,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
 
-        static var count: Int { return RepositoriesTableCellTyle.RepositoryType.hashValue + 1 }
+        static var count: Int { return RepositoriesTableCellTyle.RepositoryType.rawValue + 1 }
     }
 
     // define value workaround
