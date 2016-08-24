@@ -2,19 +2,19 @@ import UIKit
 
 class RepositoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     enum RepositoriesTableCellTyle: Int {
-        case UserInfoCell
-        case RepositoryCell
+        case UserInfoType
+        case RepositoryType
 
         func toString() -> String {
             switch self {
-                case .UserInfoCell:
+                case .UserInfoType:
                     return "UserInfoCell"
-                case .RepositoryCell:
+                case .RepositoryType:
                     return "RepositoryCell"
             }
         }
 
-        static var count: Int { return RepositoriesTableCellTyle.RepositoryCell.hashValue + 1 }
+        static var count: Int { return RepositoriesTableCellTyle.RepositoryType.hashValue + 1 }
     }
 
     // define value workaround
@@ -30,7 +30,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         switch section {
-        case RepositoriesTableCellTyle.UserInfoCell.rawValue:
+        case RepositoriesTableCellTyle.UserInfoType.rawValue:
             return 1
         default:
             return repositoriesCount
@@ -39,21 +39,21 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case RepositoriesTableCellTyle.UserInfoCell.rawValue:
-            let cell = tableView.dequeueReusableCellWithIdentifier(RepositoriesTableCellTyle.UserInfoCell.toString(), forIndexPath: indexPath)
+        case RepositoriesTableCellTyle.UserInfoType.rawValue:
+            let cell = tableView.dequeueReusableCellWithIdentifier(RepositoriesTableCellTyle.UserInfoType.toString(), forIndexPath: indexPath)
             return cell
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier(RepositoriesTableCellTyle.RepositoryCell.toString(), forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier(RepositoriesTableCellTyle.RepositoryType.toString(), forIndexPath: indexPath)
             return cell
         }
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.section {
-        case RepositoriesTableCellTyle.UserInfoCell.rawValue:
-            return 139.5
+        case RepositoriesTableCellTyle.UserInfoType.rawValue:
+            return UserInfoTableViewCell.height
         default:
-            return 96.5
+            return RepositoryTableViewCell.height
         }
     }
 }
