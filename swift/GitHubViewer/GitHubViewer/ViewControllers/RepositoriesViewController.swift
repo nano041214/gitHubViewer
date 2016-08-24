@@ -10,7 +10,8 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
                 case .UserInfoCell:
                     return "UserInfoCell"
                 case .RepositoryCell:
-                    return "RepositoryCell"            }
+                    return "RepositoryCell"
+            }
         }
 
         func height() -> CGFloat {
@@ -38,7 +39,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         switch section {
-        case 0:
+        case RepositoriesTableCell.UserInfoCell.rawValue:
             return 1
         default:
             return repositoriesCount
@@ -47,11 +48,11 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
+        case RepositoriesTableCell.UserInfoCell.rawValue:
+            let cell = tableView.dequeueReusableCellWithIdentifier(RepositoriesTableCell.UserInfoCell.toString(), forIndexPath: indexPath)
             return cell
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier(RepositoriesTableCell.RepositoryCell.toString(), forIndexPath: indexPath)
             return cell
         }
     }
