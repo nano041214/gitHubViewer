@@ -1,7 +1,7 @@
 import UIKit
 
 class RepositoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    enum RepositoriesTableCellType: Int {
+    enum TableCellType: Int {
         case UserInfo
         case Repository
     }
@@ -16,12 +16,12 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
     // MARK: - tableViewDataSource
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionCount;
+        return sectionCount
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         switch section {
-        case RepositoriesTableCellType.UserInfo.rawValue:
+        case TableCellType.UserInfo.rawValue:
             return 1
         default:
             return repositoriesCount
@@ -30,7 +30,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case RepositoriesTableCellType.UserInfo.rawValue:
+        case TableCellType.UserInfo.rawValue:
             let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
             return cell
         default:
@@ -41,7 +41,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.section {
-        case RepositoriesTableCellType.UserInfo.rawValue:
+        case TableCellType.UserInfo.rawValue:
             return UserInfoTableViewCell.height
         default:
             return RepositoryTableViewCell.height
