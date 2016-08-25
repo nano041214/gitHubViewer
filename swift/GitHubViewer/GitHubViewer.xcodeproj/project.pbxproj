@@ -12,6 +12,7 @@
 		270C5FFB1D65A7FF0009DAC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C5FF91D65A7FF0009DAC0 /* Main.storyboard */; };
 		270C5FFD1D65A7FF0009DAC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270C5FFC1D65A7FF0009DAC0 /* Assets.xcassets */; };
 		270C60001D65A7FF0009DAC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C5FFE1D65A7FF0009DAC0 /* LaunchScreen.storyboard */; };
+		271107861D6EB5B600DE65F6 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */; };
 		274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */; };
 		27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */; };
 		2798FADE1D6D419D0080EEA1 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */; };
@@ -34,6 +35,7 @@
 		270C5FFC1D65A7FF0009DAC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		270C5FFF1D65A7FF0009DAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		270C60011D65A7FF0009DAC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTabBarController.swift; sourceTree = "<group>"; };
 		27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				270C5FF71D65A7FF0009DAC0 /* InquiryViewController.swift */,
 				2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */,
 				27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */,
+				271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */,
 				274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */,
 				27C48DE31D6FE5BD005E98D3 /* Repository.swift in Sources */,
+				271107861D6EB5B600DE65F6 /* ActivitiesViewController.swift in Sources */,
 				270C5FF81D65A7FF0009DAC0 /* InquiryViewController.swift in Sources */,
 				2798FADE1D6D419D0080EEA1 /* RepositoryTableViewCell.swift in Sources */,
 				27C48DE51D6FE5D8005E98D3 /* Activity.swift in Sources */,
