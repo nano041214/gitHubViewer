@@ -13,11 +13,9 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
                     return "RepositoryCell"
             }
         }
-
-        static var count: Int {
-            return RepositoriesTableCellType.Repository.rawValue + 1
-        }
     }
+
+    let sectionCount = 2
 
     // define value workaround
     let repositoriesCount = 5
@@ -27,7 +25,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
     // MARK: - tableViewDataSource
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return RepositoriesTableCellType.count;
+        return sectionCount;
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
