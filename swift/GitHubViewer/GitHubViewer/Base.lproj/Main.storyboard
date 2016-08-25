@@ -105,7 +105,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0E-9N-KqU" userLabel="UserInfoHeaderView">
-                                                    <rect key="frame" x="15" y="12" width="570" height="101"/>
+                                                    <rect key="frame" x="15" y="18" width="570" height="101"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8l-gj-GrR" userLabel="LabelWrapperView">
                                                             <rect key="frame" x="114" y="0.0" width="456" height="101"/>
@@ -241,7 +241,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="M0E-9N-KqU" firstAttribute="leading" secondItem="2aF-ob-YNi" secondAttribute="leading" constant="15" id="8vJ-e6-t47"/>
-                                                <constraint firstItem="M0E-9N-KqU" firstAttribute="top" secondItem="2aF-ob-YNi" secondAttribute="top" constant="12" id="BLC-7J-1yW"/>
+                                                <constraint firstItem="M0E-9N-KqU" firstAttribute="top" secondItem="2aF-ob-YNi" secondAttribute="top" constant="18" id="BLC-7J-1yW"/>
                                                 <constraint firstAttribute="trailing" secondItem="M0E-9N-KqU" secondAttribute="trailing" constant="15" id="efB-5C-220"/>
                                             </constraints>
                                         </tableViewCellContentView>
