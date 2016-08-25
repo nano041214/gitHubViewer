@@ -20,10 +20,10 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
-        guard let section = TableCellType(rawValue: section) else {
+        guard let cellType = TableCellType(rawValue: section) else {
             fatalError("Acesssing undefined section row")
         }
-        switch section {
+        switch cellType {
         case .UserInfo:
             return 1
         default:
@@ -32,10 +32,10 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        guard let section = TableCellType(rawValue: indexPath.section) else {
+        guard let cellType = TableCellType(rawValue: indexPath.section) else {
             fatalError("Acesssing undefined section row")
         }
-        switch section {
+        switch cellType {
         case .UserInfo:
             let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
             return cell
@@ -46,10 +46,10 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        guard let section = TableCellType(rawValue: indexPath.section) else {
+        guard let cellType = TableCellType(rawValue: indexPath.section) else {
             fatalError("Acesssing undefined section row")
         }
-        switch section {
+        switch cellType {
         case .UserInfo:
             return UserInfoTableViewCell.height
         default:
