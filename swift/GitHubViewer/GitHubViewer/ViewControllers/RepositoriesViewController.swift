@@ -4,15 +4,6 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
     enum RepositoriesTableCellType: Int {
         case UserInfo
         case Repository
-
-        func toString() -> String {
-            switch self {
-                case .UserInfo:
-                    return "UserInfoCell"
-                case .Repository:
-                    return "RepositoryCell"
-            }
-        }
     }
 
     let sectionCount = 2
@@ -40,10 +31,10 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case RepositoriesTableCellType.UserInfo.rawValue:
-            let cell = tableView.dequeueReusableCellWithIdentifier(RepositoriesTableCellType.UserInfo.toString(), forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
             return cell
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier(RepositoriesTableCellType.Repository.toString(), forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
             return cell
         }
     }
