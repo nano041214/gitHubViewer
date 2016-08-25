@@ -42,9 +42,9 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.section {
         case ActivitiesTableCellType.UserInfo.rawValue:
-            return 139.5
+            return UserInfoTableViewCell.height
         default:
-            return 96.5
+            return ActivityTableViewCell.height
         }
     }
     
