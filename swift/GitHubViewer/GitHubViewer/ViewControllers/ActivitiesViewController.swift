@@ -1,7 +1,7 @@
 import UIKit
 
 class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    enum ActivitiesTableCellType: Int {
+    enum TableCellType: Int {
         case UserInfo
         case Activity
     }
@@ -20,8 +20,11 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
-        switch section {
-        case ActivitiesTableCellType.UserInfo.rawValue:
+        guard let cellType = TableCellType(rawValue: section) else {
+            fatalError("Acesssing undefined section row")
+        }
+        switch cellType {
+        case .UserInfo:
             return 1
         default:
             return activitiesCount
@@ -29,8 +32,11 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case ActivitiesTableCellType.UserInfo.rawValue:
+        guard let cellType = TableCellType(rawValue: indexPath.section) else {
+            fatalError("Acesssing undefined section row")
+        }
+        switch cellType {
+        case .UserInfo:
             let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
             return cell
         default:
@@ -40,8 +46,11 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        switch indexPath.section {
-        case ActivitiesTableCellType.UserInfo.rawValue:
+        guard let cellType = TableCellType(rawValue: indexPath.section) else {
+            fatalError("Acesssing undefined section row")
+        }
+        switch cellType {
+        case .UserInfo:
             return UserInfoTableViewCell.height
         default:
             return ActivityTableViewCell.height
