@@ -84,7 +84,7 @@
         <!--Activities-->
         <scene sceneID="Xl7-iz-5fT">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hWO-w9-dqk" userLabel="Activities" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hWO-w9-dqk" userLabel="Activities" customClass="ActivitiesViewController" customModule="GitHubViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zup-RS-zSA"/>
                         <viewControllerLayoutGuide type="bottom" id="28A-cg-dNW"/>
@@ -289,6 +289,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hWO-w9-dqk" id="Bz7-Up-Ghr"/>
+                                    <outlet property="delegate" destination="hWO-w9-dqk" id="zeS-X4-Dku"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -300,6 +304,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="FBu-RR-CzC"/>
+                    <connections>
+                        <outlet property="tableView" destination="eyp-AX-sCN" id="yUr-Am-CDP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSX-Js-35m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
