@@ -26,7 +26,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
         switch cellType {
         case .UserInfo:
             return 1
-        default:
+        case .Repository:
             return repositoriesCount
         }
     }
@@ -39,7 +39,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
         case .UserInfo:
             let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
             return cell
-        default:
+        case .Repository:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
             return cell
         }
@@ -52,7 +52,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate, UITable
         switch cellType {
         case .UserInfo:
             return UserInfoTableViewCell.height
-        default:
+        case .Repository:
             return RepositoryTableViewCell.height
         }
     }

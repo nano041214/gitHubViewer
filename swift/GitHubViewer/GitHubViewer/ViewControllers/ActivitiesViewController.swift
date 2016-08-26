@@ -26,7 +26,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
         switch cellType {
         case .UserInfo:
             return 1
-        default:
+        case .Activity:
             return activitiesCount
         }
     }
@@ -39,7 +39,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
         case .UserInfo:
             let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
             return cell
-        default:
+        case .Activity:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath)
             return cell
         }
@@ -52,7 +52,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
         switch cellType {
         case .UserInfo:
             return UserInfoTableViewCell.height
-        default:
+        case .Activity:
             return ActivityTableViewCell.height
         }
     }
