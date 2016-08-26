@@ -32,13 +32,13 @@ extension User: Decodable {
     }
 
     static func decode(e: Extractor) throws -> User {
-        return try User(name: e <| "name",
-                        iconURL: URLTransformer.apply(e <| "image_url"),
-                        followersCount: e <| "followersCount",
-                        followingCount: e <| "followingCount",
-                        blogURL: URLTransformer.apply(e <|? "image_url"),
-                        mailAddress: e <|? "mail",
+        return try User(name: e <| "login",
+                        iconURL: URLTransformer.apply(e <| "avatar_url"),
+                        followersCount: e <| "followers",
+                        followingCount: e <| "following",
+                        blogURL: URLTransformer.apply(e <|? "blog"),
+                        mailAddress: e <|? "email",
                         location: e <|? "location",
-                        joinedDate: DateTransformer.apply(e <| "date"))
+                        joinedDate: DateTransformer.apply(e <| "created_at"))
     }
 }
