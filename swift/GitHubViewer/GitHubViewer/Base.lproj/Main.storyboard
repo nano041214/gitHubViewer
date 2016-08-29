@@ -62,6 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="428" y="593"/>
         </scene>
         <!--User Info Tab Bar Controller-->
         <scene sceneID="quA-Gs-29X">
@@ -94,7 +95,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4zJ-8t-YXx" id="1Uc-Yk-woW">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="139.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epw-XX-6rX" userLabel="UserInfoHeaderView">
@@ -292,7 +293,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z27-nh-X64" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2781" y="1667"/>
+            <point key="canvasLocation" x="2789" y="1131"/>
         </scene>
         <!--Repositories-->
         <scene sceneID="6ut-AT-QNh">
@@ -562,7 +563,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a13-8v-Cn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1969" y="1667"/>
+            <point key="canvasLocation" x="1977" y="1131"/>
         </scene>
     </scenes>
     <resources>
