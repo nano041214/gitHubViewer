@@ -2,10 +2,6 @@ import UIKit
 import APIKit
 
 class InquiryViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     @IBAction func didEnterUserName(sender: UITextField) {
         assert(sender.text != nil, "sender.txt never be nil even if the value has no character")
         let userNameString = sender.text!
