@@ -1,6 +1,6 @@
 import UIKit
 
-class RepositoryTableViewCell: UITableViewCell {
+class ActivityTableViewCell: UITableViewCell {
 
     static let height: CGFloat = 97
 

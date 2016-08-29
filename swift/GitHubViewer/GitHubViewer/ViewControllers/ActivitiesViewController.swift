@@ -1,20 +1,20 @@
 import UIKit
 
-class RepositoriesViewController: UITableViewController {
+class ActivitiesViewController: UITableViewController {
     enum TableCellType: Int {
         case UserInfo
-        case Repository
+        case Activity
     }
 
     let sectionCount = 2
 
     // define value workaround
-    let repositoriesCount = 5
-
+    let activitiesCount = 5
+    
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionCount
+        return sectionCount;
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
@@ -24,8 +24,8 @@ class RepositoriesViewController: UITableViewController {
         switch cellType {
         case .UserInfo:
             return 1
-        case .Repository:
-            return repositoriesCount
+        case .Activity:
+            return activitiesCount
         }
     }
 
@@ -37,8 +37,8 @@ class RepositoriesViewController: UITableViewController {
         case .UserInfo:
             let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
             return cell
-        case .Repository:
-            let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
+        case .Activity:
+            let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath)
             return cell
         }
     }
@@ -50,8 +50,9 @@ class RepositoriesViewController: UITableViewController {
         switch cellType {
         case .UserInfo:
             return UserInfoTableViewCell.height
-        case .Repository:
-            return RepositoryTableViewCell.height
+        case .Activity:
+            return ActivityTableViewCell.height
         }
     }
+    
 }
