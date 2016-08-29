@@ -22,7 +22,7 @@ extension User: Decodable {
 
     static let dateTransformer = Transformer<String, NSDate> { dateString throws -> NSDate in
         let formatter: NSDateFormatter = NSDateFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "ja")
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         guard let date = formatter.dateFromString(dateString) else
         {
