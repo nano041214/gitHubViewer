@@ -19,7 +19,6 @@
 		27C48DE11D6FE582005E98D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE01D6FE582005E98D3 /* User.swift */; };
 		27C48DE31D6FE5BD005E98D3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE21D6FE5BD005E98D3 /* Repository.swift */; };
 		27C48DE51D6FE5D8005E98D3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE41D6FE5D8005E98D3 /* Activity.swift */; };
-		27C48DE81D6FFD82005E98D3 /* GithubAPISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE71D6FFD82005E98D3 /* GithubAPISession.swift */; };
 		27C48DEA1D6FFDE2005E98D3 /* GithubAPIRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE91D6FFDE2005E98D3 /* GithubAPIRequestType.swift */; };
 		27C48DEC1D70048D005E98D3 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DEB1D70048D005E98D3 /* UserRequest.swift */; };
 		27EE30F91D66D95C00526F88 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30F81D66D95C00526F88 /* APIKit.framework */; };
@@ -44,7 +43,6 @@
 		27C48DE01D6FE582005E98D3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		27C48DE21D6FE5BD005E98D3 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		27C48DE41D6FE5D8005E98D3 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
-		27C48DE71D6FFD82005E98D3 /* GithubAPISession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPISession.swift; sourceTree = "<group>"; };
 		27C48DE91D6FFDE2005E98D3 /* GithubAPIRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPIRequestType.swift; sourceTree = "<group>"; };
 		27C48DEB1D70048D005E98D3 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		27EE30F81D66D95C00526F88 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				27C48DE01D6FE582005E98D3 /* User.swift */,
 				27C48DE21D6FE5BD005E98D3 /* Repository.swift */,
 				27C48DE41D6FE5D8005E98D3 /* Activity.swift */,
-				27C48DE71D6FFD82005E98D3 /* GithubAPISession.swift */,
 				27C48DE91D6FFDE2005E98D3 /* GithubAPIRequestType.swift */,
 				27C48DEB1D70048D005E98D3 /* UserRequest.swift */,
 			);
@@ -241,7 +238,6 @@
 			files = (
 				2798FAE01D6D420A0080EEA1 /* UserInfoTableViewCell.swift in Sources */,
 				27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */,
-				27C48DE81D6FFD82005E98D3 /* GithubAPISession.swift in Sources */,
 				274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */,
 				27C48DE31D6FE5BD005E98D3 /* Repository.swift in Sources */,
 				270C5FF81D65A7FF0009DAC0 /* InquiryViewController.swift in Sources */,
