@@ -1,7 +1,7 @@
 import APIKit
 import Himotoki
 
-struct UserRequest: GithubAPIRequestType {
+struct UserRequest: GitHubAPIRequestType {
     typealias Response = User
 
     var method: HTTPMethod {

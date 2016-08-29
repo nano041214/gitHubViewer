@@ -1,8 +1,8 @@
 import APIKit
 
-protocol GithubAPIRequestType: RequestType {}
+protocol GitHubAPIRequestType: RequestType {}
 
-extension GithubAPIRequestType {
+extension GitHubAPIRequestType {
     var baseURL: NSURL {
         return NSURL(string: "https://api.github.com")!
     }
