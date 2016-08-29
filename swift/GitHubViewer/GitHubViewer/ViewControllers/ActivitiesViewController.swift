@@ -21,7 +21,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         guard let cellType = TableCellType(rawValue: section) else {
-            fatalError("Acesssing undefined section row")
+            fatalError("Accesssing undefined section row")
         }
         switch cellType {
         case .UserInfo:
@@ -33,7 +33,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
-            fatalError("Acesssing undefined section row")
+            fatalError("Accesssing undefined section row")
         }
         switch cellType {
         case .UserInfo:
@@ -47,7 +47,7 @@ class ActivitiesViewController: UIViewController, UITableViewDelegate, UITableVi
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
-            fatalError("Acesssing undefined section row")
+            fatalError("Accesssing undefined section row")
         }
         switch cellType {
         case .UserInfo:
