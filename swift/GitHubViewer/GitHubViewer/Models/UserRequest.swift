@@ -1,17 +1,17 @@
 import APIKit
 import Himotoki
 
-class UserRequest: GithubAPIRequestType {
+struct UserRequest: GithubAPIRequestType {
     typealias Response = User
 
     var method: HTTPMethod {
         return .GET
     }
 
-    var userName: String
+    let userName: String
 
     var path: String {
-        return String(format:"/users/%@", userName)
+        return "/users/\(userName)"
     }
 
     init(userName: String) {
