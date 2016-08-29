@@ -20,15 +20,15 @@ extension User: Decodable {
         return URL
     }
 
-    static let DateTransformer = Transformer<String, NSDate> { DateString throws -> NSDate in
+    static let dateTransformer = Transformer<String, NSDate> { dateString throws -> NSDate in
         let formatter: NSDateFormatter = NSDateFormatter()
         formatter.locale = NSLocale(localeIdentifier: "ja")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        guard let Date = formatter.dateFromString(DateString) else
+        guard let date = formatter.dateFromString(dateString) else
         {
-            throw customError("Invalid Date String: \(DateString)")
+            throw customError("Invalid Date String: \(dateString)")
         }
-        return Date
+        return date
     }
 
     static func decode(e: Extractor) throws -> User {
@@ -39,6 +39,6 @@ extension User: Decodable {
                         blogURL: URLTransformer.apply(e <|? "blog"),
                         mailAddress: e <|? "email",
                         location: e <|? "location",
-                        joinedDate: DateTransformer.apply(e <| "created_at"))
+                        joinedDate: dateTransformer.apply(e <| "created_at"))
     }
 }
