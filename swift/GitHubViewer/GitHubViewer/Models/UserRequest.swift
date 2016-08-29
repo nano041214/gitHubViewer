@@ -8,8 +8,14 @@ class UserRequest: GithubAPIRequestType {
         return .GET
     }
 
+    var userName: String
+
     var path: String {
-        return "/users/nano041214"
+        return String(format:"/users/%@", userName)
+    }
+
+    init(userName: String) {
+        self.userName = userName
     }
 
     func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {

@@ -5,7 +5,7 @@ class InquiryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let request = UserRequest()
+        let request = UserRequest(userName: "nano041214")
         Session.sendRequest(request) { result in
             switch result {
             case .Success(let response):
