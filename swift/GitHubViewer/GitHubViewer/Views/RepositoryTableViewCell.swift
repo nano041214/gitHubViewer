@@ -2,6 +2,6 @@ import UIKit
 
 class RepositoryTableViewCell: UITableViewCell {
 
-    static let height: CGFloat = 96.5
+    static let height: CGFloat = 97
 
 }

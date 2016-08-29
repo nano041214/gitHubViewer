@@ -235,7 +235,6 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="epw-XX-6rX" firstAttribute="top" secondItem="1Uc-Yk-woW" secondAttribute="topMargin" constant="11" id="9Tv-36-2Og"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="epw-XX-6rX" secondAttribute="bottom" constant="11" id="KgG-X1-r7E"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="epw-XX-6rX" secondAttribute="trailing" constant="7" id="T2O-do-j6u"/>
                                         <constraint firstItem="epw-XX-6rX" firstAttribute="leading" secondItem="1Uc-Yk-woW" secondAttribute="leadingMargin" constant="7" id="ayc-DE-6U3"/>
                                     </constraints>
@@ -374,12 +373,6 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-C3-OgN" userLabel="FollowedLabelWrapper">
                                                             <rect key="frame" x="304" y="54" width="152" height="47"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDS-SF-R65">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IE-ED-y4O">
                                                                     <rect key="frame" x="0.0" y="30" width="152" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -389,18 +382,20 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="XDS-SF-R65" firstAttribute="leading" secondItem="fEP-C3-OgN" secondAttribute="leading" id="3JF-wM-NSq"/>
-                                                                <constraint firstItem="XDS-SF-R65" firstAttribute="top" secondItem="fEP-C3-OgN" secondAttribute="top" id="Etq-32-fzt"/>
                                                                 <constraint firstAttribute="bottom" secondItem="9IE-ED-y4O" secondAttribute="bottom" id="H4x-6p-OFx"/>
                                                                 <constraint firstAttribute="trailing" secondItem="9IE-ED-y4O" secondAttribute="trailing" id="V9w-uc-bdJ"/>
                                                                 <constraint firstItem="9IE-ED-y4O" firstAttribute="leading" secondItem="fEP-C3-OgN" secondAttribute="leading" id="fPh-Zs-wIo"/>
-                                                                <constraint firstAttribute="trailing" secondItem="XDS-SF-R65" secondAttribute="trailing" id="o1q-mp-Yn3"/>
-                                                                <constraint firstItem="XDS-SF-R65" firstAttribute="top" secondItem="fEP-C3-OgN" secondAttribute="top" id="tcl-Dd-8QB"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVY-NV-fC4">
                                                             <rect key="frame" x="25" y="0.0" width="431" height="47"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDS-SF-R65">
+                                                            <rect key="frame" x="304" y="54" width="152" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -505,7 +500,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cma-F2-crP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="262"/>
+            <point key="canvasLocation" x="2696" y="262"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="umT-2A-iNg">
