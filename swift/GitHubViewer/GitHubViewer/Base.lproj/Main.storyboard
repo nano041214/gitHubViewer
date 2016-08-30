@@ -378,7 +378,7 @@
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDS-SF-R65">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDS-SF-R65">
                                                                     <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -387,9 +387,12 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
+                                                                <constraint firstItem="XDS-SF-R65" firstAttribute="top" secondItem="fEP-C3-OgN" secondAttribute="top" id="2Wj-KB-FqE"/>
                                                                 <constraint firstAttribute="bottom" secondItem="9IE-ED-y4O" secondAttribute="bottom" id="H4x-6p-OFx"/>
                                                                 <constraint firstAttribute="trailing" secondItem="9IE-ED-y4O" secondAttribute="trailing" id="V9w-uc-bdJ"/>
+                                                                <constraint firstItem="XDS-SF-R65" firstAttribute="leading" secondItem="fEP-C3-OgN" secondAttribute="leading" id="Zbg-Hl-sSc"/>
                                                                 <constraint firstItem="9IE-ED-y4O" firstAttribute="leading" secondItem="fEP-C3-OgN" secondAttribute="leading" id="fPh-Zs-wIo"/>
+                                                                <constraint firstAttribute="trailing" secondItem="XDS-SF-R65" secondAttribute="trailing" id="tqM-3z-4PD"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVY-NV-fC4">
