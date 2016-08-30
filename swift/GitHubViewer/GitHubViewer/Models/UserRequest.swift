@@ -14,10 +14,6 @@ struct UserRequest: GitHubAPIRequestType {
         return "/users/\(userName)"
     }
 
-    init(userName: String) {
-        self.userName = userName
-    }
-
     func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {
         return try decodeValue(object)
     }

@@ -24,8 +24,7 @@ extension User: Decodable {
         let formatter: NSDateFormatter = NSDateFormatter()
         formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        guard let date = formatter.dateFromString(dateString) else
-        {
+        guard let date = formatter.dateFromString(dateString) else {
             throw customError("Invalid Date String: \(dateString)")
         }
         return date
