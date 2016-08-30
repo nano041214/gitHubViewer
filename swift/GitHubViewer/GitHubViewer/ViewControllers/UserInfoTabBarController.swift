@@ -14,6 +14,7 @@ class UserInfoTabBarController: UITabBarController, UserProvider {
         }
 
         activitiesViewController.userProvider = self
+        repositoriesViewController.userProvider = self
 
         let repositoriesContainerController = UINavigationController(rootViewController: repositoriesViewController)
         repositoriesContainerController.title = "Repos"

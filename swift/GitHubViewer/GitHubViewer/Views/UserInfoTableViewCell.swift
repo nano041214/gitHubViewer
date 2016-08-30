@@ -11,15 +11,8 @@ class UserInfoTableViewCell: UITableViewCell {
     static let height: CGFloat = 140
 
     var userProvider: UserProvider! {
-        get {
-            return self.userProvider
-        }
-
-        set {
+        didSet {
             self.userNameLabel.text = userProvider.user.name
         }
     }
-
-
-
 }

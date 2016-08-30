@@ -11,6 +11,8 @@ class RepositoriesViewController: UITableViewController {
     // define value workaround
     let repositoriesCount = 5
 
+    var userProvider: UserProvider!
+
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -35,7 +37,10 @@ class RepositoriesViewController: UITableViewController {
         }
         switch cellType {
         case .UserInfo:
-            let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
+            guard let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath) as? UserInfoTableViewCell else {
+                fatalError("Failing to create UserInfoCell")
+            }
+            cell.userProvider = userProvider
             return cell
         case .Repository:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
