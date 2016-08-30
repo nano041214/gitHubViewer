@@ -1,6 +1,6 @@
 import UIKit
 
-class UserInfoTabBarController: UITabBarController, userProvider {
+class UserInfoTabBarController: UITabBarController, UserProvider {
     var user: User!
 
     override func viewDidLoad() {
@@ -13,6 +13,8 @@ class UserInfoTabBarController: UITabBarController, userProvider {
             fatalError("Could not load ActivitiesViewController")
         }
 
+        activitiesViewController.userProvider = self
+
         let repositoriesContainerController = UINavigationController(rootViewController: repositoriesViewController)
         repositoriesContainerController.title = "Repos"
         let activitiesContainerController = UINavigationController(rootViewController: activitiesViewController)
@@ -23,6 +25,6 @@ class UserInfoTabBarController: UITabBarController, userProvider {
 
 }
 
-protocol userProvider {
+protocol UserProvider {
     var user: User! { get }
 }

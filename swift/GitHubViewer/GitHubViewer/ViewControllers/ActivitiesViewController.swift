@@ -6,11 +6,13 @@ class ActivitiesViewController: UITableViewController {
         case Activity
     }
 
+    var userProvider: UserProvider?
+
     let sectionCount = 2
 
     // define value workaround
     let activitiesCount = 5
-    
+
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
