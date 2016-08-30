@@ -3,8 +3,9 @@ import APIKit
 
 class InquiryViewController: UIViewController {
     @IBAction func didEnterUserName(sender: UITextField) {
-        assert(sender.text != nil, "sender.txt never be nil even if the value has no character")
-        let userNameString = sender.text!
+        guard let userNameString = sender.text else {
+            return
+        }
         let request = UserRequest(userName: userNameString)
         Session.sendRequest(request) { result in
             switch result {
