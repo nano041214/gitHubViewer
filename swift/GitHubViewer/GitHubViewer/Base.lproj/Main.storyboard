@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserInfoCell" rowHeight="140" id="4zJ-8t-YXx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserInfoCell" rowHeight="140" id="4zJ-8t-YXx" customClass="UserInfoTableViewCell" customModule="GitHubViewer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4zJ-8t-YXx" id="1Uc-Yk-woW">
@@ -235,6 +235,13 @@
                                         <constraint firstItem="epw-XX-6rX" firstAttribute="leading" secondItem="1Uc-Yk-woW" secondAttribute="leadingMargin" constant="7" id="ayc-DE-6U3"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="followedLabel" destination="bsz-Ax-FdU" id="SZ8-hJ-dSR"/>
+                                    <outlet property="followingLabel" destination="8n4-Gl-PgB" id="2fv-qK-VML"/>
+                                    <outlet property="iconImageView" destination="Pek-Of-Ah8" id="9hi-8A-OmI"/>
+                                    <outlet property="starredLabel" destination="lgj-mP-Jqg" id="U6I-i0-Qsn"/>
+                                    <outlet property="userNameLabel" destination="2eO-fQ-B0y" id="27q-9Y-PM2"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="96" id="MWt-9Y-cbe">
                                 <rect key="frame" x="0.0" y="168" width="600" height="96"/>

@@ -37,7 +37,10 @@ class ActivitiesViewController: UITableViewController {
         }
         switch cellType {
         case .UserInfo:
-            let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
+            guard let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath) as? UserInfoTableViewCell else {
+                fatalError("Failing to create UserInfoCell")
+            }
+            cell.userProvider = userProvider
             return cell
         case .Activity:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath)

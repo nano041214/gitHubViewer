@@ -13,6 +13,8 @@ class UserInfoTableViewCell: UITableViewCell {
     var userProvider: UserProvider! {
         didSet {
             self.userNameLabel.text = userProvider.user.name
+            self.followedLabel.text = "\(userProvider.user.followersCount)"
+            self.followingLabel.text = "\(userProvider.user.followingCount)"
         }
     }
 }
