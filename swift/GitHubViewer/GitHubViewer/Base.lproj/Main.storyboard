@@ -299,7 +299,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserInfoCell" rowHeight="140" id="2wd-NA-Q1k">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserInfoCell" rowHeight="140" id="2wd-NA-Q1k" customClass="UserInfoTableViewCell" customModule="GitHubViewer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2wd-NA-Q1k" id="MVb-7p-Lng">
@@ -309,6 +309,9 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FP4-zG-duf" userLabel="UserInfoHeaderView">
                                             <rect key="frame" x="15" y="19" width="570" height="101"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="uAc-L7-2lU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="101"/>
+                                                </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jl9-oA-C89" userLabel="LabelWrapperView">
                                                     <rect key="frame" x="114" y="0.0" width="456" height="101"/>
                                                     <subviews>
@@ -375,6 +378,12 @@
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDS-SF-R65">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
@@ -386,12 +395,6 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVY-NV-fC4">
                                                             <rect key="frame" x="25" y="0.0" width="431" height="47"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDS-SF-R65">
-                                                            <rect key="frame" x="304" y="54" width="152" height="29"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -419,9 +422,6 @@
                                                         <constraint firstItem="fEP-C3-OgN" firstAttribute="top" secondItem="YVY-NV-fC4" secondAttribute="bottom" constant="7" id="z4n-Kj-pgP"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="octcat" translatesAutoresizingMaskIntoConstraints="NO" id="uAc-L7-2lU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="114" height="101"/>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -443,6 +443,13 @@
                                         <constraint firstItem="FP4-zG-duf" firstAttribute="top" secondItem="MVb-7p-Lng" secondAttribute="topMargin" constant="11" id="Ghg-gs-Lzd"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="followedLabel" destination="XDS-SF-R65" id="Lbt-6e-9Vy"/>
+                                    <outlet property="followingLabel" destination="zea-LX-967" id="9d9-WM-4me"/>
+                                    <outlet property="iconImageView" destination="uAc-L7-2lU" id="VtC-Im-FN9"/>
+                                    <outlet property="starredLabel" destination="bIy-It-ifV" id="5Ax-1O-KEq"/>
+                                    <outlet property="userNameLabel" destination="YVY-NV-fC4" id="7P1-jT-TPk"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RepositoryCell" rowHeight="96" id="8gQ-ZQ-GnD">
                                 <rect key="frame" x="0.0" y="168" width="600" height="96"/>
