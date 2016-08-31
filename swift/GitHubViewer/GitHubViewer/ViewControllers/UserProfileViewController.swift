@@ -4,6 +4,7 @@ class UserProfileViewController: UITableViewController {
     enum TableCellType: Int {
         case UserInfo
         case UserProfile
+        static let count = 2
     }
 
     enum RowType: Int {
@@ -14,18 +15,17 @@ class UserProfileViewController: UITableViewController {
         static let count = 4
     }
 
-    let sectionCount = 2
-    let defaultRowHeight:CGFloat = 44.0
+    let defaultCellHeight: CGFloat = 44.0
 
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionCount;
+        return TableCellType.count;
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         guard let cellType = TableCellType(rawValue: section) else {
-            fatalError("Accesssing undefined section row")
+            fatalError("Accesssing undefined section")
         }
         switch cellType {
         case .UserInfo:
@@ -37,7 +37,7 @@ class UserProfileViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
-            fatalError("Accesssing undefined section row")
+            fatalError("Accesssing undefined section")
         }
         switch cellType {
         case .UserInfo:
@@ -57,7 +57,6 @@ class UserProfileViewController: UITableViewController {
                 cell.textLabel?.text = "Location"
             case .JoinedDate:
                 cell.textLabel?.text = "Joined at"
-
             }
             return cell
         }
@@ -65,13 +64,13 @@ class UserProfileViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
-            fatalError("Accesssing undefined section row")
+            fatalError("Accesssing undefined section")
         }
         switch cellType {
         case .UserInfo:
             return UserInfoTableViewCell.height
         case .UserProfile:
-            return defaultRowHeight
+            return defaultCellHeight
         }
     }
 }
