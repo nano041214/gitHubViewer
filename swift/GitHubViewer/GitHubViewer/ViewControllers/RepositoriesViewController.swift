@@ -11,7 +11,7 @@ class RepositoriesViewController: UITableViewController {
     // define value workaround
     let repositoriesCount = 5
 
-    var userProvider: UserProvider!
+    var userProvider: UserProvider?
 
     // MARK: - tableViewDataSource
 
@@ -40,7 +40,7 @@ class RepositoriesViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath) as? UserInfoTableViewCell else {
                 fatalError("Failing to create UserInfoCell")
             }
-            cell.userProvider = userProvider
+            cell.user = userProvider?.user
             return cell
         case .Repository:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)

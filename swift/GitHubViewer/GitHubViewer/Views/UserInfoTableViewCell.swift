@@ -10,11 +10,14 @@ class UserInfoTableViewCell: UITableViewCell {
 
     static let height: CGFloat = 140
 
-    var userProvider: UserProvider! {
+    var user: User? {
         didSet {
-            self.userNameLabel.text = userProvider.user.name
-            self.followedLabel.text = "\(userProvider.user.followersCount)"
-            self.followingLabel.text = "\(userProvider.user.followingCount)"
+            guard let fetchedUser = user else {
+                return
+            }
+            self.userNameLabel.text = fetchedUser.name
+            self.followedLabel.text = "\(fetchedUser.followersCount)"
+            self.followingLabel.text = "\(fetchedUser.followingCount)"
         }
     }
 }
