@@ -13,6 +13,11 @@ class ActivitiesViewController: UITableViewController {
     // define value workaround
     let activitiesCount = 5
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -40,7 +45,7 @@ class ActivitiesViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath) as? UserInfoTableViewCell else {
                 fatalError("Failing to create UserInfoCell")
             }
-            cell.user = userProvider?.fetchedUser
+            cell.user = userProvider?.user
             return cell
         case .Activity:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath)

@@ -1,15 +1,15 @@
 import UIKit
 
-class UserInfoTabBarController: UITabBarController, UserProvider {
+class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewControllerDelegate {
     var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let repositoriesViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RepositoriesViewController") as? RepositoriesViewController else {
+        guard let repositoriesViewController = storyboard?.instantiateViewControllerWithIdentifier("RepositoriesViewController") as? RepositoriesViewController else {
             fatalError("Could not load RepositoriesViewController")
         }
-        guard let activitiesViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ActivitiesViewController") as? ActivitiesViewController else {
+        guard let activitiesViewController = storyboard?.instantiateViewControllerWithIdentifier("ActivitiesViewController") as? ActivitiesViewController else {
             fatalError("Could not load ActivitiesViewController")
         }
 
@@ -21,17 +21,27 @@ class UserInfoTabBarController: UITabBarController, UserProvider {
         let activitiesContainerController = UINavigationController(rootViewController: activitiesViewController)
         activitiesContainerController.title = "Activities"
 
-        self.viewControllers = [repositoriesContainerController, activitiesContainerController]
+        viewControllers = [repositoriesContainerController, activitiesContainerController]
     }
 
-    var fetchedUser: User {
-        guard let fetchedUser = user else {
-            fatalError("failed to fetch user")
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if user == nil {
+            guard let inquiryViewController = storyboard?.instantiateViewControllerWithIdentifier("InquiryViewController") as? InquiryViewController else {
+                fatalError("Could not load RepositoriesViewController")
+            }
+            inquiryViewController.delegate = self
+            self.presentViewController(inquiryViewController, animated: true, completion: nil)
         }
-        return fetchedUser
+    }
+
+    // MARK: - InquiryViewControllerDelegate
+
+    func inquiryViewController(inquiryViewController: InquiryViewController, userWasSelected user: User) {
+        self.user = user
     }
 }
 
 protocol UserProvider {
-    var fetchedUser: User { get }
+    var user: User? { get }
 }

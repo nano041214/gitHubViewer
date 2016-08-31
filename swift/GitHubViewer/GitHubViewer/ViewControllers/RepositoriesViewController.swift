@@ -13,6 +13,11 @@ class RepositoriesViewController: UITableViewController {
 
     var userProvider: UserProvider?
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -40,7 +45,7 @@ class RepositoriesViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath) as? UserInfoTableViewCell else {
                 fatalError("Failing to create UserInfoCell")
             }
-            cell.user = userProvider?.fetchedUser
+            cell.user = userProvider?.user
             return cell
         case .Repository:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
