@@ -597,24 +597,27 @@
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZl-s3-okX">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="eEg-4t-Omc" secondAttribute="bottom" id="4ce-yt-YaD"/>
                                                                 <constraint firstItem="eEg-4t-Omc" firstAttribute="leading" secondItem="Urd-63-yYR" secondAttribute="leading" id="4jm-id-BUU"/>
+                                                                <constraint firstAttribute="trailing" secondItem="iZl-s3-okX" secondAttribute="trailing" id="8Fs-ax-3T2"/>
                                                                 <constraint firstAttribute="trailing" secondItem="eEg-4t-Omc" secondAttribute="trailing" id="Bp7-IB-FPs"/>
+                                                                <constraint firstItem="iZl-s3-okX" firstAttribute="top" secondItem="Urd-63-yYR" secondAttribute="top" id="aqr-5F-J3p"/>
+                                                                <constraint firstItem="iZl-s3-okX" firstAttribute="leading" secondItem="Urd-63-yYR" secondAttribute="leading" id="zSH-uE-TwA"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAP-UQ-R01">
                                                             <rect key="frame" x="25" y="0.0" width="431" height="47"/>
                                                             <gestureRecognizers/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZl-s3-okX">
-                                                            <rect key="frame" x="304" y="54" width="152" height="29"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
