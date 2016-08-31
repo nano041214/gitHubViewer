@@ -512,10 +512,10 @@
             </objects>
             <point key="canvasLocation" x="2696" y="262"/>
         </scene>
-        <!--Table View Controller-->
+        <!--User Profile View Controller-->
         <scene sceneID="nig-Ll-rcB">
             <objects>
-                <tableViewController id="dZ8-yC-lqx" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="UserProfileViewController" id="dZ8-yC-lqx" customClass="UserProfileViewController" customModule="GitHubViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5h8-9K-sBn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
