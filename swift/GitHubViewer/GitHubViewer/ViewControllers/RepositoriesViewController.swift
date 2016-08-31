@@ -40,7 +40,7 @@ class RepositoriesViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath) as? UserInfoTableViewCell else {
                 fatalError("Failing to create UserInfoCell")
             }
-            cell.user = userProvider?.user
+            cell.user = userProvider?.fetchedUser
             return cell
         case .Repository:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)

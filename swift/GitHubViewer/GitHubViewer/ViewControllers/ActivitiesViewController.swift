@@ -40,7 +40,7 @@ class ActivitiesViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath) as? UserInfoTableViewCell else {
                 fatalError("Failing to create UserInfoCell")
             }
-            cell.user = userProvider?.user
+            cell.user = userProvider?.fetchedUser
             return cell
         case .Activity:
             let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath)

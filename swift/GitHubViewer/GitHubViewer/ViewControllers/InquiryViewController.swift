@@ -13,7 +13,7 @@ class InquiryViewController: UIViewController {
                 guard let tabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("UserInfoTabBarController") as? UserInfoTabBarController else {
                     fatalError("Could not load UserInfoTabBarController")
                 }
-                tabBarController.fetchedUser = response
+                tabBarController.user = response
                 self.showViewController(tabBarController, sender: self)
             case .Failure(let error):
                 print(error)

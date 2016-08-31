@@ -1,7 +1,7 @@
 import UIKit
 
 class UserInfoTabBarController: UITabBarController, UserProvider {
-    var fetchedUser: User!
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +24,14 @@ class UserInfoTabBarController: UITabBarController, UserProvider {
         self.viewControllers = [repositoriesContainerController, activitiesContainerController]
     }
 
-    var user: User {
-        guard let user = fetchedUser else {
+    var fetchedUser: User {
+        guard let fetchedUser = user else {
             fatalError("failed to fetch user")
         }
-        return user
+        return fetchedUser
     }
 }
 
 protocol UserProvider {
-    var user: User { get }
+    var fetchedUser: User { get }
 }
