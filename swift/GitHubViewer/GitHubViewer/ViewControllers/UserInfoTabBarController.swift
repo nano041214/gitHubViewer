@@ -31,7 +31,7 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
                 fatalError("Could not load RepositoriesViewController")
             }
             inquiryViewController.delegate = self
-            self.presentViewController(inquiryViewController, animated: true, completion: nil)
+            presentViewController(inquiryViewController, animated: true, completion: nil)
         }
     }
 
