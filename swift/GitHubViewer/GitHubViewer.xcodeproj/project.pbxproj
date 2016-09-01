@@ -27,6 +27,7 @@
 		27D958EE1D76CE9A00F5BAC6 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D958ED1D76CE9A00F5BAC6 /* UserProfileViewController.swift */; };
 		27D309671D77DE3600DF0154 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D309661D77DE3600DF0154 /* RepositoryDetailViewController.swift */; };
 		27D309691D77E23A00DF0154 /* RepositoryTitleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D309681D77E23A00DF0154 /* RepositoryTitleTableCell.swift */; };
+		27D3096B1D77EA5400DF0154 /* GitHubLinkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D3096A1D77EA5400DF0154 /* GitHubLinkView.xib */; };
 		27EE30F91D66D95C00526F88 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30F81D66D95C00526F88 /* APIKit.framework */; };
 		27EE30FB1D66D96F00526F88 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FA1D66D96F00526F88 /* Himotoki.framework */; };
 		27EE30FD1D66D97B00526F88 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FC1D66D97B00526F88 /* Kingfisher.framework */; };
@@ -57,6 +58,7 @@
 		27D958ED1D76CE9A00F5BAC6 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		27D309661D77DE3600DF0154 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		27D309681D77E23A00DF0154 /* RepositoryTitleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTitleTableCell.swift; sourceTree = "<group>"; };
+		27D3096A1D77EA5400DF0154 /* GitHubLinkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitHubLinkView.xib; sourceTree = "<group>"; };
 		27EE30F81D66D95C00526F88 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		27EE30FA1D66D96F00526F88 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 		27EE30FC1D66D97B00526F88 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				2798FADF1D6D420A0080EEA1 /* UserInfoTableViewCell.swift */,
 				271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */,
 				27D309681D77E23A00DF0154 /* RepositoryTitleTableCell.swift */,
+				27D3096A1D77EA5400DF0154 /* GitHubLinkView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D3096B1D77EA5400DF0154 /* GitHubLinkView.xib in Resources */,
 				270C60001D65A7FF0009DAC0 /* LaunchScreen.storyboard in Resources */,
 				270C5FFD1D65A7FF0009DAC0 /* Assets.xcassets in Resources */,
 				270C5FFB1D65A7FF0009DAC0 /* Main.storyboard in Resources */,
