@@ -7,6 +7,17 @@ class RepositoryDetailViewController: UITableViewController {
         static let count = 2
     }
 
+    enum ProfileTitle: Int {
+        case Language
+        case Starred
+        case Watchers
+        case Contributers
+        case Commits
+        case Issues
+        case Branches
+        static let count = 7
+    }
+
     // define value workaround
     let activitiesCount = 5
 
@@ -24,13 +35,13 @@ class RepositoryDetailViewController: UITableViewController {
         case .Title:
             return 1
         case .Detail:
-            return activitiesCount
+            return ProfileTitle.count
         }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
-            fatalError("Accesssing undefined section row")
+            fatalError("Accesssing undefined section")
         }
         switch cellType {
         case .Title:
@@ -38,6 +49,25 @@ class RepositoryDetailViewController: UITableViewController {
             return cell
         case .Detail:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryDetailCell", forIndexPath: indexPath)
+            guard let titleType = ProfileTitle(rawValue: indexPath.row) else {
+                fatalError("Accesssing undefined section row")
+            }
+            switch titleType {
+            case .Branches:
+                cell.textLabel?.text = "Branches"
+            case .Commits:
+                cell.textLabel?.text = "Commits"
+            case .Contributers:
+                cell.textLabel?.text = "Contributers"
+            case .Issues:
+                cell.textLabel?.text = "Issues"
+            case .Language:
+                cell.textLabel?.text = "Language"
+            case .Starred:
+                cell.textLabel?.text = "Starred"
+            case .Watchers:
+                cell.textLabel?.text = "Watchers"
+            }
             return cell
         }
     }
@@ -48,7 +78,7 @@ class RepositoryDetailViewController: UITableViewController {
         }
         switch cellType {
         case .Title:
-            return 185.0
+            return RepositoryTitleTableCell.height
         case .Detail:
             return 44.0
         }
