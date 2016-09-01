@@ -3,7 +3,7 @@ import APIKit
 
 class InquiryViewController: UIViewController {
     // it always exist but cannot be set in initializer because initialized by storyboard
-    var delegate: InquiryViewControllerDelegate!
+    weak var delegate: InquiryViewControllerDelegate?
 
     @IBAction func didEnterUserName(sender: UITextField) {
         guard let userNameString = sender.text else {
@@ -12,16 +12,17 @@ class InquiryViewController: UIViewController {
         let request = UserRequest(userName: userNameString)
         Session.sendRequest(request) { result in
             switch result {
-            case .Success(let response):
-                self.delegate.inquiryViewController(self, userWasSelected: response)
+            case .Success(let user):
+                self.delegate?.inquiryViewController(self, userWasSelected: user)
                 self.dismissViewControllerAnimated(true, completion: nil)
             case .Failure(let error):
                 print(error)
+                assertionFailure("Should display an error message")
             }
         }
     }
 }
 
-protocol InquiryViewControllerDelegate {
+protocol InquiryViewControllerDelegate: class {
     func inquiryViewController(inquiryViewController: InquiryViewController, userWasSelected user: User)
 }

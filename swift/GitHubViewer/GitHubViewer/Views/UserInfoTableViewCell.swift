@@ -16,8 +16,8 @@ class UserInfoTableViewCell: UITableViewCell {
                 return
             }
             self.userNameLabel.text = fetchedUser.name
-            self.followedLabel.text = "\(fetchedUser.followersCount)"
-            self.followingLabel.text = "\(fetchedUser.followingCount)"
+            self.followedLabel.text = String(fetchedUser.followersCount)
+            self.followingLabel.text = String(fetchedUser.followingCount)
         }
     }
 }
