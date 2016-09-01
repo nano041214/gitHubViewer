@@ -26,7 +26,7 @@ class RepositoriesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         guard let cellType = TableCellType(rawValue: section) else {
-            fatalError("Accesssing undefined section row")
+            fatalError("Accessing undefined section")
         }
         switch cellType {
         case .UserInfo:
@@ -38,13 +38,11 @@ class RepositoriesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
-            fatalError("Accesssing undefined section row")
+            fatalError("Accessing undefined section")
         }
         switch cellType {
         case .UserInfo:
-            guard let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath) as? UserInfoTableViewCell else {
-                fatalError("Failing to create UserInfoCell")
-            }
+            let cell: UserInfoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.user = userProvider?.user
             return cell
         case .Repository:
@@ -55,7 +53,7 @@ class RepositoriesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
-            fatalError("Accesssing undefined section row")
+            fatalError("Accessing undefined section")
         }
         switch cellType {
         case .UserInfo:
