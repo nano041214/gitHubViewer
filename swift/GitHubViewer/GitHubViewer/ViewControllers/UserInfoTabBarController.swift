@@ -3,15 +3,19 @@ import UIKit
 class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewControllerDelegate {
     var user: User?
 
+    private func instantiateViewController<ViewControllerType: UIViewController>() -> ViewControllerType {
+        let className = String(ViewControllerType)
+        guard let viewController = storyboard?.instantiateViewControllerWithIdentifier(className) as? ViewControllerType else {
+            fatalError("Could not load \(ViewControllerType.self)")
+        }
+        return viewController
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let repositoriesViewController = storyboard?.instantiateViewControllerWithIdentifier("RepositoriesViewController") as? RepositoriesViewController else {
-            fatalError("Could not load RepositoriesViewController")
-        }
-        guard let activitiesViewController = storyboard?.instantiateViewControllerWithIdentifier("ActivitiesViewController") as? ActivitiesViewController else {
-            fatalError("Could not load ActivitiesViewController")
-        }
+        let repositoriesViewController: RepositoriesViewController = instantiateViewController()
+        let activitiesViewController: ActivitiesViewController = instantiateViewController()
 
         activitiesViewController.userProvider = self
         repositoriesViewController.userProvider = self
