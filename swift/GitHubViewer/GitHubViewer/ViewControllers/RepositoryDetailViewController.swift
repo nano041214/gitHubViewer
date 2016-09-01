@@ -23,6 +23,11 @@ class RepositoryDetailViewController: UITableViewController {
 
     // MARK: - tableViewDataSource
 
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let linkView = tableView.dequeueReusableHeaderFooterViewWithIdentifier("GitHubLinkView")
+        return linkView
+    }
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return TableCellType.count;
     }
