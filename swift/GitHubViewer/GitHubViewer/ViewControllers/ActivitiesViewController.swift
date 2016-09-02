@@ -26,7 +26,7 @@ class ActivitiesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
         guard let cellType = TableCellType(rawValue: section) else {
-            fatalError("Accesssing undefined section row")
+            fatalError("Accesssing undefined section")
         }
         switch cellType {
         case .UserInfo:
@@ -42,7 +42,7 @@ class ActivitiesViewController: UITableViewController {
         }
         switch cellType {
         case .UserInfo:
-            let cell: UserInfoTableViewCell = tableView.ghv_dequeueReusableCell(identifier: "UserInfoCell", for: indexPath)
+            let cell: UserInfoTableViewCell = tableView.ghv_dequeueReusableCell(for: indexPath)
             cell.user = userProvider?.user
             return cell
         case .Activity:
@@ -53,7 +53,7 @@ class ActivitiesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
-            fatalError("Accesssing undefined section row")
+            fatalError("Accesssing undefined section")
         }
         switch cellType {
         case .UserInfo:
