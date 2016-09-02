@@ -1,7 +1,7 @@
 import UIKit
 
 extension UITableView {
-    func dequeueReusableCell<TableViewCellType: UITableViewCell>(identifier identifier: String = String(TableViewCellType), for indexPath: NSIndexPath) -> TableViewCellType {
+    func ghv_dequeueReusableCell<TableViewCellType: UITableViewCell>(identifier identifier: String = String(TableViewCellType), for indexPath: NSIndexPath) -> TableViewCellType {
         guard let cell = dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as? TableViewCellType else {
             fatalError("Failing to create \(TableViewCellType.self)")
         }
