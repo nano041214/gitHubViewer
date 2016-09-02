@@ -27,7 +27,6 @@ class RepositoryDetailViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let linkView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(GitHubLinkView.self)) as? GitHubLinkView else {
-            print(String(GitHubLinkView.self))
             return nil
         }
         return linkView
