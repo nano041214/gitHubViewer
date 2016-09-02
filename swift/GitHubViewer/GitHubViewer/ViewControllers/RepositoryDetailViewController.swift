@@ -18,13 +18,18 @@ class RepositoryDetailViewController: UITableViewController {
         static let count = 7
     }
 
-    // define value workaround
-    let activitiesCount = 5
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.registerNib(UINib.init(nibName: String(GitHubLinkView.self), bundle: nil), forHeaderFooterViewReuseIdentifier: String(GitHubLinkView.self))
+    }
 
     // MARK: - tableViewDataSource
 
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let linkView = tableView.dequeueReusableHeaderFooterViewWithIdentifier("GitHubLinkView")
+        guard let linkView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(GitHubLinkView.self)) as? GitHubLinkView else {
+            print(String(GitHubLinkView.self))
+            return nil
+        }
         return linkView
     }
 
