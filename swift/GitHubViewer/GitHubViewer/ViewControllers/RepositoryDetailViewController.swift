@@ -26,10 +26,18 @@ class RepositoryDetailViewController: UITableViewController {
     // MARK: - tableViewDataSource
 
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard let linkView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(GitHubLinkView.self)) as? GitHubLinkView else {
-            return nil
+        guard let sectionType = TableCellType(rawValue: section) else {
+            fatalError("Accessing undefined section")
         }
-        return linkView
+        switch sectionType {
+        case .Title:
+            return nil
+        case .Detail:
+            guard let linkView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(GitHubLinkView.self)) as? GitHubLinkView else {
+                return nil
+            }
+            return linkView
+        }
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -90,6 +98,18 @@ class RepositoryDetailViewController: UITableViewController {
             return RepositoryTitleTableCell.height
         case .Detail:
             return 44.0
+        }
+    }
+
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        guard let cellType = TableCellType(rawValue: section) else {
+            fatalError("Accesssing undefined section")
+        }
+        switch cellType {
+        case .Title:
+            return 0
+        case .Detail:
+            return GitHubLinkView.height
         }
     }
 }
