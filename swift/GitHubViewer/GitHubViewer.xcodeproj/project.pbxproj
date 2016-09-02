@@ -23,6 +23,7 @@
 		27C48DE51D6FE5D8005E98D3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE41D6FE5D8005E98D3 /* Activity.swift */; };
 		27C48DEA1D6FFDE2005E98D3 /* GitHubAPIRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE91D6FFDE2005E98D3 /* GitHubAPIRequestType.swift */; };
 		27C48DEC1D70048D005E98D3 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DEB1D70048D005E98D3 /* UserRequest.swift */; };
+		27D3096E1D7806EB00DF0154 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3096D1D7806EB00DF0154 /* UIViewController+Extension.swift */; };
 		27EE30F91D66D95C00526F88 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30F81D66D95C00526F88 /* APIKit.framework */; };
 		27EE30FB1D66D96F00526F88 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FA1D66D96F00526F88 /* Himotoki.framework */; };
 		27EE30FD1D66D97B00526F88 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FC1D66D97B00526F88 /* Kingfisher.framework */; };
@@ -49,6 +50,7 @@
 		27C48DE41D6FE5D8005E98D3 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		27C48DE91D6FFDE2005E98D3 /* GitHubAPIRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAPIRequestType.swift; sourceTree = "<group>"; };
 		27C48DEB1D70048D005E98D3 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		27D3096D1D7806EB00DF0154 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		27EE30F81D66D95C00526F88 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		27EE30FA1D66D96F00526F88 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 		27EE30FC1D66D97B00526F88 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		270C5FF41D65A7FF0009DAC0 /* GitHubViewer */ = {
 			isa = PBXGroup;
 			children = (
+				27D3096C1D78068200DF0154 /* Helpers */,
 				270C600A1D65B2860009DAC0 /* Models */,
 				270C60091D65B2820009DAC0 /* Views */,
 				270C60071D65B2710009DAC0 /* ViewControllers */,
@@ -147,6 +150,14 @@
 				27EE31011D66DB8600526F88 /* Result.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27D3096C1D78068200DF0154 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				27D3096D1D7806EB00DF0154 /* UIViewController+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 				27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */,
 				274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */,
 				27C48DE31D6FE5BD005E98D3 /* Repository.swift in Sources */,
+				27D3096E1D7806EB00DF0154 /* UIViewController+Extension.swift in Sources */,
 				271107861D6EB5B600DE65F6 /* ActivitiesViewController.swift in Sources */,
 				270C5FF81D65A7FF0009DAC0 /* InquiryViewController.swift in Sources */,
 				2798FADE1D6D419D0080EEA1 /* RepositoryTableViewCell.swift in Sources */,
