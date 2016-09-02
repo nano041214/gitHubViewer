@@ -42,10 +42,7 @@ class ActivitiesViewController: UITableViewController {
         }
         switch cellType {
         case .UserInfo:
-//            guard let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath) as? UserInfoTableViewCell else {
-//                fatalError("Failing to create UserInfoCell")
-//            }
-            let cell: UserInfoTableViewCell = tableView.dequeueReusableCell(identifier: "UserInfoCell", for: indexPath)
+            let cell: UserInfoTableViewCell = tableView.ghv_dequeueReusableCell(identifier: "UserInfoCell", for: indexPath)
             cell.user = userProvider?.user
             return cell
         case .Activity:

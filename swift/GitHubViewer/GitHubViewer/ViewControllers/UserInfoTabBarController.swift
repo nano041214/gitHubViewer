@@ -31,9 +31,7 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if user == nil {
-            guard let inquiryViewController = storyboard?.instantiateViewControllerWithIdentifier("InquiryViewController") as? InquiryViewController else {
-                fatalError("Could not load RepositoriesViewController")
-            }
+            let inquiryViewController: InquiryViewController = instantiateViewController()
             inquiryViewController.delegate = self
             presentViewController(inquiryViewController, animated: true, completion: nil)
         }

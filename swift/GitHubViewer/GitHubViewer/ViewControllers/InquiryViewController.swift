@@ -2,7 +2,6 @@ import UIKit
 import APIKit
 
 class InquiryViewController: UIViewController {
-    // it always exist but cannot be set in initializer because initialized by storyboard
     weak var delegate: InquiryViewControllerDelegate?
 
     @IBAction func didEnterUserName(sender: UITextField) {
