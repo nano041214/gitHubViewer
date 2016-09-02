@@ -41,7 +41,7 @@ class UserProfileViewController: UITableViewController {
         }
         switch cellType {
         case .UserInfo:
-            let cell = tableView.dequeueReusableCellWithIdentifier("UserInfoCell", forIndexPath: indexPath)
+            let cell: UserInfoTableViewCell = tableView.ghv_dequeueReusableCell(for: indexPath)
             return cell
         case .UserProfile:
             let cell = tableView.dequeueReusableCellWithIdentifier("UserProfileCell", forIndexPath: indexPath)
