@@ -41,10 +41,10 @@ class RepositoryDetailViewController: UITableViewController {
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return TableCellType.count;
+        return TableCellType.count
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let cellType = TableCellType(rawValue: section) else {
             fatalError("Accesssing undefined section")
         }
@@ -56,7 +56,7 @@ class RepositoryDetailViewController: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
             fatalError("Accesssing undefined section")
         }
