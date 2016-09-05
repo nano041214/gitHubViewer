@@ -18,6 +18,8 @@ class RepositoryDetailViewController: UITableViewController {
         static let count = 7
     }
 
+    let defaultCellHeight: CGFloat = 44.0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib.init(nibName: String(GitHubLinkView.self), bundle: nil), forHeaderFooterViewReuseIdentifier: String(GitHubLinkView.self))
@@ -95,7 +97,7 @@ class RepositoryDetailViewController: UITableViewController {
         case .Title:
             return RepositoryTitleTableCell.height
         case .Detail:
-            return 44.0
+            return defaultCellHeight
         }
     }
 
