@@ -33,9 +33,7 @@ class RepositoryDetailViewController: UITableViewController {
         case .Title:
             return nil
         case .Detail:
-            guard let linkView = tableView.dequeueReusableHeaderFooterViewWithIdentifier(String(GitHubLinkView.self)) as? GitHubLinkView else {
-                return nil
-            }
+            let linkView: GitHubLinkView = tableView.ghv_dequeueReusableHeaderFooterView()
             return linkView
         }
     }
