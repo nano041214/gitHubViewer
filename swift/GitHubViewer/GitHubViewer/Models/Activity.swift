@@ -4,4 +4,3 @@ struct Activity {
     let name: String
     let descriptionString: String
 }
-

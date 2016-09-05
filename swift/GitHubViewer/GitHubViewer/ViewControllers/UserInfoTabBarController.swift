@@ -13,7 +13,7 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let repositoriesViewController: RepositoriesViewController = instantiateViewController()
         let activitiesViewController: ActivitiesViewController = instantiateViewController()
 
