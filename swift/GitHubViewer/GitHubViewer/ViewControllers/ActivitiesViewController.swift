@@ -21,10 +21,10 @@ class ActivitiesViewController: UITableViewController {
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionCount;
+        return sectionCount
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int  {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let cellType = TableCellType(rawValue: section) else {
             fatalError("Accesssing undefined section")
         }
@@ -36,7 +36,7 @@ class ActivitiesViewController: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
             fatalError("Accesssing undefined section row")
         }
@@ -62,5 +62,4 @@ class ActivitiesViewController: UITableViewController {
             return ActivityTableViewCell.height
         }
     }
-    
 }
