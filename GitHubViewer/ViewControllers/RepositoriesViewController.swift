@@ -9,8 +9,7 @@ class RepositoriesViewController: UITableViewController {
 
     let sectionCount = 2
 
-    // define value workaround
-    let repositoriesCount = 5
+    var repositories: [Repository] = []
 
     var userProvider: UserProvider?
 
@@ -23,13 +22,13 @@ class RepositoriesViewController: UITableViewController {
         Session.sendRequest(request) { result in
             switch result {
             case .Success(let repositories):
-                print(repositories)
+                self.repositories = repositories
+                self.tableView.reloadData()
             case .Failure(let error):
                 print(error)
                 assertionFailure("Should display an error message")
             }
         }
-        tableView.reloadData()
     }
 
     // MARK: - tableViewDataSource
@@ -46,7 +45,7 @@ class RepositoriesViewController: UITableViewController {
         case .UserInfo:
             return 1
         case .Repository:
-            return repositoriesCount
+            return repositories.count
         }
     }
 
@@ -60,7 +59,8 @@ class RepositoriesViewController: UITableViewController {
             cell.user = userProvider?.user
             return cell
         case .Repository:
-            let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryCell", forIndexPath: indexPath)
+            let cell: RepositoryTableViewCell = tableView.ghv_dequeueReusableCell(identifier: "RepositoryCell", for: indexPath)
+            cell.repository = repositories[indexPath.row]
             return cell
         }
     }
