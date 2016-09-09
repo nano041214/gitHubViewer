@@ -11,14 +11,15 @@ class RepositoryDetailViewController: UITableViewController {
         case Language
         case Starred
         case Watchers
-        case Contributers
+        case Followers
         case Commits
         case Issues
-        case Branches
+        case Forks
         static let count = 7
     }
 
     let defaultCellHeight: CGFloat = 44.0
+    var repository: Repository?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,20 +71,27 @@ class RepositoryDetailViewController: UITableViewController {
                 fatalError("Accesssing undefined section row")
             }
             switch titleType {
-            case .Branches:
-                cell.textLabel?.text = "Branches"
+            case .Forks:
+                cell.textLabel?.text = "Forks"
+                cell.detailTextLabel?.text = String(repository?.forksCount)
             case .Commits:
                 cell.textLabel?.text = "Commits"
-            case .Contributers:
-                cell.textLabel?.text = "Contributers"
+                cell.detailTextLabel?.text = String(repository?.commitsCount)
+            case .Followers:
+                cell.textLabel?.text = "Followers"
+                cell.detailTextLabel?.text = String(repository?.followersCount)
             case .Issues:
                 cell.textLabel?.text = "Issues"
+                cell.detailTextLabel?.text = String(repository?.issuesCount)
             case .Language:
                 cell.textLabel?.text = "Language"
+                cell.detailTextLabel?.text = repository?.language
             case .Starred:
                 cell.textLabel?.text = "Starred"
+                cell.detailTextLabel?.text = String(repository?.starredCount)
             case .Watchers:
                 cell.textLabel?.text = "Watchers"
+                cell.detailTextLabel?.text = String(repository?.watchersCount)
             }
             return cell
         }

@@ -3,6 +3,7 @@ import Himotoki
 
 struct Repository {
     let name: String
+    let userName: String
     let descriptionString: String?
     let language: String?
     let followersCount: Int
@@ -37,6 +38,7 @@ extension Repository: Decodable {
 
     static func decode(extractor: Extractor) throws -> Repository {
         return try Repository(name: extractor <| "name",
+                              userName: extractor <| "owner.login",
                               descriptionString: extractor <|? "description",
                               language: extractor <|? "language",
                               followersCount: 0,
