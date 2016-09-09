@@ -38,7 +38,7 @@ extension Repository: Decodable {
 
     static func decode(extractor: Extractor) throws -> Repository {
         return try Repository(name: extractor <| "name",
-                              userName: extractor <| "owner.login",
+                              userName: extractor <| ["owner", "login"],
                               descriptionString: extractor <|? "description",
                               language: extractor <|? "language",
                               followersCount: 0,

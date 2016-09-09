@@ -63,7 +63,8 @@ class RepositoryDetailViewController: UITableViewController {
         }
         switch cellType {
         case .Title:
-            let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryTitleCell", forIndexPath: indexPath)
+            let cell: RepositoryTitleTableCell = tableView.ghv_dequeueReusableCell(for: indexPath)
+            cell.repository = repository
             return cell
         case .Detail:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryDetailCell", forIndexPath: indexPath)
