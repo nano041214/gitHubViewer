@@ -1,4 +1,5 @@
 import UIKit
+import APIKit
 
 class RepositoriesViewController: UITableViewController {
     enum TableCellType: Int {
@@ -15,6 +16,19 @@ class RepositoriesViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        guard let userNameString = userProvider?.user?.name else {
+            return
+        }
+        let request = RepositoryRequest(userName: userNameString)
+        Session.sendRequest(request) { result in
+            switch result {
+            case .Success(let repositories):
+                print(repositories)
+            case .Failure(let error):
+                print(error)
+                assertionFailure("Should display an error message")
+            }
+        }
         tableView.reloadData()
     }
 

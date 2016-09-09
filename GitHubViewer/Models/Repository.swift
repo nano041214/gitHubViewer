@@ -8,10 +8,10 @@ struct Repository {
     let followersCount: Int
     let followingCount: Int
     let watchersCount: Int
-    let contributersCount: Int
+    let forksCount: Int
     let commitsCount: Int
     let issuesCount: Int
-    let branchesCount: Int
+    let starredCount: Int
     let repositoryURL: NSURL?
     let createdDate: NSDate
     let updatedDate: NSDate
@@ -36,18 +36,18 @@ extension Repository: Decodable {
     }
 
     static func decode(extractor: Extractor) throws -> Repository {
-        return try Repository(name: extractor <| "login",
+        return try Repository(name: extractor <| "name",
                               descriptionString: extractor <|? "description",
                               language: extractor <|? "language",
-                              followersCount: extractor <| "followers",
-                              followingCount: extractor <| "following",
-                              watchersCount: extractor <| "watchers",
-                              contributersCount: extractor <| "controbuters",
-                              commitsCount: extractor <| "commits",
-                              issuesCount: extractor <| "issues",
-                              branchesCount: extractor <| "branches",
-                              repositoryURL: URLTransformer.apply(extractor <| "avatar_url"),
+                              followersCount: 0,
+                              followingCount: 0,
+                              watchersCount: extractor <| "watchers_count",
+                              forksCount: extractor <| "forks",
+                              commitsCount: 0,
+                              issuesCount: extractor <| "open_issues_count",
+                              starredCount: extractor <| "stargazers_count",
+                              repositoryURL: URLTransformer.apply(extractor <| "html_url"),
                               createdDate: dateTransformer.apply(extractor <| "created_at"),
-                              updatedDate: dateTransformer.apply(extractor <| "created_at"))
+                              updatedDate: dateTransformer.apply(extractor <| "updated_at"))
     }
 }
