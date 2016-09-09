@@ -508,6 +508,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="nameLabel" destination="4F6-e9-jqY" id="kaI-WY-K3s"/>
+                                    <outlet property="starredCountLabel" destination="X3O-Aa-CRd" id="gvb-02-3YF"/>
                                     <segue destination="azc-Ed-Dui" kind="show" id="0Jo-OG-J8U"/>
                                 </connections>
                             </tableViewCell>
