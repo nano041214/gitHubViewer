@@ -14,6 +14,7 @@
 		270C60001D65A7FF0009DAC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C5FFE1D65A7FF0009DAC0 /* LaunchScreen.storyboard */; };
 		271107861D6EB5B600DE65F6 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */; };
 		271107881D6EB91900DE65F6 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */; };
+		2717DD461D797447004C279E /* GitHubLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717DD451D797447004C279E /* GitHubLinkView.swift */; };
 		274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */; };
 		27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */; };
 		2798FADE1D6D419D0080EEA1 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */; };
@@ -25,6 +26,9 @@
 		27C48DEC1D70048D005E98D3 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DEB1D70048D005E98D3 /* UserRequest.swift */; };
 		27D3096E1D7806EB00DF0154 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3096D1D7806EB00DF0154 /* UIViewController+Extension.swift */; };
 		27D958EE1D76CE9A00F5BAC6 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D958ED1D76CE9A00F5BAC6 /* UserProfileViewController.swift */; };
+		27D309671D77DE3600DF0154 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D309661D77DE3600DF0154 /* RepositoryDetailViewController.swift */; };
+		27D309691D77E23A00DF0154 /* RepositoryTitleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D309681D77E23A00DF0154 /* RepositoryTitleTableCell.swift */; };
+		27D3096B1D77EA5400DF0154 /* GitHubLinkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D3096A1D77EA5400DF0154 /* GitHubLinkView.xib */; };
 		27EE30F91D66D95C00526F88 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30F81D66D95C00526F88 /* APIKit.framework */; };
 		27EE30FB1D66D96F00526F88 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FA1D66D96F00526F88 /* Himotoki.framework */; };
 		27EE30FD1D66D97B00526F88 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FC1D66D97B00526F88 /* Kingfisher.framework */; };
@@ -42,6 +46,7 @@
 		270C60011D65A7FF0009DAC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		2717DD451D797447004C279E /* GitHubLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubLinkView.swift; sourceTree = "<group>"; };
 		2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTabBarController.swift; sourceTree = "<group>"; };
 		27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -53,6 +58,9 @@
 		27C48DEB1D70048D005E98D3 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		27D3096D1D7806EB00DF0154 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		27D958ED1D76CE9A00F5BAC6 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		27D309661D77DE3600DF0154 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
+		27D309681D77E23A00DF0154 /* RepositoryTitleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTitleTableCell.swift; sourceTree = "<group>"; };
+		27D3096A1D77EA5400DF0154 /* GitHubLinkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitHubLinkView.xib; sourceTree = "<group>"; };
 		27EE30F81D66D95C00526F88 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		27EE30FA1D66D96F00526F88 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 		27EE30FC1D66D97B00526F88 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -117,6 +125,7 @@
 				27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */,
 				271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */,
 				27D958ED1D76CE9A00F5BAC6 /* UserProfileViewController.swift */,
+				27D309661D77DE3600DF0154 /* RepositoryDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,6 +136,9 @@
 				2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */,
 				2798FADF1D6D420A0080EEA1 /* UserInfoTableViewCell.swift */,
 				271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */,
+				27D309681D77E23A00DF0154 /* RepositoryTitleTableCell.swift */,
+				27D3096A1D77EA5400DF0154 /* GitHubLinkView.xib */,
+				2717DD451D797447004C279E /* GitHubLinkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D3096B1D77EA5400DF0154 /* GitHubLinkView.xib in Resources */,
 				270C60001D65A7FF0009DAC0 /* LaunchScreen.storyboard in Resources */,
 				270C5FFD1D65A7FF0009DAC0 /* Assets.xcassets in Resources */,
 				270C5FFB1D65A7FF0009DAC0 /* Main.storyboard in Resources */,
@@ -262,11 +275,14 @@
 				27C48DE31D6FE5BD005E98D3 /* Repository.swift in Sources */,
 				27D3096E1D7806EB00DF0154 /* UIViewController+Extension.swift in Sources */,
 				271107861D6EB5B600DE65F6 /* ActivitiesViewController.swift in Sources */,
+				27D309691D77E23A00DF0154 /* RepositoryTitleTableCell.swift in Sources */,
+				27D309671D77DE3600DF0154 /* RepositoryDetailViewController.swift in Sources */,
 				270C5FF81D65A7FF0009DAC0 /* InquiryViewController.swift in Sources */,
 				2798FADE1D6D419D0080EEA1 /* RepositoryTableViewCell.swift in Sources */,
 				27C48DEA1D6FFDE2005E98D3 /* GitHubAPIRequestType.swift in Sources */,
 				27C48DEC1D70048D005E98D3 /* UserRequest.swift in Sources */,
 				27D958EE1D76CE9A00F5BAC6 /* UserProfileViewController.swift in Sources */,
+				2717DD461D797447004C279E /* GitHubLinkView.swift in Sources */,
 				27C48DE51D6FE5D8005E98D3 /* Activity.swift in Sources */,
 				271107881D6EB91900DE65F6 /* ActivityTableViewCell.swift in Sources */,
 				270C5FF61D65A7FF0009DAC0 /* AppDelegate.swift in Sources */,

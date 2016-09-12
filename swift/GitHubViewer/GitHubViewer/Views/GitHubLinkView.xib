@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="GitHubLinkView" id="iN0-l3-epB" customClass="GitHubLinkView" customModule="GitHubViewer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="621" height="152"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEy-rp-HiK" userLabel="background">
+                    <rect key="frame" x="0.0" y="1" width="621" height="151"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTw-Px-hyz">
+                    <rect key="frame" x="0.0" y="0.0" width="621" height="1"/>
+                    <color key="backgroundColor" red="0.42655369639396667" green="0.47584608197212219" blue="0.48026475310325623" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Q2V-mS-6TZ"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O42-Pb-ee1">
+                    <rect key="frame" x="227" y="56" width="167" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="View on GitHub"/>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="O42-Pb-ee1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="73W-am-sEf"/>
+                <constraint firstItem="wTw-Px-hyz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8k6-dU-HUB"/>
+                <constraint firstItem="wTw-Px-hyz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BSa-jE-aEG"/>
+                <constraint firstAttribute="bottom" secondItem="gEy-rp-HiK" secondAttribute="bottom" id="UlC-kl-D1a"/>
+                <constraint firstItem="O42-Pb-ee1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bnq-oc-6rT"/>
+                <constraint firstAttribute="trailing" secondItem="gEy-rp-HiK" secondAttribute="trailing" id="t55-zq-BCh"/>
+                <constraint firstItem="gEy-rp-HiK" firstAttribute="top" secondItem="wTw-Px-hyz" secondAttribute="bottom" id="uqb-pT-xHN"/>
+                <constraint firstAttribute="trailing" secondItem="wTw-Px-hyz" secondAttribute="trailing" id="v9r-2j-dfm"/>
+                <constraint firstItem="gEy-rp-HiK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wtq-4q-cRQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="475.5" y="330"/>
+        </view>
+    </objects>
+</document>

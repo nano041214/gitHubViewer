@@ -7,4 +7,11 @@ extension UITableView {
         }
         return cell
     }
+
+    func ghv_dequeueReusableHeaderFooterView<TableViewHeaderFooterView: UITableViewHeaderFooterView>() -> TableViewHeaderFooterView {
+        guard let headerFooterView = dequeueReusableHeaderFooterViewWithIdentifier(String(TableViewHeaderFooterView.self)) as? TableViewHeaderFooterView else {
+            fatalError("Failing to create \(TableViewHeaderFooterView.self)")
+        }
+        return headerFooterView
+    }
 }

@@ -1,7 +1,7 @@
 disabled_rules:
 - line_length
+- cyclomatic_complexity
 
-# Lint対象から外すファイル
 excluded:
 - Carthage
 
