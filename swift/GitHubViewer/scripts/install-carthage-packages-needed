@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+command = "carthage bootstrap --platform iOS"
+system(command)
