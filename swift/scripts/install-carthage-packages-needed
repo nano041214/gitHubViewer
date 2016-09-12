@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+require "yaml"
+require "pathname"
+require_relative "lib/carthage"
+require_relative "lib/utils"
+
+CARTHAGE_VERSION_WANTED = "0.18"
+if (version_for_comparison(`carthage version`) <=> version_for_comparison(CARTHAGE_VERSION_WANTED)) < 0
+  raise "Make sure you use at least Carthage #{CARTHAGE_VERSION_WANTED}: brew update && brew upgrade carthage"
+end
+
+# Carthage always uses the system's default xcodebuild, so make sure its version is the one expected.
+dokumi_settings_path = Pathname.new(__FILE__).dirname.join("..", "dokumi.yml")
+dokumi_settings = YAML.load(IO.read(dokumi_settings_path))
+xcode_version_wanted = dokumi_settings["xcode_version"].to_s
+xcode_version_used = Carthage.selected_xcode_version
+if version_for_comparison(xcode_version_used, 2) != version_for_comparison(xcode_version_wanted, 2)
+  raise "Expecting xcodebuild to come from Xcode #{xcode_version_wanted}, but it was from Xcode #{xcode_version_used}. You may want to have a look at xcode-select."
+end
+
+packages_to_install = Carthage.packages_to_install
+
+if packages_to_install == :nothing
+  puts "The wanted Carthage packages are already installed."
+else
+  Dir.chdir(Carthage.base_directory) do
+    command = "carthage bootstrap --no-use-binaries --platform iOS"
+    if packages_to_install != :all
+      command += " " + packages_to_install.map {|package| package[:short_name].to_s }.join(" ")
+    end
+
+    wanted_resolved_cartfile = Carthage.wanted_resolved_cartfile
+    installed_resolved_cartfile = Carthage.installed_resolved_cartfile
+    installed_resolved_cartfile.unlink if installed_resolved_cartfile.exist?
+    saved_environment_used_last = Carthage.saved_environment_used_last
+    saved_environment_used_last.unlink if saved_environment_used_last.exist?
+
+    environment = Carthage.environment_to_use
+    shell_environment = environment.select {|k, v| k != "XCODE_VERSION" }
+    puts shell_environment.map {|k, v| "#{k}=#{v} " }.join + command
+    raise "Error executing #{command.inspect}" unless system(shell_environment, command)
+    FileUtils.cp(wanted_resolved_cartfile, installed_resolved_cartfile)
+    IO.write(Carthage.saved_environment_used_last, YAML.dump(environment))
+  end
+end
