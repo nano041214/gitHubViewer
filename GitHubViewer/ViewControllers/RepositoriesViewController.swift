@@ -59,7 +59,7 @@ class RepositoriesViewController: UITableViewController {
             cell.user = userProvider?.user
             return cell
         case .Repository:
-            let cell: RepositoryTableViewCell = tableView.ghv_dequeueReusableCell(identifier: "RepositoryCell", for: indexPath)
+            let cell: RepositoryTableViewCell = tableView.ghv_dequeueReusableCell(for: indexPath)
             cell.repository = repositories[indexPath.row]
             return cell
         }
