@@ -8,9 +8,9 @@ extension UITableView {
         return cell
     }
 
-    func ghv_dequeueReusableHeaderFooterView<TableViewHeaderFooterView: UITableViewHeaderFooterView>() -> TableViewHeaderFooterView {
-        guard let headerFooterView = dequeueReusableHeaderFooterViewWithIdentifier(String(TableViewHeaderFooterView.self)) as? TableViewHeaderFooterView else {
-            fatalError("Failing to create \(TableViewHeaderFooterView.self)")
+    func ghv_dequeueReusableHeaderFooterView<TableViewHeaderFooterViewType: UITableViewHeaderFooterView>(identifier identifier: String = String(TableViewHeaderFooterViewType)) -> TableViewHeaderFooterViewType {
+        guard let headerFooterView = dequeueReusableHeaderFooterViewWithIdentifier(String(TableViewHeaderFooterViewType.self)) as? TableViewHeaderFooterViewType else {
+            fatalError("Failing to create \(TableViewHeaderFooterViewType.self)")
         }
         return headerFooterView
     }
