@@ -16,6 +16,18 @@ struct Repository {
     let repositoryURL: NSURL?
     let createdDate: NSDate
     let updatedDate: NSDate
+
+    var formattedRepositoryNameString: String {
+        get {
+            return "\(userName)/\n\(name)"
+        }
+    }
+
+    var formattedCreatedAndUpdatedDateString: String {
+        get {
+            return "created at \(createdDate) updated at \(updatedDate)"
+        }
+    }
 }
 
 extension Repository: Decodable {

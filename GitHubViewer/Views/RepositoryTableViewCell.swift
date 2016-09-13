@@ -8,11 +8,11 @@ class RepositoryTableViewCell: UITableViewCell {
 
     var repository: Repository? {
         didSet {
-            guard let fetchedRepository = repository else {
+            guard let repository = repository else {
                 return
             }
-            nameLabel.text = fetchedRepository.name
-            starredCountLabel.text = String(fetchedRepository.starredCount)
+            nameLabel.text = repository.name
+            starredCountLabel.text = String(repository.starredCount)
         }
     }
 }
