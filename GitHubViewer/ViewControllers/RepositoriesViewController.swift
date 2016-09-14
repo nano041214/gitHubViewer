@@ -13,6 +13,14 @@ class RepositoriesViewController: UITableViewController {
 
     var userProvider: UserProvider?
 
+    private func instantiateViewController<ViewControllerType: UIViewController>() -> ViewControllerType {
+        let className = String(ViewControllerType)
+        guard let viewController = storyboard?.instantiateViewControllerWithIdentifier(className) as? ViewControllerType else {
+            fatalError("Could not load \(ViewControllerType.self)")
+        }
+        return viewController
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         guard let userNameString = userProvider?.user?.name else {
@@ -26,7 +34,12 @@ class RepositoriesViewController: UITableViewController {
                 self.tableView.reloadData()
             case .Failure(let error):
                 print(error)
-                assertionFailure("Should display an error message")
+                let inquiryViewController: InquiryViewController = self.instantiateViewController()
+                guard let userInfoTabBarController: UserInfoTabBarController = self.tabBarController as? UserInfoTabBarController else {
+                    fatalError("Could not load \(UserInfoTabBarController.self)")
+                }
+                inquiryViewController.delegate = userInfoTabBarController
+                self.presentViewController(inquiryViewController, animated: true, completion: nil)
             }
         }
     }
