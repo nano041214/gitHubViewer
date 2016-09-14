@@ -15,7 +15,27 @@ class RepositoryDetailViewController: UITableViewController {
         case Commits
         case Issues
         case Forks
+
         static let count = 7
+
+        func toString () -> String {
+            switch self {
+            case .Language:
+                return "Language"
+            case .Starred:
+                return "Starred"
+            case .Watchers:
+                return "Watchers"
+            case .Followers:
+                return "Followers"
+            case .Commits:
+                return "Commits"
+            case .Issues:
+                return "Issues"
+            case .Forks:
+                return "Forks"
+            }
+        }
     }
 
     let defaultCellHeight: CGFloat = 44.0
@@ -71,27 +91,22 @@ class RepositoryDetailViewController: UITableViewController {
             guard let titleType = ProfileTitle(rawValue: indexPath.row) else {
                 fatalError("Accesssing undefined section row")
             }
+
+            cell.textLabel?.text = titleType.toString()
             switch titleType {
             case .Forks:
-                cell.textLabel?.text = "Forks"
                 cell.detailTextLabel?.text = String(repository?.forksCount)
             case .Commits:
-                cell.textLabel?.text = "Commits"
                 cell.detailTextLabel?.text = String(repository?.commitsCount)
             case .Followers:
-                cell.textLabel?.text = "Followers"
                 cell.detailTextLabel?.text = String(repository?.followersCount)
             case .Issues:
-                cell.textLabel?.text = "Issues"
                 cell.detailTextLabel?.text = String(repository?.issuesCount)
             case .Language:
-                cell.textLabel?.text = "Language"
                 cell.detailTextLabel?.text = repository?.language
             case .Starred:
-                cell.textLabel?.text = "Starred"
                 cell.detailTextLabel?.text = String(repository?.starredCount)
             case .Watchers:
-                cell.textLabel?.text = "Watchers"
                 cell.detailTextLabel?.text = String(repository?.watchersCount)
             }
             return cell
