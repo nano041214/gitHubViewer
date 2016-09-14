@@ -15,6 +15,7 @@
 		271107861D6EB5B600DE65F6 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */; };
 		271107881D6EB91900DE65F6 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */; };
 		2717DD461D797447004C279E /* GitHubLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717DD451D797447004C279E /* GitHubLinkView.swift */; };
+		272EC1CE1D8951AA0046B4DC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EC1CD1D8951AA0046B4DC /* UIViewController+Extension.swift */; };
 		274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */; };
 		275877FA1D87FED200F9D1E8 /* GitHubViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275877F91D87FED200F9D1E8 /* GitHubViewerTests.swift */; };
 		27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */; };
@@ -29,7 +30,7 @@
 		27D309671D77DE3600DF0154 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D309661D77DE3600DF0154 /* RepositoryDetailViewController.swift */; };
 		27D309691D77E23A00DF0154 /* RepositoryTitleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D309681D77E23A00DF0154 /* RepositoryTitleTableCell.swift */; };
 		27D3096B1D77EA5400DF0154 /* GitHubLinkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D3096A1D77EA5400DF0154 /* GitHubLinkView.xib */; };
-		27D3096E1D7806EB00DF0154 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3096D1D7806EB00DF0154 /* UIViewController+Extension.swift */; };
+		27D3096E1D7806EB00DF0154 /* UITableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3096D1D7806EB00DF0154 /* UITableViewController+Extension.swift */; };
 		27D958EE1D76CE9A00F5BAC6 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D958ED1D76CE9A00F5BAC6 /* UserProfileViewController.swift */; };
 		27EE30F91D66D95C00526F88 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30F81D66D95C00526F88 /* APIKit.framework */; };
 		27EE30FB1D66D96F00526F88 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FA1D66D96F00526F88 /* Himotoki.framework */; };
@@ -59,6 +60,7 @@
 		271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		2717DD451D797447004C279E /* GitHubLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubLinkView.swift; sourceTree = "<group>"; };
+		272EC1CD1D8951AA0046B4DC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTabBarController.swift; sourceTree = "<group>"; };
 		275877F71D87FED200F9D1E8 /* GitHubViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275877F91D87FED200F9D1E8 /* GitHubViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubViewerTests.swift; sourceTree = "<group>"; };
@@ -75,7 +77,7 @@
 		27D309661D77DE3600DF0154 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		27D309681D77E23A00DF0154 /* RepositoryTitleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTitleTableCell.swift; sourceTree = "<group>"; };
 		27D3096A1D77EA5400DF0154 /* GitHubLinkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GitHubLinkView.xib; sourceTree = "<group>"; };
-		27D3096D1D7806EB00DF0154 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		27D3096D1D7806EB00DF0154 /* UITableViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Extension.swift"; sourceTree = "<group>"; };
 		27D958ED1D76CE9A00F5BAC6 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		27EE30F81D66D95C00526F88 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		27EE30FA1D66D96F00526F88 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -205,7 +207,8 @@
 		27D3096C1D78068200DF0154 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				27D3096D1D7806EB00DF0154 /* UIViewController+Extension.swift */,
+				27D3096D1D7806EB00DF0154 /* UITableViewController+Extension.swift */,
+				272EC1CD1D8951AA0046B4DC /* UIViewController+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -339,9 +342,10 @@
 				274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */,
 				27B3C0041D82A5DF00FB270E /* RepositoryRequest.swift in Sources */,
 				27C48DE31D6FE5BD005E98D3 /* Repository.swift in Sources */,
-				27D3096E1D7806EB00DF0154 /* UIViewController+Extension.swift in Sources */,
+				27D3096E1D7806EB00DF0154 /* UITableViewController+Extension.swift in Sources */,
 				271107861D6EB5B600DE65F6 /* ActivitiesViewController.swift in Sources */,
 				27D309691D77E23A00DF0154 /* RepositoryTitleTableCell.swift in Sources */,
+				272EC1CE1D8951AA0046B4DC /* UIViewController+Extension.swift in Sources */,
 				27D309671D77DE3600DF0154 /* RepositoryDetailViewController.swift in Sources */,
 				270C5FF81D65A7FF0009DAC0 /* InquiryViewController.swift in Sources */,
 				2798FADE1D6D419D0080EEA1 /* RepositoryTableViewCell.swift in Sources */,
@@ -563,6 +567,7 @@
 				275877FF1D87FED200F9D1E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
