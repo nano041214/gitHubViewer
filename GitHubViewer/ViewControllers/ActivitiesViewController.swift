@@ -23,6 +23,7 @@ class ActivitiesViewController: UITableViewController {
                 self.activities = activities
                 self.tableView.reloadData()
             case .Failure(let error):
+                // TODO: #4 をマージできたらエラーハンドリングやります。
                 print(error)
             }
         }
