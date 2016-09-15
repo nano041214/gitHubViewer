@@ -56,7 +56,8 @@ class ActivitiesViewController: UITableViewController {
             cell.user = userProvider?.user
             return cell
         case .Activity:
-            let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath)
+            let cell: ActivityTableViewCell = tableView.ghv_dequeueReusableCell(for: indexPath)
+            cell.activity = activities[indexPath.row]
             return cell
         }
     }
