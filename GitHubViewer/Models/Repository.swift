@@ -13,7 +13,7 @@ struct Repository {
     let commitsCount: Int
     let issuesCount: Int
     let starredCount: Int
-    let repositoryURL: NSURL?
+    let repositoryURL: NSURL
     let createdDate: NSDate
     let updatedDate: NSDate
 
