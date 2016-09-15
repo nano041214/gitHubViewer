@@ -4,11 +4,10 @@ class ActivitiesViewController: UITableViewController {
     enum TableCellType: Int {
         case UserInfo
         case Activity
+        static let sectionCount = 2
     }
 
     var userProvider: UserProvider?
-
-    let sectionCount = 2
 
     // define value workaround
     let activitiesCount = 5
@@ -21,7 +20,7 @@ class ActivitiesViewController: UITableViewController {
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionCount
+        return TableCellType.sectionCount
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
