@@ -12,6 +12,7 @@ class RepositoryDetailViewController: UITableViewController {
         case Starred
         case Watchers
         case Followers
+        case Following
         case Commits
         case Issues
         case Forks
@@ -28,6 +29,8 @@ class RepositoryDetailViewController: UITableViewController {
                 return "Watchers"
             case .Followers:
                 return "Followers"
+            case .Following:
+                return "Following"
             case .Commits:
                 return "Commits"
             case .Issues:
@@ -97,17 +100,28 @@ class RepositoryDetailViewController: UITableViewController {
             case .Forks:
                 cell.detailTextLabel?.text = String(repository?.forksCount)
             case .Commits:
-                cell.detailTextLabel?.text = String(repository?.commitsCount)
+                cell.detailTextLabel?.text = "unmeasured"
             case .Followers:
-                cell.detailTextLabel?.text = String(repository?.followersCount)
+                cell.detailTextLabel?.text = "unmeasured"
+            case .Following:
+                cell.detailTextLabel?.text = "unmeasured"
             case .Issues:
-                cell.detailTextLabel?.text = String(repository?.issuesCount)
+                guard let issuecount = repository?.issuesCount else {
+                    fatalError("Invalid value type returned from API")
+                }
+                cell.detailTextLabel?.text = String(issuecount)
             case .Language:
                 cell.detailTextLabel?.text = repository?.language
             case .Starred:
-                cell.detailTextLabel?.text = String(repository?.starredCount)
+                guard let starredCount = repository?.starredCount else {
+                    fatalError("Invalid value type returned from API")
+                }
+                cell.detailTextLabel?.text = String(starredCount)
             case .Watchers:
-                cell.detailTextLabel?.text = String(repository?.watchersCount)
+                guard let watchersCount = repository?.watchersCount else {
+                    fatalError("Invalid value type returned from API")
+                }
+                cell.detailTextLabel?.text = String(watchersCount)
             }
             return cell
         }
