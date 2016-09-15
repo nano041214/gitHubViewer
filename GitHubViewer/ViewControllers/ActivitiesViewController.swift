@@ -1,3 +1,4 @@
+import APIKit
 import UIKit
 
 class ActivitiesViewController: UITableViewController {
@@ -8,13 +9,23 @@ class ActivitiesViewController: UITableViewController {
     }
 
     var userProvider: UserProvider?
-
-    // define value workaround
-    let activitiesCount = 5
+    var activities: [Activity] = []
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        guard let userNameString = userProvider?.user?.name else {
+            return
+        }
+        let request = ActivityRequest(userName: userNameString)
+        Session.sendRequest(request) { result in
+            switch result {
+            case .Success(let activities):
+                self.activities = activities
+                self.tableView.reloadData()
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
 
     // MARK: - tableViewDataSource
@@ -31,7 +42,7 @@ class ActivitiesViewController: UITableViewController {
         case .UserInfo:
             return 1
         case .Activity:
-            return activitiesCount
+            return activities.count
         }
     }
 

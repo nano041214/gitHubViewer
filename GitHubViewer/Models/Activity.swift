@@ -8,7 +8,7 @@ struct Activity {
 
 extension Activity: Decodable {
     static func decode(extractor: Extractor) throws -> Activity {
-        return try Activity(name: extractor <| "login",
-                            descriptionString: extractor <| ["repository", "name"])
+        return try Activity(name: extractor <| "type",
+                            descriptionString: extractor <| ["repo", "name"])
     }
 }
