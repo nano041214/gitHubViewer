@@ -5,9 +5,8 @@ class RepositoriesViewController: UITableViewController {
     enum TableCellType: Int {
         case UserInfo
         case Repository
+        static let sectionCount = 2
     }
-
-    let sectionCount = 2
 
     var repositories: [Repository] = []
 
@@ -24,8 +23,7 @@ class RepositoriesViewController: UITableViewController {
             case .Success(let repositories):
                 self.repositories = repositories
                 self.tableView.reloadData()
-            case .Failure(let error):
-                print(error)
+            case .Failure(_):
                 let inquiryViewController: InquiryViewController = self.ghv_instantiateViewController()
                 guard let userInfoTabBarController: UserInfoTabBarController = self.tabBarController as? UserInfoTabBarController else {
                     fatalError("Could not load \(UserInfoTabBarController.self)")
@@ -39,7 +37,7 @@ class RepositoriesViewController: UITableViewController {
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionCount
+        return TableCellType.sectionCount
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
