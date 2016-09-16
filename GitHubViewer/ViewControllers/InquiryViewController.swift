@@ -35,7 +35,6 @@ class InquiryViewController: UIViewController {
                 self.delegate?.inquiryViewController(self, userWasSelected: user)
                 self.dismissViewControllerAnimated(true, completion: nil)
             case .Failure(let error):
-                print(error)
                 self.alertLabel.hidden = false
                 self.alertLabel.text = String(error)
             }
