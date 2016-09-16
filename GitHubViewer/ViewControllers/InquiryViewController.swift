@@ -4,7 +4,12 @@ import UIKit
 
 class InquiryViewController: UIViewController {
     weak var delegate: InquiryViewControllerDelegate?
+    
     @IBOutlet weak var variableHeightViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var alertLabel: UILabel!
+
+
 
     @IBAction func didEnterUserName(sender: UITextField) {
         guard let userNameString = sender.text else {
@@ -18,7 +23,8 @@ class InquiryViewController: UIViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
             case .Failure(let error):
                 print(error)
-                assertionFailure("Should display an error message")
+                self.alertLabel.hidden = false
+                self.alertLabel.text = String(error)
             }
         }
     }
