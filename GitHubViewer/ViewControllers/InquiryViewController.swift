@@ -9,7 +9,9 @@ class InquiryViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var alertLabel: UILabel!
 
-
+    @IBAction func didChangeTextFieldValue(sender: UITextField) {
+        alertLabel.hidden = true
+    }
 
     @IBAction func didEnterUserName(sender: UITextField) {
         guard let userNameString = sender.text else {
