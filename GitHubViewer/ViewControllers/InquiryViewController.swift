@@ -1,8 +1,10 @@
-import UIKit
 import APIKit
+import SnapKit
+import UIKit
 
 class InquiryViewController: UIViewController {
     weak var delegate: InquiryViewControllerDelegate?
+    @IBOutlet weak var variableHeightViewHeightConstraint: NSLayoutConstraint!
 
     @IBAction func didEnterUserName(sender: UITextField) {
         guard let userNameString = sender.text else {

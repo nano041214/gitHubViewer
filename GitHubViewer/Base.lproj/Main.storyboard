@@ -73,14 +73,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6yD-pO-BPx" firstAttribute="top" secondItem="jjD-5y-Hvv" secondAttribute="bottom" id="0XQ-ga-sDQ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="6yD-pO-BPx" secondAttribute="bottom" id="AZo-n4-jhy"/>
                             <constraint firstAttribute="trailing" secondItem="jjD-5y-Hvv" secondAttribute="trailing" id="JyF-4J-E5u"/>
-                            <constraint firstItem="jjD-5y-Hvv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="MqV-fq-HaA"/>
+                            <constraint firstItem="jjD-5y-Hvv" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Kdd-8a-Wbs"/>
+                            <constraint firstItem="6yD-pO-BPx" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Pgc-OO-6Sk"/>
                             <constraint firstItem="6yD-pO-BPx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="byI-jI-SoJ"/>
                             <constraint firstItem="jjD-5y-Hvv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nXs-1W-FFp"/>
                             <constraint firstAttribute="trailing" secondItem="6yD-pO-BPx" secondAttribute="trailing" id="r5j-oc-7Ad"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="variableHeightViewHeightConstraint" destination="nz4-JM-nh9" id="PNg-Dy-lzT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
