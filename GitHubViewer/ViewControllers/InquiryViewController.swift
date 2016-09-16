@@ -4,10 +4,21 @@ import UIKit
 
 class InquiryViewController: UIViewController {
     weak var delegate: InquiryViewControllerDelegate?
-    
+
     @IBOutlet weak var variableHeightViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var alertLabel: UILabel!
+
+    override func viewDidLoad() {
+        let defaultCenter = NSNotificationCenter.defaultCenter()
+        defaultCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(keyboardDidHide), name: UIKeyboardWillHideNotification, object: nil)
+    }
+
+    deinit {
+        let defaultCenter = NSNotificationCenter.defaultCenter()
+        defaultCenter.removeObserver(self)
+    }
 
     @IBAction func didChangeTextFieldValue(sender: UITextField) {
         alertLabel.hidden = true
@@ -29,6 +40,17 @@ class InquiryViewController: UIViewController {
                 self.alertLabel.text = String(error)
             }
         }
+    }
+
+    // workaround
+    func keyboardWillShow() {
+        variableHeightViewHeightConstraint.constant = 200.0
+        view.layoutIfNeeded()
+    }
+
+    func keyboardDidHide() {
+        variableHeightViewHeightConstraint.constant = 0
+        view.layoutIfNeeded()
     }
 }
 
