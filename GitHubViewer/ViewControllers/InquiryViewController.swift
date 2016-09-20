@@ -47,9 +47,14 @@ class InquiryViewController: UIViewController {
         view.layoutIfNeeded()
     }
 
-    func keyboardWillHide() {
-        variableHeightViewHeightConstraint.constant = 0
-        view.layoutIfNeeded()
+    func keyboardWillHide(notification: NSNotification) {
+        variableHeightViewHeightConstraint.constant = 0.0
+        guard let duration: NSTimeInterval = notification.userInfo?["UIKeyboardAnimationDurationUserInfoKey"] as? Double else {
+            fatalError("NSNotification has invalid userInfo")
+        }
+        UIView.animateWithDuration(duration, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
 }
 
