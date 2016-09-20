@@ -1,4 +1,5 @@
 import UIKit
+import FontAwesome
 
 class ActivitiesViewController: UITableViewController {
     enum TableCellType: Int {
@@ -12,6 +13,13 @@ class ActivitiesViewController: UITableViewController {
 
     // define value workaround
     let activitiesCount = 5
+
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
+    override func viewDidLoad() {
+        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(24)] as Dictionary!
+        rightBarButton.setTitleTextAttributes(attributes, forState: .Normal)
+        rightBarButton.title = String.fontAwesomeIconWithName(.Github)
+    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

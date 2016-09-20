@@ -1,4 +1,5 @@
 import UIKit
+import FontAwesome
 
 class RepositoriesViewController: UITableViewController {
     enum TableCellType: Int {
@@ -12,6 +13,13 @@ class RepositoriesViewController: UITableViewController {
     let repositoriesCount = 5
 
     var userProvider: UserProvider?
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
+
+    override func viewDidLoad() {
+        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(24)] as Dictionary!
+        rightBarButton.setTitleTextAttributes(attributes, forState: .Normal)
+        rightBarButton.title = String.fontAwesomeIconWithName(.Github)
+    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
