@@ -9,12 +9,15 @@ class RepositoryTitleTableCell: UITableViewCell {
 
     var repository: Repository? {
         didSet {
-            guard let repository = repository else {
-                return
+            if let repository = repository {
+                dateLabel.text = repository.formattedCreatedAndUpdatedDateString
+                repositoryTitleLabel.text = repository.formattedRepositoryName
+                descriptionLabel.text = repository.descriptionString
+            } else {
+                dateLabel.text = ""
+                repositoryTitleLabel.text = ""
+                descriptionLabel.text = ""
             }
-            dateLabel.text = repository.formattedCreatedAndUpdatedDateString
-            repositoryTitleLabel.text = repository.formattedRepositoryName
-            descriptionLabel.text = repository.descriptionString
         }
     }
 }
