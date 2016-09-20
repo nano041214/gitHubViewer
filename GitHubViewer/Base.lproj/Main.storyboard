@@ -138,16 +138,16 @@
                                                     <rect key="frame" x="107" y="0.0" width="430" height="101"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfW-yI-Sqw" userLabel="StarredLabelWrapper">
-                                                            <rect key="frame" x="0.0" y="55" width="143" height="46"/>
+                                                            <rect key="frame" x="0.0" y="55" width="143.5" height="46"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starred" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0d-6g-uCZ">
-                                                                    <rect key="frame" x="0.0" y="29" width="143" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="29" width="143.5" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgj-mP-Jqg">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="143" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="143.5" height="29"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -192,16 +192,16 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79L-TJ-787" userLabel="FollowedLabelWrapper">
-                                                            <rect key="frame" x="286" y="54" width="143" height="47"/>
+                                                            <rect key="frame" x="286" y="54" width="143.5" height="47"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsz-Ax-FdU">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="143" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="143.5" height="29"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ut-rR-7Yh">
-                                                                    <rect key="frame" x="0.0" y="30" width="143" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="30" width="143.5" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -283,7 +283,7 @@
                                     <segue destination="dZ8-yC-lqx" kind="show" id="s04-a3-UBp"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="96" id="MWt-9Y-cbe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityTableViewCell" rowHeight="96" id="MWt-9Y-cbe" customClass="ActivityTableViewCell" customModule="GitHubViewer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="232" width="600" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MWt-9Y-cbe" id="y95-es-AZ1">
@@ -324,6 +324,10 @@
                                         <constraint firstItem="Kgg-uR-0hZ" firstAttribute="leading" secondItem="y95-es-AZ1" secondAttribute="leadingMargin" id="drX-qz-7ze"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activityNameLabel" destination="GrB-3i-6qQ" id="bOI-lT-2Gf"/>
+                                    <outlet property="repositoryNameLabel" destination="TAY-1B-chd" id="2Hj-4K-nfM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -340,6 +344,7 @@
         <!--Repositories View Controller-->
         <scene sceneID="ceI-Sd-Sxs">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cma-F2-crP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="RepositoriesViewController" id="dO7-wN-kKY" customClass="RepositoriesViewController" customModule="GitHubViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CSD-JH-fmG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -503,7 +508,7 @@
                                     <segue destination="dZ8-yC-lqx" kind="show" id="daI-Mq-hcU"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RepositoryCell" rowHeight="96" id="8gQ-ZQ-GnD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RepositoryTableViewCell" rowHeight="96" id="8gQ-ZQ-GnD" customClass="RepositoryTableViewCell" customModule="GitHubViewer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="232" width="600" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8gQ-ZQ-GnD" id="rop-vU-0gi">
@@ -545,7 +550,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="azc-Ed-Dui" kind="show" id="0Jo-OG-J8U"/>
+                                    <outlet property="nameLabel" destination="4F6-e9-jqY" id="kaI-WY-K3s"/>
+                                    <outlet property="starredCountLabel" destination="X3O-Aa-CRd" id="gvb-02-3YF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -556,7 +562,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Rjz-cy-Qrv"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cma-F2-crP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2696" y="262"/>
         </scene>
@@ -763,8 +768,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryTitleCell" rowHeight="185" id="ySe-ld-Xi4" customClass="RepositoryTitleTableCell" customModule="GitHubViewer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="185"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryTitleTableCell" rowHeight="185" id="ySe-ld-Xi4" customClass="RepositoryTitleTableCell" customModule="GitHubViewer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="185"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ySe-ld-Xi4" id="sdn-MT-sYk">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="185"/>
@@ -830,7 +835,7 @@ RepositoryName
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryDetailCell" textLabel="olC-Vc-1Ti" detailTextLabel="JRy-sx-5KO" style="IBUITableViewCellStyleValue1" id="Pdn-W9-PiL">
-                                <rect key="frame" x="0.0" y="277" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="213" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pdn-W9-PiL" id="DeO-rV-Lot">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -907,6 +912,6 @@ RepositoryName
         <image name="octcat" width="180" height="180"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s04-a3-UBp"/>
+        <segue reference="daI-Mq-hcU"/>
     </inferredMetricsTieBreakers>
 </document>
