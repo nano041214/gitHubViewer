@@ -1,7 +1,6 @@
-import Foundation
 import Himotoki
 
-struct DecodeHelper {
+struct HimotokiTransformer {
     static let URLTransformer = Transformer<String, NSURL> { URLString throws -> NSURL in
         guard let URL = NSURL(string: URLString) else {
             throw customError("Invalid URL string: \(URLString)")

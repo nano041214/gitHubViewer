@@ -43,8 +43,8 @@ extension Repository: Decodable {
                               commitsCount: 0,
                               issuesCount: extractor <| "open_issues_count",
                               starredCount: extractor <| "stargazers_count",
-                              repositoryURL: DecodeHelper.URLTransformer.apply(extractor <| "html_url"),
-                              createdDate: DecodeHelper.dateTransformer.apply(extractor <| "created_at"),
-                              updatedDate: DecodeHelper.dateTransformer.apply(extractor <| "updated_at"))
+                              repositoryURL: HimotokiTransformer.URLTransformer.apply(extractor <| "html_url"),
+                              createdDate: HimotokiTransformer.dateTransformer.apply(extractor <| "created_at"),
+                              updatedDate: HimotokiTransformer.dateTransformer.apply(extractor <| "updated_at"))
     }
 }
