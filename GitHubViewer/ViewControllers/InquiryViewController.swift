@@ -12,7 +12,7 @@ class InquiryViewController: UIViewController {
     override func viewDidLoad() {
         let defaultCenter = NSNotificationCenter.defaultCenter()
         defaultCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
-        defaultCenter.addObserver(self, selector: #selector(keyboardDidHide), name: UIKeyboardWillHideNotification, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
 
     deinit {
@@ -47,7 +47,7 @@ class InquiryViewController: UIViewController {
         view.layoutIfNeeded()
     }
 
-    func keyboardDidHide() {
+    func keyboardWillHide() {
         variableHeightViewHeightConstraint.constant = 0
         view.layoutIfNeeded()
     }
