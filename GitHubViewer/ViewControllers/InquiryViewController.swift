@@ -46,31 +46,32 @@ class InquiryViewController: UIViewController {
     }
 
     func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() else {
-            fatalError("NSNotification has invalid userInfo")
+        guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSTimeInterval else {
+            return
         }
-        let keyboardCGRectGetHeight = keyboardFrame.size.height
-        let deviceFrame = UIScreen.mainScreen().bounds
-        let deviceCGRectGetHeight = deviceFrame.size.height
 
-        let keyboardOffsetHeight = deviceCGRectGetHeight - keyboardCGRectGetHeight
+        guard let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() else {
+            return
+        }
+        let keyboardHeight = keyboardFrame.height
+        let deviceFrame = UIScreen.mainScreen().bounds
+        let deviceHeight = deviceFrame.height
+
+        let keyboardOffsetHeight = deviceHeight - keyboardHeight
 
         let statusBarFrame = UIApplication.sharedApplication().statusBarFrame
-        let statusBarCGRectGetHeight = statusBarFrame.size.height
+        let statusBartHeight = statusBarFrame.height
         let userNameTextFieldFrame = userNameTextField.frame
-        let userNameTextFieldCGRectGetY = userNameTextFieldFrame.origin.y
-        let userNameTextFieldCGRectGetHeight = userNameTextFieldFrame.size.height
+        let userNameTextFieldOriginY = userNameTextFieldFrame.origin.y
+        let userNameTextFieldHeight = userNameTextFieldFrame.height
 
-        let textFieldBottomOffsetHeight = statusBarCGRectGetHeight + userNameTextFieldCGRectGetY + userNameTextFieldCGRectGetHeight
+        let textFieldBottomOffsetHeight = statusBartHeight + userNameTextFieldOriginY + userNameTextFieldHeight
 
         if textFieldBottomOffsetHeight > keyboardOffsetHeight {
             let marginBottom: CGFloat = 30.0
             let scrollOffset = textFieldBottomOffsetHeight - keyboardOffsetHeight + marginBottom
             variableHeightViewHeightConstraint.constant = scrollOffset
 
-            guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSTimeInterval else {
-                fatalError("NSNotification has invalid userInfo")
-            }
             UIView.animateWithDuration(duration, animations: {
                 self.view.layoutIfNeeded()
             })
@@ -80,7 +81,7 @@ class InquiryViewController: UIViewController {
     func keyboardWillHide(notification: NSNotification) {
         variableHeightViewHeightConstraint.constant = 0.0
         guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSTimeInterval else {
-            fatalError("NSNotification has invalid userInfo")
+            return
         }
         UIView.animateWithDuration(duration, animations: {
             self.view.layoutIfNeeded()
