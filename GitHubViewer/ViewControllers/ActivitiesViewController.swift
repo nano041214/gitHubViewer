@@ -1,3 +1,4 @@
+import APIKit
 import UIKit
 import FontAwesome
 
@@ -5,14 +6,11 @@ class ActivitiesViewController: UITableViewController {
     enum TableCellType: Int {
         case UserInfo
         case Activity
+        static let sectionCount = 2
     }
 
     var userProvider: UserProvider?
-
-    let sectionCount = 2
-
-    // define value workaround
-    let activitiesCount = 5
+    private var activities: [Activity] = []
 
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -23,13 +21,30 @@ class ActivitiesViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        guard let userNameString = userProvider?.user?.name else {
+            return
+        }
+        let request = ActivityRequest(userName: userNameString)
+        Session.sendRequest(request) { result in
+            switch result {
+            case .Success(let activities):
+                self.activities = activities
+                self.tableView.reloadData()
+            case .Failure(_):
+                let inquiryViewController: InquiryViewController = self.ghv_instantiateViewController()
+                guard let userInfoTabBarController: UserInfoTabBarController = self.tabBarController as? UserInfoTabBarController else {
+                    fatalError("Could not load \(UserInfoTabBarController.self)")
+                }
+                inquiryViewController.delegate = userInfoTabBarController
+                self.presentViewController(inquiryViewController, animated: true, completion: nil)
+            }
+        }
     }
 
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return sectionCount
+        return TableCellType.sectionCount
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +55,7 @@ class ActivitiesViewController: UITableViewController {
         case .UserInfo:
             return 1
         case .Activity:
-            return activitiesCount
+            return activities.count
         }
     }
 
@@ -54,7 +69,8 @@ class ActivitiesViewController: UITableViewController {
             cell.user = userProvider?.user
             return cell
         case .Activity:
-            let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell", forIndexPath: indexPath)
+            let cell: ActivityTableViewCell = tableView.ghv_dequeueReusableCell(for: indexPath)
+            cell.activity = activities[indexPath.row]
             return cell
         }
     }

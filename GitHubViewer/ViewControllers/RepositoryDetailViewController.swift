@@ -7,18 +7,42 @@ class RepositoryDetailViewController: UITableViewController {
         static let count = 2
     }
 
-    enum ProfileTitle: Int {
+    enum ProfileRow: Int {
         case Language
         case Starred
         case Watchers
-        case Contributers
+        case Followers
+        case Following
         case Commits
         case Issues
-        case Branches
-        static let count = 7
+        case Forks
+
+        static let count = 8
+
+        var title: String {
+            switch self {
+            case .Language:
+                return "Language"
+            case .Starred:
+                return "Starred"
+            case .Watchers:
+                return "Watchers"
+            case .Followers:
+                return "Followers"
+            case .Following:
+                return "Following"
+            case .Commits:
+                return "Commits"
+            case .Issues:
+                return "Issues"
+            case .Forks:
+                return "Forks"
+            }
+        }
     }
 
     let defaultCellHeight: CGFloat = 44.0
+    var repository: Repository?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +76,7 @@ class RepositoryDetailViewController: UITableViewController {
         case .Title:
             return 1
         case .Detail:
-            return ProfileTitle.count
+            return ProfileRow.count
         }
     }
 
@@ -62,28 +86,41 @@ class RepositoryDetailViewController: UITableViewController {
         }
         switch cellType {
         case .Title:
-            let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryTitleCell", forIndexPath: indexPath)
+            let cell: RepositoryTitleTableCell = tableView.ghv_dequeueReusableCell(for: indexPath)
+            cell.repository = repository
             return cell
         case .Detail:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryDetailCell", forIndexPath: indexPath)
-            guard let titleType = ProfileTitle(rawValue: indexPath.row) else {
+            guard let titleType = ProfileRow(rawValue: indexPath.row) else {
                 fatalError("Accesssing undefined section row")
             }
+
+            cell.textLabel?.text = titleType.title
             switch titleType {
-            case .Branches:
-                cell.textLabel?.text = "Branches"
+            case .Forks:
+                if let forksCount = repository?.forksCount {
+                    cell.detailTextLabel?.text = "\(forksCount) fork"
+                }
             case .Commits:
-                cell.textLabel?.text = "Commits"
-            case .Contributers:
-                cell.textLabel?.text = "Contributers"
+                cell.detailTextLabel?.text = "unmeasured"
+            case .Followers:
+                cell.detailTextLabel?.text = "unmeasured"
+            case .Following:
+                cell.detailTextLabel?.text = "unmeasured"
             case .Issues:
-                cell.textLabel?.text = "Issues"
+                if let issuecount = repository?.issuesCount {
+                    cell.detailTextLabel?.text = "\(issuecount) issue"
+                }
             case .Language:
-                cell.textLabel?.text = "Language"
+                cell.detailTextLabel?.text = repository?.language
             case .Starred:
-                cell.textLabel?.text = "Starred"
+                if let starredCount = repository?.starredCount {
+                    cell.detailTextLabel?.text = "\(starredCount) star"
+                }
             case .Watchers:
-                cell.textLabel?.text = "Watchers"
+                if let watchersCount = repository?.watchersCount {
+                    cell.detailTextLabel?.text = "\(watchersCount) watcher"
+                }
             }
             return cell
         }
