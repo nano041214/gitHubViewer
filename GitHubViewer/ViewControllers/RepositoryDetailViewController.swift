@@ -17,7 +17,7 @@ class RepositoryDetailViewController: UITableViewController {
         case Issues
         case Forks
 
-        static let count = 7
+        static let count = 8
 
         var title: String {
             switch self {
@@ -98,7 +98,9 @@ class RepositoryDetailViewController: UITableViewController {
             cell.textLabel?.text = titleType.title
             switch titleType {
             case .Forks:
-                cell.detailTextLabel?.text = String(repository?.forksCount)
+                if let forksCount = repository?.forksCount {
+                    cell.detailTextLabel?.text = "\(forksCount) fork"
+                }
             case .Commits:
                 cell.detailTextLabel?.text = "unmeasured"
             case .Followers:
@@ -106,22 +108,19 @@ class RepositoryDetailViewController: UITableViewController {
             case .Following:
                 cell.detailTextLabel?.text = "unmeasured"
             case .Issues:
-                guard let issuecount = repository?.issuesCount else {
-                    fatalError("Invalid value type returned from API")
+                if let issuecount = repository?.issuesCount {
+                    cell.detailTextLabel?.text = "\(issuecount) issue"
                 }
-                cell.detailTextLabel?.text = String(issuecount)
             case .Language:
                 cell.detailTextLabel?.text = repository?.language
             case .Starred:
-                guard let starredCount = repository?.starredCount else {
-                    fatalError("Invalid value type returned from API")
+                if let starredCount = repository?.starredCount {
+                    cell.detailTextLabel?.text = "\(starredCount) star"
                 }
-                cell.detailTextLabel?.text = String(starredCount)
             case .Watchers:
-                guard let watchersCount = repository?.watchersCount else {
-                    fatalError("Invalid value type returned from API")
+                if let watchersCount = repository?.watchersCount {
+                    cell.detailTextLabel?.text = "\(watchersCount) watcher"
                 }
-                cell.detailTextLabel?.text = String(watchersCount)
             }
             return cell
         }
