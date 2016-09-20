@@ -59,6 +59,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="SXv-tT-HkP" firstAttribute="centerX" secondItem="jjD-5y-Hvv" secondAttribute="centerX" id="RfB-JW-g1f"/>
                                     <constraint firstItem="SXv-tT-HkP" firstAttribute="top" secondItem="jjD-5y-Hvv" secondAttribute="top" constant="110" id="Rk6-AK-KrN"/>
@@ -69,6 +70,9 @@
                                     <constraint firstItem="Tml-hn-5N1" firstAttribute="leading" secondItem="jjD-5y-Hvv" secondAttribute="leading" constant="25" id="oau-WE-m4h"/>
                                     <constraint firstAttribute="trailing" secondItem="vDD-zh-WGS" secondAttribute="trailing" constant="30" id="uNj-YZ-Uqg"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="acl-zJ-hY8" appends="YES" id="NJG-lD-nCj"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -89,6 +93,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="acl-zJ-hY8">
+                    <connections>
+                        <action selector="didTapContainerView:" destination="BYZ-38-t0r" id="kSV-fw-EsN"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="428" y="593"/>
         </scene>

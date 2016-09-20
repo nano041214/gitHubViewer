@@ -41,7 +41,10 @@ class InquiryViewController: UIViewController {
         }
     }
 
-    // workaround
+    @IBAction func didTapContainerView(sender: AnyObject) {
+        view.endEditing(false)
+    }
+
     func keyboardWillShow(notification: NSNotification) {
         guard let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() else {
             fatalError("NSNotification has invalid userInfo")
