@@ -8,11 +8,13 @@ class ActivityTableViewCell: UITableViewCell {
 
     var activity: Activity? {
         didSet {
-            guard let activity = activity else {
-                return
+            if let activity = activity {
+                activityNameLabel.text = activity.name
+                repositoryNameLabel.text = activity.descriptionString
+            } else {
+                activityNameLabel.text = "no activity name fetched"
+                repositoryNameLabel.text = "no repository name fetched"
             }
-            activityNameLabel.text = activity.name
-            repositoryNameLabel.text = activity.descriptionString
         }
     }
 
