@@ -17,7 +17,7 @@ struct Repository {
     let createdDate: NSDate
     let updatedDate: NSDate
 
-    var formattedRepositoryNameString: String {
+    var formattedRepositoryName: String {
         get {
             return "\(userName)/\n\(name)"
         }

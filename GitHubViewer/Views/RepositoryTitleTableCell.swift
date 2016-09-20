@@ -13,7 +13,7 @@ class RepositoryTitleTableCell: UITableViewCell {
                 return
             }
             dateLabel.text = repository.formattedCreatedAndUpdatedDateString
-            repositoryTitleLabel.text = repository.formattedRepositoryNameString
+            repositoryTitleLabel.text = repository.formattedRepositoryName
             descriptionLabel.text = repository.descriptionString
         }
     }

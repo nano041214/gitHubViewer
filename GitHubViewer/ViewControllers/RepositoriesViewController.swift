@@ -8,7 +8,7 @@ class RepositoriesViewController: UITableViewController {
         static let sectionCount = 2
     }
 
-    var repositories: [Repository] = []
+    private var repositories: [Repository] = []
 
     var userProvider: UserProvider?
 
@@ -82,7 +82,7 @@ class RepositoriesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == TableCellType.Repository.rawValue {
-            guard let repositoryDetailViewController = storyboard?.instantiateViewControllerWithIdentifier("RepositoryDetailViewController") as? RepositoryDetailViewController else {
+            guard let repositoryDetailViewController = storyboard?.instantiateViewControllerWithIdentifier(String(RepositoryDetailViewController.self)) as? RepositoryDetailViewController else {
                 fatalError("Accessing undefined viewController")
             }
             repositoryDetailViewController.repository = repositories[indexPath.row]
