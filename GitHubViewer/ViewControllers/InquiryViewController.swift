@@ -27,6 +27,10 @@ class InquiryViewController: UIViewController {
             }
         }
     }
+
+    @IBAction func didTapCloseButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
 protocol InquiryViewControllerDelegate: class {
