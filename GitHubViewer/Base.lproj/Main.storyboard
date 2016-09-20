@@ -101,16 +101,16 @@
                                                     <rect key="frame" x="107" y="0.0" width="430" height="101"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfW-yI-Sqw" userLabel="StarredLabelWrapper">
-                                                            <rect key="frame" x="0.0" y="55" width="143" height="46"/>
+                                                            <rect key="frame" x="0.0" y="55" width="143.5" height="46"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starred" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0d-6g-uCZ">
-                                                                    <rect key="frame" x="0.0" y="29" width="143" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="29" width="143.5" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgj-mP-Jqg">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="143" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="143.5" height="29"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -155,16 +155,16 @@
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79L-TJ-787" userLabel="FollowedLabelWrapper">
-                                                            <rect key="frame" x="286" y="54" width="143" height="47"/>
+                                                            <rect key="frame" x="286" y="54" width="143.5" height="47"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsz-Ax-FdU">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="143" height="29"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="143.5" height="29"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ut-rR-7Yh">
-                                                                    <rect key="frame" x="0.0" y="30" width="143" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="30" width="143.5" height="17"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -246,7 +246,7 @@
                                     <segue destination="dZ8-yC-lqx" kind="show" id="s04-a3-UBp"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityCell" rowHeight="96" id="MWt-9Y-cbe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityTableViewCell" rowHeight="96" id="MWt-9Y-cbe" customClass="ActivityTableViewCell" customModule="GitHubViewer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="232" width="600" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MWt-9Y-cbe" id="y95-es-AZ1">
@@ -287,6 +287,10 @@
                                         <constraint firstItem="Kgg-uR-0hZ" firstAttribute="leading" secondItem="y95-es-AZ1" secondAttribute="leadingMargin" id="drX-qz-7ze"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="activityNameLabel" destination="GrB-3i-6qQ" id="bOI-lT-2Gf"/>
+                                    <outlet property="repositoryNameLabel" destination="TAY-1B-chd" id="2Hj-4K-nfM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
