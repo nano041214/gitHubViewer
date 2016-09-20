@@ -1,8 +1,15 @@
 import UIKit
 import APIKit
+import FontAwesome
 
 class InquiryViewController: UIViewController {
     weak var delegate: InquiryViewControllerDelegate?
+    @IBOutlet weak var closeButton: UIButton!
+
+    override func viewDidLoad() {
+        closeButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        closeButton.setTitle(String.fontAwesomeIconWithName(.Close), forState: .Normal)
+    }
 
     @IBAction func didEnterUserName(sender: UITextField) {
         guard let userNameString = sender.text else {
