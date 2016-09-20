@@ -7,7 +7,7 @@ class RepositoryDetailViewController: UITableViewController {
         static let count = 2
     }
 
-    enum ProfileTitle: Int {
+    enum ProfileRow: Int {
         case Language
         case Starred
         case Watchers
@@ -19,7 +19,7 @@ class RepositoryDetailViewController: UITableViewController {
 
         static let count = 7
 
-        func toString () -> String {
+        var title: String {
             switch self {
             case .Language:
                 return "Language"
@@ -76,7 +76,7 @@ class RepositoryDetailViewController: UITableViewController {
         case .Title:
             return 1
         case .Detail:
-            return ProfileTitle.count
+            return ProfileRow.count
         }
     }
 
@@ -91,11 +91,11 @@ class RepositoryDetailViewController: UITableViewController {
             return cell
         case .Detail:
             let cell = tableView.dequeueReusableCellWithIdentifier("RepositoryDetailCell", forIndexPath: indexPath)
-            guard let titleType = ProfileTitle(rawValue: indexPath.row) else {
+            guard let titleType = ProfileRow(rawValue: indexPath.row) else {
                 fatalError("Accesssing undefined section row")
             }
 
-            cell.textLabel?.text = titleType.toString()
+            cell.textLabel?.text = titleType.title
             switch titleType {
             case .Forks:
                 cell.detailTextLabel?.text = String(repository?.forksCount)
