@@ -17,9 +17,9 @@ class UserInfoTableViewCell: UITableViewCell {
                 self.followedLabel.text = String(user.followersCount)
                 self.followingLabel.text = String(user.followingCount)
             } else {
-                self.userNameLabel.text = ""
-                self.followedLabel.text = ""
-                self.followingLabel.text = ""
+                self.userNameLabel.text = "No user was selected"
+                self.followedLabel.text = "?"
+                self.followingLabel.text = "?"
             }
         }
     }

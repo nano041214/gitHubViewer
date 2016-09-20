@@ -14,9 +14,9 @@ class RepositoryTitleTableCell: UITableViewCell {
                 repositoryTitleLabel.text = repository.formattedRepositoryName
                 descriptionLabel.text = repository.descriptionString
             } else {
-                dateLabel.text = ""
-                repositoryTitleLabel.text = ""
-                descriptionLabel.text = ""
+                dateLabel.text = "no date"
+                repositoryTitleLabel.text = "No repository fetched"
+                descriptionLabel.text = "no description"
             }
         }
     }
