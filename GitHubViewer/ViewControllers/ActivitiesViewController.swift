@@ -9,7 +9,7 @@ class ActivitiesViewController: UITableViewController {
     }
 
     var userProvider: UserProvider?
-    var activities: [Activity] = []
+    private var activities: [Activity] = []
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
