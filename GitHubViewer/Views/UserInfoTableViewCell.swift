@@ -12,12 +12,15 @@ class UserInfoTableViewCell: UITableViewCell {
 
     var user: User? {
         didSet {
-            guard let fetchedUser = user else {
-                return
+            if let user = user {
+                self.userNameLabel.text = user.name
+                self.followedLabel.text = String(user.followersCount)
+                self.followingLabel.text = String(user.followingCount)
+            } else {
+                self.userNameLabel.text = ""
+                self.followedLabel.text = ""
+                self.followingLabel.text = ""
             }
-            self.userNameLabel.text = fetchedUser.name
-            self.followedLabel.text = String(fetchedUser.followersCount)
-            self.followingLabel.text = String(fetchedUser.followingCount)
         }
     }
 }
