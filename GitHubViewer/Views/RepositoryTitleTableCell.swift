@@ -6,4 +6,18 @@ class RepositoryTitleTableCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var repositoryTitleLabel: UILabel!
+
+    var repository: Repository? {
+        didSet {
+            if let repository = repository {
+                dateLabel.text = repository.formattedCreatedAndUpdatedDateString
+                repositoryTitleLabel.text = repository.formattedRepositoryName
+                descriptionLabel.text = repository.descriptionString
+            } else {
+                dateLabel.text = "no date"
+                repositoryTitleLabel.text = "No repository fetched"
+                descriptionLabel.text = "no description"
+            }
+        }
+    }
 }
