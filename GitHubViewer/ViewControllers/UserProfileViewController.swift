@@ -66,11 +66,23 @@ class UserProfileViewController: UITableViewController {
             cell.textLabel?.text = rowType.title
             switch rowType {
             case .Email:
-                cell.detailTextLabel?.text = user?.mailAddress
+                if let mailAddress =  user?.mailAddress {
+                    cell.detailTextLabel?.text = mailAddress
+                } else {
+                    cell.detailTextLabel?.text = "Private"
+                }
             case .BlogURL:
-                cell.detailTextLabel?.text = user?.blogURL?.absoluteString
+                if let blogURL =  user?.blogURL {
+                    cell.detailTextLabel?.text = blogURL.absoluteString
+                } else {
+                    cell.detailTextLabel?.text = "Private"
+                }
             case .Location:
-                cell.detailTextLabel?.text = user?.location
+                if let location =  user?.location {
+                    cell.detailTextLabel?.text = location
+                } else {
+                    cell.detailTextLabel?.text = "Private"
+                }
             case .JoinedDate:
                 if let joinedDate = user?.joinedDate {
                     cell.detailTextLabel?.text = String(joinedDate)
