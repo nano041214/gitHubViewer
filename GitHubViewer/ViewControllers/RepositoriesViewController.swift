@@ -42,6 +42,15 @@ class RepositoriesViewController: UITableViewController {
         }
     }
 
+    @IBAction func didTapRightBarButton(sender: AnyObject) {
+        let inquiryViewController: InquiryViewController = self.ghv_instantiateViewController()
+        guard let userInfoTabBarController: UserInfoTabBarController = self.tabBarController as? UserInfoTabBarController else {
+            fatalError("Could not load \(UserInfoTabBarController.self)")
+        }
+        inquiryViewController.delegate = userInfoTabBarController
+        self.presentViewController(inquiryViewController, animated: true, completion: nil)
+    }
+
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
