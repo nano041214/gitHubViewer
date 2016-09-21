@@ -33,6 +33,12 @@ class ActivitiesViewController: UITableViewController {
         }
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let userProfileViewController = segue.destinationViewController as? UserProfileViewController {
+            userProfileViewController.user = userProvider?.user
+        }
+    }
+
     // MARK: - tableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

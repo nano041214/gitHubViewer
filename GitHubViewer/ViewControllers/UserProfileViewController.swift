@@ -29,6 +29,7 @@ class UserProfileViewController: UITableViewController {
     }
 
     let defaultCellHeight: CGFloat = 44.0
+    var user: User?
 
     // MARK: - tableViewDataSource
 
@@ -55,6 +56,7 @@ class UserProfileViewController: UITableViewController {
         switch cellType {
         case .UserInfo:
             let cell: UserInfoTableViewCell = tableView.ghv_dequeueReusableCell(for: indexPath)
+            cell.user = user
             return cell
         case .UserProfile:
             let cell = tableView.dequeueReusableCellWithIdentifier("UserProfileCell", forIndexPath: indexPath)
@@ -62,12 +64,16 @@ class UserProfileViewController: UITableViewController {
                 fatalError("Accesssing undefined section row")
             }
             cell.textLabel?.text = rowType.title
-//            switch rowType {
-//            case .Email:
-//            case .BlogURL:
-//            case .Location:
-//            case .JoinedDate:
-//            }
+            switch rowType {
+            case .Email:
+                cell.detailTextLabel?.text = user?.mailAddress
+            case .BlogURL:
+                cell.detailTextLabel?.text = user?.blogURL?.absoluteString
+            case .Location:
+                cell.detailTextLabel?.text = user?.location
+            case .JoinedDate:
+                cell.detailTextLabel?.text = String(user?.joinedDate)
+            }
             return cell
         }
     }
