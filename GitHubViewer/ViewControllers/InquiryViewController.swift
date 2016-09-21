@@ -1,11 +1,13 @@
 import APIKit
 import FontAwesome
-import SnapKit
 import UIKit
 
 class InquiryViewController: UIViewController {
     weak var delegate: InquiryViewControllerDelegate?
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var variableHeightViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var alertLabel: UILabel!
 
     override func viewDidLoad() {
         closeButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
@@ -15,10 +17,6 @@ class InquiryViewController: UIViewController {
         defaultCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
         defaultCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
     }
-
-    @IBOutlet weak var variableHeightViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var alertLabel: UILabel!
 
     deinit {
         let defaultCenter = NSNotificationCenter.defaultCenter()
