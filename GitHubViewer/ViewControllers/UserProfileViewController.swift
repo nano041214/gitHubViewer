@@ -72,7 +72,9 @@ class UserProfileViewController: UITableViewController {
             case .Location:
                 cell.detailTextLabel?.text = user?.location
             case .JoinedDate:
-                cell.detailTextLabel?.text = String(user?.joinedDate)
+                if let joinedDate = user?.joinedDate {
+                    cell.detailTextLabel?.text = String(joinedDate)
+                }
             }
             return cell
         }
