@@ -153,7 +153,7 @@ class RepositoryDetailViewController: UITableViewController {
 }
 
 extension RepositoryDetailViewController: GitHubLinkViewDelegate {
-    func didTapLinkViewButton() {
+    func didTapLinkViewButton(gitHubLinkView: GitHubLinkView) {
         guard let repositoryURL = repository?.repositoryURL else {
             fatalError("Repository object is nil or repositoryURL is nil")
         }

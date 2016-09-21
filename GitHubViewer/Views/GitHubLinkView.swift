@@ -5,10 +5,10 @@ class GitHubLinkView: UITableViewHeaderFooterView {
     weak var delegate: GitHubLinkViewDelegate?
 
     @IBAction func didTapLinkViewButton(sender: AnyObject) {
-        delegate?.didTapLinkViewButton()
+        delegate?.didTapLinkViewButton(self)
     }
 }
 
 protocol GitHubLinkViewDelegate: class {
-    func didTapLinkViewButton()
+    func didTapLinkViewButton(gitHubLinkView: GitHubLinkView)
 }
