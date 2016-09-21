@@ -60,6 +60,7 @@ class RepositoryDetailViewController: UITableViewController {
             return nil
         case .Detail:
             let linkView: GitHubLinkView = tableView.ghv_dequeueReusableHeaderFooterView()
+            linkView.delegate = self
             return linkView
         }
     }
@@ -147,6 +148,17 @@ class RepositoryDetailViewController: UITableViewController {
             return 0
         case .Detail:
             return GitHubLinkView.height
+        }
+    }
+}
+
+extension RepositoryDetailViewController: GitHubLinkViewDelegate {
+    func didTapLinkViewButton() {
+        guard let repositoryURL = repository?.repositoryURL else {
+            fatalError("Repository object is nil or repositoryURL is nil")
+        }
+        if UIApplication.sharedApplication().canOpenURL(repositoryURL) {
+            UIApplication.sharedApplication().openURL(repositoryURL)
         }
     }
 }
