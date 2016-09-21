@@ -7,12 +7,25 @@ class UserProfileViewController: UITableViewController {
         static let count = 2
     }
 
-    enum RowType: Int {
+    enum ProfileRow: Int {
         case Email
         case BlogURL
         case Location
         case JoinedDate
         static let count = 4
+
+        var title: String {
+            switch self {
+            case .Email:
+                return "Email"
+            case .BlogURL:
+                return "Blog URL"
+            case .Location:
+                return "Location"
+            case .JoinedDate:
+                return "Joined at"
+            }
+        }
     }
 
     let defaultCellHeight: CGFloat = 44.0
@@ -31,7 +44,7 @@ class UserProfileViewController: UITableViewController {
         case .UserInfo:
             return 1
         case .UserProfile:
-            return RowType.count
+            return ProfileRow.count
         }
     }
 
@@ -45,19 +58,16 @@ class UserProfileViewController: UITableViewController {
             return cell
         case .UserProfile:
             let cell = tableView.dequeueReusableCellWithIdentifier("UserProfileCell", forIndexPath: indexPath)
-            guard let rowType = RowType(rawValue: indexPath.row) else {
+            guard let rowType = ProfileRow(rawValue: indexPath.row) else {
                 fatalError("Accesssing undefined section row")
             }
-            switch rowType {
-            case .Email:
-                cell.textLabel?.text = "Email"
-            case .BlogURL:
-                cell.textLabel?.text = "Blog URL"
-            case .Location:
-                cell.textLabel?.text = "Location"
-            case .JoinedDate:
-                cell.textLabel?.text = "Joined at"
-            }
+            cell.textLabel?.text = rowType.title
+//            switch rowType {
+//            case .Email:
+//            case .BlogURL:
+//            case .Location:
+//            case .JoinedDate:
+//            }
             return cell
         }
     }
