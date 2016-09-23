@@ -25,6 +25,9 @@
 		278F8DCB1D94F3780072BAB3 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FA1D66D96F00526F88 /* Himotoki.framework */; };
 		278F8DCC1D94F3840072BAB3 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2710BA131D94CEC800B9DE54 /* OHHTTPStubs.framework */; };
 		278F8DCE1D94F5950072BAB3 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F8DCD1D94F5950072BAB3 /* UserTest.swift */; };
+		278F8DD11D94F8DA0072BAB3 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 278F8DD01D94F8DA0072BAB3 /* user.json */; };
+		278F8DD21D94FDDD0072BAB3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE01D6FE582005E98D3 /* User.swift */; };
+		278F8DD31D95006E0072BAB3 /* HimotokiTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5FE491D9125E800125D43 /* HimotokiTransformer.swift */; };
 		2798FADE1D6D419D0080EEA1 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */; };
 		2798FAE01D6D420A0080EEA1 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798FADF1D6D420A0080EEA1 /* UserInfoTableViewCell.swift */; };
 		27A5FE4A1D9125E800125D43 /* HimotokiTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5FE491D9125E800125D43 /* HimotokiTransformer.swift */; };
@@ -76,6 +79,7 @@
 		275877FB1D87FED200F9D1E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		278F8DCD1D94F5950072BAB3 /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		278F8DD01D94F8DA0072BAB3 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		2798FADF1D6D420A0080EEA1 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		27A5FE491D9125E800125D43 /* HimotokiTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HimotokiTransformer.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 		278F8DCF1D94F82F0072BAB3 /* fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				278F8DD01D94F8DA0072BAB3 /* user.json */,
 			);
 			path = fixtures;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278F8DD11D94F8DA0072BAB3 /* user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +419,8 @@
 			files = (
 				278F8DCE1D94F5950072BAB3 /* UserTest.swift in Sources */,
 				275877FA1D87FED200F9D1E8 /* GitHubViewerTests.swift in Sources */,
+				278F8DD21D94FDDD0072BAB3 /* User.swift in Sources */,
+				278F8DD31D95006E0072BAB3 /* HimotokiTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

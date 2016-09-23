@@ -1,4 +1,6 @@
 import XCTest
+import GitHubViewer
+import OHHTTPStubs
 
 class GitHubViewerTests: XCTestCase {
     override func setUp() {
