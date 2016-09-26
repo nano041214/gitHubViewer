@@ -10,12 +10,13 @@ class RepositoriesViewController: UITableViewController {
     }
 
     private var repositories: [Repository] = []
+    let navigationBarRightButtonFontSize: CGFloat = 24.0
 
     var userProvider: UserProvider?
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
-        let attributes: [String: AnyObject] = [NSFontAttributeName: UIFont.fontAwesomeOfSize(24)]
+        let attributes: [String: AnyObject] = [NSFontAttributeName: UIFont.fontAwesomeOfSize(navigationBarRightButtonFontSize)]
         rightBarButton.setTitleTextAttributes(attributes, forState: .Normal)
         rightBarButton.title = String.fontAwesomeIconWithName(.Github)
     }

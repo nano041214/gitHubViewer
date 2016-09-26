@@ -10,11 +10,12 @@ class ActivitiesViewController: UITableViewController {
     }
 
     var userProvider: UserProvider?
+    let navigationBarRightButtonFontSize: CGFloat = 24.0
     private var activities: [Activity] = []
 
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     override func viewDidLoad() {
-        let attributes: [String: AnyObject] = [NSFontAttributeName: UIFont.fontAwesomeOfSize(24)]
+        let attributes: [String: AnyObject] = [NSFontAttributeName: UIFont.fontAwesomeOfSize(navigationBarRightButtonFontSize)]
         rightBarButton.setTitleTextAttributes(attributes, forState: .Normal)
         rightBarButton.title = String.fontAwesomeIconWithName(.Github)
     }

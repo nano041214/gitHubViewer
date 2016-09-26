@@ -9,8 +9,10 @@ class InquiryViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var alertLabel: UILabel!
 
+    let closeButtonFontSize:CGFloat = 30.0
+
     override func viewDidLoad() {
-        closeButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        closeButton.titleLabel?.font = UIFont.fontAwesomeOfSize(closeButtonFontSize)
         closeButton.setTitle(String.fontAwesomeIconWithName(.Close), forState: .Normal)
 
         let defaultCenter = NSNotificationCenter.defaultCenter()
