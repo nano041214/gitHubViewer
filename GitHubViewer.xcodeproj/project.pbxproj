@@ -14,17 +14,18 @@
 		270C60001D65A7FF0009DAC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270C5FFE1D65A7FF0009DAC0 /* LaunchScreen.storyboard */; };
 		271107861D6EB5B600DE65F6 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */; };
 		271107881D6EB91900DE65F6 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */; };
+		271499DC1D98EFDF00A2A11A /* NSDateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271499DB1D98EFDF00A2A11A /* NSDateFormatter+Extension.swift */; };
 		2717DD461D797447004C279E /* GitHubLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717DD451D797447004C279E /* GitHubLinkView.swift */; };
-		272EC1D01D8A5F200046B4DC /* ActivityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EC1CF1D8A5F200046B4DC /* ActivityRequest.swift */; };
 		272EC1CE1D8951AA0046B4DC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EC1CD1D8951AA0046B4DC /* UIViewController+Extension.swift */; };
+		272EC1D01D8A5F200046B4DC /* ActivityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EC1CF1D8A5F200046B4DC /* ActivityRequest.swift */; };
 		274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */; };
 		275877FA1D87FED200F9D1E8 /* GitHubViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275877F91D87FED200F9D1E8 /* GitHubViewerTests.swift */; };
 		27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */; };
 		2798FADE1D6D419D0080EEA1 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */; };
 		2798FAE01D6D420A0080EEA1 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798FADF1D6D420A0080EEA1 /* UserInfoTableViewCell.swift */; };
-		27B9E9741D91029700FD89F7 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B9E9731D91029700FD89F7 /* FontAwesome.framework */; };
 		27A5FE4A1D9125E800125D43 /* HimotokiTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5FE491D9125E800125D43 /* HimotokiTransformer.swift */; };
 		27B3C0041D82A5DF00FB270E /* RepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B3C0031D82A5DF00FB270E /* RepositoryRequest.swift */; };
+		27B9E9741D91029700FD89F7 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B9E9731D91029700FD89F7 /* FontAwesome.framework */; };
 		27C48DE11D6FE582005E98D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE01D6FE582005E98D3 /* User.swift */; };
 		27C48DE31D6FE5BD005E98D3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE21D6FE5BD005E98D3 /* Repository.swift */; };
 		27C48DE51D6FE5D8005E98D3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE41D6FE5D8005E98D3 /* Activity.swift */; };
@@ -62,9 +63,10 @@
 		270C60011D65A7FF0009DAC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		271499DB1D98EFDF00A2A11A /* NSDateFormatter+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		2717DD451D797447004C279E /* GitHubLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubLinkView.swift; sourceTree = "<group>"; };
-		272EC1CF1D8A5F200046B4DC /* ActivityRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRequest.swift; sourceTree = "<group>"; };
 		272EC1CD1D8951AA0046B4DC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		272EC1CF1D8A5F200046B4DC /* ActivityRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRequest.swift; sourceTree = "<group>"; };
 		2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTabBarController.swift; sourceTree = "<group>"; };
 		275877F71D87FED200F9D1E8 /* GitHubViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275877F91D87FED200F9D1E8 /* GitHubViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubViewerTests.swift; sourceTree = "<group>"; };
@@ -72,9 +74,9 @@
 		27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		2798FADF1D6D420A0080EEA1 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
-		27B9E9731D91029700FD89F7 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
 		27A5FE491D9125E800125D43 /* HimotokiTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HimotokiTransformer.swift; sourceTree = "<group>"; };
 		27B3C0031D82A5DF00FB270E /* RepositoryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRequest.swift; sourceTree = "<group>"; };
+		27B9E9731D91029700FD89F7 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
 		27C48DE01D6FE582005E98D3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		27C48DE21D6FE5BD005E98D3 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		27C48DE41D6FE5D8005E98D3 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				27D3096D1D7806EB00DF0154 /* UITableViewController+Extension.swift */,
 				272EC1CD1D8951AA0046B4DC /* UIViewController+Extension.swift */,
+				271499DB1D98EFDF00A2A11A /* NSDateFormatter+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				2717DD461D797447004C279E /* GitHubLinkView.swift in Sources */,
 				27C48DE51D6FE5D8005E98D3 /* Activity.swift in Sources */,
 				271107881D6EB91900DE65F6 /* ActivityTableViewCell.swift in Sources */,
+				271499DC1D98EFDF00A2A11A /* NSDateFormatter+Extension.swift in Sources */,
 				270C5FF61D65A7FF0009DAC0 /* AppDelegate.swift in Sources */,
 				27C48DE11D6FE582005E98D3 /* User.swift in Sources */,
 				272EC1D01D8A5F200046B4DC /* ActivityRequest.swift in Sources */,
