@@ -44,6 +44,14 @@ class RepositoriesViewController: UITableViewController {
         }
     }
 
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if userProvider?.user == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+
     @IBAction func didTapRightBarButton(sender: AnyObject) {
         self.userProvider?.showInquiryViewController()
     }
