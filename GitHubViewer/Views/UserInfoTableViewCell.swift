@@ -13,20 +13,21 @@ class UserInfoTableViewCell: UITableViewCell {
 
     var user: User? {
         didSet {
+            let placeholderImage = UIImage(named: "octcat")
             if let user = user {
                 iconImageView.kf_setImageWithURL(user.iconURL,
-                                                 placeholderImage: UIImage(named: "octcat"),
+                                                 placeholderImage: placeholderImage,
                                                  optionsInfo: nil,
                                                  progressBlock: nil,
                                                  completionHandler: nil)
-                self.userNameLabel.text = user.name
-                self.followedLabel.text = String(user.followersCount)
-                self.followingLabel.text = String(user.followingCount)
+                userNameLabel.text = user.name
+                followedLabel.text = String(user.followersCount)
+                followingLabel.text = String(user.followingCount)
             } else {
-                iconImageView.image = UIImage(named: "octcat")
-                self.userNameLabel.text = "No user was selected"
-                self.followedLabel.text = "?"
-                self.followingLabel.text = "?"
+                iconImageView.image = placeholderImage
+                userNameLabel.text = "No user was selected"
+                followedLabel.text = "?"
+                followingLabel.text = "?"
             }
         }
     }
