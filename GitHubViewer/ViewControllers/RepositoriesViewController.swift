@@ -33,23 +33,13 @@ class RepositoriesViewController: UITableViewController {
                 self.repositories = repositories
                 self.tableView.reloadData()
             case .Failure(_):
-                let inquiryViewController: InquiryViewController = self.ghv_instantiateViewController()
-                guard let userInfoTabBarController: UserInfoTabBarController = self.tabBarController as? UserInfoTabBarController else {
-                    fatalError("Could not load \(UserInfoTabBarController.self)")
-                }
-                inquiryViewController.delegate = userInfoTabBarController
-                self.presentViewController(inquiryViewController, animated: true, completion: nil)
+                self.userProvider?.showInquiryViewController()
             }
         }
     }
 
     @IBAction func didTapRightBarButton(sender: AnyObject) {
-        let inquiryViewController: InquiryViewController = ghv_instantiateViewController()
-        guard let userInfoTabBarController = tabBarController as? UserInfoTabBarController else {
-            fatalError("Could not load \(UserInfoTabBarController.self)")
-        }
-        inquiryViewController.delegate = userInfoTabBarController
-        presentViewController(inquiryViewController, animated: true, completion: nil)
+        self.userProvider?.showInquiryViewController()
     }
 
     // MARK: - tableViewDataSource
