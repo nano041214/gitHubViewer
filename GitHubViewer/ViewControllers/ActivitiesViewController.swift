@@ -14,7 +14,7 @@ class ActivitiesViewController: UITableViewController {
 
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     override func viewDidLoad() {
-        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(24)] as Dictionary!
+        let attributes: [String: AnyObject] = [NSFontAttributeName: UIFont.fontAwesomeOfSize(24)]
         rightBarButton.setTitleTextAttributes(attributes, forState: .Normal)
         rightBarButton.title = String.fontAwesomeIconWithName(.Github)
     }
@@ -42,12 +42,12 @@ class ActivitiesViewController: UITableViewController {
     }
 
     @IBAction func didTapRightBarButton(sender: AnyObject) {
-        let inquiryViewController: InquiryViewController = self.ghv_instantiateViewController()
-        guard let userInfoTabBarController: UserInfoTabBarController = self.tabBarController as? UserInfoTabBarController else {
+        let inquiryViewController: InquiryViewController = ghv_instantiateViewController()
+        guard let userInfoTabBarController = tabBarController as? UserInfoTabBarController else {
             fatalError("Could not load \(UserInfoTabBarController.self)")
         }
         inquiryViewController.delegate = userInfoTabBarController
-        self.presentViewController(inquiryViewController, animated: true, completion: nil)
+        presentViewController(inquiryViewController, animated: true, completion: nil)
     }
 
     // MARK: - tableViewDataSource
