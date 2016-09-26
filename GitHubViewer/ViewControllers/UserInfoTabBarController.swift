@@ -23,9 +23,7 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if user == nil {
-            let inquiryViewController: InquiryViewController = ghv_instantiateViewController()
-            inquiryViewController.delegate = self
-            presentViewController(inquiryViewController, animated: true, completion: nil)
+            showInquiryViewController()
         }
     }
 
@@ -34,8 +32,17 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
     func inquiryViewController(inquiryViewController: InquiryViewController, userWasSelected user: User) {
         self.user = user
     }
+
+    // MARK: - UserProvider
+
+    func showInquiryViewController() {
+        let inquiryViewController: InquiryViewController = ghv_instantiateViewController()
+        inquiryViewController.delegate = self
+        presentViewController(inquiryViewController, animated: true, completion: nil)
+    }
 }
 
-protocol UserProvider {
+protocol UserProvider: class {
     var user: User? { get }
+    func showInquiryViewController()
 }
