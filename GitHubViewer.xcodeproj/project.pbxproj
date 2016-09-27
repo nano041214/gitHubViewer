@@ -20,7 +20,6 @@
 		272EC1CE1D8951AA0046B4DC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EC1CD1D8951AA0046B4DC /* UIViewController+Extension.swift */; };
 		272EC1D01D8A5F200046B4DC /* ActivityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EC1CF1D8A5F200046B4DC /* ActivityRequest.swift */; };
 		274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */; };
-		275877FA1D87FED200F9D1E8 /* GitHubViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275877F91D87FED200F9D1E8 /* GitHubViewerTests.swift */; };
 		27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */; };
 		278F8DCB1D94F3780072BAB3 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FA1D66D96F00526F88 /* Himotoki.framework */; };
 		278F8DCC1D94F3840072BAB3 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2710BA131D94CEC800B9DE54 /* OHHTTPStubs.framework */; };
@@ -78,7 +77,6 @@
 		272EC1CF1D8A5F200046B4DC /* ActivityRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRequest.swift; sourceTree = "<group>"; };
 		2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTabBarController.swift; sourceTree = "<group>"; };
 		275877F71D87FED200F9D1E8 /* GitHubViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		275877F91D87FED200F9D1E8 /* GitHubViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubViewerTests.swift; sourceTree = "<group>"; };
 		275877FB1D87FED200F9D1E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		278F8DCD1D94F5950072BAB3 /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				278F8DCF1D94F82F0072BAB3 /* fixtures */,
-				275877F91D87FED200F9D1E8 /* GitHubViewerTests.swift */,
 				275877FB1D87FED200F9D1E8 /* Info.plist */,
 				278F8DCD1D94F5950072BAB3 /* UserTest.swift */,
 				278F8DD41D9501C20072BAB3 /* UserRequestTest.swift */,
@@ -423,7 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				278F8DCE1D94F5950072BAB3 /* UserTest.swift in Sources */,
-				275877FA1D87FED200F9D1E8 /* GitHubViewerTests.swift in Sources */,
 				278F8DD21D94FDDD0072BAB3 /* User.swift in Sources */,
 				278F8DD31D95006E0072BAB3 /* HimotokiTransformer.swift in Sources */,
 				278F8DD51D9501C20072BAB3 /* UserRequestTest.swift in Sources */,

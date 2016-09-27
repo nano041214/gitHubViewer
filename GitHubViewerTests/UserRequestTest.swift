@@ -22,7 +22,6 @@ class UserRequestTest: XCTestCase {
                 return OHHTTPStubsResponse(data: NSData(), statusCode: 400, headers: nil)
             }
         }
-
         let request = UserRequest(userName: "nano041214")
         let expectation = expectationWithDescription("Check user request")
         Session.sendRequest(request) { result in
@@ -33,7 +32,6 @@ class UserRequestTest: XCTestCase {
                 return
             }
         }
-
         waitForExpectationsWithTimeout(1.0, handler: nil)
     }
 
@@ -57,7 +55,6 @@ class UserRequestTest: XCTestCase {
                 expectation.fulfill()
             }
         }
-
         waitForExpectationsWithTimeout(1.0, handler: nil)
     }
 }
