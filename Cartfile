@@ -2,5 +2,5 @@ github "ishkawa/APIKit" ~> 2.0
 github "ikesyo/Himotoki" ~> 2.1
 github "onevcat/Kingfisher" ~> 2.4
 github "SnapKit/SnapKit" ~> 0.22
-github "AliSoftware/OHHTTPStubs" == 5.1.0
+github "AliSoftware/OHHTTPStubs" "5.1.0"
 github "thii/FontAwesome.swift" ~> 0.9
