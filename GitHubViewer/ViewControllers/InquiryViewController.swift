@@ -41,7 +41,8 @@ class InquiryViewController: UIViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
             case .Failure(let error):
                 self.alertLabel.hidden = false
-                self.alertLabel.text = String(error)
+                let raisedNSError = error as NSError
+                self.alertLabel.text = String(raisedNSError.localizedDescription)
             }
         }
     }
