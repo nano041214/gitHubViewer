@@ -32,6 +32,7 @@
 		278F8DD71D9506A70072BAB3 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DEB1D70048D005E98D3 /* UserRequest.swift */; };
 		2798FADE1D6D419D0080EEA1 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */; };
 		2798FAE01D6D420A0080EEA1 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2798FADF1D6D420A0080EEA1 /* UserInfoTableViewCell.swift */; };
+		27B9E9741D91029700FD89F7 /* FontAwesome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B9E9731D91029700FD89F7 /* FontAwesome.framework */; };
 		27A5FE4A1D9125E800125D43 /* HimotokiTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5FE491D9125E800125D43 /* HimotokiTransformer.swift */; };
 		27B3C0041D82A5DF00FB270E /* RepositoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B3C0031D82A5DF00FB270E /* RepositoryRequest.swift */; };
 		27C48DE11D6FE582005E98D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C48DE01D6FE582005E98D3 /* User.swift */; };
@@ -84,6 +85,7 @@
 		278F8DD41D9501C20072BAB3 /* UserRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequestTest.swift; sourceTree = "<group>"; };
 		2798FADD1D6D419D0080EEA1 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		2798FADF1D6D420A0080EEA1 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		27B9E9731D91029700FD89F7 /* FontAwesome.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FontAwesome.framework; path = Carthage/Build/iOS/FontAwesome.framework; sourceTree = "<group>"; };
 		27A5FE491D9125E800125D43 /* HimotokiTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HimotokiTransformer.swift; sourceTree = "<group>"; };
 		27B3C0031D82A5DF00FB270E /* RepositoryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRequest.swift; sourceTree = "<group>"; };
 		27C48DE01D6FE582005E98D3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2710BA141D94CEC800B9DE54 /* OHHTTPStubs.framework in Frameworks */,
+				27B9E9741D91029700FD89F7 /* FontAwesome.framework in Frameworks */,
 				27EE31021D66DB8600526F88 /* Result.framework in Frameworks */,
 				27EE30FF1D66D99000526F88 /* SnapKit.framework in Frameworks */,
 				27EE30FD1D66D97B00526F88 /* Kingfisher.framework in Frameworks */,
@@ -229,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				2710BA131D94CEC800B9DE54 /* OHHTTPStubs.framework */,
+				27B9E9731D91029700FD89F7 /* FontAwesome.framework */,
 				27EE30FA1D66D96F00526F88 /* Himotoki.framework */,
 				27EE30F81D66D95C00526F88 /* APIKit.framework */,
 				27EE30FC1D66D97B00526F88 /* Kingfisher.framework */,
@@ -376,6 +380,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FontAwesome.framework",
 			);
 			outputPaths = (
 			);
@@ -556,6 +561,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GitHubViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cookpad.ios.GitHubViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -571,6 +577,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = GitHubViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cookpad.ios.GitHubViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

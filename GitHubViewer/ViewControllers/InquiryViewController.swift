@@ -1,15 +1,20 @@
 import APIKit
-import SnapKit
+import FontAwesome
 import UIKit
 
 class InquiryViewController: UIViewController {
     weak var delegate: InquiryViewControllerDelegate?
-
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var variableHeightViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var alertLabel: UILabel!
 
+    let closeButtonFontSize: CGFloat = 30.0
+
     override func viewDidLoad() {
+        closeButton.titleLabel?.font = UIFont.fontAwesomeOfSize(closeButtonFontSize)
+        closeButton.setTitle(String.fontAwesomeIconWithName(.Close), forState: .Normal)
+
         let defaultCenter = NSNotificationCenter.defaultCenter()
         defaultCenter.addObserver(self, selector: #selector(keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
         defaultCenter.addObserver(self, selector: #selector(keyboardWillHide), name: UIKeyboardWillHideNotification, object: nil)
@@ -86,6 +91,10 @@ class InquiryViewController: UIViewController {
         UIView.animateWithDuration(duration, animations: {
             self.view.layoutIfNeeded()
         })
+    }
+
+    @IBAction func didTapCloseButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

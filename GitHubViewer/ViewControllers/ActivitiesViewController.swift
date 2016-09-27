@@ -1,5 +1,6 @@
 import APIKit
 import UIKit
+import FontAwesome
 
 class ActivitiesViewController: UITableViewController {
     enum TableCellType: Int {
@@ -9,7 +10,15 @@ class ActivitiesViewController: UITableViewController {
     }
 
     var userProvider: UserProvider?
+    let navigationBarRightButtonFontSize: CGFloat = 24.0
     private var activities: [Activity] = []
+
+    @IBOutlet weak var rightBarButton: UIBarButtonItem!
+    override func viewDidLoad() {
+        let attributes: [String: AnyObject] = [NSFontAttributeName: UIFont.fontAwesomeOfSize(navigationBarRightButtonFontSize)]
+        rightBarButton.setTitleTextAttributes(attributes, forState: .Normal)
+        rightBarButton.title = String.fontAwesomeIconWithName(.Github)
+    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,14 +32,13 @@ class ActivitiesViewController: UITableViewController {
                 self.activities = activities
                 self.tableView.reloadData()
             case .Failure(_):
-                let inquiryViewController: InquiryViewController = self.ghv_instantiateViewController()
-                guard let userInfoTabBarController: UserInfoTabBarController = self.tabBarController as? UserInfoTabBarController else {
-                    fatalError("Could not load \(UserInfoTabBarController.self)")
-                }
-                inquiryViewController.delegate = userInfoTabBarController
-                self.presentViewController(inquiryViewController, animated: true, completion: nil)
+                self.userProvider?.showInquiryViewController()
             }
         }
+    }
+
+    @IBAction func didTapRightBarButton(sender: AnyObject) {
+        self.userProvider?.showInquiryViewController()
     }
 
     // MARK: - tableViewDataSource
