@@ -145,7 +145,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4zJ-8t-YXx" id="1Uc-Yk-woW">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epw-XX-6rX" userLabel="UserInfoHeaderView">
@@ -304,7 +304,7 @@
                                 <rect key="frame" x="0.0" y="232" width="600" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MWt-9Y-cbe" id="y95-es-AZ1">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="95.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgg-uR-0hZ" userLabel="ActivityCellContentWrapperView">
@@ -380,7 +380,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2wd-NA-Q1k" id="MVb-7p-Lng">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FP4-zG-duf" userLabel="UserInfoHeaderView">
@@ -537,7 +537,7 @@
                                 <rect key="frame" x="0.0" y="232" width="600" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8gQ-ZQ-GnD" id="rop-vU-0gi">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="95.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D31-Nh-E2A" userLabel="RepositoryCellContentWrapperView">
@@ -613,7 +613,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bL2-lh-wa9" id="qZf-s2-qER">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="139.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icK-Gg-zK3" userLabel="UserInfoHeaderView">
@@ -807,7 +807,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="185"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ySe-ld-Xi4" id="sdn-MT-sYk">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="185"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="184.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJ9-nF-1jw" userLabel="RepositoryTitleWrapoerView">
