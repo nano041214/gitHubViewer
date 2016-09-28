@@ -41,8 +41,12 @@ class InquiryViewController: UIViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
             case .Failure(let error):
                 self.alertLabel.hidden = false
-                let raisedNSError = error as NSError
-                self.alertLabel.text = String(raisedNSError.localizedDescription)
+                switch error {
+                case .ResponseError(let gitHubError as GitHubViewerError):
+                    self.alertLabel.text = "GitHub API Error: \(gitHubError.errorDescription)"
+                default:
+                    self.alertLabel.text = String(String(error).componentsSeparatedByString("\"")[1])
+                }
             }
         }
     }
