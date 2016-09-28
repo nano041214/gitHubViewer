@@ -26,6 +26,9 @@
                     <rect key="frame" x="227" y="56" width="167" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <state key="normal" title="View on GitHub"/>
+                    <connections>
+                        <action selector="didTapLinkViewButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="v38-Cc-6Xc"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
