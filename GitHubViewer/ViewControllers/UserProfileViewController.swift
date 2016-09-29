@@ -66,7 +66,7 @@ class UserProfileViewController: UITableViewController {
             cell.textLabel?.text = rowType.title
             switch rowType {
             case .Email:
-                 cell.detailTextLabel?.text = user?.mailAddress ?? "Private"
+                cell.detailTextLabel?.text = user?.mailAddress ?? "Private"
             case .BlogURL:
                 cell.detailTextLabel?.text = user?.blogURL?.absoluteString ?? "Private"
             case .Location:

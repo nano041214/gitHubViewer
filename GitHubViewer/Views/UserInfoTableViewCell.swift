@@ -16,10 +16,7 @@ class UserInfoTableViewCell: UITableViewCell {
             let placeholderImage = UIImage(named: "octcat")
             if let user = user {
                 iconImageView.kf_setImageWithURL(user.iconURL,
-                                                 placeholderImage: placeholderImage,
-                                                 optionsInfo: nil,
-                                                 progressBlock: nil,
-                                                 completionHandler: nil)
+                                                 placeholderImage: placeholderImage)
                 userNameLabel.text = user.name
                 followedLabel.text = String(user.followersCount)
                 followingLabel.text = String(user.followingCount)

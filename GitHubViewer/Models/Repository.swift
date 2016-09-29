@@ -22,7 +22,6 @@ struct Repository {
             return "\(userName)/\n\(name)"
         }
     }
-    //createdDate
 
     var formattedCreatedAndUpdatedDateString: String {
         get {
