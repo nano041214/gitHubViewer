@@ -25,7 +25,7 @@ struct Repository {
 
     var formattedCreatedAndUpdatedDateString: String {
         get {
-            let dateFormatter = NSDateFormatter.ghv_japaneseDateFormatter()
+            let dateFormatter = SimpleDateFormatter.dateFomatter()
             return "created at \(dateFormatter.stringFromDate(createdDate))\nupdated at \(dateFormatter.stringFromDate(updatedDate))"
         }
     }

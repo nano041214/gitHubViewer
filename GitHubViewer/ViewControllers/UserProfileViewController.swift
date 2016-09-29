@@ -73,7 +73,7 @@ class UserProfileViewController: UITableViewController {
                 cell.detailTextLabel?.text = user?.location ?? "Private"
             case .JoinedDate:
                 if let joinedDate = user?.joinedDate {
-                    let dateFormatter = NSDateFormatter.ghv_japaneseDateFormatter()
+                    let dateFormatter = SimpleDateFormatter.dateFomatter()
                     cell.detailTextLabel?.text = dateFormatter.stringFromDate(joinedDate)
                 }
             }
