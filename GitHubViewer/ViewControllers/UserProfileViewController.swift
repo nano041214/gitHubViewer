@@ -29,7 +29,7 @@ class UserProfileViewController: UITableViewController {
     }
 
     let defaultCellHeight: CGFloat = 44.0
-    var user: User?
+    var user: User!
 
     // MARK: - tableViewDataSource
 
@@ -66,16 +66,14 @@ class UserProfileViewController: UITableViewController {
             cell.textLabel?.text = rowType.title
             switch rowType {
             case .Email:
-                cell.detailTextLabel?.text = user?.mailAddress ?? "Private"
+                cell.detailTextLabel?.text = user.mailAddress ?? "Private"
             case .BlogURL:
-                cell.detailTextLabel?.text = user?.blogURL?.absoluteString ?? "Private"
+                cell.detailTextLabel?.text = user.blogURL?.absoluteString ?? "Private"
             case .Location:
-                cell.detailTextLabel?.text = user?.location ?? "Private"
+                cell.detailTextLabel?.text = user.location ?? "Private"
             case .JoinedDate:
-                if let joinedDate = user?.joinedDate {
-                    let dateFormatter = SimpleDateFormatter.dateFomatter()
-                    cell.detailTextLabel?.text = dateFormatter.stringFromDate(joinedDate)
-                }
+                let dateFormatter = SimpleDateFormatter.dateFomatter()
+                cell.detailTextLabel?.text = dateFormatter.stringFromDate(user.joinedDate)
             }
             return cell
         }
