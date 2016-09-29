@@ -14,6 +14,7 @@ class ActivitiesViewController: UITableViewController {
     private var activities: [Activity] = []
 
     private var isLoading: Bool = false
+    private var isExistingUnLoadedData = false
 
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -24,26 +25,36 @@ class ActivitiesViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        guard let userNameString = userProvider?.user?.name else {
-            return
-        }
-        isLoading = true
-        let request = ActivityRequest(userName: userNameString)
-        Session.sendRequest(request) { result in
-            switch result {
-            case .Success(let activities):
-                self.activities = activities
-                self.tableView.reloadData()
-                self.isLoading = false
-            case .Failure(let error):
-                print(error)
-                self.userProvider?.showInquiryViewController()
-            }
-        }
+        fetchActivities()
     }
 
     @IBAction func didTapRightBarButton(sender: AnyObject) {
         self.userProvider?.showInquiryViewController()
+    }
+
+    func fetchActivities() {
+        guard let userNameString = userProvider?.user?.name else {
+            return
+        }
+        let pageCount: Int = activities.count / ActivityRequest.perPage
+        let nextPageCount: Int = pageCount + 1
+
+        let request = ActivityRequest(userName: userNameString, pageCount: nextPageCount)
+        isLoading = true
+        Session.sendRequest(request) { result in
+            switch result {
+            case .Success(let activities):
+                self.isLoading = false
+                if activities.count == 0 {
+                    self.isExistingUnLoadedData = true
+                } else {
+                    self.activities.appendContentsOf(activities)
+                    self.tableView.reloadData()
+                }
+            case .Failure(_):
+                return
+            }
+        }
     }
 
     // MARK: - tableViewDataSource
@@ -98,26 +109,10 @@ class ActivitiesViewController: UITableViewController {
 
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         let contentOffsetWidthWindow = self.tableView.contentOffset.y + self.tableView.bounds.height
-        let eachToBottom = contentOffsetWidthWindow >= self.tableView.contentSize.height
-        if !eachToBottom || isLoading {
+        let isScrolledToBottom = contentOffsetWidthWindow >= self.tableView.contentSize.height
+        if !isScrolledToBottom || isLoading || isExistingUnLoadedData {
             return
         }
-        guard let userNameString = userProvider?.user?.name else {
-            return
-        }
-        let pageCount: Int = activities.count / 5
-        let nextPageCount: Int = pageCount + 1
-        let request = ActivityRequest(userName: userNameString, pageCount: nextPageCount)
-        isLoading = true
-        Session.sendRequest(request) { result in
-            switch result {
-            case .Success(let activities):
-                self.activities.appendContentsOf(activities)
-                self.tableView.reloadData()
-                self.isLoading = false
-            case .Failure(_):
-                return
-            }
-        }
+        fetchActivities()
     }
 }

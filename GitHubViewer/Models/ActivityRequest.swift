@@ -8,6 +8,7 @@ struct ActivityRequest: GitHubAPIRequestType {
         return .GET
     }
 
+    static let perPage = 10
     let userName: String
     var pageCount: Int? = nil
 
@@ -23,12 +24,12 @@ struct ActivityRequest: GitHubAPIRequestType {
     var queryParameters: [String : AnyObject]? {
         if let pageCount = self.pageCount {
             return [
-                "per_page": 5,
+                "per_page": ActivityRequest.perPage,
                 "page": pageCount,
             ]
         } else {
             return [
-                "per_page": 5,
+                "per_page": ActivityRequest.perPage,
             ]
         }
     }
