@@ -2,7 +2,8 @@ import UIKit
 
 class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewControllerDelegate {
     var user: User?
-    let barItemImageEachSideLength: CGFloat = 30
+    let barItemImageSize = CGSize(width: 30.0, height: 30.0)
+    let whiteCollor = UIColor.flatWhiteColor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,9 +16,9 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
 
         let repositoriesContainerController = UINavigationController(rootViewController: repositoriesViewController)
         repositoriesContainerController.title = "Repos"
-        repositoriesContainerController.tabBarItem.image = UIImage.fontAwesomeIconWithName(.Database, textColor: UIColor.flatWhiteColor(), size: CGSize(width: barItemImageEachSideLength, height: barItemImageEachSideLength))
+        repositoriesContainerController.tabBarItem.image = UIImage.fontAwesomeIconWithName(.Database, textColor: whiteCollor, size: barItemImageSize)
         let activitiesContainerController = UINavigationController(rootViewController: activitiesViewController)
-        activitiesContainerController.tabBarItem.image = UIImage.fontAwesomeIconWithName(.RSS, textColor: UIColor.flatWhiteColor(), size: CGSize(width: barItemImageEachSideLength, height: barItemImageEachSideLength))
+        activitiesContainerController.tabBarItem.image = UIImage.fontAwesomeIconWithName(.RSS, textColor: whiteCollor, size: barItemImageSize)
         activitiesContainerController.title = "Activities"
 
         viewControllers = [repositoriesContainerController, activitiesContainerController]
