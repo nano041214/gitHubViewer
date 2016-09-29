@@ -17,11 +17,14 @@
 		271107881D6EB91900DE65F6 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */; };
 		271499DA1D9532D600A2A11A /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30F81D66D95C00526F88 /* APIKit.framework */; };
 		27149A261D9B968200A2A11A /* GitHubViewerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27149A251D9B968200A2A11A /* GitHubViewerError.swift */; };
+		27149A201D9A3C4C00A2A11A /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27149A1F1D9A3C4C00A2A11A /* Chameleon.framework */; };
+		27149A221D9A3DD500A2A11A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27149A211D9A3DD500A2A11A /* Theme.swift */; };
 		2717DD461D797447004C279E /* GitHubLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2717DD451D797447004C279E /* GitHubLinkView.swift */; };
 		272EC1CE1D8951AA0046B4DC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EC1CD1D8951AA0046B4DC /* UIViewController+Extension.swift */; };
 		272EC1D01D8A5F200046B4DC /* ActivityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272EC1CF1D8A5F200046B4DC /* ActivityRequest.swift */; };
 		274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */; };
 		277FA4EA1D9BAC2B00615FF6 /* GitHubViewerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27149A251D9B968200A2A11A /* GitHubViewerError.swift */; };
+		277FA4EE1D9CF8E200615FF6 /* SimpleDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277FA4ED1D9CF8E200615FF6 /* SimpleDateFormatter.swift */; };
 		27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */; };
 		278F8DCB1D94F3780072BAB3 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EE30FA1D66D96F00526F88 /* Himotoki.framework */; };
 		278F8DCC1D94F3840072BAB3 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2710BA131D94CEC800B9DE54 /* OHHTTPStubs.framework */; };
@@ -76,12 +79,15 @@
 		271107851D6EB5B600DE65F6 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		271107871D6EB91900DE65F6 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		27149A251D9B968200A2A11A /* GitHubViewerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubViewerError.swift; sourceTree = "<group>"; };
+		27149A1F1D9A3C4C00A2A11A /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
+		27149A211D9A3DD500A2A11A /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		2717DD451D797447004C279E /* GitHubLinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubLinkView.swift; sourceTree = "<group>"; };
 		272EC1CD1D8951AA0046B4DC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		272EC1CF1D8A5F200046B4DC /* ActivityRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRequest.swift; sourceTree = "<group>"; };
 		2741610F1D6705D700A337FF /* UserInfoTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTabBarController.swift; sourceTree = "<group>"; };
 		275877F71D87FED200F9D1E8 /* GitHubViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275877FB1D87FED200F9D1E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277FA4ED1D9CF8E200615FF6 /* SimpleDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleDateFormatter.swift; sourceTree = "<group>"; };
 		27856CD41D6BE846001170E6 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		278F8DCD1D94F5950072BAB3 /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 		278F8DD01D94F8DA0072BAB3 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27149A201D9A3C4C00A2A11A /* Chameleon.framework in Frameworks */,
 				2710BA141D94CEC800B9DE54 /* OHHTTPStubs.framework in Frameworks */,
 				27B9E9741D91029700FD89F7 /* FontAwesome.framework in Frameworks */,
 				27EE31021D66DB8600526F88 /* Result.framework in Frameworks */,
@@ -193,6 +200,7 @@
 				27D309681D77E23A00DF0154 /* RepositoryTitleTableCell.swift */,
 				27D3096A1D77EA5400DF0154 /* GitHubLinkView.xib */,
 				2717DD451D797447004C279E /* GitHubLinkView.swift */,
+				27149A211D9A3DD500A2A11A /* Theme.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +217,7 @@
 				27B3C0031D82A5DF00FB270E /* RepositoryRequest.swift */,
 				27A5FE491D9125E800125D43 /* HimotokiTransformer.swift */,
 				27149A251D9B968200A2A11A /* GitHubViewerError.swift */,
+				277FA4ED1D9CF8E200615FF6 /* SimpleDateFormatter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,6 +244,7 @@
 		27C48DE61D6FFD33005E98D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27149A1F1D9A3C4C00A2A11A /* Chameleon.framework */,
 				2710BA131D94CEC800B9DE54 /* OHHTTPStubs.framework */,
 				27B9E9731D91029700FD89F7 /* FontAwesome.framework */,
 				27EE30FA1D66D96F00526F88 /* Himotoki.framework */,
@@ -383,6 +393,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Chameleon.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FontAwesome.framework",
 			);
@@ -402,11 +413,13 @@
 				2798FAE01D6D420A0080EEA1 /* UserInfoTableViewCell.swift in Sources */,
 				27856CD51D6BE846001170E6 /* RepositoriesViewController.swift in Sources */,
 				274161101D6705D700A337FF /* UserInfoTabBarController.swift in Sources */,
+				27149A221D9A3DD500A2A11A /* Theme.swift in Sources */,
 				27B3C0041D82A5DF00FB270E /* RepositoryRequest.swift in Sources */,
 				27C48DE31D6FE5BD005E98D3 /* Repository.swift in Sources */,
 				27D3096E1D7806EB00DF0154 /* UITableViewController+Extension.swift in Sources */,
 				271107861D6EB5B600DE65F6 /* ActivitiesViewController.swift in Sources */,
 				27D309691D77E23A00DF0154 /* RepositoryTitleTableCell.swift in Sources */,
+				277FA4EE1D9CF8E200615FF6 /* SimpleDateFormatter.swift in Sources */,
 				272EC1CE1D8951AA0046B4DC /* UIViewController+Extension.swift in Sources */,
 				27D309671D77DE3600DF0154 /* RepositoryDetailViewController.swift in Sources */,
 				270C5FF81D65A7FF0009DAC0 /* InquiryViewController.swift in Sources */,

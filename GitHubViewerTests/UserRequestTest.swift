@@ -3,10 +3,6 @@ import OHHTTPStubs
 import APIKit
 
 class UserRequestTest: XCTestCase {
-    override func setUp() {
-        super.setUp()
-    }
-
     override func tearDown() {
         super.tearDown()
         OHHTTPStubs.removeAllStubs()

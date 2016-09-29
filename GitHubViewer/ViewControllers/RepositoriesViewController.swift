@@ -38,6 +38,20 @@ class RepositoriesViewController: UITableViewController {
         }
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let userProfileViewController = segue.destinationViewController as? UserProfileViewController {
+            userProfileViewController.user = userProvider?.user
+        }
+    }
+
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if userProvider?.user == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+
     @IBAction func didTapRightBarButton(sender: AnyObject) {
         self.userProvider?.showInquiryViewController()
     }

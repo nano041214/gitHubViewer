@@ -25,7 +25,8 @@ struct Repository {
 
     var formattedCreatedAndUpdatedDateString: String {
         get {
-            return "created at \(createdDate) updated at \(updatedDate)"
+            let dateFormatter = SimpleDateFormatter.dateFomatter()
+            return "created at \(dateFormatter.stringFromDate(createdDate))\nupdated at \(dateFormatter.stringFromDate(updatedDate))"
         }
     }
 }
