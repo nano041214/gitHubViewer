@@ -17,10 +17,19 @@ struct ActivityRequest: GitHubAPIRequestType {
     }
 
     var path: String {
+        return "/users/\(userName)/events"
+    }
+
+    var queryParameters: [String : AnyObject]? {
         if let pageCount = self.pageCount {
-            return "/users/\(userName)/events?page=\(pageCount)"
+            return [
+                "per_page": 5,
+                "page": pageCount,
+            ]
         } else {
-            return "/users/\(userName)/events"
+            return [
+                "per_page": 5,
+            ]
         }
     }
 
