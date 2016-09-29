@@ -25,7 +25,7 @@ class InquiryViewController: UIViewController {
         defaultCenter.removeObserver(self)
     }
 
-    func shouErrorMessage(error: SessionTaskError) {
+    func showErrorMessage(error: SessionTaskError) {
         self.alertLabel.hidden = false
         switch error {
         case .ResponseError(let gitHubError as GitHubViewerError):
@@ -59,7 +59,7 @@ class InquiryViewController: UIViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
             case .Failure(let error):
                 self.alertLabel.hidden = false
-                self.shouErrorMessage(error)
+                self.showErrorMessage(error)
             }
         }
     }
