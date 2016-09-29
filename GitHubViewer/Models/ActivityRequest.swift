@@ -9,9 +9,19 @@ struct ActivityRequest: GitHubAPIRequestType {
     }
 
     let userName: String
+    var pageCount: Int? = nil
+
+    init(userName: String, pageCount: Int? = nil) {
+        self.userName = userName
+        self.pageCount = pageCount
+    }
 
     var path: String {
-        return "/users/\(userName)/events"
+        if let pageCount = self.pageCount {
+            return "/users/\(userName)/events?page=\(pageCount)"
+        } else {
+            return "/users/\(userName)/events"
+        }
     }
 
     func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {

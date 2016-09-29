@@ -75,6 +75,8 @@ class ActivitiesViewController: UITableViewController {
         }
     }
 
+    // MARK: - UITableViewDelegate
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
             fatalError("Accesssing undefined section")
@@ -86,4 +88,8 @@ class ActivitiesViewController: UITableViewController {
             return ActivityTableViewCell.height
         }
     }
+
+    // MARK: - UIScrollViewDelegate
+
+
 }
