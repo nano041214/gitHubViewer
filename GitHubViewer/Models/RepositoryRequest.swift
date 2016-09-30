@@ -10,12 +10,14 @@ struct RepositoryRequest: GitHubAPIRequestType {
 
     static let perPage = 10
     let userName: String
-    var pageCount = 1
+    let pageCount: Int
 
     init(userName: String, pageCount: Int? = nil) {
         self.userName = userName
         if let pageCount = pageCount {
             self.pageCount = pageCount
+        } else {
+            self.pageCount = 1
         }
     }
 
