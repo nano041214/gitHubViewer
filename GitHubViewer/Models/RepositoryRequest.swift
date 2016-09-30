@@ -10,11 +10,13 @@ struct RepositoryRequest: GitHubAPIRequestType {
 
     static let perPage = 10
     let userName: String
-    var pageCount: Int? = nil
+    var pageCount = 1
 
     init(userName: String, pageCount: Int? = nil) {
         self.userName = userName
-        self.pageCount = pageCount
+        if let pageCount = pageCount {
+            self.pageCount = pageCount
+        }
     }
 
     var path: String {
@@ -22,16 +24,10 @@ struct RepositoryRequest: GitHubAPIRequestType {
     }
 
     var queryParameters: [String : AnyObject]? {
-        if let pageCount = self.pageCount {
-            return [
-                "per_page": RepositoryRequest.perPage,
-                "page": pageCount,
-            ]
-        } else {
-            return [
-                "per_page": RepositoryRequest.perPage,
-            ]
-        }
+        return [
+            "per_page": RepositoryRequest.perPage,
+            "page": pageCount,
+        ]
     }
 
     func responseFromObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> Response {
