@@ -1,9 +1,17 @@
 import UIKit
 
 class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewControllerDelegate {
-    var user: User?
+    var user: User? {
+        didSet {
+            repositoriesViewController.setOtherUser()
+            activitiesViewController.setOtherUser()
+        }
+    }
     let barItemImageSize = CGSize(width: 30.0, height: 30.0)
     let whiteCollor = UIColor.flatWhiteColor()
+
+    var repositoriesViewController: RepositoriesViewController!
+    var activitiesViewController: ActivitiesViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,8 +19,11 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
         let repositoriesViewController: RepositoriesViewController = ghv_instantiateViewController()
         let activitiesViewController: ActivitiesViewController = ghv_instantiateViewController()
 
-        activitiesViewController.userProvider = self
         repositoriesViewController.userProvider = self
+        activitiesViewController.userProvider = self
+
+        self.repositoriesViewController = repositoriesViewController
+        self.activitiesViewController = activitiesViewController
 
         let repositoriesContainerController = UINavigationController(rootViewController: repositoriesViewController)
         repositoriesContainerController.title = "Repos"

@@ -26,12 +26,15 @@ class RepositoriesViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        resetPropertiesForNextUser()
-        fetchRepositories()
     }
 
     @IBAction func didTapRightBarButton(sender: AnyObject) {
         self.userProvider?.showInquiryViewController()
+    }
+
+    func setOtherUser() {
+        resetPropertiesForNextUser()
+        fetchRepositories()
     }
 
     func fetchRepositories() {

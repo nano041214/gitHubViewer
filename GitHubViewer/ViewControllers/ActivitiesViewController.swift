@@ -26,6 +26,9 @@ class ActivitiesViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+    }
+
+    func setOtherUser() {
         resetPropertiesForNextUser()
         fetchActivities()
     }
