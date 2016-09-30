@@ -13,8 +13,9 @@ class ActivitiesViewController: UITableViewController {
     let navigationBarRightButtonFontSize: CGFloat = 24.0
     private var activities: [Activity] = []
 
-    private var isLoading: Bool = false
+    private var isLoading = false
     private var isExistingUnLoadedData = false
+    private var currentPageCount = 1
 
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -36,9 +37,7 @@ class ActivitiesViewController: UITableViewController {
         guard let userNameString = userProvider?.user?.name else {
             return
         }
-        let pageCount: Int = activities.count / ActivityRequest.perPage
-        let nextPageCount: Int = pageCount + 1
-
+        let nextPageCount = currentPageCount + 1
         let request = ActivityRequest(userName: userNameString, pageCount: nextPageCount)
         isLoading = true
         Session.sendRequest(request) { result in
@@ -119,11 +118,8 @@ class ActivitiesViewController: UITableViewController {
         }
     }
 
-    // MARK: - UIScrollViewDelegate
-
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        let contentOffsetWidthWindow = self.tableView.contentOffset.y + self.tableView.bounds.height
-        let isScrolledToBottom = contentOffsetWidthWindow >= self.tableView.contentSize.height
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let isScrolledToBottom = indexPath.section == TableCellType.sectionCount - 1 && indexPath.row == activities.count - 1
         if !isScrolledToBottom || isLoading || isExistingUnLoadedData {
             return
         }
