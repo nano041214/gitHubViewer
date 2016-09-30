@@ -56,6 +56,13 @@ class ActivitiesViewController: UITableViewController {
         }
     }
 
+    func resetPropertiesForNextUser() {
+        isLoading = false
+        isExistingUnLoadedData = false
+        currentPageCount = 1
+        activities = []
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let userProfileViewController = segue.destinationViewController as? UserProfileViewController {
             userProfileViewController.user = userProvider?.user

@@ -56,6 +56,13 @@ class RepositoriesViewController: UITableViewController {
         }
     }
 
+    func resetPropertiesForNextUser() {
+        isLoading = false
+        isExistingUnLoadedData = false
+        currentPageCount = 1
+        repositories = []
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let userProfileViewController = segue.destinationViewController as? UserProfileViewController {
             userProfileViewController.user = userProvider?.user
