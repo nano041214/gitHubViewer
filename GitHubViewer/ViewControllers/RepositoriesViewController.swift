@@ -13,7 +13,7 @@ class RepositoriesViewController: UITableViewController {
     let navigationBarRightButtonFontSize: CGFloat = 24.0
     private var isLoading = false
     private var isExistingUnLoadedData = false
-    private var currentPageCount = 1
+    private var currentPageCount = 0
 
     var userProvider: UserProvider?
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
@@ -26,6 +26,7 @@ class RepositoriesViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        resetPropertiesForNextUser()
         fetchRepositories()
     }
 
@@ -48,9 +49,11 @@ class RepositoriesViewController: UITableViewController {
                     self.isExistingUnLoadedData = true
                 } else {
                     self.repositories.appendContentsOf(repositories)
+                    self.currentPageCount += 1
                     self.tableView.reloadData()
                 }
             case .Failure(_):
+                // TODO: error handling
                 return
             }
         }
@@ -59,8 +62,11 @@ class RepositoriesViewController: UITableViewController {
     func resetPropertiesForNextUser() {
         isLoading = false
         isExistingUnLoadedData = false
-        currentPageCount = 1
+        currentPageCount = 0
         repositories = []
+        let tableTopIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        tableView.scrollToRowAtIndexPath(tableTopIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+        tableView.reloadData()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -136,7 +142,7 @@ class RepositoriesViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let isScrolledToBottom = indexPath.section == TableCellType.sectionCount - 1 && indexPath.row == repositories.count - 1
+        let isScrolledToBottom = (indexPath.section == TableCellType.sectionCount - 1 && indexPath.row == repositories.count - 1)
         if !isScrolledToBottom || isLoading || isExistingUnLoadedData {
             return
         }

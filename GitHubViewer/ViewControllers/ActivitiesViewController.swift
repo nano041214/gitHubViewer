@@ -15,7 +15,7 @@ class ActivitiesViewController: UITableViewController {
 
     private var isLoading = false
     private var isExistingUnLoadedData = false
-    private var currentPageCount = 1
+    private var currentPageCount = 0
 
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -26,6 +26,7 @@ class ActivitiesViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        resetPropertiesForNextUser()
         fetchActivities()
     }
 
@@ -48,9 +49,11 @@ class ActivitiesViewController: UITableViewController {
                     self.isExistingUnLoadedData = true
                 } else {
                     self.activities.appendContentsOf(activities)
+                    self.currentPageCount += 1
                     self.tableView.reloadData()
                 }
             case .Failure(_):
+                // TODO: error handling
                 return
             }
         }
@@ -59,8 +62,11 @@ class ActivitiesViewController: UITableViewController {
     func resetPropertiesForNextUser() {
         isLoading = false
         isExistingUnLoadedData = false
-        currentPageCount = 1
+        currentPageCount = 0
         activities = []
+        let tableTopIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        tableView.scrollToRowAtIndexPath(tableTopIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+        tableView.reloadData()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -126,7 +132,7 @@ class ActivitiesViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let isScrolledToBottom = indexPath.section == TableCellType.sectionCount - 1 && indexPath.row == activities.count - 1
+        let isScrolledToBottom = (indexPath.section == TableCellType.sectionCount - 1 && indexPath.row == activities.count - 1)
         if !isScrolledToBottom || isLoading || isExistingUnLoadedData {
             return
         }
