@@ -25,8 +25,26 @@ class InquiryViewController: UIViewController {
         defaultCenter.removeObserver(self)
     }
 
-    @IBAction func didChangeTextFieldValue(sender: UITextField) {
+    func showErrorMessage(error: SessionTaskError) {
+        self.alertLabel.hidden = false
+        switch error {
+        case .ResponseError(let gitHubViewerError as GitHubViewerError):
+            self.alertLabel.text = "GitHub API Error: \(gitHubViewerError.errorDescription)"
+        case .ConnectionError(_):
+            self.alertLabel.text = "Connection Error: Connection failed."
+        case .RequestError(_):
+            self.alertLabel.text = "Request Error: Invalid request was sent."
+        default:
+            self.alertLabel.text = "Unknown Error: Unknown response error occured."
+        }
+    }
+
+    func hideErrorMessage() {
         alertLabel.hidden = true
+    }
+
+    @IBAction func didChangeTextFieldValue(sender: UITextField) {
+        hideErrorMessage()
     }
 
     @IBAction func didEnterUserName(sender: UITextField) {
@@ -41,7 +59,7 @@ class InquiryViewController: UIViewController {
                 self.dismissViewControllerAnimated(true, completion: nil)
             case .Failure(let error):
                 self.alertLabel.hidden = false
-                self.alertLabel.text = String(error)
+                self.showErrorMessage(error)
             }
         }
     }
