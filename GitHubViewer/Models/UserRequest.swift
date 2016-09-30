@@ -21,17 +21,16 @@ struct UserRequest: GitHubAPIRequestType {
 
 extension UserRequest {
     func interceptObject(object: AnyObject, URLResponse: NSHTTPURLResponse) throws -> AnyObject {
-        switch URLResponse.statusCode {
-        case 200..<300:
-            return object
-        case 404:
-            throw GitHubViewerError.NoSuchUser
-        default:
+        guard (200..<300).contains(URLResponse.statusCode) else {
+            if URLResponse.statusCode == 404 {
+                throw GitHubViewerError.NoSuchUser
+            }
             if let message = object["message"] as? String {
-                throw GitHubViewerError.UnExpectedResponce(message: message)
+                throw GitHubViewerError.UnExpectedResponse(message: message)
             } else {
-                return object
+                throw GitHubViewerError.UnknownError
             }
         }
+        return object
     }
 }

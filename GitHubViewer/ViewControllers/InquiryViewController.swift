@@ -28,14 +28,14 @@ class InquiryViewController: UIViewController {
     func showErrorMessage(error: SessionTaskError) {
         self.alertLabel.hidden = false
         switch error {
-        case .ResponseError(let gitHubError as GitHubViewerError):
-            self.alertLabel.text = "GitHub API Error: \(gitHubError.errorDescription)"
+        case .ResponseError(let gitHubViewerError as GitHubViewerError):
+            self.alertLabel.text = "GitHub API Error: \(gitHubViewerError.errorDescription)"
         case .ConnectionError(_):
             self.alertLabel.text = "Connection Error: Connection failed."
         case .RequestError(_):
             self.alertLabel.text = "Request Error: Invalid request was sent."
         default:
-            self.alertLabel.text = "Unknown error occured."
+            self.alertLabel.text = "Unknown Error: Unknown response error occured."
         }
     }
 
