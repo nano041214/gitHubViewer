@@ -28,13 +28,13 @@ class ActivitiesViewController: UITableViewController {
         super.viewWillAppear(animated)
     }
 
-    func setOtherUser() {
+    func didSetOtherUser() {
         resetPropertiesForNextUser()
         fetchActivities()
     }
 
     @IBAction func didTapRightBarButton(sender: AnyObject) {
-        self.userProvider?.showInquiryViewController()
+        self.userProvider?.openInquiryModal()
     }
 
     func fetchActivities() {

@@ -29,10 +29,10 @@ class RepositoriesViewController: UITableViewController {
     }
 
     @IBAction func didTapRightBarButton(sender: AnyObject) {
-        self.userProvider?.showInquiryViewController()
+        self.userProvider?.openInquiryModal()
     }
 
-    func setOtherUser() {
+    func didSetOtherUser() {
         resetPropertiesForNextUser()
         fetchRepositories()
     }

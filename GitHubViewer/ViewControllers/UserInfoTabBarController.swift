@@ -3,8 +3,8 @@ import UIKit
 class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewControllerDelegate {
     var user: User? {
         didSet {
-            repositoriesViewController.setOtherUser()
-            activitiesViewController.setOtherUser()
+            repositoriesViewController.didSetOtherUser()
+            activitiesViewController.didSetOtherUser()
         }
     }
     let barItemImageSize = CGSize(width: 30.0, height: 30.0)
@@ -38,7 +38,7 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if user == nil {
-            showInquiryViewController()
+            openInquiryModal()
         }
     }
 
@@ -50,7 +50,7 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
 
     // MARK: - UserProvider
 
-    func showInquiryViewController() {
+    func openInquiryModal() {
         let inquiryViewController: InquiryViewController = ghv_instantiateViewController()
         inquiryViewController.delegate = self
         presentViewController(inquiryViewController, animated: true, completion: nil)
@@ -59,5 +59,5 @@ class UserInfoTabBarController: UITabBarController, UserProvider, InquiryViewCon
 
 protocol UserProvider: class {
     var user: User? { get }
-    func showInquiryViewController()
+    func openInquiryModal()
 }
