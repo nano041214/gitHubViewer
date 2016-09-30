@@ -1,3 +1,4 @@
+import Kingfisher
 import UIKit
 
 class UserInfoTableViewCell: UITableViewCell {
@@ -12,14 +13,18 @@ class UserInfoTableViewCell: UITableViewCell {
 
     var user: User? {
         didSet {
+            let placeholderImage = UIImage(named: "octcat")
             if let user = user {
-                self.userNameLabel.text = user.name
-                self.followedLabel.text = String(user.followersCount)
-                self.followingLabel.text = String(user.followingCount)
+                iconImageView.kf_setImageWithURL(user.iconURL,
+                                                 placeholderImage: placeholderImage)
+                userNameLabel.text = user.name
+                followedLabel.text = String(user.followersCount)
+                followingLabel.text = String(user.followingCount)
             } else {
-                self.userNameLabel.text = "No user was selected"
-                self.followedLabel.text = "?"
-                self.followingLabel.text = "?"
+                iconImageView.image = placeholderImage
+                userNameLabel.text = "No user was selected"
+                followedLabel.text = "?"
+                followingLabel.text = "?"
             }
         }
     }
