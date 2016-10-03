@@ -11,6 +11,9 @@ class RepositoriesViewController: UITableViewController {
 
     private var repositories: [Repository] = []
     let navigationBarRightButtonFontSize: CGFloat = 24.0
+    private var isLoading = false
+    private var isExistingUnLoadedData = false
+    private var currentPageCount = 0
 
     var userProvider: UserProvider?
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
@@ -23,19 +26,50 @@ class RepositoriesViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+    }
+
+    @IBAction func didTapRightBarButton(sender: AnyObject) {
+        self.userProvider?.openInquiryModal()
+    }
+
+    func didSetOtherUser() {
+        resetPropertiesForNextUser()
+        fetchRepositories()
+    }
+
+    func fetchRepositories() {
         guard let userNameString = userProvider?.user?.name else {
             return
         }
-        let request = RepositoryRequest(userName: userNameString)
+        let nextPageCount = currentPageCount + 1
+        let request = RepositoryRequest(userName: userNameString, pageCount: nextPageCount)
+        isLoading = true
         Session.sendRequest(request) { result in
             switch result {
             case .Success(let repositories):
-                self.repositories = repositories
-                self.tableView.reloadData()
+                self.isLoading = false
+                if repositories.count == 0 {
+                    self.isExistingUnLoadedData = true
+                } else {
+                    self.repositories.appendContentsOf(repositories)
+                    self.currentPageCount += 1
+                    self.tableView.reloadData()
+                }
             case .Failure(_):
-                self.userProvider?.showInquiryViewController()
+                // TODO: error handling
+                return
             }
         }
+    }
+
+    func resetPropertiesForNextUser() {
+        isLoading = false
+        isExistingUnLoadedData = false
+        currentPageCount = 0
+        repositories = []
+        let tableTopIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        tableView.scrollToRowAtIndexPath(tableTopIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+        tableView.reloadData()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -50,10 +84,6 @@ class RepositoriesViewController: UITableViewController {
         } else {
             return true
         }
-    }
-
-    @IBAction func didTapRightBarButton(sender: AnyObject) {
-        self.userProvider?.showInquiryViewController()
     }
 
     // MARK: - tableViewDataSource
@@ -90,6 +120,8 @@ class RepositoriesViewController: UITableViewController {
         }
     }
 
+    // MARK: - UITableViewDelegate
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
             fatalError("Accessing undefined section")
@@ -110,5 +142,13 @@ class RepositoriesViewController: UITableViewController {
             repositoryDetailViewController.repository = repositories[indexPath.row]
             showViewController(repositoryDetailViewController, sender: nil)
         }
+    }
+
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let isScrolledToBottom = (indexPath.section == TableCellType.sectionCount - 1 && indexPath.row == repositories.count - 1)
+        if !isScrolledToBottom || isLoading || isExistingUnLoadedData {
+            return
+        }
+        fetchRepositories()
     }
 }

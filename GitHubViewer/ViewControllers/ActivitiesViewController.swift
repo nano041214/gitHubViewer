@@ -13,6 +13,10 @@ class ActivitiesViewController: UITableViewController {
     let navigationBarRightButtonFontSize: CGFloat = 24.0
     private var activities: [Activity] = []
 
+    private var isLoading = false
+    private var isExistingUnLoadedData = false
+    private var currentPageCount = 0
+
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         let attributes: [String: AnyObject] = [NSFontAttributeName: UIFont.fontAwesomeOfSize(navigationBarRightButtonFontSize)]
@@ -22,19 +26,50 @@ class ActivitiesViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+    }
+
+    func didSetOtherUser() {
+        resetPropertiesForNextUser()
+        fetchActivities()
+    }
+
+    @IBAction func didTapRightBarButton(sender: AnyObject) {
+        self.userProvider?.openInquiryModal()
+    }
+
+    func fetchActivities() {
         guard let userNameString = userProvider?.user?.name else {
             return
         }
-        let request = ActivityRequest(userName: userNameString)
+        let nextPageCount = currentPageCount + 1
+        let request = ActivityRequest(userName: userNameString, pageCount: nextPageCount)
+        isLoading = true
         Session.sendRequest(request) { result in
             switch result {
             case .Success(let activities):
-                self.activities = activities
-                self.tableView.reloadData()
+                self.isLoading = false
+                if activities.count == 0 {
+                    self.isExistingUnLoadedData = true
+                } else {
+                    self.activities.appendContentsOf(activities)
+                    self.currentPageCount += 1
+                    self.tableView.reloadData()
+                }
             case .Failure(_):
-                self.userProvider?.showInquiryViewController()
+                // TODO: error handling
+                return
             }
         }
+    }
+
+    func resetPropertiesForNextUser() {
+        isLoading = false
+        isExistingUnLoadedData = false
+        currentPageCount = 0
+        activities = []
+        let tableTopIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        tableView.scrollToRowAtIndexPath(tableTopIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+        tableView.reloadData()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -49,10 +84,6 @@ class ActivitiesViewController: UITableViewController {
         } else {
             return true
         }
-    }
-
-    @IBAction func didTapRightBarButton(sender: AnyObject) {
-        self.userProvider?.showInquiryViewController()
     }
 
     // MARK: - tableViewDataSource
@@ -89,6 +120,8 @@ class ActivitiesViewController: UITableViewController {
         }
     }
 
+    // MARK: - UITableViewDelegate
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         guard let cellType = TableCellType(rawValue: indexPath.section) else {
             fatalError("Accesssing undefined section")
@@ -99,5 +132,13 @@ class ActivitiesViewController: UITableViewController {
         case .Activity:
             return ActivityTableViewCell.height
         }
+    }
+
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let isScrolledToBottom = (indexPath.section == TableCellType.sectionCount - 1 && indexPath.row == activities.count - 1)
+        if !isScrolledToBottom || isLoading || isExistingUnLoadedData {
+            return
+        }
+        fetchActivities()
     }
 }
